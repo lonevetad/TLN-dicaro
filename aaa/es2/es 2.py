@@ -2,21 +2,24 @@ import nltk
 from nltk.corpus import wordnet as wn
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-import re
 import csv
 import collections
 
 import sys
-sys.path.append(".\\..\\..\\utils")
+sys.path.append(".\\..\\utilitiess")
 import utils
 import functions
-import cacheVarie
+from cacheVarie import *
 
 
 #regex_punctuation = r'[^\w\s]'
 #lemmatizer = WordNetLemmatizer()
 #stop_words = set(stopwords.words('english'))
 
+def newCache():
+	return cacheVarie.CacheSynsetsBag()
+
+cache = newCache()
 
 
 #------------
@@ -38,7 +41,7 @@ def read_csv():
 				if can_use:
 					row_string = row[0]
 					i = 0
-					cols_in_this_row = split_csv_row_string(row_string)
+					cols_in_this_row = utils.split_csv_row_string(row_string)
 					length = len(cols_in_this_row) -1
 					while i < length:
 						cols[i].append(cols_in_this_row[i + 1]) #because the first column is reserved for indexes
@@ -66,7 +69,7 @@ def read_csv():
 
 
 root_synset = wn.synsets('entity')[0] # top-most synset (only one exists) 
-bag_root_synset = synsetToBagOfWords(root_synset)
+bag_root_synset = functions.synsetToBagOfWords(root_synset)
 cache_synsets = { 'entity': root_synset }
 cache_synsets_bag = { 'entity': bag_root_synset }
 print(root_synset)
@@ -79,12 +82,10 @@ print(bag_root_synset)
 
 
 
-def searchBestApproximatingSynset(bagOrSynset, cacheSynsetsBagByName = None, addsAntinomies = True, usingOverlapSimilarity = True):
-	if cacheSynsetsBagByName == None:
-		cacheSynsetsBagByName = {}
+def searchBestApproximatingSynset(bagOrSynset, addsAntinomies = True, usingOverlapSimilarity = True):
 	if not isinstance(bagOrSynset, set):
 		#assumption: it's a WordNet's synset:
-		bagOrSynset = get_synset_bag(bagOrSynset, cacheSynsetsBagByName)
+		bagOrSynset = cache.get_synset_bag(bagOrSynset, cacheSynsetsBagByName)
 	print("calculated bag:\n\t", bagOrSynset)
 	'''
 	"macchia d'olio":
@@ -107,7 +108,7 @@ def searchBestApproximatingSynset(bagOrSynset, cacheSynsetsBagByName = None, add
 	len_original_words_bag = len(bagOrSynset)
 	while len(frontier) > 0:
 		current_word = frontier.popleft()
-		synsets_current_word = get_synsets(current_word)
+		synsets_current_word = cache.get_synsets(current_word)
 		if not (isinstance(synsets_current_word, list)):
 			synsets_current_word = [synsets_current_word]
 		#gather all usefull synsets from a given words:
@@ -136,8 +137,8 @@ def searchBestApproximatingSynset(bagOrSynset, cacheSynsetsBagByName = None, add
 		 
 		for synsName, current_node in useful_synsets_by_name.items():
 		#for current_node in synsets_current_word:
-			current_bag = get_synset_bag(current_node, cacheSynsetsBagByName)
-			current_simil = compute_sim(bagOrSynset, current_bag, usingOverlapSimilarity = usingOverlapSimilarity)
+			current_bag = cache.get_synset_bag(current_node)
+			current_simil = functions.compute_sim(bagOrSynset, current_bag, usingOverlapSimilarity = usingOverlapSimilarity)
 			if current_simil > best_simil :
 				print("\t-> updating: new node ", current_node.name(), ", with simil:", current_simil, "and bag: ", current_bag)
 				best_synset = current_node
@@ -159,12 +160,10 @@ def searchBestApproximatingSynset(bagOrSynset, cacheSynsetsBagByName = None, add
 	return best_synset, best_simil
 
 
-def searchBestApproximatingSynset_V2(bagOrSynset, cacheSynsetsBagByName = None):
-	if cacheSynsetsBagByName == None:
-		cacheSynsetsBagByName = {}
+def searchBestApproximatingSynset_V2(bagOrSynset):
 	if not isinstance(bagOrSynset, set):
 		#assumption: it's a WordNet's synset:
-		bagOrSynset = get_synset_bag(bagOrSynset, cacheSynsetsBagByName)
+		bagOrSynset = cache.get_synset_bag(bagOrSynset)
 		#print("calculated bag:\n\t", bagOrSynset)
 	'''
 	"macchia d'olio":
@@ -185,10 +184,10 @@ def searchBestApproximatingSynset_V2(bagOrSynset, cacheSynsetsBagByName = None):
 	best_bag = None
 	while len(frontier) > 0:
 		current_word = frontier.popleft()
-		synsets_current_word = get_synsets(current_word)
+		synsets_current_word = cache.get_synsets(current_word)
 		for current_node in synsets_current_word:
-			current_bag = get_synset_bag(current_node, cacheSynsetsBagByName)
-			current_simil = 0.0 if best_synset is None else compute_sim(best_bag, current_bag, usingOverlapSimilarity = usingOverlapSimilarity)
+			current_bag = cache.get_synset_bag(current_node)
+			current_simil = 0.0 if best_synset is None else functions.compute_sim(best_bag, current_bag, usingOverlapSimilarity = usingOverlapSimilarity)
 			if current_simil > best_simil :
 				print("\t -> updating: new node ", current_node.name(), ", with simil:", current_simil.name(), "and bag: ", current_bag)
 				best_synset = current_node
@@ -208,12 +207,12 @@ def searchBestApproximatingSynset_V1(bagOrSynset, cacheSynsetsBagByName = None):
 		cacheSynsetsBagByName = {}
 	if not isinstance(bagOrSynset, set):
 		#assumption: it's a WordNet's synset:
-		bagOrSynset = get_synset_bag(bagOrSynset, cacheSynsetsBagByName)
+		bagOrSynset = cache.get_synset_bag(bagOrSynset, cacheSynsetsBagByName)
 		#print("calculated bag:\n\t", bagOrSynset)
 	best_synset = root_synset
 	synonyms_already_seen = { best_synset.name(): best_synset }
 	best_bag = bag_root_synset
-	best_simil = compute_sim(bagOrSynset, best_bag, usingOverlapSimilarity = usingOverlapSimilarity)
+	best_simil = functions.compute_sim(bagOrSynset, best_bag, usingOverlapSimilarity = usingOverlapSimilarity)
 	frontier = collections.deque(root_synset.hyponyms())
 	#print("\n\n original best simil: ", best_simil)
 	while len(frontier) > 0:
@@ -221,8 +220,8 @@ def searchBestApproximatingSynset_V1(bagOrSynset, cacheSynsetsBagByName = None):
 		if current_node.name() not in synonyms_already_seen:
 			#print("current node:", current_node.name())
 			synonyms_already_seen[current_node.name()] = current_node
-			current_bag = get_synset_bag(current_node, cacheSynsetsBagByName)
-			current_simil = compute_sim(best_bag, current_bag, usingOverlapSimilarity = usingOverlapSimilarity)
+			current_bag = cache.get_synset_bag(current_node, cacheSynsetsBagByName)
+			current_simil = functions.compute_sim(best_bag, current_bag, usingOverlapSimilarity = usingOverlapSimilarity)
 			if current_simil > best_simil :
 				print("\t -> updating: new node ", current_node.name(), ", with simil:", current_simil)
 				best_synset = current_node
@@ -245,7 +244,7 @@ def colum_csv_to_bag_of_words( column ):
 	bag = set()
 	for c in column:
 		if len(c) > 0:
-			bags_of_c = filter_and_lemmatize_words_in(c)
+			bags_of_c = functions.filter_and_lemmatize_words_in(c)
 			for w in bags_of_c:
 				bag.add(w)
 	return bag
@@ -279,9 +278,9 @@ def main():
 
 		for column in cols:
 			print("\n\n\n elaborating th given column:")
-			deep_array_printer(column)		
+			utils.deep_array_printer(column)		
 			bag_for_col = colum_csv_to_bag_of_words(column)
-			best_synset, best_simil = searchBestApproximatingSynset(bag_for_col, cache_synsets_bag, addsAntinomies = True, usingOverlapSimilarity = useOverlap)
+			best_synset, best_simil = searchBestApproximatingSynset(bag_for_col, addsAntinomies = True, usingOverlapSimilarity = useOverlap)
 			print("found: ", best_synset, ", with similarity of:", best_simil)
 
 	#beware of entries in columns having len(field) == 0 ....
