@@ -159,6 +159,18 @@ class DocumentSegmentator(object):
     #
     #
 
+    def firstIndexOf(self, stri, a_char):
+        i = 0
+        le = len(stri)
+        if le == 0:
+            return -1
+        notFound = True
+        while notFound and i < le:
+            notFound = stri[i] != a_char
+            if notFound:
+                i+=1
+        return -1 if notFound else i
+
     def get_weighted_synset_map(self, synset_name):
         """
         :param synset_name:
@@ -229,7 +241,11 @@ class DocumentSegmentator(object):
             for coll_weighted in synsets_collections_weighted:
                 we = coll_weighted[1]
                 for syn in coll_weighted[0]:
-                    mapped_weights[syn.name()] = we
+                    namee = syn.name()
+                    index_dot = self.firstIndexOf(namee, '.')
+                    if index_dot >= 0:
+                        namee = namee[0:index_dot]
+                    mapped_weights[namee] = we
         return mapped_weights
 
     def get_weighted_word_map_for_sentence(self, sentence):
@@ -409,6 +425,8 @@ class DocumentSegmentator(object):
                     words_weight[word] = w
             i += 1
 
+        print("words_weight:")
+        print(words_weight)
         # pre-compute the similarity of each sentence
         similarity_subsequent_sentences = self.compute_similarity_lists_subsequent_sentences(
             list_of_sentences, words_weight)
