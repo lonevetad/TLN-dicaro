@@ -50,9 +50,10 @@ if __name__ == '__main__':
                 slot2_ss.append(sup[1].split('.')[1])    #Supersensi degli oggetti
             else:
                 slot2_ss.append(sup[1])
-            tot_slot1 = len(slot1_ss)
-            tot_slot2 = len(slot2_ss)
-            tot_ss = len(super_senses)
+
+    tot_slot1 = len(slot1_ss)
+    tot_slot2 = len(slot2_ss)
+    tot_ss = len(super_senses)
 
 
     #Risultati finali
@@ -86,6 +87,8 @@ if __name__ == '__main__':
     for i in range(0, valenza):
         generate_word_cloud(slots[i])
         print("Word Cloud", i+1, "generata")
+
+
 
 
 
