@@ -3,6 +3,9 @@ import csv
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import re
+
+from notebooks.utilities.functions import compute_sim
+
 '''
 from nltk import word_tokenize
 from nltk import pos_tag
@@ -65,29 +68,6 @@ def lemmatization(sentence):
 
 #------------
 
-
-def jaccard_similarity(sent1, sent2):
-	len_sent1 = len(sent1)
-	len_sent2 = len(sent2)
-	if len_sent1== 0 or len_sent2 == 0:
-		return 0
-	intCard = len(sent1.intersection(sent2))
-	union_card = (len_sent1 + len_sent2) - (intCard)
-	return intCard/union_card
-	
-def overlap_similarity(sent1, sent2):
-	len_sent1 = len(sent1)
-	len_sent2 = len(sent2)
-	if len_sent1 == 0 or len_sent2 == 0:
-		if len_sent1 == 0 and len_sent2 == 0:
-			return 1
-		else:
-			return 0
-	intCard = len(sent1.intersection(sent2))
-	return intCard / min(len_sent1, len_sent2)
-
-def compute_sim(sent1, sent2):
-	return overlap_similarity(sent1, sent2)
 
 
 #------------

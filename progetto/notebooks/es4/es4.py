@@ -151,6 +151,7 @@ class DocumentSegmentator(object):
         self.cache = cache
         self.options = options
         self.map_sentence_to_bag = {}
+        self.bag_from_sentence_list = []
         self.algorithm_tiling = 0  # will see
 
     #
@@ -168,7 +169,7 @@ class DocumentSegmentator(object):
         while notFound and i < le:
             notFound = stri[i] != a_char
             if notFound:
-                i+=1
+                i += 1
         return -1 if notFound else i
 
     def get_weighted_synset_map(self, synset_name):
@@ -177,6 +178,8 @@ class DocumentSegmentator(object):
         :return: a map, that given a word (a synset's name), maps the weight of each words in
         that synset's definition.
         """
+        if len(synset_name) < 3:
+            return None
         synsets = self.cache.get_synsets(synset_name)
         if synsets is None:
             return None
@@ -197,7 +200,8 @@ class DocumentSegmentator(object):
                 # since it's a sentence, let's extract the useful word
                 defin_refined = preprocessing(defin)
                 for def_word in defin_refined:
-                    mapped_weights[def_word] = opt.weight
+                    if len(def_word) > 1:
+                        mapped_weights[def_word] = opt.weight
 
             # synonyms
             opt = self.options.get_option("lemmas")
@@ -205,7 +209,12 @@ class DocumentSegmentator(object):
                 opt = self.options.get_option("synonyms")
             if opt.isEnabled:
                 for synonym in synset.lemmas():
-                    mapped_weights[synonym.name()] = opt.weight
+                    nnn = synonym.name()
+                    index_dot = self.firstIndexOf(nnn, '.')
+                    if index_dot >= 0:
+                        nnn = nnn[0:index_dot]
+                    if len(nnn) > 1:
+                        mapped_weights[synonym.name()] = opt.weight
 
             # examples
             opt = self.options.get_option("examples")
@@ -213,7 +222,8 @@ class DocumentSegmentator(object):
                 for exampl in synset.examples():
                     ex_refined = preprocessing(exampl)
                     for ex_word in ex_refined:
-                        mapped_weights[ex_word] = opt.weight
+                        if len(ex_word) > 1:
+                            mapped_weights[ex_word] = opt.weight
 
             # collect some stuffs
             synsets_collections_weighted = []
@@ -245,7 +255,8 @@ class DocumentSegmentator(object):
                     index_dot = self.firstIndexOf(namee, '.')
                     if index_dot >= 0:
                         namee = namee[0:index_dot]
-                    mapped_weights[namee] = we
+                    if len(namee) > 1:
+                        mapped_weights[namee] = we
         return mapped_weights
 
     def get_weighted_word_map_for_sentence(self, sentence):
@@ -256,12 +267,13 @@ class DocumentSegmentator(object):
         describing the argument of the sentence
         """
         sent_filtered = None
-        #print(".... processing sentence: ", sentence)
+        # print(".... processing sentence: ", sentence)
         if sentence in self.map_sentence_to_bag:
             sent_filtered = self.map_sentence_to_bag[sentence]
         else:
             sent_filtered = preprocessing(sentence)
             self.map_sentence_to_bag[sentence] = sent_filtered
+            self.bag_from_sentence_list.append(sent_filtered)
         all_weighted_maps = [self.get_weighted_synset_map(w) for w in sent_filtered]
         sent_filtered = None  # clear the memory
         final_weighted_map = {}
@@ -273,12 +285,15 @@ class DocumentSegmentator(object):
         '''
         weights_collectors = {}
         for wm in all_weighted_maps:  # per ogni dizionario (ergo, per ogni parola non-stop nella frase) ..
-            for wordd, weight in wm.items():  # scorro tutte le parole soppesate del dizionario
-                # raccolgo i pesi in una collezione
-                if wordd in weights_collectors:
-                    weights_collectors[wordd].append(weight)
-                else:
-                    weights_collectors[wordd] = [weight]
+            if wm:
+                for wordd, weight in wm.items():  # scorro tutte le parole soppesate del dizionario
+                    # raccolgo i pesi in una collezione
+                    if len(wordd) < 2:
+                        raise ValueError("WTF 2: --" + str(wordd) + "--")
+                    if wordd in weights_collectors:
+                        weights_collectors[wordd].append(weight)
+                    else:
+                        weights_collectors[wordd] = [weight]
         all_weighted_maps = None  # clear the memory
         # some sort of averaging ... like "arithmetic" ones
         for wordd, weights in weights_collectors.items():
@@ -307,6 +322,12 @@ class DocumentSegmentator(object):
             return self.weighted_intersection(word_weight_map, string_set2, string_set1)
         # consider the first as the smaller set
         summ = 0
+        if 'h' in string_set1:
+            print("WTF IS THIS h?")
+            print(string_set1)
+            if isinstance(string_set1, set):
+                print("IS ALSO A SET!?!?!!?")
+            raise ValueError("WTF 4")
         for w in string_set1:
             if w in string_set2:
                 summ += word_weight_map[w].getTotalWeigth()
@@ -321,19 +342,21 @@ class DocumentSegmentator(object):
 
     #
 
-    def compute_similarity_lists_subsequent_sentences(self, list_of_sentences, word_weight_map):
+    def compute_similarity_lists_subsequent_sentences(self, bags_sentences, word_weight_map):
         """
-        :param list_of_sentences: the parameter of the function "document_segmentation"
+        :param bags_sentences: list of bags of words, extracter from the sentences
+        (whose are the parameter of the function "document_segmentation") during the computation
+        of the function "get_weighted_synset_map"
         :param word_weight_map: map <string, WordWeighted> that maps the weight of each words
         :return: a list, with length equal to "len(document_segmentation)-1", containing
         holding the similarity score between two subsequent sentences
         (the similarity between sentences in index 0 and 1 is stored in index 0).
         """
         i = 0
-        leng = len(list_of_sentences) - 1
+        leng = len(bags_sentences) - 1
         simils = [0] * leng
         while i < leng:
-            simils[i] = self.similarity(word_weight_map, list_of_sentences[i], list_of_sentences[i + 1])
+            simils[i] = self.similarity(word_weight_map, bags_sentences[i], bags_sentences[i + 1])
             i += 1
         return simils
 
@@ -417,6 +440,15 @@ class DocumentSegmentator(object):
             for word, weight in map_for_a_sent.items():
                 bag_of_word_of_sentence = self.map_sentence_to_bag[list_of_sentences[i]]
                 is_in_sentence = word in bag_of_word_of_sentence
+                if len(word) <= 1:
+                    print("\n\n WTF in sentence:")
+                    print(list_of_sentences[i])
+                    print("and word: ---", word, "---")
+                    print("and bag")
+                    print(map_for_a_sent)
+                    print("\nweights collected since then")
+                    print(words_weight)
+                    raise ValueError("WTF ?" + word + "--\n\n")
                 if word in words_weight:
                     words_weight[word].addWeight(weight, isPresentInDocument=is_in_sentence)
                 else:
@@ -425,11 +457,13 @@ class DocumentSegmentator(object):
                     words_weight[word] = w
             i += 1
 
-        print("words_weight:")
-        print(words_weight)
+        # print("words_weight:")
+        # print(words_weight)
         # pre-compute the similarity of each sentence
         similarity_subsequent_sentences = self.compute_similarity_lists_subsequent_sentences(
-            list_of_sentences, words_weight)
+            self.bag_from_sentence_list, words_weight)
+        print("\n\n generated similarity_subsequent_sentences:")
+        print(similarity_subsequent_sentences)
 
         # now segment
         breakpoint_indexes = self.doc_tiling(similarity_subsequent_sentences, desiredParagraphAmount)
@@ -437,9 +471,11 @@ class DocumentSegmentator(object):
         i = 0
         start = 0
         subdivision = [None] * desiredParagraphAmount
+        print("\n\n generated breakpoint_indexes:")
+        print(breakpoint_indexes)
         while i < desiredParagraphAmount:
-            subdivision = list_of_sentences[start: breakpoint_indexes[i]]
-            start = breakpoint_indexes[i]
+            subdivision[i] = list_of_sentences[start: breakpoint_indexes[i]+1]
+            start = breakpoint_indexes[i]+1
             i += 1
         return subdivision
 
@@ -470,11 +506,11 @@ def document_segmentation_v1(list_of_sentences, cache=None):
 
 sentences = [
     "I love to pet my cat while reading fantasy books.",
-    "The cat's furry is so fluffy that chills me.",
-    "It entertain me, its tail sometimes goes over my pages and meows.",
-    "Sometimes, it plays with me but hurts me with its claws",
-    "Even so, its agile and soft body warms me with its cute fur, meow and purr."
-    
+    "The furry of my cat is so fluffy that chills me.",
+    "It entertain me, its tail sometimes goes over my pages and meows, also showing me the weird pattern in its chest's fur.",
+    "Sometimes, it plays with me but hurts me with its claws and once it scratched me so bad the one drop of blood felt over my favourite book's pages.",
+    "Even so, its agile and soft body warms me with its cute fur, meow and purr, so I've forgave it."
+
     "There are tons of books I like, from literature, romance, fantasy and sci-fi.",
     "When i hold a book, the stress flushes out and I start reading the whole life wit an external and more critical mindset.",
     "Sometimes, some author or topic can help to better understand the world, as just by giving a meaning",

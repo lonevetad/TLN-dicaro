@@ -7,6 +7,7 @@ import spacy
 
 nlp = spacy.load("en_core_web_sm")
 regex_punctuation = r'[^\w\s]'
+only_letters = re.compile('[A-z]+$')
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
 
@@ -67,7 +68,9 @@ def preprocessing(text):
     res = set()
     for t in tokens:
         if t.pos_ != "PUNCT" and not t.is_stop:
-            res.add(t.text if t.pos_ == "PRON" else t.lemma_)
+            tt = t.text if t.pos_ == "PRON" else t.lemma_
+            if only_letters.fullmatch(tt):
+                res.add(tt)
     return res
 
 

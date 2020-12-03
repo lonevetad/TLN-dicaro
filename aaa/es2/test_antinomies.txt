@@ -1,0 +1,13 @@
+import nltk 
+from nltk.corpus import wordnet
+
+g = wordnet.synsets("good")
+for syn in g: 
+	for l in syn.lemmas(): 
+		print(l.name(), " -> ", l)
+		ant = l.antonyms()
+		#if ant:
+		#	for a in ant:
+		#		print("\t ant:", ant) #.name(), " -> ", ant)
+		for a in ant:
+			print("\t ant:", ant) #.name(), " -> ", ant)

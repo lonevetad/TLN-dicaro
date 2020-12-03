@@ -1,0 +1,48 @@
+
+
+calcolo "bag" per una parola:
+	si prelevano, di ogni synset di tale parola:
+	- glossa
+	- definizione
+	- esempi
+	- quanto sopra di iponimi ed iperonimi
+	- lemmi e sinonimi
+
+soppesazione parole:
+	- calcolare la bag di ogni parola
+	- calcolare la similarità tra la bag e l'insieme di parole in ogni frase
+	- sommare le similarità così calcolata con ogni frase
+	- il risultato è il peso della singola parola
+
+similarità tra frasi:
+	- sommatoria di uno di due (ancora da decidere):
+	-	- pesi delle parole presenti nelle intersezioni
+	-	- di ogni frase, calcolare la "super-bag" unendo le bag di ogni parola ; similarità (overlap?) tra le super-bag delle due frasi
+
+
+
+
+2.0
+
+
+
+sapendo quante e quali parole (non stop-words) esistono in tutto il testo
+per ogni frase:
+	per ogni parola nella frase
+		piglio i synset
+		do' un peso alle informazioni che posso ricavare dal sinset ... in ordine decrescente:
+			) peso: 4
+			- nome
+			- sinonimi (in WordNet sono i Lemmas)
+
+			) peso 2
+			- parole nella definizione
+			- olonimia ( usare ".member_holonyms()")
+			- parole negli esempi
+
+			) peso 1
+			- nome degli iponimi
+			- nome edgli iperonimi
+	e di tutto questo insieme (pesato) di parole ->
+	-> calcolo la similarità (overlap pesato?) con le frasi adiacenti
+	cerco le frasi (o la coppia di frasi contigue) con le più basse similarità
