@@ -7,6 +7,8 @@ from nltk.stem import WordNetLemmatizer
 import csv
 import collections
 
+from sortedcontainers import SortedDict
+
 from notebooks.utilities.cacheVarie import CacheSynsetsBag
 from notebooks.utilities.functions import preprocessing, SynsetToBagOptions
 
@@ -52,18 +54,15 @@ def newCache():
     return CacheSynsetsBag()
 
 
-# ------------
-# ------------
-# ------------------ func ------------------
-# ------------
-# ------------
-
-
 def get_preprocessed_words(text):
     return preprocessing(text)
 
 
-# return preprocessing(text)
+# ------------
+# ------------
+# ------------------ classes ------------------
+# ------------
+# ------------
 
 
 class WeightsSynsetsInfo(object):
@@ -136,9 +135,213 @@ class SynsetInfoExtractionOptions(object):
 DEFAULT_SYNSET_EXTRACTION_OPTIONS = SynsetInfoExtractionOptions()
 
 
-class DocumentSegmentator(object):
-    def __init__(self, cache=None, options=None):
+#
+#
+# start CachePairwiseSentenceSimilarity
+#
+#
+
+class CachePairwiseSentenceSimilarity:
+    def __init__(self, map_words_weights, list_word_bags_from_sentences, sentence_similarity_function):
         """
+        :param map_words_weights: map <string, int> representing the words' weights
+        :param list_word_bags_from_sentences: a list of set of string, i.e. a list of bag of words
+        each extracted from a respective sentence
+        :param sentence_similarity_function: a function that accepts a map <string, int> (words' weights),
+        and two strings (sentences) and returns a float (the similarity between those)
+        """
+        self.map_words_weights = map_words_weights
+        self.list_word_bags_from_sentences = list_word_bags_from_sentences
+        self.sentence_similarity_function = sentence_similarity_function
+        self.cache_simil = [None] * len(list_word_bags_from_sentences)
+
+    def get_similarity_by_sentence_indexes(self, index_sentence1, index_sentence2):
+        minind = 0
+        maxind = 0
+        if index_sentence1 > index_sentence2:
+            minind = index_sentence2
+            maxind = index_sentence1
+        elif index_sentence1 == index_sentence2:
+            raise ValueError(
+                "Shouldn't calculate the similarity of the same sentence (index: " + str(index_sentence1) + ")")
+        else:
+            minind = index_sentence1
+            maxind = index_sentence2
+        m = self.cache_simil[minind]
+        if m is None:
+            m = {}
+            self.cache_simil[minind] = m
+        if maxind in m:
+            return m[maxind]
+        else:
+            sim = self.sentence_similarity_function(self.map_words_weights,
+                                                    self.list_word_bags_from_sentences[index_sentence1],
+                                                    self.list_word_bags_from_sentences[index_sentence2])
+            m[maxind] = sim
+            return sim
+
+
+#
+#
+# end CachePairwiseSentenceSimilarity
+#
+#
+
+#
+#
+# start Paragraph
+#
+#
+
+class Paragraph(object):
+    def __init__(self, documentSegmentator):  # , cache_pairwise_sentence_similarity
+        if not (isinstance(documentSegmentator, DocumentSegmentator)):
+            raise ValueError("The first constuctor parameter must be a DocumentSegmentator")
+
+        # if not (isinstance(cache_pairwise_sentence_similarity, CachePairwiseSentenceSimilarity)):
+        #    raise ValueError("The second constuctor parameter must be a CachePairwiseSentenceSimilarity")
+        self.documentSegmentator = documentSegmentator
+        self.score = -1
+        # self.cache_pairwise_sentence_similarity = cache_pairwise_sentence_similarity
+        # self.map_sentence_by_index = SortedDict()  # all sentences that builds the paragraph
+        self.lowest_index_sentence = 0
+        self.highest_index_sentence = -1  # ESTREMI INCLUSI
+        self.previous_paragraph = None
+        self.next_paragraph = None
+
+    def is_empty(self):
+        # return len(self.map_sentence_by_index) == 0
+        return self.lowest_index_sentence < self.highest_index_sentence
+
+    def __adjust_indexes__(self):
+        # fix wrong data
+        if self.lowest_index_sentence < 0:
+            self.lowest_index_sentence = 0
+        if self.highest_index_sentence >= len(self.documentSegmentator.list_of_sentences):
+            self.highest_index_sentence = len(self.documentSegmentator.list_of_sentences) - 1
+
+    def raiseNonContiguousError(self, par):
+        raise ValueError("Non contiguous paragraphs: self:(" + str(self.lowest_index_sentence) + ";" +
+                         str(self.highest_index_sentence) + "), given:(" +
+                         str(par.lowest_index_sentence) + ";" + str(par.highest_index_sentence) + ")")
+
+    def merge_paragraph(self, par):
+        """
+        Merge the "lowest" (in term of starting index) paragraph
+        into the "highest".
+        Will rise an exception if they are not contiguous.
+        :param par: a given paragraph
+        :return: the remaining paragraph, or None in case of non-Paragraph parameter
+        """
+        if not isinstance(par, Paragraph):
+            return None
+        if self.lowest_index_sentence > par.lowest_index_sentence:
+            return par.merge_paragraph(self)
+        # I'm the lowest
+        if ((
+                    self.highest_index_sentence + 1) != par.lowest_index_sentence) or self.next_paragraph != par or par.previous_paragraph != self:
+            self.raiseNonContiguousError(par)
+        self.highest_index_sentence = par.highest_index_sentence
+        # merge links
+        if par.next_paragraph is not None:
+            par.next_paragraph.previous_paragraph = self
+        # if self.previous_paragraph is not None:
+        #    self.previous_paragraph.next_paragraph
+        self.next_paragraph = par.next_paragraph
+        par.next_paragraph = None
+        par.previous_paragraph = None
+        return self
+
+    def add_sentence(self, sentence, i, is_start_of_paragraph=True):
+        self.score = -1
+        # self.map_sentence_by_index[i] = sentence
+        if self.is_empty():
+            self.lowest_index_sentence = i
+            self.highest_index_sentence = i
+        else:
+            if is_start_of_paragraph:
+                self.lowest_index_sentence = i
+            else:
+                self.highest_index_sentence = i
+        self.__adjust_indexes__()
+
+    def remove_sentence(self, i):
+        self.score = -1
+        # self.map_sentence_by_index.pop(i)
+        if i == self.lowest_index_sentence:
+            self.lowest_index_sentence += 1
+        elif i == self.highest_index_sentence:
+            self.lowest_index_sentence -= 1
+        self.__adjust_indexes__()
+
+    def get_score(self):
+        if self.is_empty():
+            return 0
+        if self.score >= 0:
+            return self.score
+        self.score = 0
+        # for i, sent1 in self.map_sentence_by_index.items():
+        #    for j, sent2 in self.map_sentence_by_index.items():
+        for i in range(self.lowest_index_sentence, self.highest_index_sentence + 1):
+            for j in range(self.lowest_index_sentence, self.highest_index_sentence + 1):
+                if i != j:
+                    # self.score += self.cache_pairwise_sentence_similarity.get_similarity_by_sentence_indexes(
+                    self.score += self.documentSegmentator.cache_bag_sentence_similarity \
+                        .get_similarity_by_sentence_indexes(
+                        # self.documentSegmentator.get_bag_of_word_of_sentence_by_index(i),
+                        # self.documentSegmentator.get_bag_of_word_of_sentence_by_index(j)
+                        i, j
+                    )
+        self.score /= float(len(self.map_sentence_by_index) * (len(self.map_sentence_by_index) - 1))
+        return self.score
+
+    def get_first_sentence_index(self):
+        """
+        The extremes are included.
+        :return: the index of the first sentence held by this paragraph
+        """
+        if self.is_empty():
+            return -1
+        return self.lowest_index_sentence
+
+    def get_first_sentence(self):
+        if self.is_empty():
+            return None
+        # return self.map_sentence_by_index.peekitem(0)
+        return self.documentSegmentator.list_of_sentences[self.lowest_index_sentence]
+
+    def get_last_sentence_index(self):
+        """
+        The extremes are included.
+        :return: the index of the last sentence held by this paragraph
+        """
+        if self.is_empty():
+            return -1
+        return self.highest_index_sentence
+
+    def get_last_sentence(self):
+        if self.is_empty():
+            return None
+        # return self.map_sentence_by_index.peekitem(0)
+        return self.documentSegmentator.list_of_sentences[self.highest_index_sentence]
+
+
+#
+#
+# end Paragraph
+#
+#
+
+#
+#
+# start DocumentSegmentator
+#
+#
+
+class DocumentSegmentator(object):
+    def __init__(self, list_of_sentences, cache=None, options=None):
+        """
+        :param list_of_sentences: list of sentences
         :param cache:  a CacheSynsetsBag object or None, used to cache synsets to speed up and reduce the use of Internet
         (at the cost of more memory usage)
         :param options:  a SynsetInfoExtractionOptions object or None, used to specify what information are required to be
@@ -148,17 +351,15 @@ class DocumentSegmentator(object):
             cache = newCache()
         if options is None:
             options = DEFAULT_SYNSET_EXTRACTION_OPTIONS
+        self.list_of_sentences = list_of_sentences
         self.cache = cache
         self.options = options
         self.map_sentence_to_bag = {}
         self.bag_from_sentence_list = []
         self.algorithm_tiling = 0  # will see
+        self.cache_bag_sentence_similarity = None
 
-    #
-    #
     # start document pre-processing
-    #
-    #
 
     def firstIndexOf(self, stri, a_char):
         i = 0
@@ -171,6 +372,15 @@ class DocumentSegmentator(object):
             if notFound:
                 i += 1
         return -1 if notFound else i
+
+    def get_sentence_by_index(self, i):
+        return self.list_of_sentences[i]
+
+    def get_bag_of_word_of_sentence_by_sentence(self, sentence):
+        return self.map_sentence_to_bag[sentence]
+
+    def get_bag_of_word_of_sentence_by_index(self, i):
+        return self.get_bag_of_word_of_sentence_by_sentence(self.list_of_sentences[i])
 
     def get_weighted_synset_map(self, synset_name):
         """
@@ -332,6 +542,13 @@ class DocumentSegmentator(object):
         return wi_sum / min(len(string_set1), len(string_set2))
 
     def similarity(self, word_weight_map, string_set1, string_set2):
+        """
+        similarity function
+        :param word_weight_map: a map <string, int> representing the words' weights
+        :param string_set1: a set of words, extracted from a sentence
+        :param string_set2: as the previous parameter
+        :return: a float, indicating how much those sentences are similar
+        """
         return self.weighted_overlap(word_weight_map, string_set1, string_set2)
 
     #
@@ -350,11 +567,13 @@ class DocumentSegmentator(object):
         leng = len(bags_sentences) - 1
         simils = [0] * leng
         while i < leng:
-            simils[i] = self.similarity(word_weight_map, bags_sentences[i], bags_sentences[i + 1])
+            # simils[i] = self.similarity(word_weight_map, bags_sentences[i], bags_sentences[i + 1])
+            simils[i] = self.cache_bag_sentence_similarity.get_similarity_by_sentence_indexes(bags_sentences[i],
+                                                                                              bags_sentences[i + 1])
             i += 1
         return simils
 
-    def doc_tiling(self, similarity_subsequent_sentences, windows_count, max_iterations=0):
+    def doc_tiling_v1(self, similarity_subsequent_sentences, windows_count, max_iterations=0):
         """
         :param similarity_subsequent_sentences: the result of
         the function "compute_similarity_lists_subsequent_sentences"
@@ -418,13 +637,178 @@ class DocumentSegmentator(object):
             i += 1
         return breakpoint_indexes
 
-    def document_segmentation(self, list_of_sentences, desiredParagraphAmount=0):
-        if not (isinstance(list_of_sentences, list)):
-            return None
+    def doc_tiling(self,  windows_count, max_iterations=0):
+        """
+        :param windows_count: the amount of paragraph to find. It's greater by 1 than the length of
+        the returned list
+        :param max_iterations: the inner algorithm improves iteratively the tiling; this parameter
+        sets an upper bound of iterations
+        :return: a list of breakpoints: indexes (between one sentence and the next) where one paragraph ends and
+        the next starts. The length is equal to the parameter "windows_count", so the last index is the last sentence.
+        So, the indexes are to be considered as "inclusive".
+        """
+        '''
+        all'inizio:
+        - si genera un Paragraph per ogni frase
+        - per ogni Paragraph (tranne primo ed ultimo, che è scontato)
+            si calcola quale frase tra la precedente e la successiva
+            è la migliore candidata per la fusione dei paragrafi
+        - (convertire i backpointer per comodita', vedere dopo)
+        - fondere ogni paragrafo con quello puntato
+        
+        POI
+        
+        '''
+        sentences = self.list_of_sentences
+        sentences_amount = len(sentences)
+        paragraphs_by_starting_index = SortedDict()
+
+        # maps < a paragraph's lowest index -> the par.'s lowest index wish to merge into
+        preferences = SortedDict()
+
+        # inizializzazione
+        i = 0
+        prevParagraph = None
+        while i < sentences_amount:  # creo i paragragi
+            par = Paragraph(self)
+            par.add_sentence(sentences[i], i)
+            if prevParagraph is not None:
+                prevParagraph.next_paragraph = par
+                par.previous_paragraph = prevParagraph
+            paragraphs_by_starting_index[i] = par
+            prevParagraph = par
+            i += 1
+        # cerco le preferenze iniziali
+        for j, par in paragraphs_by_starting_index.items():
+            if j == 0:
+                # scelta obbligata
+                preferences[0] = 1
+            elif j == (sentences_amount - 1):
+                # scelta obbligata
+                preferences[j] = j - 1  # il penultimo
+            else:
+                simil_prev = self.cache_bag_sentence_similarity.get_similarity_by_sentence_indexes(j - 1, j)
+                simil_next = self.cache_bag_sentence_similarity.get_similarity_by_sentence_indexes(j, j + 1)
+                if simil_next >= simil_prev:
+                    preferences[j] = j + 1
+                else:
+                    preferences[j] = j - 1
+                    '''
+                    V2
+                    a ragion veduta, si puo' risparmiare la conversione dei backpointer
+                    mettendola qui, dato che le "back-chain" vengono costruite iterativamente
+                    quando si cade, consecutivamente, in questo ramo
+                    '''
+                    pref_of_prev = preferences[j - 1]
+                    if j > 1 and pref_of_prev < (j - 1):
+                        preferences[j - 1] = j  # conversione del backpointer
+
+        '''
+        V1
+        codice lasciato per ragioni "storiche", rimosso dopo il ragionamento (commento multilinea)
+        di cui sopra
+        ...
+        # conversione di tutti i backpointers
+        # perche' tanto andranno a finire nello stesso paragrafo
+        i = sentences_amount - 1
+        while i > 0:
+            pref = preferences[i]
+            if pref < i:
+                # start of a back sequence: convert all other stuffs
+                j = pref # j == i-1 per costruzione
+                # a do-while ...
+                even_prev = preferences[j]
+                #search_not_done = True
+                #while search_not_done:
+                while even_prev < j:
+                    j = even_prev
+                    even_prev = preferences[j]
+                # j holds the last of the backward chain (i.e., the first to be redirected
+                even_prev = j
+                while j <= pref: # nel caso non si entrasse mai nel "while" precedente, questo non fara' altro che sprecare il tempo di una iterazione
+                    # preferences[j] = (j+=1)
+                    preferences[j] = j+1
+                    j += 1
+                i = even_prev -1
+            else:
+                i -= 1
+        '''
+        # ora i backpointers possono essere trattati come "terminatori di paragrafo"
+        # merge delle preferenze:
+        start = 0
+        end = 0
+        # V2
+        # si procede a ritroso per semplicita
+        end = sentences_amount - 1
+        # per ogni paragrafo
+        while start > 0:
+            start = end - 1
+            # almeno due elementi nel paragrafo, per costruzione
+            par_end = paragraphs_by_starting_index[end]
+            paragraphs_by_starting_index[start] = paragraphs_by_starting_index[start].merge_paragraph(par_end)
+            paragraphs_by_starting_index.pop(end)
+            start -= 1  # jump to the next (previous, tbh) sentence
+            pref = preferences[start]
+            if start < pref:
+                # there's someone to merge
+                while 0 < start < pref:
+                    paragraphs_by_starting_index[start] = paragraphs_by_starting_index[start].merge_paragraph(
+                        paragraphs_by_starting_index[pref])
+                    paragraphs_by_starting_index.pop(pref)
+                    start -= 1
+                    pref = preferences[start]
+                end = start
+            else:
+                # the paragraph has ended: start is pointing backward
+                end = start
+
+        # manage the first element: nothing is done if start == 0
+        paragraphs_by_starting_index[0].merge_paragraph(paragraphs_by_starting_index[1])  # per costruzione dei pointer
+        paragraphs_by_starting_index.pop(1)
+        '''
+            V1
+        while start < sentences_amount:
+            end = preferences[start]
+            if end < start:
+                # backward link
+                todo;
+
+                start += 1
+            else:
+                canSearch = True
+                last_end = end
+                while canSearch:
+                    end = preferences[end]
+                    if end < last_end:
+                        # backward pointer -> end of all
+                        canSearch = False
+                    else:
+                        last_end = end
+                end = start + 1 # riciclato come un iteratore
+                while end <= last_end:
+                    par_to_merge = paragraphs_by_starting_index[end]
+                    par.merge_paragraph(par_to_merge)
+                    #remove its reference
+                    end += 1
+                start = end #move to the next
+        '''
+
+        # WELL, INITIALIZATION HAS ENDED
+        # now make the paragraphs-bubble boiling
+        # need to use max_iterations
+
+        # conversione in array di indici
+        indexes = [par.highest_index_sentence for i, par in paragraphs_by_starting_index.items()]
+        #for i, par in paragraphs_by_starting_index.items():
+        print("indexes:")
+        print(indexes)
+        return indexes
+
+    def document_segmentation(self, desiredParagraphAmount=0):
         if desiredParagraphAmount < 2:
             desiredParagraphAmount = 2
         words_mapped_each_sentences = [self.get_weighted_word_map_for_sentence(sentence) for sentence in
-                                       list_of_sentences]
+                                       self.list_of_sentences]
         words_weight = {}  # contiene i pesi finali delle parole
         # aggreghiamo i pesi delle parole:
         # ispirandosi all term-frequency, il peso finale è
@@ -432,11 +816,11 @@ class DocumentSegmentator(object):
         i = 0
         for map_for_a_sent in words_mapped_each_sentences:
             for word, weight in map_for_a_sent.items():
-                bag_of_word_of_sentence = self.map_sentence_to_bag[list_of_sentences[i]]
+                bag_of_word_of_sentence = self.map_sentence_to_bag[self.list_of_sentences[i]]
                 is_in_sentence = word in bag_of_word_of_sentence
                 if len(word) <= 1:
                     print("\n\n WTF in sentence:")
-                    print(list_of_sentences[i])
+                    print(self.list_of_sentences[i])
                     print("and word: ---", word, "---")
                     print("and bag")
                     print(map_for_a_sent)
@@ -451,9 +835,17 @@ class DocumentSegmentator(object):
                     words_weight[word] = w
             i += 1
 
+        self.cache_bag_sentence_similarity = CachePairwiseSentenceSimilarity(
+            map_words_weights=words_weight,
+            list_word_bags_from_sentences=self.bag_from_sentence_list,
+            sentence_similarity_function=self.similarity
+        )
         # print("words_weight:")
         # print(words_weight)
         # pre-compute the similarity of each sentence
+
+        '''
+        #V1, pre-version V2:
         similarity_subsequent_sentences = self.compute_similarity_lists_subsequent_sentences(
             self.bag_from_sentence_list, words_weight)
         print("\n\n generated similarity_subsequent_sentences:")
@@ -462,14 +854,18 @@ class DocumentSegmentator(object):
         # now segment
         breakpoint_indexes = self.doc_tiling(similarity_subsequent_sentences, desiredParagraphAmount)
         breakpoint_indexes.append(len(similarity_subsequent_sentences))
+        '''
+
+        # now segment
+        breakpoint_indexes = self.doc_tiling(desiredParagraphAmount)
         i = 0
         start = 0
         subdivision = [None] * desiredParagraphAmount
         print("\n\n generated breakpoint_indexes:")
         print(breakpoint_indexes)
         while i < desiredParagraphAmount:
-            subdivision[i] = list_of_sentences[start: breakpoint_indexes[i]+1]
-            start = breakpoint_indexes[i]+1
+            subdivision[i] = self.list_of_sentences[start: breakpoint_indexes[i] + 1]
+            start = breakpoint_indexes[i] + 1
             i += 1
         return subdivision
 
@@ -498,7 +894,7 @@ def document_segmentation_v1(list_of_sentences, cache=None):
     return words_counts_and_bags
 '''
 
-sentences = [
+sentences_mocked = [
     "I love to pet my cat while reading fantasy books.",
     "The fur of my cat is so fluffy that chills me.",
     "It entertain me, its tail sometimes goes over my pages and meows, also showing me the weird pattern in its chest's fur.",
@@ -534,8 +930,8 @@ for sent in sentences:
     print("\n\n\n\ngiven the sentence:\n\t--", sent, "--")
     print(get_weighted_word_map_for_sentence(sent, cache=local_cache))
 '''
-ds = DocumentSegmentator(cache=local_cache)
-paragraphs = ds.document_segmentation(sentences, 3)
+ds = DocumentSegmentator(sentences_mocked, cache=local_cache)
+paragraphs = ds.document_segmentation(3)
 for p in paragraphs:
     print("\n\n paragraph:")
     for s in p:
