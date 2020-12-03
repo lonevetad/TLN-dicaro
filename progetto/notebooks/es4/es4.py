@@ -322,23 +322,17 @@ class DocumentSegmentator(object):
             return self.weighted_intersection(word_weight_map, string_set2, string_set1)
         # consider the first as the smaller set
         summ = 0
-        if 'h' in string_set1:
-            print("WTF IS THIS h?")
-            print(string_set1)
-            if isinstance(string_set1, set):
-                print("IS ALSO A SET!?!?!!?")
-            raise ValueError("WTF 4")
         for w in string_set1:
             if w in string_set2:
                 summ += word_weight_map[w].getTotalWeigth()
         return summ
 
     def weighted_overlap(self, word_weight_map, string_set1, string_set2):
-        wi_sum = self.weighted_overlap(word_weight_map, string_set1, string_set2)
+        wi_sum = self.weighted_intersection(word_weight_map, string_set1, string_set2)
         return wi_sum / min(len(string_set1), len(string_set2))
 
     def similarity(self, word_weight_map, string_set1, string_set2):
-        return self.weighted_intersection(word_weight_map, string_set1, string_set2)
+        return self.weighted_overlap(word_weight_map, string_set1, string_set2)
 
     #
 
@@ -506,7 +500,7 @@ def document_segmentation_v1(list_of_sentences, cache=None):
 
 sentences = [
     "I love to pet my cat while reading fantasy books.",
-    "The furry of my cat is so fluffy that chills me.",
+    "The fur of my cat is so fluffy that chills me.",
     "It entertain me, its tail sometimes goes over my pages and meows, also showing me the weird pattern in its chest's fur.",
     "Sometimes, it plays with me but hurts me with its claws and once it scratched me so bad the one drop of blood felt over my favourite book's pages.",
     "Even so, its agile and soft body warms me with its cute fur, meow and purr, so I've forgave it."
