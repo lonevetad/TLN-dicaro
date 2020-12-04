@@ -1,4 +1,3 @@
-
 import math
 
 import collections
@@ -8,7 +7,7 @@ from notebooks.utilities.functions import preprocessing, SynsetToBagOptions
 
 
 def newCacheSynsetsBags():
-    return CacheSynsetsBag
+    return CacheSynsetsBag()
 
 
 # ------------
@@ -404,7 +403,7 @@ class DocumentSegmentator(object):
         """
         if len(synset_name) < 3:
             return None
-        synsets = self.cache.get_synsets(synset_name)
+        synsets = self.cache_synset_and_bag.get_synsets(word_text=synset_name)
         if synsets is None:
             return None
 
@@ -789,7 +788,7 @@ class DocumentSegmentator(object):
                 # the paragraph has ended: start is pointing backward
                 end = start
 
-        print("\n\n paragrafi DOPO i merge")
+        print("\n\n paragrafi DOPO i merge\npreferenze:")
         print(preferences)
         print("paragraphs :")
         print_paragraph_map(paragraphs_by_starting_index)
@@ -821,15 +820,15 @@ class DocumentSegmentator(object):
         
         '''
         # START MAIN ALGORITHM - V2
-        isUp = True
-
-        for iter in range(0, max_iterations):
-            isUp = (iter %2) == 1
+        print("\n\n start the main algorithm")
+        is_up = True
+        for iteration in range(0, max_iterations):
+            is_up = (iteration % 2) == 1
             i = 0
             paragraphs_emptied = []
             paragraphs_to_be_processed = []
-            amount_paragr_pairs = len(paragraphs_by_starting_index) -1
-            if isUp:
+            amount_paragr_pairs = len(paragraphs_by_starting_index) - 1
+            if is_up:
                 i = amount_paragr_pairs
                 stack_paragraphs = collections.deque()
                 for ind, par in paragraphs_by_starting_index.items():
@@ -840,7 +839,8 @@ class DocumentSegmentator(object):
                     prev_cohesion_prev = par.previous_paragraph.get_cohesion()
                     index_first = par.get_first_sentence_index()
                     par.remove_sentence(index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
-                    par.next_paragraph.add_sentence(index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
+                    par.next_paragraph.add_sentence(
+                        index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
                     modified_cohesion_current = par.get_cohesion()
                     modified_cohesion_prev = par.previous_paragraph.get_cohesion()
                     sum_previous = prev_cohesion_current + prev_cohesion_prev
@@ -853,7 +853,7 @@ class DocumentSegmentator(object):
                     par.previous_paragraph.score = prev_cohesion_prev
                     # check modifications
                     if sum_previous < sum_modified:
-                        paragraphs_to_be_processed.append((par,modified_cohesion_current,modified_cohesion_prev))
+                        paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_prev))
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
                     par_index = par.lowest_index_sentence
@@ -870,16 +870,18 @@ class DocumentSegmentator(object):
                         prev_cohesion_current = par.get_cohesion()
                         prev_cohesion_next = par.next_paragraph.get_cohesion()
                         index_last = par.get_last_sentence_index()
-                        par.remove_sentence(index_last) #__remove_sentence_bag_to_counter_by_index__(index_last)
-                        par.next_paragraph.add_sentence(index_last) #__add_sentence_bag_to_counter_by_index__(index_last)
+                        par.remove_sentence(index_last)  # __remove_sentence_bag_to_counter_by_index__(index_last)
+                        par.next_paragraph.add_sentence(
+                            index_last)  # __add_sentence_bag_to_counter_by_index__(index_last)
                         modified_cohesion_current = par.get_cohesion()
                         modified_cohesion_next = par.next_paragraph.get_cohesion()
                         sum_previous = prev_cohesion_current + prev_cohesion_next
                         sum_modified = modified_cohesion_current + modified_cohesion_next
                         # restore previous situation
-                        par.add_sentence(index_last) #__add_sentence_bag_to_counter_by_index__(index_last)
+                        par.add_sentence(index_last)  # __add_sentence_bag_to_counter_by_index__(index_last)
                         par.score = prev_cohesion_current
-                        par.next_paragraph.remove_sentence(index_last) #__remove_sentence_bag_to_counter_by_index__(index_last)
+                        par.next_paragraph.remove_sentence(
+                            index_last)  # __remove_sentence_bag_to_counter_by_index__(index_last)
                         par.next_paragraph.score = prev_cohesion_next
                         # check modifications
                         if sum_previous < sum_modified:
@@ -887,13 +889,17 @@ class DocumentSegmentator(object):
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
                     par_index = par.lowest_index_sentence
-                    par.next_paragraph.add_sentence(par.get_last_sentence_index())  # __add_sentence_bag_to_counter_by_index__(par_index)
-                    par.remove_sentence(par.get_last_sentence_index())  # __remove_sentence_bag_to_counter_by_index__(par_index)
+                    par.next_paragraph.add_sentence(
+                        par.get_last_sentence_index())  # __add_sentence_bag_to_counter_by_index__(par_index)
+                    par.remove_sentence(
+                        par.get_last_sentence_index())  # __remove_sentence_bag_to_counter_by_index__(par_index)
                     par.score = tupla[1]
                     par.next_paragraph.score = tupla[2]
                     if par.is_empty():
                         paragraphs_by_starting_index.pop(par_index)
 
+        print("\n\n\n after the main algorithm:\nparagraphs :")
+        print_paragraph_map(paragraphs_by_starting_index)
         # END MAIN ALGORITHM - V2
 
         # conversione in array di indici
