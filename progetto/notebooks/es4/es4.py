@@ -208,10 +208,12 @@ class Paragraph(object):
         self.highest_index_sentence = -1  # ESTREMI INCLUSI
         self.previous_paragraph = None
         self.next_paragraph = None
+        if not self.is_empty():
+            raise ValueError("MA NON HA SENSO")
 
     def is_empty(self):
         # return len(self.map_sentence_by_index) == 0
-        return self.lowest_index_sentence < self.highest_index_sentence
+        return self.lowest_index_sentence > self.highest_index_sentence
 
     def __adjust_indexes__(self):
         # fix wrong data
@@ -259,6 +261,7 @@ class Paragraph(object):
             self.lowest_index_sentence = i
             self.highest_index_sentence = i
         else:
+            print("NOT empty: i: ", str(i))
             if is_start_of_paragraph:
                 self.lowest_index_sentence = i
             else:
@@ -324,6 +327,18 @@ class Paragraph(object):
             return None
         # return self.map_sentence_by_index.peekitem(0)
         return self.documentSegmentator.list_of_sentences[self.highest_index_sentence]
+
+    def toString(self):
+        sss = "P[(" + str(self.lowest_index_sentence) + "; " + str(self.highest_index_sentence) + ")"
+        if self.previous_paragraph is None:
+            sss += ", no prev"
+        else:
+            sss += ", prev-" + str(self.previous_paragraph.lowest_index_sentence)
+        if self.next_paragraph is None:
+            sss += ", no next"
+        else:
+            sss += ", next-" + str(self.next_paragraph.lowest_index_sentence)
+        return sss + "]"
 
 
 #
@@ -637,7 +652,7 @@ class DocumentSegmentator(object):
             i += 1
         return breakpoint_indexes
 
-    def doc_tiling(self,  windows_count, max_iterations=0):
+    def doc_tiling(self, windows_count, max_iterations=0):
         """
         :param windows_count: the amount of paragraph to find. It's greater by 1 than the length of
         the returned list
@@ -666,10 +681,14 @@ class DocumentSegmentator(object):
         # maps < a paragraph's lowest index -> the par.'s lowest index wish to merge into
         preferences = SortedDict()
 
+        def print_paragraph_map(p_m):
+            for ind, ppp in p_m.items():
+                print("with index", ind, ", paragraph ->", ppp.toString())
+
         # inizializzazione
         i = 0
         prevParagraph = None
-        while i < sentences_amount:  # creo i paragragi
+        while i < sentences_amount:  # creo i paragrafi
             par = Paragraph(self)
             par.add_sentence(sentences[i], i)
             if prevParagraph is not None:
@@ -678,6 +697,7 @@ class DocumentSegmentator(object):
             paragraphs_by_starting_index[i] = par
             prevParagraph = par
             i += 1
+
         # cerco le preferenze iniziali
         for j, par in paragraphs_by_starting_index.items():
             if j == 0:
@@ -698,41 +718,49 @@ class DocumentSegmentator(object):
                     a ragion veduta, si puo' risparmiare la conversione dei backpointer
                     mettendola qui, dato che le "back-chain" vengono costruite iterativamente
                     quando si cade, consecutivamente, in questo ramo
-                    '''
+                    
                     pref_of_prev = preferences[j - 1]
                     if j > 1 and pref_of_prev < (j - 1):
                         preferences[j - 1] = j  # conversione del backpointer
+                    '''
 
+        print("\n\n preferences at start:")
+        print(preferences)
         '''
         V1
         codice lasciato per ragioni "storiche", rimosso dopo il ragionamento (commento multilinea)
         di cui sopra
         ...
+        '''
         # conversione di tutti i backpointers
         # perche' tanto andranno a finire nello stesso paragrafo
         i = sentences_amount - 1
         while i > 0:
             pref = preferences[i]
             if pref < i:
-                # start of a back sequence: convert all other stuffs
-                j = pref # j == i-1 per costruzione
+                # search for the start of a "back sequence": convert all other stuffs
+                j = pref  # j == i-1 per costruzione
                 # a do-while ...
                 even_prev = preferences[j]
-                #search_not_done = True
-                #while search_not_done:
-                while even_prev < j:
+                # search_not_done = True
+                # while search_not_done:
+                while even_prev < j and 0 < j:
+                    preferences[j] = j + 1
                     j = even_prev
                     even_prev = preferences[j]
                 # j holds the last of the backward chain (i.e., the first to be redirected
-                even_prev = j
-                while j <= pref: # nel caso non si entrasse mai nel "while" precedente, questo non fara' altro che sprecare il tempo di una iterazione
-                    # preferences[j] = (j+=1)
-                    preferences[j] = j+1
-                    j += 1
-                i = even_prev -1
+                preferences[
+                    j] = j + 1  # qualora non si entrasse nel ciclo (paragrafo grande 2), semplicemente si riconfermera' la precedenza
+                i = j - 1
             else:
                 i -= 1
-        '''
+
+        print("\n\n\n post-aggiustamento dei backpointer:\npreferenze:")
+        print(preferences)
+        print("paragraphs :")
+        print_paragraph_map(paragraphs_by_starting_index)
+
+        print("\n\n ora si fanno i merge")
         # ora i backpointers possono essere trattati come "terminatori di paragrafo"
         # merge delle preferenze:
         start = 0
@@ -740,6 +768,7 @@ class DocumentSegmentator(object):
         # V2
         # si procede a ritroso per semplicita
         end = sentences_amount - 1
+        start = end
         # per ogni paragrafo
         while start > 0:
             start = end - 1
@@ -747,24 +776,32 @@ class DocumentSegmentator(object):
             par_end = paragraphs_by_starting_index[end]
             paragraphs_by_starting_index[start] = paragraphs_by_starting_index[start].merge_paragraph(par_end)
             paragraphs_by_starting_index.pop(end)
+            print("popped end:", end, " before hard work")
             start -= 1  # jump to the next (previous, tbh) sentence
             pref = preferences[start]
             if start < pref:
-                # there's someone to merge
-                while 0 < start < pref:
+                # sequence not ended: the current paragraph (end-1) could be merged into start
+                while 0 <= start < pref:
                     paragraphs_by_starting_index[start] = paragraphs_by_starting_index[start].merge_paragraph(
                         paragraphs_by_starting_index[pref])
                     paragraphs_by_starting_index.pop(pref)
                     start -= 1
-                    pref = preferences[start]
+                    if 0 <= start:
+                        pref = preferences[start]
                 end = start
             else:
                 # the paragraph has ended: start is pointing backward
                 end = start
 
         # manage the first element: nothing is done if start == 0
-        paragraphs_by_starting_index[0].merge_paragraph(paragraphs_by_starting_index[1])  # per costruzione dei pointer
-        paragraphs_by_starting_index.pop(1)
+        # paragraphs_by_starting_index[0].merge_paragraph(paragraphs_by_starting_index[1])  # per costruzione dei pointer
+        # paragraphs_by_starting_index.pop(1)
+
+        print("\n\n paragrafi DOPO i merge")
+        print(preferences)
+        print("paragraphs :")
+        print_paragraph_map(paragraphs_by_starting_index)
+
         '''
             V1
         while start < sentences_amount:
@@ -796,11 +833,27 @@ class DocumentSegmentator(object):
         # WELL, INITIALIZATION HAS ENDED
         # now make the paragraphs-bubble boiling
         # need to use max_iterations
-
+        '''
+        for iter in range(0, max_iterations):
+            par = paragraphs_by_starting_index[0]
+            while par.next_paragraph is not None:
+                current_score = par.get_score()
+                next_score = par.next_paragraph.get_score()
+                par_sent_index = par.get_last_sentence_index()
+                next_sent_index = par.next_paragraph.get_first_sentence_index()
+                # proviamo a spostare la first frase in par
+                
+                # ora spostiamo l'ultima di par nel next
+                
+                # selezione del migliore dei tre casi
+                prev_score
+                
+                par = par.next_paragraph
+'''
         # conversione in array di indici
         indexes = [par.highest_index_sentence for i, par in paragraphs_by_starting_index.items()]
-        #for i, par in paragraphs_by_starting_index.items():
-        print("indexes:")
+        # for i, par in paragraphs_by_starting_index.items():
+        print("\n\n\nindexes:")
         print(indexes)
         return indexes
 
@@ -858,6 +911,7 @@ class DocumentSegmentator(object):
 
         # now segment
         breakpoint_indexes = self.doc_tiling(desiredParagraphAmount)
+        desiredParagraphAmount = len(breakpoint_indexes) # forzo il fatto di mantenere i paragrafi
         i = 0
         start = 0
         subdivision = [None] * desiredParagraphAmount
