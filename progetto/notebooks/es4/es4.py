@@ -1,61 +1,14 @@
+
 import math
 
-import nltk
-from nltk.corpus import wordnet as wn
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-import csv
 import collections
-
 from sortedcontainers import SortedDict
-
 from notebooks.utilities.cacheVarie import CacheSynsetsBag
 from notebooks.utilities.functions import preprocessing, SynsetToBagOptions
 
-'''
-import sys
-#sys.path.append(".")
-#sys.path.append(".\\..\\..\\utilities")
 
-sys.path.append(".\\..\\utilities")
-print("what the file:")
-print(__file__)
-print("let's go ....")
-'''
-
-'''
-sys.path.append(".\\..\\aaa")
-import bbb
-bbb.ccc()
-
-if __name__ == '__main__':
-    print("main")
-    bbb.ccc()
-    print("FINE main")
-'''
-
-# sys.path.append(".\\..\\")
-# from utilities import *
-# import utilities
-# from utilities import *
-# from utilities import cacheVarie
-# from ..utilities import *
-
-# import cacheVarie
-
-# from ..utilities import cacheVarie
-
-print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__, __name__, str(__package__)))
-
-print("\n\nlet's do it")
-
-
-def newCache():
-    return CacheSynsetsBag()
-
-
-def get_preprocessed_words(text):
-    return preprocessing(text)
+def newCacheSynsetsBags():
+    return CacheSynsetsBag
 
 
 # ------------
@@ -208,12 +161,14 @@ class Paragraph(object):
         self.highest_index_sentence = -1  # ESTREMI INCLUSI
         self.previous_paragraph = None
         self.next_paragraph = None
-        if not self.is_empty():
-            raise ValueError("MA NON HA SENSO")
+        self.words_cooccurrence_in_bags_conter = {}
 
     def is_empty(self):
         # return len(self.map_sentence_by_index) == 0
         return self.lowest_index_sentence > self.highest_index_sentence
+
+    def size(self):
+        return 0 if self.is_empty() else 1 + (self.highest_index_sentence - self.lowest_index_sentence)
 
     def __adjust_indexes__(self):
         # fix wrong data
@@ -252,6 +207,10 @@ class Paragraph(object):
         self.next_paragraph = par.next_paragraph
         par.next_paragraph = None
         par.previous_paragraph = None
+        # update score (cohesion) caches
+        par.score = -1
+        for i in range(par.lowest_index_sentence, par.highest_index_sentence + 1):
+            self.__add_sentence_bag_to_counter_by_index__(i)
         return self
 
     def add_sentence(self, sentence, i, is_start_of_paragraph=True):
@@ -267,6 +226,7 @@ class Paragraph(object):
             else:
                 self.highest_index_sentence = i
         self.__adjust_indexes__()
+        self.__add_sentence_bag_to_counter_by_index__(i)
 
     def remove_sentence(self, i):
         self.score = -1
@@ -276,8 +236,46 @@ class Paragraph(object):
         elif i == self.highest_index_sentence:
             self.lowest_index_sentence -= 1
         self.__adjust_indexes__()
+        self.__remove_sentence_bag_to_counter_by_index__(i)
+
+    def __add_sentence_bag_to_counter_by_index__(self, i):
+        bag_sent = self.documentSegmentator.get_bag_of_word_of_sentence_by_index(i)
+        if len(bag_sent) > 0:
+            self.score = -1  # invalidates score(cohesion) cache
+        for w in bag_sent:
+            if w in self.words_cooccurrence_in_bags_conter:
+                self.words_cooccurrence_in_bags_conter[w] += 1
+            else:
+                self.words_cooccurrence_in_bags_conter[w] = 1
+
+    def __remove_sentence_bag_to_counter_by_index__(self, i):
+        bag_sent = self.documentSegmentator.get_bag_of_word_of_sentence_by_index(i)
+        for w in bag_sent:
+            if w in self.words_cooccurrence_in_bags_conter:
+                self.score = -1  # invalidates score(cohesion) cache
+                c = self.words_cooccurrence_in_bags_conter[w]
+                if c == 1:
+                    del self.words_cooccurrence_in_bags_conter[w]
+                else:
+                    self.words_cooccurrence_in_bags_conter[w] -= 1
+
+    def get_cohesion(self):
+        if self.is_empty():
+            return 0
+        if self.score >= 0:
+            return self.score
+        self.score = 0
+        for w, c in self.words_cooccurrence_in_bags_conter.items():
+            if c > 1:
+                self.score += self.documentSegmentator.words_weight[w]
+        self.score /= self.size()
+        return self.score
 
     def get_score(self):
+        """
+        DEPRECATED
+        :return:
+        """
         if self.is_empty():
             return 0
         if self.score >= 0:
@@ -354,25 +352,26 @@ class Paragraph(object):
 #
 
 class DocumentSegmentator(object):
-    def __init__(self, list_of_sentences, cache=None, options=None):
+    def __init__(self, list_of_sentences, cache_synset_and_bag=None, options=None):
         """
         :param list_of_sentences: list of sentences
-        :param cache:  a CacheSynsetsBag object or None, used to cache synsets to speed up and reduce the use of Internet
+        :param cache_synset_and_bag:  a CacheSynsetsBag object or None, used to cache synsets to speed up and reduce the use of Internet
         (at the cost of more memory usage)
         :param options:  a SynsetInfoExtractionOptions object or None, used to specify what information are required to be
         collected from synsets
         """
-        if cache is None:
-            cache = newCache()
+        if cache_synset_and_bag is None:
+            cache_synset_and_bag = newCacheSynsetsBags()
         if options is None:
             options = DEFAULT_SYNSET_EXTRACTION_OPTIONS
         self.list_of_sentences = list_of_sentences
-        self.cache = cache
+        self.cache_synset_and_bag = cache_synset_and_bag
         self.options = options
         self.map_sentence_to_bag = {}
         self.bag_from_sentence_list = []
         self.algorithm_tiling = 0  # will see
         self.cache_bag_sentence_similarity = None
+        self.words_weight = {}
 
     # start document pre-processing
 
@@ -728,9 +727,6 @@ class DocumentSegmentator(object):
         print(preferences)
         '''
         V1
-        codice lasciato per ragioni "storiche", rimosso dopo il ragionamento (commento multilinea)
-        di cui sopra
-        ...
         '''
         # conversione di tutti i backpointers
         # perche' tanto andranno a finire nello stesso paragrafo
@@ -793,47 +789,16 @@ class DocumentSegmentator(object):
                 # the paragraph has ended: start is pointing backward
                 end = start
 
-        # manage the first element: nothing is done if start == 0
-        # paragraphs_by_starting_index[0].merge_paragraph(paragraphs_by_starting_index[1])  # per costruzione dei pointer
-        # paragraphs_by_starting_index.pop(1)
-
         print("\n\n paragrafi DOPO i merge")
         print(preferences)
         print("paragraphs :")
         print_paragraph_map(paragraphs_by_starting_index)
 
-        '''
-            V1
-        while start < sentences_amount:
-            end = preferences[start]
-            if end < start:
-                # backward link
-                todo;
-
-                start += 1
-            else:
-                canSearch = True
-                last_end = end
-                while canSearch:
-                    end = preferences[end]
-                    if end < last_end:
-                        # backward pointer -> end of all
-                        canSearch = False
-                    else:
-                        last_end = end
-                end = start + 1 # riciclato come un iteratore
-                while end <= last_end:
-                    par_to_merge = paragraphs_by_starting_index[end]
-                    par.merge_paragraph(par_to_merge)
-                    #remove its reference
-                    end += 1
-                start = end #move to the next
-        '''
-
         # WELL, INITIALIZATION HAS ENDED
         # now make the paragraphs-bubble boiling
         # need to use max_iterations
         '''
+        V1
         for iter in range(0, max_iterations):
             par = paragraphs_by_starting_index[0]
             while par.next_paragraph is not None:
@@ -850,6 +815,87 @@ class DocumentSegmentator(object):
                 
                 par = par.next_paragraph
 '''
+
+        '''
+        if the following "main algorithm" is bad, just comment it out
+        
+        '''
+        # START MAIN ALGORITHM - V2
+        isUp = True
+
+        for iter in range(0, max_iterations):
+            isUp = (iter %2) == 1
+            i = 0
+            paragraphs_emptied = []
+            paragraphs_to_be_processed = []
+            amount_paragr_pairs = len(paragraphs_by_starting_index) -1
+            if isUp:
+                i = amount_paragr_pairs
+                stack_paragraphs = collections.deque()
+                for ind, par in paragraphs_by_starting_index.items():
+                    if ind != 0:
+                        stack_paragraphs.appendleft(par)
+                for par in stack_paragraphs:
+                    prev_cohesion_current = par.get_cohesion()
+                    prev_cohesion_prev = par.previous_paragraph.get_cohesion()
+                    index_first = par.get_first_sentence_index()
+                    par.remove_sentence(index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
+                    par.next_paragraph.add_sentence(index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
+                    modified_cohesion_current = par.get_cohesion()
+                    modified_cohesion_prev = par.previous_paragraph.get_cohesion()
+                    sum_previous = prev_cohesion_current + prev_cohesion_prev
+                    sum_modified = modified_cohesion_current + modified_cohesion_prev
+                    # restore previous situation
+                    par.add_sentence(index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
+                    par.score = prev_cohesion_current
+                    par.previous_paragraph.remove_sentence(
+                        index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
+                    par.previous_paragraph.score = prev_cohesion_prev
+                    # check modifications
+                    if sum_previous < sum_modified:
+                        paragraphs_to_be_processed.append((par,modified_cohesion_current,modified_cohesion_prev))
+                for tupla in paragraphs_to_be_processed:
+                    par = tupla[0]
+                    par_index = par.lowest_index_sentence
+                    par.previous_paragraph.add_sentence(par_index)
+                    par.remove_sentence(par_index)
+                    par.score = tupla[1]
+                    par.previous_paragraph.score = tupla[2]
+                    if par.is_empty():
+                        paragraphs_by_starting_index.pop(par_index)
+            else:
+                # scorro tutte le coppie di paragrafi, ossia tutti i par. tranne l'ultimo
+                for ind, par in paragraphs_by_starting_index.items():
+                    if ind != amount_paragr_pairs:
+                        prev_cohesion_current = par.get_cohesion()
+                        prev_cohesion_next = par.next_paragraph.get_cohesion()
+                        index_last = par.get_last_sentence_index()
+                        par.remove_sentence(index_last) #__remove_sentence_bag_to_counter_by_index__(index_last)
+                        par.next_paragraph.add_sentence(index_last) #__add_sentence_bag_to_counter_by_index__(index_last)
+                        modified_cohesion_current = par.get_cohesion()
+                        modified_cohesion_next = par.next_paragraph.get_cohesion()
+                        sum_previous = prev_cohesion_current + prev_cohesion_next
+                        sum_modified = modified_cohesion_current + modified_cohesion_next
+                        # restore previous situation
+                        par.add_sentence(index_last) #__add_sentence_bag_to_counter_by_index__(index_last)
+                        par.score = prev_cohesion_current
+                        par.next_paragraph.remove_sentence(index_last) #__remove_sentence_bag_to_counter_by_index__(index_last)
+                        par.next_paragraph.score = prev_cohesion_next
+                        # check modifications
+                        if sum_previous < sum_modified:
+                            paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_prev))
+                for tupla in paragraphs_to_be_processed:
+                    par = tupla[0]
+                    par_index = par.lowest_index_sentence
+                    par.next_paragraph.add_sentence(par.get_last_sentence_index())  # __add_sentence_bag_to_counter_by_index__(par_index)
+                    par.remove_sentence(par.get_last_sentence_index())  # __remove_sentence_bag_to_counter_by_index__(par_index)
+                    par.score = tupla[1]
+                    par.next_paragraph.score = tupla[2]
+                    if par.is_empty():
+                        paragraphs_by_starting_index.pop(par_index)
+
+        # END MAIN ALGORITHM - V2
+
         # conversione in array di indici
         indexes = [par.highest_index_sentence for i, par in paragraphs_by_starting_index.items()]
         # for i, par in paragraphs_by_starting_index.items():
@@ -862,7 +908,7 @@ class DocumentSegmentator(object):
             desiredParagraphAmount = 2
         words_mapped_each_sentences = [self.get_weighted_word_map_for_sentence(sentence) for sentence in
                                        self.list_of_sentences]
-        words_weight = {}  # contiene i pesi finali delle parole
+        w_w = self.words_weight  # contiene i pesi finali delle parole
         # aggreghiamo i pesi delle parole:
         # ispirandosi all term-frequency, il peso finale è
         # la somma di tutti i pesi moltiplicta per floor(1+log(numero occorrenze nel documento))
@@ -878,18 +924,18 @@ class DocumentSegmentator(object):
                     print("and bag")
                     print(map_for_a_sent)
                     print("\nweights collected since then")
-                    print(words_weight)
+                    print(w_w)
                     raise ValueError("WTF ?" + word + "--\n\n")
-                if word in words_weight:
-                    words_weight[word].addWeight(weight, isPresentInDocument=is_in_sentence)
+                if word in w_w:
+                    w_w[word].addWeight(weight, isPresentInDocument=is_in_sentence)
                 else:
                     w = WordWeighted(word)
                     w.addWeight(weight, isPresentInDocument=is_in_sentence)
-                    words_weight[word] = w
+                    w_w[word] = w
             i += 1
 
         self.cache_bag_sentence_similarity = CachePairwiseSentenceSimilarity(
-            map_words_weights=words_weight,
+            map_words_weights=w_w,
             list_word_bags_from_sentences=self.bag_from_sentence_list,
             sentence_similarity_function=self.similarity
         )
@@ -911,7 +957,7 @@ class DocumentSegmentator(object):
 
         # now segment
         breakpoint_indexes = self.doc_tiling(desiredParagraphAmount)
-        desiredParagraphAmount = len(breakpoint_indexes) # forzo il fatto di mantenere i paragrafi
+        desiredParagraphAmount = len(breakpoint_indexes)  # forzo il fatto di mantenere i paragrafi
         i = 0
         start = 0
         subdivision = [None] * desiredParagraphAmount
@@ -953,7 +999,9 @@ sentences_mocked = [
     "The fur of my cat is so fluffy that chills me.",
     "It entertain me, its tail sometimes goes over my pages and meows, also showing me the weird pattern in its chest's fur.",
     "Sometimes, it plays with me but hurts me with its claws and once it scratched me so bad the one drop of blood felt over my favourite book's pages.",
-    "Even so, its agile and soft body warms me with its cute fur, meow and purr, so I've forgave it."
+    "Even so, its agile and soft body at least warms me and appease me with its cute fur, meow and purr, so I alwayse forgive it and those little drops of damage.",
+    # "Even so, its agile and soft body warms me with its cute fur, meow and purr, so I've forgave it.",
+    "Every time a cat is put aside of a character, i cannot prevent remembering when I found it malnourished and lacking in fur.",
 
     "There are tons of books I like, from literature, romance, fantasy and sci-fi.",
     "When i hold a book, the stress flushes out and I start reading the whole life wit an external and more critical mindset.",
@@ -978,13 +1026,13 @@ for word, cab in wcabs.items():
 '''
 
 print("\n\n now the last made function: get_weighted_word_map_for_sentence")
-local_cache = newCache()
+local_cache_synset = newCacheSynsetsBags()
 '''
 for sent in sentences:
     print("\n\n\n\ngiven the sentence:\n\t--", sent, "--")
     print(get_weighted_word_map_for_sentence(sent, cache=local_cache))
 '''
-ds = DocumentSegmentator(sentences_mocked, cache=local_cache)
+ds = DocumentSegmentator(sentences_mocked, cache=local_cache_synset)
 paragraphs = ds.document_segmentation(3)
 for p in paragraphs:
     print("\n\n paragraph:")
