@@ -1032,7 +1032,7 @@ for sent in sentences:
     print("\n\n\n\ngiven the sentence:\n\t--", sent, "--")
     print(get_weighted_word_map_for_sentence(sent, cache=local_cache))
 '''
-ds = DocumentSegmentator(sentences_mocked, cache=local_cache_synset)
+ds = DocumentSegmentator(sentences_mocked, cache_synset_and_bag=local_cache_synset)
 paragraphs = ds.document_segmentation(3)
 for p in paragraphs:
     print("\n\n paragraph:")
