@@ -179,14 +179,19 @@ class Paragraph(object):
         self.__add_sentence_bag_to_counter_by_index__(i)
 
     def remove_sentence(self, i):
-        self.score = -1
+
         # self.map_sentence_by_index.pop(i)
+        removed = False
         if i == self.lowest_index_sentence:
             self.lowest_index_sentence += 1
+            removed = True
         elif i == self.highest_index_sentence:
-            self.lowest_index_sentence -= 1
-        self.__adjust_indexes__()
-        self.__remove_sentence_bag_to_counter_by_index__(i)
+            self.highest_index_sentence -= 1
+            removed = True
+        if removed:
+            self.score = -1
+            self.__adjust_indexes__()
+            self.__remove_sentence_bag_to_counter_by_index__(i)
 
     def __add_sentence_bag_to_counter_by_index__(self, i):
         bag_sent = self.documentSegmentator.get_bag_of_word_of_sentence_by_index(i)
@@ -447,15 +452,15 @@ class DocumentSegmentator(object):
         preferences = SortedDict()
 
         def print_paragraph_map(p_m):
-            for ind, ppp in p_m.items():
-                print("with index", ind, ", paragraph ->", ppp.toString())
+            for inddd, ppp in p_m.items():
+                print("with key", inddd, "\t, par ->", ppp.toString())
 
         # inizializzazione
         i = 0
         prevParagraph = None
         while i < sentences_amount:  # creo i paragrafi
             par = Paragraph(self)
-            par.add_sentence(sentences[i], i)
+            par.add_sentence(sentences[i], i, is_start_of_paragraph=False)
             if prevParagraph is not None:
                 prevParagraph.next_paragraph = par
                 par.previous_paragraph = prevParagraph
@@ -511,8 +516,9 @@ class DocumentSegmentator(object):
                     j = even_prev
                     even_prev = preferences[j]
                 # j holds the last of the backward chain (i.e., the first to be redirected
-                preferences[
-                    j] = j + 1  # qualora non si entrasse nel ciclo (paragrafo grande 2), semplicemente si riconfermera' la precedenza
+
+                # qualora non si entrasse nel ciclo (il paragrafo ha 2 frasi), semplicemente si riconfermera' la precedenza
+                preferences[j] = j + 1
                 i = j - 1
             else:
                 i -= 1
@@ -591,12 +597,15 @@ class DocumentSegmentator(object):
         is_up = True
         for iteration in range(0, max_iterations):
             is_up = (iteration % 2) == 1
-            i = 0
+            print(
+                "\n#####################################################\nat the start of the iteration, the paragraphs are:")
+            print_paragraph_map(paragraphs_by_starting_index)
+
             paragraphs_emptied = []
             paragraphs_to_be_processed = []
             amount_paragr_pairs = len(paragraphs_by_starting_index) - 1
             if is_up:
-                i = amount_paragr_pairs
+                print("\n[][][][] GO UP")
                 stack_paragraphs = collections.deque()
                 for ind, par in paragraphs_by_starting_index.items():
                     if ind != 0:
@@ -605,9 +614,13 @@ class DocumentSegmentator(object):
                     prev_cohesion_current = par.get_cohesion()
                     prev_cohesion_prev = par.previous_paragraph.get_cohesion()
                     index_first = par.get_first_sentence_index()
+                    print("---- removing index :", index_first)
                     par.remove_sentence(index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
-                    par.previous_paragraph.add_sentence("will be ignored :D",
-                                                    index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
+                    par.previous_paragraph.add_sentence("will be ignored :D", index_first,
+                                                        is_start_of_paragraph=False)
+                    print("____ now par is:\n\t", par.toString(), "\n\t\t and the rpev:",
+                          par.previous_paragraph.toString())
+                    # __add_sentence_bag_to_counter_by_index__(index_first)
                     modified_cohesion_current = par.get_cohesion()
                     modified_cohesion_prev = par.previous_paragraph.get_cohesion()
                     sum_previous = prev_cohesion_current + prev_cohesion_prev
@@ -622,19 +635,34 @@ class DocumentSegmentator(object):
                     # check modifications
                     if sum_previous < sum_modified:
                         paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_prev))
-                print("\n\non going UP: ".len(paragraphs_to_be_processed), "paragraphs to process:")
+                print("\n\non going UP: ", len(paragraphs_to_be_processed), "paragraphs to process:")
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
-                    print("\t-", par.toString())
-                    par_index = par.lowest_index_sentence
-                    par.previous_paragraph.add_sentence("will be ignored :D", par_index)
+                    print("processing -", par.toString())
+                    par_index = par.lowest_index_sentence  # che sarebbe la sua "chiave"
+                    par.previous_paragraph.add_sentence("will be ignored :D", par_index, is_start_of_paragraph=False)
                     par.remove_sentence(par_index)
                     par.score = tupla[1]
                     par.previous_paragraph.score = tupla[2]
-                    if par.is_empty():
-                        paragraphs_by_starting_index.pop(par_index)
-            else:
+                    #adjust indexes
+                    paragraphs_by_starting_index.pop(par_index)
+                    if not par.is_empty():
+                        paragraphs_by_starting_index[par_index+1] = par
+                        # ora vale: par_index+1 == par.lowest_index_sentence
+                        '''
+                        print("\t processing it :D (its index should be: ", par_index, ")")
+                        try:
+                            paragraphs_by_starting_index.pop(par_index)
+                            paragraphs_by_starting_index[par_index]
+                        except KeyError as ke:
+                            print("key error on removing: par_index:", par_index, " -> ", par.toString())
+                            for iiiii, ppppp in paragraphs_by_starting_index.items():
+                                print("\t-", iiiii, "->", ppppp.toString())
+                            raise ke
+                        '''
+            else:  # we're going dooown, dooown, dooooown, we're going dooown, dooOOWWN, DOOOOWN [cit. Bruce Springsteen]
                 # scorro tutte le coppie di paragrafi, ossia tutti i par. tranne l'ultimo
+                print("\n:::::::: GO DOWN")
                 i = 0
                 for ind, par in paragraphs_by_starting_index.items():
                     if i != amount_paragr_pairs:
@@ -642,16 +670,21 @@ class DocumentSegmentator(object):
                         prev_cohesion_next = par.next_paragraph.get_cohesion()
                         index_last = par.get_last_sentence_index()
                         # noinspection DuplicatedCode
+                        print("---- removing index ", index_last)
                         par.remove_sentence(index_last)  # __remove_sentence_bag_to_counter_by_index__(index_last)
                         par.next_paragraph.add_sentence("will be ignored :D",
-                                                        index_last)  # __add_sentence_bag_to_counter_by_index__(index_last)
+                                                        index_last, is_start_of_paragraph=True)
+                        print("____ now par is:\n\t", par.toString(), "\n\t\t and the next:",
+                              par.next_paragraph.toString())
+                        # __add_sentence_bag_to_counter_by_index__(index_last)
                         modified_cohesion_current = par.get_cohesion()
                         modified_cohesion_next = par.next_paragraph.get_cohesion()
                         sum_previous = prev_cohesion_current + prev_cohesion_next
                         sum_modified = modified_cohesion_current + modified_cohesion_next
                         # restore previous situation
                         par.add_sentence("will be ignored :D",
-                                         index_last)  # __add_sentence_bag_to_counter_by_index__(index_last)
+                                         index_last,
+                                         is_start_of_paragraph=False)  # __add_sentence_bag_to_counter_by_index__(index_last)
                         par.score = prev_cohesion_current
                         par.next_paragraph.remove_sentence(
                             index_last)  # __remove_sentence_bag_to_counter_by_index__(index_last)
@@ -663,17 +696,25 @@ class DocumentSegmentator(object):
                 print("\n\non going DOWN: ", len(paragraphs_to_be_processed), "paragraphs to process:")
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
-                    print("\t-", par.toString())
-                    par_index = par.lowest_index_sentence
-                    par.next_paragraph.add_sentence("will be ignored :D",
-                                                    par.get_last_sentence_index())  # __add_sentence_bag_to_counter_by_index__(par_index)
-                    par.remove_sentence(
-                        par.get_last_sentence_index())  # __remove_sentence_bag_to_counter_by_index__(par_index)
+                    print("processing -", par.toString())
+                    par_next_index = par.next_paragraph.lowest_index_sentence
+                    # aggiungo la frase al paragrafo dopo
+                    index_to_add =par.get_last_sentence_index()
+                    par.next_paragraph.add_sentence("will be ignored :D", index_to_add,
+                                                    is_start_of_paragraph=True)
+                    # __add_sentence_bag_to_counter_by_index__(par_index)
+                    # la rimuovo da quello attuale
+                    par.remove_sentence(index_to_add)  # __remove_sentence_bag_to_counter_by_index__(par_index)
                     par.score = tupla[1]
                     par.next_paragraph.score = tupla[2]
+                    paragraphs_by_starting_index.pop(par_next_index)
+                    paragraphs_by_starting_index[index_to_add] = par.next_paragraph
                     if par.is_empty():
+                        paragraphs_by_starting_index.pop(par.lowest_index_sentence)
+                        """
+                        print("\t processing it :D (its index should be: ", par_index, ")")
                         try:
-                            paragraphs_by_starting_index.pop(par_index)
+                            paragraphs_by_starting_index[index_to_add] = par.next_paragraph
                         except KeyError as ke:
                             print(ke)
                             print("-------------\nthe paragraphs_by_starting_index was:")
@@ -689,7 +730,7 @@ class DocumentSegmentator(object):
                             ...
                             '''
                             raise ke
-
+                        """
         print("\n\n\n after the main algorithm:\nparagraphs :")
         print_paragraph_map(paragraphs_by_starting_index)
         # END MAIN ALGORITHM - V2
@@ -766,3 +807,47 @@ class DocumentSegmentator(object):
             start = breakpoint_indexes[i] + 1
             i += 1
         return subdivision
+
+
+def main():
+    print("testing Paragraph add-remove stuffs")
+    origin_sent = ["ciao mondo", "sono lonevetad", "devo inventare dei paragrafi", "oltre a fare i test dei Paragraph",
+                   "mannaggia, non funzionano", "forse il problema risiede nei add remove sentence",
+                   "lo vedremo con calma", "sempre se non impazzisco prima"]
+    ds = DocumentSegmentator(origin_sent)
+    for s in origin_sent:
+        bag = preprocessing(s)
+        ds.bag_from_sentence_list.append(bag)
+        ds.map_sentence_to_bag[s] = bag
+    ds.cache_bag_sentence_similarity = CachePairwiseSentenceSimilarity(
+        map_words_weights=ds.words_weight,
+        list_word_bags_from_sentences=ds.bag_from_sentence_list,
+        sentence_similarity_function=ds.similarity
+    )
+
+    paragrsss = {}
+    i = 0
+    last_par = None
+    start = 0
+    for end in [4, 6, len(origin_sent)]:
+        par = Paragraph(ds)
+        paragrsss[start] = par
+        for j in range(start, end):
+            par.add_sentence(origin_sent[j], j, is_start_of_paragraph=False)
+        if last_par is not None:
+            last_par.next_paragraph = par
+            par.previous_paragraph = last_par
+        last_par = par
+        start = end
+        print("\nparagraph ", i, " at the end:")
+        print("\t", par.toString())
+        i += 1
+
+    for start, par in paragrsss.items():
+        print("\nparagraph starting at ", start, " is:")
+        print("\t", par.toString())
+
+    print("\n\n FINEH")
+
+
+main()
