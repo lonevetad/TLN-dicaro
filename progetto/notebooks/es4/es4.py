@@ -2,26 +2,17 @@ import math
 
 import collections
 from sortedcontainers import SortedDict
+
+from notebooks.utilities import synsetInfoExtraction
 from notebooks.utilities.cacheVarie import CacheSynsetsBag
 from notebooks.utilities.functions import preprocessing, SynsetToBagOptions
-
-
-def newCacheSynsetsBags():
-    return CacheSynsetsBag()
-
 
 # ------------
 # ------------
 # ------------------ classes ------------------
 # ------------
 # ------------
-
-
-class WeightsSynsetsInfo(object):
-    def __init__(self, high=4, medium=2, low=1):
-        self.high = high
-        self.medium = medium
-        self.low = low
+from notebooks.utilities.synsetInfoExtraction import DEFAULT_SYNSET_EXTRACTION_OPTIONS, FilteredWeightedWordsInSentence
 
 
 class WordWeighted(object):
@@ -46,45 +37,6 @@ class WordWeighted(object):
         if isPresentInDocument:
             self.countPresenceInDocument += 1
             self.cacheTotalValue = -1  # invalidates cache
-
-
-WEIGHTS_SYNSET_INFO = WeightsSynsetsInfo()
-SYNSET_INFORMATIONS_WEIGHTS = {
-    "name": WEIGHTS_SYNSET_INFO.high,
-    "lemmas": WEIGHTS_SYNSET_INFO.high,
-    "synonyms": WEIGHTS_SYNSET_INFO.high,
-    "definition": WEIGHTS_SYNSET_INFO.medium,
-    "hypernyms": WEIGHTS_SYNSET_INFO.medium,
-    "hyponyms": WEIGHTS_SYNSET_INFO.low,
-    "holonyms": WEIGHTS_SYNSET_INFO.low,
-    "meronyms": WEIGHTS_SYNSET_INFO.low,
-    "examples": WEIGHTS_SYNSET_INFO.low
-}
-
-
-class SynsetInfoExtractionOptions(object):
-    class SynsetInfoExtrOption(object):
-        def __init__(self, name, isEnabled=True, weight=1):
-            self.name = name
-            self.isEnabled = isEnabled
-            self.weight = weight
-
-    def __init__(self):
-        self.informationsEnabled = {}
-        for infoName, infoWeight in SYNSET_INFORMATIONS_WEIGHTS.items():
-            self.informationsEnabled[infoName] = self.SynsetInfoExtrOption(infoName, True, infoWeight)
-
-    def get_option(self, optionName):
-        return self.informationsEnabled[optionName]
-
-    def is_enabled(self, optionName):
-        return self.get_option(optionName).isEnabled  # ["isEnabled"]
-
-    def get_weight(self, optionName):
-        return self.get_option(optionName).weight  # ["weight"]
-
-
-DEFAULT_SYNSET_EXTRACTION_OPTIONS = SynsetInfoExtractionOptions()
 
 
 #
@@ -219,7 +171,6 @@ class Paragraph(object):
             self.lowest_index_sentence = i
             self.highest_index_sentence = i
         else:
-            print("NOT empty: i: ", str(i))
             if is_start_of_paragraph:
                 self.lowest_index_sentence = i
             else:
@@ -266,7 +217,7 @@ class Paragraph(object):
         self.score = 0
         for w, c in self.words_cooccurrence_in_bags_conter.items():
             if c > 1:
-                self.score += self.documentSegmentator.words_weight[w]
+                self.score += self.documentSegmentator.words_weight[w].getTotalWeigth()
         self.score /= self.size()
         return self.score
 
@@ -360,7 +311,7 @@ class DocumentSegmentator(object):
         collected from synsets
         """
         if cache_synset_and_bag is None:
-            cache_synset_and_bag = newCacheSynsetsBags()
+            cache_synset_and_bag = CacheSynsetsBag()
         if options is None:
             options = DEFAULT_SYNSET_EXTRACTION_OPTIONS
         self.list_of_sentences = list_of_sentences
@@ -374,18 +325,6 @@ class DocumentSegmentator(object):
 
     # start document pre-processing
 
-    def firstIndexOf(self, stri, a_char):
-        i = 0
-        le = len(stri)
-        if le == 0:
-            return -1
-        notFound = True
-        while notFound and i < le:
-            notFound = stri[i] != a_char
-            if notFound:
-                i += 1
-        return -1 if notFound else i
-
     def get_sentence_by_index(self, i):
         return self.list_of_sentences[i]
 
@@ -395,93 +334,6 @@ class DocumentSegmentator(object):
     def get_bag_of_word_of_sentence_by_index(self, i):
         return self.get_bag_of_word_of_sentence_by_sentence(self.list_of_sentences[i])
 
-    def get_weighted_synset_map(self, synset_name):
-        """
-        :param synset_name:
-        :return: a map, that given a word (a synset's name), maps the weight of each words in
-        that synset's definition.
-        """
-        if len(synset_name) < 3:
-            return None
-        synsets = self.cache_synset_and_bag.get_synsets(word_text=synset_name)
-        if synsets is None:
-            return None
-
-        mapped_weights = None
-        opt = self.options.get_option("name")
-        if opt.isEnabled:
-            mapped_weights = {synset_name: opt.weight}
-        else:
-            mapped_weights = {}
-
-        #
-        for synset in synsets:
-            # definition
-            opt = self.options.get_option("definition")
-            if opt.isEnabled:
-                defin = synset.definition()
-                # since it's a sentence, let's extract the useful word
-                defin_refined = preprocessing(defin)
-                for def_word in defin_refined:
-                    if len(def_word) > 1:
-                        mapped_weights[def_word] = opt.weight
-
-            # synonyms
-            opt = self.options.get_option("lemmas")
-            if opt is None:
-                opt = self.options.get_option("synonyms")
-            if opt.isEnabled:
-                for synonym in synset.lemmas():
-                    nnn = synonym.name()
-                    index_dot = self.firstIndexOf(nnn, '.')
-                    if index_dot >= 0:
-                        nnn = nnn[0:index_dot]
-                    if len(nnn) > 1:
-                        mapped_weights[synonym.name()] = opt.weight
-
-            # examples
-            opt = self.options.get_option("examples")
-            if opt.isEnabled:
-                for exampl in synset.examples():
-                    ex_refined = preprocessing(exampl)
-                    for ex_word in ex_refined:
-                        if len(ex_word) > 1:
-                            mapped_weights[ex_word] = opt.weight
-
-            # collect some stuffs
-            synsets_collections_weighted = []
-            opt = self.options.get_option("hypernyms")
-            if opt.isEnabled:
-                synsets_collections_weighted.append((synset.hypernyms(), opt.weight))
-
-            opt = self.options.get_option("hyponyms")
-            if opt.isEnabled:
-                synsets_collections_weighted.append((synset.hyponyms(), opt.weight))
-
-            opt = self.options.get_option("holonyms")
-            if opt.isEnabled:
-                synsets_collections_weighted.append((synset.member_holonyms(), opt.weight))
-                synsets_collections_weighted.append((synset.part_holonyms(), opt.weight))
-                synsets_collections_weighted.append((synset.substance_holonyms(), opt.weight))
-
-            opt = self.options.get_option("meronyms")
-            if opt.isEnabled:
-                synsets_collections_weighted.append((synset.part_meronyms(), opt.weight))
-                synsets_collections_weighted.append((synset.member_meronyms(), opt.weight))
-                synsets_collections_weighted.append((synset.substance_meronyms(), opt.weight))
-
-            # add the stuffs
-            for coll_weighted in synsets_collections_weighted:
-                we = coll_weighted[1]
-                for syn in coll_weighted[0]:
-                    namee = syn.name()
-                    index_dot = self.firstIndexOf(namee, '.')
-                    if index_dot >= 0:
-                        namee = namee[0:index_dot]
-                    if len(namee) > 1:
-                        mapped_weights[namee] = we
-        return mapped_weights
-
     def get_weighted_word_map_for_sentence(self, sentence):
         """
         :param sentence:  an English sentence in string variable
@@ -489,44 +341,13 @@ class DocumentSegmentator(object):
         into a float positive value: a weight indicating how much that word helps in
         describing the argument of the sentence
         """
-        sent_filtered = None
-        # print(".... processing sentence: ", sentence)
-        if sentence in self.map_sentence_to_bag:
-            sent_filtered = self.map_sentence_to_bag[sentence]
-        else:
-            sent_filtered = preprocessing(sentence)
-            self.map_sentence_to_bag[sentence] = sent_filtered
-            self.bag_from_sentence_list.append(sent_filtered)
-        all_weighted_maps = [self.get_weighted_synset_map(w) for w in sent_filtered]
-        sent_filtered = None  # clear the memory
-        final_weighted_map = {}
-        '''
-        prima si collezionano tutti i pesi per una data parola della frase
-        (differenti parole potrebbero aver ri-trovato la stessa parola in momenti
-        diversi, ergo assegnando pesi diversi). poi si calcola una sorta
-        di media e la si assegna a quella parola nella mappatura finale
-        '''
-        weights_collectors = {}
-        for wm in all_weighted_maps:  # per ogni dizionario (ergo, per ogni parola non-stop nella frase) ..
-            if wm:
-                for wordd, weight in wm.items():  # scorro tutte le parole soppesate del dizionario
-                    # raccolgo i pesi in una collezione
-                    if len(wordd) < 2:
-                        raise ValueError("WTF 2: --" + str(wordd) + "--")
-                    if wordd in weights_collectors:
-                        weights_collectors[wordd].append(weight)
-                    else:
-                        weights_collectors[wordd] = [weight]
-        all_weighted_maps = None  # clear the memory
-        # some sort of averaging ... like "arithmetic" ones
-        for wordd, weights in weights_collectors.items():
-            if len(weights) > 0:
-                # calculate the "mean"
-                # ... or just the sum ...
-                final_weighted_map[wordd] = sum(weights)  # float(sum(weights) / len(weights))
-            else:
-                final_weighted_map[wordd] = weights[0]
-        return final_weighted_map
+        h = synsetInfoExtraction.weighted_bag_for_sentence(sentence)
+        if not isinstance(h, FilteredWeightedWordsInSentence):
+            raise ValueError("get_weighted_word_map_for_sentence returned a non- FilteredWeightedWordsInSentence "
+                             "instance:\n" + str(h))
+        self.map_sentence_to_bag[sentence] = h.filtered_words
+        self.bag_from_sentence_list.append(h.filtered_words)
+        return h.word_to_weight_mapping
 
     #
     #
@@ -541,6 +362,12 @@ class DocumentSegmentator(object):
     #
 
     def weighted_intersection(self, word_weight_map, string_set1, string_set2):
+        """
+        :param word_weight_map: a mapping <string,int> representing the weights
+        :param string_set1: a set of words
+        :param string_set2: a set of words
+        :return:
+        """
         if len(string_set2) < len(string_set1):
             return self.weighted_intersection(word_weight_map, string_set2, string_set1)
         # consider the first as the smaller set
@@ -552,7 +379,10 @@ class DocumentSegmentator(object):
 
     def weighted_overlap(self, word_weight_map, string_set1, string_set2):
         wi_sum = self.weighted_intersection(word_weight_map, string_set1, string_set2)
-        return wi_sum / min(len(string_set1), len(string_set2))
+        minlen = min(len(string_set1), len(string_set2))
+        if minlen == 0:
+            return 0
+        return wi_sum / minlen
 
     def similarity(self, word_weight_map, string_set1, string_set2):
         """
@@ -568,6 +398,7 @@ class DocumentSegmentator(object):
 
     def compute_similarity_lists_subsequent_sentences(self, bags_sentences, word_weight_map):
         """
+        DEPRECATED
         :param bags_sentences: list of bags of words, extracter from the sentences
         (whose are the parameter of the function "document_segmentation") during the computation
         of the function "get_weighted_synset_map"
@@ -586,71 +417,7 @@ class DocumentSegmentator(object):
             i += 1
         return simils
 
-    def doc_tiling_v1(self, similarity_subsequent_sentences, windows_count, max_iterations=0):
-        """
-        :param similarity_subsequent_sentences: the result of
-        the function "compute_similarity_lists_subsequent_sentences"
-        :param windows_count: the amount of paragraph to find. It's greater by 1 than the length of
-        the returned list
-        :param max_iterations: the inner algorithm improves iteratively the tiling; this parameter
-        sets an upper bound of iterations
-        :return: a list of breakpoints: indexes (between one sentence and the next) where one paragraph ends and
-        the next starts. The length is lower by 1 than the parameter "windows_count", since those indexes identifies
-        a boundary within two different paragraphs. The indexes are to be considered as "inclusive"
-        """
-        #:param list_of_sentences: the parameter of the function "document_segmentation"
-        if max_iterations < 1:
-            max_iterations = 10
-        len_sss = len(similarity_subsequent_sentences)
-        # initial_window_size = float(windows_count) / float(len_sss)
-        # iniziamo con finestre equamente distribuite
-        breakpoints_amount = windows_count - 1
-        # breakpoint_indexes = [int(initial_window_size * (1+i)) for i in range(0, breakpoints_amount)]
-        breakpoint_indexes = None
-        '''
-        if self.algorithm_tiling == 0:  # K-Means
-            # breakpoint_indexes = [int(initial_window_size * (1+i)) for i in range(0, breakpoints_amount)]
-            breakpoint_indexes = [((windows_count * (1 + i)) / len_sss) for i in range(0, breakpoints_amount)]
-            means = [0.0] * windows_count
-            breakpoints_amount = len(breakpoint_indexes)
-
-            def recalculate_mean():
-                # calcola le medie
-                i = 0
-                while i <= breakpoints_amount:  # see "limit"
-                    start = breakpoint_indexes[i]
-                    # the last step is the length of the whole array
-                    limit = len_sss if (i == breakpoints_amount) else breakpoint_indexes[i + 1]
-                    paragraph_length = (limit - start) + 1
-                    summ = 0.0
-                    while start < limit:
-                        summ += similarity_subsequent_sentences[start]
-                        start += 1
-                    means[i] = summ
-
-            recalculate_mean()
-        '''
-
-        '''
-        silliest implementation:
-        the scores varies a bit, but some sentences varies more.
-        Let's compute the mean [and variance??] first. The K paragraphs
-        (indexes where the last sentence of a p. meets the first
-        of the new p.) are then the k farthest indexes which 
-        have lower value than the mean
-        '''
-        mean = sum(similarity_subsequent_sentences) / float(len_sss)
-        deltas_from_mean = sorted(
-            [((similarity_subsequent_sentences[i] - mean), i) for i in range(0, len_sss)]
-            , key=lambda t: t[0])
-        breakpoint_indexes = [0] * breakpoints_amount
-        i = 0
-        while i < breakpoints_amount:
-            breakpoint_indexes[i] = deltas_from_mean[i][1]
-            i += 1
-        return breakpoint_indexes
-
-    def doc_tiling(self, windows_count, max_iterations=0):
+    def doc_tiling(self, windows_count, max_iterations=8):
         """
         :param windows_count: the amount of paragraph to find. It's greater by 1 than the length of
         the returned list
@@ -820,7 +587,7 @@ class DocumentSegmentator(object):
         
         '''
         # START MAIN ALGORITHM - V2
-        print("\n\n start the main algorithm")
+        print("\n\n start the main algorithm ... max_iterations: ", max_iterations)
         is_up = True
         for iteration in range(0, max_iterations):
             is_up = (iteration % 2) == 1
@@ -839,14 +606,15 @@ class DocumentSegmentator(object):
                     prev_cohesion_prev = par.previous_paragraph.get_cohesion()
                     index_first = par.get_first_sentence_index()
                     par.remove_sentence(index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
-                    par.next_paragraph.add_sentence(
-                        index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
+                    par.previous_paragraph.add_sentence("will be ignored :D",
+                                                    index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
                     modified_cohesion_current = par.get_cohesion()
                     modified_cohesion_prev = par.previous_paragraph.get_cohesion()
                     sum_previous = prev_cohesion_current + prev_cohesion_prev
                     sum_modified = modified_cohesion_current + modified_cohesion_prev
                     # restore previous situation
-                    par.add_sentence(index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
+                    par.add_sentence("will be ignored :D",
+                                     index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
                     par.score = prev_cohesion_current
                     par.previous_paragraph.remove_sentence(
                         index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
@@ -854,10 +622,12 @@ class DocumentSegmentator(object):
                     # check modifications
                     if sum_previous < sum_modified:
                         paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_prev))
+                print("\n\non going UP: ".len(paragraphs_to_be_processed), "paragraphs to process:")
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
+                    print("\t-", par.toString())
                     par_index = par.lowest_index_sentence
-                    par.previous_paragraph.add_sentence(par_index)
+                    par.previous_paragraph.add_sentence("will be ignored :D", par_index)
                     par.remove_sentence(par_index)
                     par.score = tupla[1]
                     par.previous_paragraph.score = tupla[2]
@@ -865,38 +635,60 @@ class DocumentSegmentator(object):
                         paragraphs_by_starting_index.pop(par_index)
             else:
                 # scorro tutte le coppie di paragrafi, ossia tutti i par. tranne l'ultimo
+                i = 0
                 for ind, par in paragraphs_by_starting_index.items():
-                    if ind != amount_paragr_pairs:
+                    if i != amount_paragr_pairs:
                         prev_cohesion_current = par.get_cohesion()
                         prev_cohesion_next = par.next_paragraph.get_cohesion()
                         index_last = par.get_last_sentence_index()
+                        # noinspection DuplicatedCode
                         par.remove_sentence(index_last)  # __remove_sentence_bag_to_counter_by_index__(index_last)
-                        par.next_paragraph.add_sentence(
-                            index_last)  # __add_sentence_bag_to_counter_by_index__(index_last)
+                        par.next_paragraph.add_sentence("will be ignored :D",
+                                                        index_last)  # __add_sentence_bag_to_counter_by_index__(index_last)
                         modified_cohesion_current = par.get_cohesion()
                         modified_cohesion_next = par.next_paragraph.get_cohesion()
                         sum_previous = prev_cohesion_current + prev_cohesion_next
                         sum_modified = modified_cohesion_current + modified_cohesion_next
                         # restore previous situation
-                        par.add_sentence(index_last)  # __add_sentence_bag_to_counter_by_index__(index_last)
+                        par.add_sentence("will be ignored :D",
+                                         index_last)  # __add_sentence_bag_to_counter_by_index__(index_last)
                         par.score = prev_cohesion_current
                         par.next_paragraph.remove_sentence(
                             index_last)  # __remove_sentence_bag_to_counter_by_index__(index_last)
                         par.next_paragraph.score = prev_cohesion_next
                         # check modifications
                         if sum_previous < sum_modified:
-                            paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_prev))
+                            paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_next))
+                    i += 1
+                print("\n\non going DOWN: ", len(paragraphs_to_be_processed), "paragraphs to process:")
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
+                    print("\t-", par.toString())
                     par_index = par.lowest_index_sentence
-                    par.next_paragraph.add_sentence(
-                        par.get_last_sentence_index())  # __add_sentence_bag_to_counter_by_index__(par_index)
+                    par.next_paragraph.add_sentence("will be ignored :D",
+                                                    par.get_last_sentence_index())  # __add_sentence_bag_to_counter_by_index__(par_index)
                     par.remove_sentence(
                         par.get_last_sentence_index())  # __remove_sentence_bag_to_counter_by_index__(par_index)
                     par.score = tupla[1]
                     par.next_paragraph.score = tupla[2]
                     if par.is_empty():
-                        paragraphs_by_starting_index.pop(par_index)
+                        try:
+                            paragraphs_by_starting_index.pop(par_index)
+                        except KeyError as ke:
+                            print(ke)
+                            print("-------------\nthe paragraphs_by_starting_index was:")
+                            for ind, par in paragraphs_by_starting_index.items():
+                                print(ind, "->", par.toString())
+                            '''
+                            3
+                            -------------
+                            the paragraphs_by_starting_index was:
+                            0 -> P[(4; 3), no prev, next-3] <---- VA' CHE SCHIFO DI BUG!
+                            4 -> P[(3; 5), prev-4, next-8]
+                            6 -> P[(8; 8), prev-3, next-11]
+                            ...
+                            '''
+                            raise ke
 
         print("\n\n\n after the main algorithm:\nparagraphs :")
         print_paragraph_map(paragraphs_by_starting_index)
@@ -974,75 +766,3 @@ class DocumentSegmentator(object):
             start = breakpoint_indexes[i] + 1
             i += 1
         return subdivision
-
-
-'''
-# Deprecated, per ora
-def document_segmentation_v1(list_of_sentences, cache=None):
-    if cache is None:
-        cache = newCache()
-    if not (isinstance(list_of_sentences, list)):
-        return None
-    words_each_sentences = [get_preprocessed_words(sentence) for sentence in list_of_sentences]
-    words_counts_and_bags = {}  # set()
-    option = SynsetToBagOptions(bag=set())
-    # option = SynsetToBagOptions(bag=set())
-    for words in words_each_sentences:
-        for w in words:
-            # all_words.add(w)
-            if w in words_counts_and_bags:
-                words_counts_and_bags[w][0] += 1
-            else:
-                words_counts_and_bags[w] = [1, (
-                    w, cache.get_extended_bag_for_words(option=option))]  # bag_of_word_expanded
-
-    # TODO: ora usare le frasi e questi bags per computarne le similarità ed eseguire il text tiling
-    return words_counts_and_bags
-'''
-
-sentences_mocked = [
-    "I love to pet my cat while reading fantasy books.",
-    "The fur of my cat is so fluffy that chills me.",
-    "It entertain me, its tail sometimes goes over my pages and meows, also showing me the weird pattern in its chest's fur.",
-    "Sometimes, it plays with me but hurts me with its claws and once it scratched me so bad the one drop of blood felt over my favourite book's pages.",
-    "Even so, its agile and soft body at least warms me and appease me with its cute fur, meow and purr, so I alwayse forgive it and those little drops of damage.",
-    # "Even so, its agile and soft body warms me with its cute fur, meow and purr, so I've forgave it.",
-    "Every time a cat is put aside of a character, i cannot prevent remembering when I found it malnourished and lacking in fur.",
-
-    "There are tons of books I like, from literature, romance, fantasy and sci-fi.",
-    "When i hold a book, the stress flushes out and I start reading the whole life wit an external and more critical mindset.",
-    "Sometimes, some author or topic can help to better understand the world, as just by giving a meaning",
-    "Mostly, I grab a book to just distract the mind in some other reality.",
-    "Fantasy is my best genre because let my imagination to run freely.",
-    "Reading books makes my fantasy fly over everyday problems.",
-
-    "One problem of those is my cat vomiting on my pants.",
-    "But, dealing with people is way more problematic and causes me stomach issues."
-    "I find difficult to deal with people, they are usually focused in their egoistic desires and purposes.",
-    "Most of them just treat others as resources to achieve their objectives and gets upset if You don't fulfill their expectations.",
-    "Sometimes they also undervaluate your own problem, like they are nothing compared to theirs.",
-    "Sometimes they even stop listening as you start talking about your own problems, like they are annoyed.",
-    "It's a no surprise if happens that I found a better dialogue with a book or my cat."
-]
-
-'''
-wcabs = document_segmentation(sentences)
-for word, cab in wcabs.items():
-    print(word, " -> (", cab[0], ";;;", cab[1])
-'''
-
-print("\n\n now the last made function: get_weighted_word_map_for_sentence")
-local_cache_synset = newCacheSynsetsBags()
-'''
-for sent in sentences:
-    print("\n\n\n\ngiven the sentence:\n\t--", sent, "--")
-    print(get_weighted_word_map_for_sentence(sent, cache=local_cache))
-'''
-ds = DocumentSegmentator(sentences_mocked, cache_synset_and_bag=local_cache_synset)
-paragraphs = ds.document_segmentation(3)
-for p in paragraphs:
-    print("\n\n paragraph:")
-    for s in p:
-        print("----", s)
-
-print("\n\n\n\n end")

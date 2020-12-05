@@ -1,5 +1,6 @@
 import collections
 
+# inizio cose per stampare liste multidimensionali
 
 def print_tab(level, end_line="\n"):
     if level > 0:
@@ -21,6 +22,13 @@ def deep_array_printer(x, level=0):
     else:
         print(x)
 
+# fine cose per stampare liste multidimensionali
+
+#
+
+# inizio ALTROH
+
+#
 
 def split_csv_row_string(rs):
     '''
