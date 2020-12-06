@@ -15,12 +15,6 @@ def newCache():
 
 cache = newCache()
 
-# ------------
-# ------------
-# ------------------ utilities ------------------
-# ------------
-# ------------
-
 
 # ------------
 # ------------
@@ -30,24 +24,14 @@ cache = newCache()
 
 
 root_synset = wn.synsets('entity')[0]  # top-most synset (only one exists)
-# bag_root_synset = synsetToBagOfWords(root_synset)
 cache_synsets = {'entity': root_synset}
-# cache_synsets_bag = {'entity': bag_root_synset}
-print(root_synset)
-print("bags for entity:")
 
 
-# print(bag_root_synset)
-
-
-def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], addsAntinomies=True,
-                                  usingOverlapSimilarity=True,
-                                  cacheSynsetsBagByName=None):
+def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cacheSynsetsBagByName=None):
     # words_info_cache = {}  # words_seen = set()
     frontier = collections.deque()
 
-    cache_synset_and_bag = CacheSynsetsBag()
-    # word_to_synset_map_cache = cache_synset_and_bag.cache_synsets
+    cache_synset_and_bag = CacheSynsetsBag() if cacheSynsetsBagByName is None else cacheSynsetsBagByName
     weighted_context_info = sye.weighted_bag_for_sentence(bagOfWordFromDefinitions,
                                                           cache_synset_and_bag=cache_synset_and_bag)
 
@@ -91,7 +75,7 @@ def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], addsA
             for lem in syn.lemmas():
                 for a in lem.antonyms():
                     all_antinomies.append(a.synset())
-    differentia = sye.merge_weighted_bags(sye.weighted_bag_for_word(s.name()) for s in all_antinomies)
+    differentia = sye.merge_weighted_bags(sye.weighted_bag_for_word(s.name(), options=options_for_antinomies) for s in all_antinomies)
 
     def get_weighted_def(woo: str) -> Dict[str, int] or None:
         if woo in weighted_context_info.mapping_word_to_its_weighted_bag:
@@ -158,94 +142,3 @@ def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], addsA
                 # else: scartalo
     return best_synset, best_simil
 
-
-def searchBestApproximatingSynset_V1(bagOrSynset, addsAntinomies=True, usingOverlapSimilarity=True,
-                                     cacheSynsetsBagByName=None):
-    if cacheSynsetsBagByName is None:
-        cacheSynsetsBagByName = newCache()
-    if not isinstance(bagOrSynset, set):
-        # assumption: it's a WordNet's synset:
-        bagOrSynset = cache.get_synset_bag(bagOrSynset, cacheSynsetsBagByName)  # QUESTA FUNZIONE NON ESISTE PIU
-    '''
-    "macchia d'olio":
-    per ogni parola nella bag:
-    -) cercare il relativo synset
-    -) calcolarne la bag
-    -) overlap con la bag
-    -) se l'overlap è migliore -> aggiornare migliore
-    -) ricorsione
-    '''
-    words_seen = set()
-    frontier = collections.deque()
-    for word in bagOrSynset:
-        words_seen.add(word)
-        frontier.append(word)
-    best_synset = None
-    best_simil = 0.0
-    # best_bag = None
-    # original_words_bag_remaining = 0
-    len_original_words_bag = len(bagOrSynset)
-    while len(frontier) > 0:
-        current_word = frontier.popleft()
-        synsets_current_word = cache.get_synsets(current_word)
-        if not (isinstance(synsets_current_word, list)):
-            synsets_current_word = [synsets_current_word]
-
-        # RACCOLTA
-        # gather all usefull synsets from a given words:
-        # 1) is synsets
-        # 2) their sister terms
-        # 3) synonyms
-        useful_synsets_by_name = {}
-        for s in synsets_current_word:
-            s_name = s.name()
-
-            # inizio precursore (== versione brutta) di synsetInfoExtraction.weighted_bag_words_from_word
-            useful_synsets_by_name[s_name] = s
-            lemmas = s.lemmas()
-            matrix_synsets = [
-                [l.synset() for l in lemmas],  # synonyms
-                s.hypernyms()
-            ]
-            if addsAntinomies:  # L'INCRIMINATO PEZZO DI CODICE
-                for l in lemmas:
-                    ant = l.antonyms()
-                    if ant:
-                        matrix_synsets.append([a.synset() for a in ant])
-            for synsets_collection in matrix_synsets:
-                for syn in synsets_collection:
-                    if s_name != syn.name():
-                        useful_synsets_by_name[syn.name()] = syn
-
-            # fine precursore (== versione brutta) di synsetInfoExtraction.weighted_bag_words_from_word
-
-        # RICERCA DEL SYNSET MIGLIORE
-        for synsName, current_node in useful_synsets_by_name.items():
-            current_bag = cache.get_synset_bag(current_node)  # QUESTA FUNZIONE NON ESISTE PIU
-            current_simil = functions.compute_sim(bagOrSynset, current_bag,
-                                                  usingOverlapSimilarity=usingOverlapSimilarity)
-
-            '''
-            IPOTESI DI MIGLIORAMENTO DEL CODICE:
-            decrementare "current_simil" di un ammotare pari alla similarità tra il
-            "bag" delle antinomie con il "bag delle definizioni [colonna]" (ossia di "bagOrSynset")
-            '''
-
-            if current_simil > best_simil:  # SE E' MIGLIORE, LO SALVO E RICORSIONE
-                # print("\t-> updating: new node ", current_node.name(), ", with simil:", current_simil, "and bag: ", current_bag)
-                best_synset = current_node
-                # best_bag = current_bag
-                best_simil = current_simil
-                # if original_words_bag_remaining >= len_original_words_bag:
-                for word in current_bag:
-                    if word not in words_seen:
-                        words_seen.add(word)
-                        frontier.append(word)  # RICORSIONE
-        useful_synsets_by_name = None
-    return best_synset, best_simil
-
-# ------------
-# ------------
-# ------------------ main ------------------
-# ------------
-# ------------

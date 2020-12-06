@@ -2,6 +2,7 @@ import csv
 
 from notebooks.es2 import es2
 from notebooks.utilities import utils, functions
+from notebooks.utilities.cacheVarie import CacheSynsetsBag
 
 
 def read_csv():
@@ -10,7 +11,7 @@ def read_csv():
         can_use = False  # la prima riga deve essere salata
         cols = None
         i = 0
-        for row in csv_reader: # "row" e' una stringa rozza e grezza
+        for row in csv_reader:  # "row" e' una stringa rozza e grezza
             if len(row) > 0:
                 if can_use:
                     row_string = row[0]
@@ -40,35 +41,17 @@ def colum_csv_to_bag_of_words(column):
 
 
 def main():
-    # print(get_synsets("play"))
     print("start :D\n\n")
-
     cols = read_csv()
-    # print("\n\nCOLONNEEEEEE")
-    # deep_array_printer(cols)
-
-    similarities_to_test = 2
-
-    while similarities_to_test > 0:
-        similarities_to_test -= 1
-        useOverlap = similarities_to_test > 0
-
-        print("\n\n\n\n")
-        for i in range(0, 5):
-            print("-------------------------------------------------")
-        print(" testing similarity", "overlap" if useOverlap else "jaccard")
-
-        i = 0
-        for column in cols:
-            print("\n\n\n elaborating th given column:", i)
-            #utils.deep_array_printer(column)
-            bag_for_col = colum_csv_to_bag_of_words(column) # sono le informazioni fornite dalla "colonna di definizioni"
-            best_synset, best_simil = es2.searchBestApproximatingSynset(bag_for_col, addsAntinomies=True, usingOverlapSimilarity=useOverlap)
-            print("found: ", best_synset, ", with similarity of:", best_simil)
-            i += 1
-
-    # beware of entries in columns having len(field) == 0 ....
-
+    cache_synset_and_bag = CacheSynsetsBag()
+    i = 0
+    for column in cols:
+        print("\n\n\n elaborating the column:", i)
+        bag_for_col = colum_csv_to_bag_of_words(column)  # sono le informazioni fornite dalla "colonna di definizioni"
+        best_synset, best_simil = es2.searchBestApproximatingSynset(bag_for_col,
+                                                                    cacheSynsetsBagByName=cache_synset_and_bag)
+        print("found: ", best_synset, ", with similarity of:", best_simil)
+        i += 1
     print("\n\n\n fine")
 
 
