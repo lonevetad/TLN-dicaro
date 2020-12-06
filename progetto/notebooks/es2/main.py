@@ -45,13 +45,28 @@ def main():
     cols = read_csv()
     cache_synset_and_bag = CacheSynsetsBag()
     i = 0
-    for column in cols:
-        print("\n\n\n elaborating the column:", i)
-        bag_for_col = colum_csv_to_bag_of_words(column)  # sono le informazioni fornite dalla "colonna di definizioni"
-        best_synset, best_simil = es2.searchBestApproximatingSynset(bag_for_col,
-                                                                    cacheSynsetsBagByName=cache_synset_and_bag)
-        print("found: ", best_synset, ", with similarity of:", best_simil)
-        i += 1
+    bag_of_cols = [colum_csv_to_bag_of_words(column) for column in cols]
+
+    use_antinomies = 1
+    while use_antinomies >= 0:
+        i = 0
+        for j in range(0,10):
+            print("--------------------------------")
+        if use_antinomies == 0:
+            print("NOT", end="")
+        print("using antinomyes")
+        for bag_of_col in bag_of_cols:
+            print("\n\n\nelaborating the column:", i)
+            for c in cols[i]:
+                print("-\t", c)
+            print("with bag of words:")
+            print("\t", bag_of_col)
+            best_synset, best_simil = es2.searchBestApproximatingSynset(bag_of_col,
+                                                                        cacheSynsetsBagByName=cache_synset_and_bag,
+                                                                        shouldConsiderAntinomyes=use_antinomies > 0)
+            print("\nfound: ", best_synset, ", with similarity of:", best_simil)
+            i += 1
+        use_antinomies -= 1
     print("\n\n\n fine")
 
 

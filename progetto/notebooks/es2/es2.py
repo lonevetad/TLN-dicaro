@@ -27,7 +27,8 @@ root_synset = wn.synsets('entity')[0]  # top-most synset (only one exists)
 cache_synsets = {'entity': root_synset}
 
 
-def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cacheSynsetsBagByName=None):
+def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cacheSynsetsBagByName=None,
+                                  shouldConsiderAntinomyes = True):
     # words_info_cache = {}  # words_seen = set()
     frontier = collections.deque()
 
@@ -67,15 +68,17 @@ def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cache
         ("name", sye.SYNSET_INFORMATIONS_WEIGHTS["name"]),
         ("definition", sye.SYNSET_INFORMATIONS_WEIGHTS["definition"])
     ])
-    all_antinomies = []
-    for w in bagOfWordFromDefinitions:
-        # slim_genus[w] = genus_fat[w]
-        syns = cache_synset_and_bag.get_synsets(w)
-        for syn in syns:
-            for lem in syn.lemmas():
-                for a in lem.antonyms():
-                    all_antinomies.append(a.synset())
-    differentia = sye.merge_weighted_bags(sye.weighted_bag_for_word(s.name(), options=options_for_antinomies) for s in all_antinomies)
+    differentia = None
+    if shouldConsiderAntinomyes :
+        all_antinomies = []
+        for w in bagOfWordFromDefinitions:
+            # slim_genus[w] = genus_fat[w]
+            syns = cache_synset_and_bag.get_synsets(w)
+            for syn in syns:
+                for lem in syn.lemmas():
+                    for a in lem.antonyms():
+                        all_antinomies.append(a.synset())
+        differentia = sye.merge_weighted_bags(sye.weighted_bag_for_word(s.name(), options=options_for_antinomies) for s in all_antinomies)
 
     def get_weighted_def(woo: str) -> Dict[str, int] or None:
         if woo in weighted_context_info.mapping_word_to_its_weighted_bag:
@@ -124,11 +127,13 @@ def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cache
                         can_recurse = False
                         if best_synset is None:
                             best_synset = curr_synset
-                            best_simil = curr_simil - functions.weighted_similarity(differentia,
-                                                                                    curr_bag)  # no matter if it's negatives
+                            best_simil = curr_simil
+                            if shouldConsiderAntinomyes:
+                                best_simil -= functions.weighted_similarity(differentia, curr_bag)
                             can_recurse = True
                         else:
-                            curr_simil -= functions.weighted_similarity(differentia, curr_bag)
+                            if shouldConsiderAntinomyes:
+                                curr_simil -= functions.weighted_similarity(differentia, curr_bag)
                             if curr_simil > best_simil:
                                 best_synset = curr_synset
                                 best_simil = curr_simil
