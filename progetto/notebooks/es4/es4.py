@@ -1,6 +1,8 @@
 import math
 
 import collections
+from typing import Dict, Iterable
+
 from sortedcontainers import SortedDict
 
 from notebooks.utilities import synsetInfoExtraction
@@ -112,7 +114,7 @@ class Paragraph(object):
         self.highest_index_sentence = -1  # ESTREMI INCLUSI
         self.previous_paragraph = None
         self.next_paragraph = None
-        self.words_cooccurrence_in_bags_conter = {}
+        self.words_cooccurrence_in_bags_counter: Dict[str, int] = {}
 
     def is_empty(self):
         # return len(self.map_sentence_by_index) == 0
@@ -198,21 +200,34 @@ class Paragraph(object):
         if len(bag_sent) > 0:
             self.score = -1  # invalidates score(cohesion) cache
         for w in bag_sent:
-            if w in self.words_cooccurrence_in_bags_conter:
-                self.words_cooccurrence_in_bags_conter[w] += 1
+            if w in self.words_cooccurrence_in_bags_counter:
+                self.words_cooccurrence_in_bags_counter[w] += 1
             else:
-                self.words_cooccurrence_in_bags_conter[w] = 1
+                self.words_cooccurrence_in_bags_counter[w] = 1
 
     def __remove_sentence_bag_to_counter_by_index__(self, i):
         bag_sent = self.documentSegmentator.get_bag_of_word_of_sentence_by_index(i)
         for w in bag_sent:
-            if w in self.words_cooccurrence_in_bags_conter:
+            if w in self.words_cooccurrence_in_bags_counter:
                 self.score = -1  # invalidates score(cohesion) cache
-                c = self.words_cooccurrence_in_bags_conter[w]
+                c = self.words_cooccurrence_in_bags_counter[w]
                 if c == 1:
-                    del self.words_cooccurrence_in_bags_conter[w]
+                    del self.words_cooccurrence_in_bags_counter[w]
                 else:
-                    self.words_cooccurrence_in_bags_conter[w] -= 1
+                    self.words_cooccurrence_in_bags_counter[w] -= 1
+
+    '''
+    SVILUPPI FUTURI:
+    si potrebbe ottimizzare il calcolo della coesione memorizzando non il singolo "score",
+    ma solo il numeratore (il denominatore è la cardinalità dell'insieme di frasi, ossia un
+    dato facilmente reperibile).
+    Aggiungendo una frase (come sopra), si potrebbero sommare allo "score" tutti i pesi delle
+    parole che sono già presenti in "words_cooccurrence_in_bags_counter" MA con c == 1.
+    Analogamente, in fase di rimozione di una frase si rimuovono i pesi delle parole con
+    esattamente c == 2 (con c == 1 la parola verrebbe già rimossa dal codice soprastante).
+    La "cohesion" sarebbe, quindi, la divisione dello score con la dimensione del paragrafo
+    (ossia, non si fa cache: è solo una divisione, d'altronde).
+    '''
 
     def get_cohesion(self):
         if self.is_empty():
@@ -220,13 +235,13 @@ class Paragraph(object):
         if self.score >= 0:
             return self.score
         self.score = 0
-        for w, c in self.words_cooccurrence_in_bags_conter.items():
+        for w, c in self.words_cooccurrence_in_bags_counter.items():
             if c > 1:
-                self.score += self.documentSegmentator.words_weight[w].getTotalWeigth()
+                self.score += self.documentSegmentator.words_weight[w].getTotalWeigth()  # it's not multiplied by "c"
         self.score /= self.size()
         return self.score
 
-    def get_score(self):
+    def get_score_OLD(self):
         """
         DEPRECATED
         :return:
@@ -281,8 +296,12 @@ class Paragraph(object):
         # return self.map_sentence_by_index.peekitem(0)
         return self.documentSegmentator.list_of_sentences[self.highest_index_sentence]
 
+    def words_cooccurrence_counter_to_words_set(self):
+        return set(w for w, c in self.words_cooccurrence_in_bags_counter.items())
+
     def toString(self):
-        sss = "P[(" + str(self.lowest_index_sentence) + "; " + str(self.highest_index_sentence) + ")"
+        sss = "P[(" + str(self.lowest_index_sentence) + "; " + str(self.highest_index_sentence) + "), size: " + str(
+            self.size())
         if self.previous_paragraph is None:
             sss += ", no prev"
         else:
@@ -442,7 +461,7 @@ class DocumentSegmentator(object):
         - fondere ogni paragrafo con quello puntato
         
         POI
-        
+        ...
         '''
         sentences = self.list_of_sentences
         sentences_amount = len(sentences)
@@ -450,10 +469,6 @@ class DocumentSegmentator(object):
 
         # maps < a paragraph's lowest index -> the par.'s lowest index wish to merge into
         preferences = SortedDict()
-
-        def print_paragraph_map(p_m):
-            for inddd, ppp in p_m.items():
-                print("with key", inddd, "\t, par ->", ppp.toString())
 
         # inizializzazione
         i = 0
@@ -492,13 +507,10 @@ class DocumentSegmentator(object):
                     pref_of_prev = preferences[j - 1]
                     if j > 1 and pref_of_prev < (j - 1):
                         preferences[j - 1] = j  # conversione del backpointer
+                        
+                    ma questo codice ha prodotto dei problemi, quindi non viene
                     '''
 
-        print("\n\n preferences at start:")
-        print(preferences)
-        '''
-        V1
-        '''
         # conversione di tutti i backpointers
         # perche' tanto andranno a finire nello stesso paragrafo
         i = sentences_amount - 1
@@ -509,8 +521,6 @@ class DocumentSegmentator(object):
                 j = pref  # j == i-1 per costruzione
                 # a do-while ...
                 even_prev = preferences[j]
-                # search_not_done = True
-                # while search_not_done:
                 while even_prev < j and 0 < j:
                     preferences[j] = j + 1
                     j = even_prev
@@ -523,12 +533,6 @@ class DocumentSegmentator(object):
             else:
                 i -= 1
 
-        print("\n\n\n post-aggiustamento dei backpointer:\npreferenze:")
-        print(preferences)
-        print("paragraphs :")
-        print_paragraph_map(paragraphs_by_starting_index)
-
-        print("\n\n ora si fanno i merge")
         # ora i backpointers possono essere trattati come "terminatori di paragrafo"
         # merge delle preferenze:
         start = 0
@@ -544,7 +548,6 @@ class DocumentSegmentator(object):
             par_end = paragraphs_by_starting_index[end]
             paragraphs_by_starting_index[start] = paragraphs_by_starting_index[start].merge_paragraph(par_end)
             paragraphs_by_starting_index.pop(end)
-            print("popped end:", end, " before hard work")
             start -= 1  # jump to the next (previous, tbh) sentence
             pref = preferences[start]
             if start < pref:
@@ -561,51 +564,17 @@ class DocumentSegmentator(object):
                 # the paragraph has ended: start is pointing backward
                 end = start
 
-        print("\n\n paragrafi DOPO i merge\npreferenze:")
-        print(preferences)
-        print("paragraphs :")
-        print_paragraph_map(paragraphs_by_starting_index)
-
         # WELL, INITIALIZATION HAS ENDED
         # now make the paragraphs-bubble boiling
-        # need to use max_iterations
-        '''
-        V1
-        for iter in range(0, max_iterations):
-            par = paragraphs_by_starting_index[0]
-            while par.next_paragraph is not None:
-                current_score = par.get_score()
-                next_score = par.next_paragraph.get_score()
-                par_sent_index = par.get_last_sentence_index()
-                next_sent_index = par.next_paragraph.get_first_sentence_index()
-                # proviamo a spostare la first frase in par
-                
-                # ora spostiamo l'ultima di par nel next
-                
-                # selezione del migliore dei tre casi
-                prev_score
-                
-                par = par.next_paragraph
-'''
 
-        '''
-        if the following "main algorithm" is bad, just comment it out
-        
-        '''
         # START MAIN ALGORITHM - V2
-        print("\n\n start the main algorithm ... max_iterations: ", max_iterations)
         is_up = True
         for iteration in range(0, max_iterations):
             is_up = (iteration % 2) == 1
-            print(
-                "\n#####################################################\nat the start of the iteration, the paragraphs are:")
-            print_paragraph_map(paragraphs_by_starting_index)
 
-            paragraphs_emptied = []
             paragraphs_to_be_processed = []
             amount_paragr_pairs = len(paragraphs_by_starting_index) - 1
             if is_up:
-                print("\n[][][][] GO UP")
                 stack_paragraphs = collections.deque()
                 for ind, par in paragraphs_by_starting_index.items():
                     if ind != 0:
@@ -614,12 +583,10 @@ class DocumentSegmentator(object):
                     prev_cohesion_current = par.get_cohesion()
                     prev_cohesion_prev = par.previous_paragraph.get_cohesion()
                     index_first = par.get_first_sentence_index()
-                    print("---- removing index :", index_first)
                     par.remove_sentence(index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
                     par.previous_paragraph.add_sentence("will be ignored :D", index_first,
                                                         is_start_of_paragraph=False)
-                    print("____ now par is:\n\t", par.toString(), "\n\t\t and the rpev:",
-                          par.previous_paragraph.toString())
+
                     # __add_sentence_bag_to_counter_by_index__(index_first)
                     modified_cohesion_current = par.get_cohesion()
                     modified_cohesion_prev = par.previous_paragraph.get_cohesion()
@@ -635,114 +602,88 @@ class DocumentSegmentator(object):
                     # check modifications
                     if sum_previous < sum_modified:
                         paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_prev))
-                print("\n\non going UP: ", len(paragraphs_to_be_processed), "paragraphs to process:")
+                # print("\n\non going UP: ", len(paragraphs_to_be_processed), "paragraphs to process:")
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
-                    print("processing -", par.toString())
+                    # print("processing -", par.toString())
                     par_index = par.lowest_index_sentence  # che sarebbe la sua "chiave"
                     par.previous_paragraph.add_sentence("will be ignored :D", par_index, is_start_of_paragraph=False)
                     par.remove_sentence(par_index)
                     par.score = tupla[1]
                     par.previous_paragraph.score = tupla[2]
-                    #adjust indexes
+                    # adjust indexes
                     paragraphs_by_starting_index.pop(par_index)
                     if not par.is_empty():
-                        paragraphs_by_starting_index[par_index+1] = par
+                        paragraphs_by_starting_index[par_index + 1] = par
                         # ora vale: par_index+1 == par.lowest_index_sentence
-                        '''
-                        print("\t processing it :D (its index should be: ", par_index, ")")
-                        try:
-                            paragraphs_by_starting_index.pop(par_index)
-                            paragraphs_by_starting_index[par_index]
-                        except KeyError as ke:
-                            print("key error on removing: par_index:", par_index, " -> ", par.toString())
-                            for iiiii, ppppp in paragraphs_by_starting_index.items():
-                                print("\t-", iiiii, "->", ppppp.toString())
-                            raise ke
-                        '''
             else:  # we're going dooown, dooown, dooooown, we're going dooown, dooOOWWN, DOOOOWN [cit. Bruce Springsteen]
                 # scorro tutte le coppie di paragrafi, ossia tutti i par. tranne l'ultimo
-                print("\n:::::::: GO DOWN")
                 i = 0
                 for ind, par in paragraphs_by_starting_index.items():
                     if i != amount_paragr_pairs:
                         prev_cohesion_current = par.get_cohesion()
                         prev_cohesion_next = par.next_paragraph.get_cohesion()
                         index_last = par.get_last_sentence_index()
-                        # noinspection DuplicatedCode
-                        print("---- removing index ", index_last)
-                        par.remove_sentence(index_last)  # __remove_sentence_bag_to_counter_by_index__(index_last)
-                        par.next_paragraph.add_sentence("will be ignored :D",
-                                                        index_last, is_start_of_paragraph=True)
-                        print("____ now par is:\n\t", par.toString(), "\n\t\t and the next:",
-                              par.next_paragraph.toString())
-                        # __add_sentence_bag_to_counter_by_index__(index_last)
+                        par.remove_sentence(index_last)
+                        par.next_paragraph.add_sentence("will be ignored :D", index_last, is_start_of_paragraph=True)
                         modified_cohesion_current = par.get_cohesion()
                         modified_cohesion_next = par.next_paragraph.get_cohesion()
                         sum_previous = prev_cohesion_current + prev_cohesion_next
                         sum_modified = modified_cohesion_current + modified_cohesion_next
                         # restore previous situation
-                        par.add_sentence("will be ignored :D",
-                                         index_last,
-                                         is_start_of_paragraph=False)  # __add_sentence_bag_to_counter_by_index__(index_last)
+                        par.add_sentence("will be ignored :D", index_last, is_start_of_paragraph=False)
                         par.score = prev_cohesion_current
-                        par.next_paragraph.remove_sentence(
-                            index_last)  # __remove_sentence_bag_to_counter_by_index__(index_last)
+                        par.next_paragraph.remove_sentence(index_last)
                         par.next_paragraph.score = prev_cohesion_next
                         # check modifications
                         if sum_previous < sum_modified:
                             paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_next))
                     i += 1
-                print("\n\non going DOWN: ", len(paragraphs_to_be_processed), "paragraphs to process:")
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
-                    print("processing -", par.toString())
                     par_next_index = par.next_paragraph.lowest_index_sentence
                     # aggiungo la frase al paragrafo dopo
-                    index_to_add =par.get_last_sentence_index()
-                    par.next_paragraph.add_sentence("will be ignored :D", index_to_add,
-                                                    is_start_of_paragraph=True)
-                    # __add_sentence_bag_to_counter_by_index__(par_index)
+                    index_to_add = par.get_last_sentence_index()
+                    par.next_paragraph.add_sentence("will be ignored :D", index_to_add, is_start_of_paragraph=True)
                     # la rimuovo da quello attuale
-                    par.remove_sentence(index_to_add)  # __remove_sentence_bag_to_counter_by_index__(par_index)
+                    par.remove_sentence(index_to_add)
                     par.score = tupla[1]
                     par.next_paragraph.score = tupla[2]
                     paragraphs_by_starting_index.pop(par_next_index)
                     paragraphs_by_starting_index[index_to_add] = par.next_paragraph
                     if par.is_empty():
                         paragraphs_by_starting_index.pop(par.lowest_index_sentence)
-                        """
-                        print("\t processing it :D (its index should be: ", par_index, ")")
-                        try:
-                            paragraphs_by_starting_index[index_to_add] = par.next_paragraph
-                        except KeyError as ke:
-                            print(ke)
-                            print("-------------\nthe paragraphs_by_starting_index was:")
-                            for ind, par in paragraphs_by_starting_index.items():
-                                print(ind, "->", par.toString())
-                            '''
-                            3
-                            -------------
-                            the paragraphs_by_starting_index was:
-                            0 -> P[(4; 3), no prev, next-3] <---- VA' CHE SCHIFO DI BUG!
-                            4 -> P[(3; 5), prev-4, next-8]
-                            6 -> P[(8; 8), prev-3, next-11]
-                            ...
-                            '''
-                            raise ke
-                        """
-        print("\n\n\n after the main algorithm:\nparagraphs :")
-        print_paragraph_map(paragraphs_by_starting_index)
-        # END MAIN ALGORITHM - V2
 
-        # conversione in array di indici
-        indexes = [par.highest_index_sentence for i, par in paragraphs_by_starting_index.items()]
-        # for i, par in paragraphs_by_starting_index.items():
-        print("\n\n\nindexes:")
-        print(indexes)
-        return indexes
+        # Union of smaller paragraph (those with 1 or 2 sentences)
+        for par in [ppp for ind, ppp in paragraphs_by_starting_index.items() if ppp.size() <= 2]:
+            par_context = par.words_cooccurrence_counter_to_words_set()
+            prev_score = 0
+            if par.previous_paragraph is not None:
+                prev_score = self.weighted_overlap(self.words_weight, par_context,
+                                                   par.previous_paragraph.words_cooccurrence_counter_to_words_set())
+            next_score = 0
+            if par.next_paragraph is not None:
+                next_score = self.weighted_overlap(self.words_weight, par_context,
+                                                   par.next_paragraph.words_cooccurrence_counter_to_words_set())
+            if ((par.previous_paragraph is not None) and (prev_score >= next_score)) or (par.next_paragraph is None):
+                if par.next_paragraph is None:
+                    print("POSSIBLE BUG: the paragraph", par.toString(), "should not be merged into the previous [i.e.",
+                          par.previous_paragraph.toString(), "], but the next is None.")
+                    print("\nThe weighted overlap with previous paragraph is:", prev_score)
+                par.previous_paragraph.merge_paragraph(par)
+                del paragraphs_by_starting_index[par.get_first_sentence_index()]
+            else:
+                paragraphs_by_starting_index[par.lowest_index_sentence] = par
+                index_of_next = par.next_paragraph.lowest_index_sentence
+                par.merge_paragraph(par.next_paragraph)
+                del paragraphs_by_starting_index[index_of_next]
 
-    def document_segmentation(self, desiredParagraphAmount=0):
+            # END MAIN ALGORITHM - V2
+
+            # conversione in array di indici
+        return [par.highest_index_sentence for i, par in paragraphs_by_starting_index.items()]
+
+    def document_segmentation(self, desiredParagraphAmount=0) -> Iterable[Iterable[str]] or list:
         if desiredParagraphAmount < 2:
             desiredParagraphAmount = 2
         words_mapped_each_sentences = [self.get_weighted_word_map_for_sentence(sentence) for sentence in
@@ -756,15 +697,6 @@ class DocumentSegmentator(object):
             for word, weight in map_for_a_sent.items():
                 bag_of_word_of_sentence = self.map_sentence_to_bag[self.list_of_sentences[i]]
                 is_in_sentence = word in bag_of_word_of_sentence
-                if len(word) <= 1:
-                    print("\n\n WTF in sentence:")
-                    print(self.list_of_sentences[i])
-                    print("and word: ---", word, "---")
-                    print("and bag")
-                    print(map_for_a_sent)
-                    print("\nweights collected since then")
-                    print(w_w)
-                    raise ValueError("WTF ?" + word + "--\n\n")
                 if word in w_w:
                     w_w[word].addWeight(weight, isPresentInDocument=is_in_sentence)
                 else:
@@ -778,30 +710,17 @@ class DocumentSegmentator(object):
             list_word_bags_from_sentences=self.bag_from_sentence_list,
             sentence_similarity_function=self.similarity
         )
-        # print("words_weight:")
-        # print(words_weight)
+
         # pre-compute the similarity of each sentence
-
-        '''
-        #V1, pre-version V2:
-        similarity_subsequent_sentences = self.compute_similarity_lists_subsequent_sentences(
-            self.bag_from_sentence_list, words_weight)
-        print("\n\n generated similarity_subsequent_sentences:")
-        print(similarity_subsequent_sentences)
-
-        # now segment
-        breakpoint_indexes = self.doc_tiling(similarity_subsequent_sentences, desiredParagraphAmount)
-        breakpoint_indexes.append(len(similarity_subsequent_sentences))
-        '''
 
         # now segment
         breakpoint_indexes = self.doc_tiling(desiredParagraphAmount)
+        print("list of breakpoints (the division will happen between the shown indexes and their respective successors):")
+        print(breakpoint_indexes)
         desiredParagraphAmount = len(breakpoint_indexes)  # forzo il fatto di mantenere i paragrafi
         i = 0
         start = 0
         subdivision = [None] * desiredParagraphAmount
-        print("\n\n generated breakpoint_indexes:")
-        print(breakpoint_indexes)
         while i < desiredParagraphAmount:
             subdivision[i] = self.list_of_sentences[start: breakpoint_indexes[i] + 1]
             start = breakpoint_indexes[i] + 1
@@ -809,45 +728,21 @@ class DocumentSegmentator(object):
         return subdivision
 
 
-def main():
-    print("testing Paragraph add-remove stuffs")
-    origin_sent = ["ciao mondo", "sono lonevetad", "devo inventare dei paragrafi", "oltre a fare i test dei Paragraph",
-                   "mannaggia, non funzionano", "forse il problema risiede nei add remove sentence",
-                   "lo vedremo con calma", "sempre se non impazzisco prima"]
-    ds = DocumentSegmentator(origin_sent)
-    for s in origin_sent:
-        bag = preprocessing(s)
-        ds.bag_from_sentence_list.append(bag)
-        ds.map_sentence_to_bag[s] = bag
-    ds.cache_bag_sentence_similarity = CachePairwiseSentenceSimilarity(
-        map_words_weights=ds.words_weight,
-        list_word_bags_from_sentences=ds.bag_from_sentence_list,
-        sentence_similarity_function=ds.similarity
-    )
+'''
+SVILUPPI FUTURI:
+Si potrebbe modificare "doc_tiling" in modo da tenere conto del numero di paragrafi
+richiesti (ossia il parametro "desiredParagraphAmount") utilizzando tale valore
+(che viene assegnato al parametro "windows_count) nel modo seguente:
 
-    paragrsss = {}
-    i = 0
-    last_par = None
-    start = 0
-    for end in [4, 6, len(origin_sent)]:
-        par = Paragraph(ds)
-        paragrsss[start] = par
-        for j in range(start, end):
-            par.add_sentence(origin_sent[j], j, is_start_of_paragraph=False)
-        if last_par is not None:
-            last_par.next_paragraph = par
-            par.previous_paragraph = last_par
-        last_par = par
-        start = end
-        print("\nparagraph ", i, " at the end:")
-        print("\t", par.toString())
-        i += 1
-
-    for start, par in paragrsss.items():
-        print("\nparagraph starting at ", start, " is:")
-        print("\t", par.toString())
-
-    print("\n\n FINEH")
-
-
-main()
+- se il numero di paragrafi prodotti fosse maggiore di quello desiderato:
+    ispirandosi all'algoritmo implementato da riga 657 in poi (marcato col commento "Union of smaller paragraph"),
+    si possono iterativamente cercare i paragrafi che hanno maggiore weighted overlap con un qualche paragrafo
+    adiacente e fonderli, iterando fino a quando non si raggiunge il numero desiderato di paragrafi
+- se fosse minore, invece:
+    un ciclo in cui, fintanto che il numero di paragrafi è inferiore a quello desiderato:
+        cerca il paragrafo più grande
+        cerca la frase con minore weighted overlap rispetto al contesto generato da ogni altra frase (del paragrafo) messa assieme
+            iterare la ricerca per la seconda frase, o terza, etc, qualora le frase trovata generasse paragrafi troppo piccoli (da 1 o 2 frasi)
+        split su quella frase (escludendola da ambo i paragrafi così prodotti)
+        aggiunta di tale frase al paragrafo (tra i due) con cui ha maggiore weighted overlap
+'''

@@ -29,7 +29,6 @@ sentences_mocked = [
 
 local_cache_synset = CacheSynsetsBag()
 document_sentences = sentences_mocked
-'''
 filename = "brexit"  # "cambridge_analytica"
 with open(filename + ".txt") as file_in:
     # noinspection PyRedeclaration
@@ -38,6 +37,7 @@ with open(filename + ".txt") as file_in:
         line_stripped = line.strip()
         if len(line_stripped) > 0:
             document_sentences.append(line_stripped)
+'''
 '''
 print("start analysys with " + str(len(document_sentences)) + " sentences")
 ds = DocumentSegmentator(document_sentences, cache_synset_and_bag=local_cache_synset)

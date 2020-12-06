@@ -1,7 +1,5 @@
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-import collections
 import re
 import spacy
 from typing import Dict
@@ -45,6 +43,13 @@ def compute_sim(sent1, sent2, usingOverlapSimilarity=True):
 
 
 def weighted_similarity(weighted_bag_1: Dict[str, int], weighted_bag_2: Dict[str, int]) -> int:
+    """
+    Compute the weighted overlap (but not normalized over the cardinality of the fewer set [map/Dict])
+    using the weights held in the given dictionaries (parameters)
+    :param weighted_bag_1:
+    :param weighted_bag_2:
+    :return:
+    """
     len_b1 = len(weighted_bag_1)
     len_b2 = len(weighted_bag_2)
     if len_b1 == 0 or len_b2 == 0:
@@ -96,7 +101,7 @@ def filter_and_lemmatize_words_in(text):
 
 
 def preprocessing(text):
-    # return filter_and_lemmatize_words_in(text)
+    # return filter_and_lemmatize_words_in(text) #old version
     tokens = nlp(text)
     res = set()
     for t in tokens:
