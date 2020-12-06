@@ -119,7 +119,7 @@ def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cache
         current_synsets = cache_synset_and_bag.get_synsets(current_word)
         for curr_synset in current_synsets:
             # iniziamo la ricerca del migliore
-            if curr_synset.name() not in words_seen:
+            if curr_synset.name() not in words_seen: # SVILUPPI FUTURI: escludere i non-nomi (es: "point.v.XY" non va bene, "point.v.WZ" si)
                 curr_bag = get_weighted_def(curr_synset.name())
                 if curr_bag is not None:
                     curr_simil = functions.weighted_similarity(genus_fat, curr_bag)
