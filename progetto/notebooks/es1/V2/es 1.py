@@ -27,7 +27,7 @@ print("start of all\n\n\n-----\n\n")
 
 
 def read_load_csv():
-    with open('definitions.csv', 'r') as csv_file:
+    with open('../Input/definitions.csv', 'r') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=';')
         cols = [[], [], [], []]
         can_use = False  # la prima riga deve essere salata

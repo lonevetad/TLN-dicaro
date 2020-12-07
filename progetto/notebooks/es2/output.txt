@@ -30,7 +30,7 @@ elaborating the column: 0
 -	 idea of fair application of laws
 -	 recognition and respect of people rights
 with bag of words:
-	 {'reasonable', 'fair', 'morally', 'moral', 'principle', 'concept', 'quality', 'point', 'based', 'law', 'shared', 'involved', 'court', 'rule', 'usually', 'abstract', 'idea', 'front', 'administrated', 'public', 'refers', 'application', 'right', 'agree', 'equality', 'code', 'people', 'respect', 'part', 'compliance', 'condition', 'allows', 'community', 'recognition', 'legal', 'correct', 'fairness', 'view', 'entity', 'determining'}
+	 {'allows', 'abstract', 'principle', 'usually', 'compliance', 'quality', 'application', 'concept', 'part', 'administrated', 'front', 'public', 'point', 'reasonable', 'shared', 'agree', 'law', 'recognition', 'entity', 'fairness', 'community', 'people', 'refers', 'equality', 'determining', 'based', 'morally', 'condition', 'court', 'fair', 'legal', 'respect', 'moral', 'idea', 'correct', 'view', 'right', 'code', 'involved', 'rule'}
 
 found:  Synset('principle.n.01') , with similarity of: 24
 
@@ -50,9 +50,9 @@ elaborating the column: 1
 -	 propension to have low reactivity to events
 -	 ability to wait or to continue doing something despite difficulties
 with bag of words:
-	 {'stress', 'time', 'capacity', 'inclined', 'delay', 'event', 'quality', 'behavior', 'period', 'something', 'wait', 'quiet', 'annoyed', 'becoming', 'suppress', 'problem', 'able', 'ability', 'suffering', 'fact', 'tolerant', 'opposed', 'anger', 'everything', 'anxious', 'situation', 'calm', 'people', 'difficulty', 'unpleasant', 'continue', 'feeling', 'hard', 'tranquility', 'tolerate', 'without', 'despite', 'accept', 'propension', 'low', 'long', 'reactivity', 'bear', 'mantain', 'angriness', 'make'}
+	 {'behavior', 'despite', 'calm', 'time', 'feeling', 'situation', 'suppress', 'low', 'capacity', 'something', 'quality', 'anger', 'opposed', 'period', 'wait', 'stress', 'continue', 'able', 'bear', 'problem', 'ability', 'inclined', 'make', 'reactivity', 'angriness', 'annoyed', 'suffering', 'anxious', 'event', 'mantain', 'people', 'accept', 'tolerate', 'fact', 'difficulty', 'delay', 'unpleasant', 'long', 'without', 'becoming', 'tranquility', 'tolerant', 'quiet', 'propension', 'hard', 'everything'}
 
-found:  Synset('have.v.17') , with similarity of: 29
+found:  Synset('time.n.01') , with similarity of: 28
 
 
 
@@ -70,9 +70,9 @@ elaborating the column: 2
 -	 obsession of needing to increase one's possession
 -	 very strong wish to continuously get more of something
 with bag of words:
-	 {'gain', 'wealth', 'impossibility', 'tends', 'generous', 'continuously', 'others', 'quality', 'something', 'behavior', 'spend', 'one', 'attachment', 'towards', 'attached', 'anything', 'sharing', 'person', 'anyone', 'non', 'object', 'needing', 'typical', 'increase', 'obsession', 'share', 'needed', 'useful', 'intense', 'excessive', 'accumulate', 'posse', 'insatiable', 'possession', 'strong', 'thing', 'wish', 'want', 'desire', 'get', 'generosity', 'attitude', 'acquire', 'money'}
+	 {'person', 'desire', 'behavior', 'share', 'typical', 'increase', 'accumulate', 'continuously', 'money', 'one', 'intense', 'wealth', 'get', 'generosity', 'something', 'quality', 'strong', 'possession', 'tends', 'useful', 'thing', 'spend', 'anything', 'others', 'attitude', 'object', 'non', 'needed', 'want', 'attachment', 'obsession', 'insatiable', 'excessive', 'impossibility', 'needing', 'acquire', 'gain', 'posse', 'wish', 'generous', 'towards', 'attached', 'anyone', 'sharing'}
 
-found:  Synset('want.v.02') , with similarity of: 26
+found:  Synset('quality.n.01') , with similarity of: 21
 
 
 
@@ -90,7 +90,7 @@ elaborating the column: 3
 -	 sience of ensuring cohesion of a population
 -	 activities of the government or people who try to influence the way a country is governed
 with bag of words:
-	 {'way', 'influence', 'regulates', 'amministrate', 'common', 'principle', 'set', 'concept', 'governing', 'according', 'associated', 'organization', 'based', 'aimed', 'debate', 'governance', 'able', 'rule', 'science', 'country', 'especially', 'abstract', 'idea', 'good', 'state', 'voter', 'power', 'inside', 'population', 'sience', 'context', 'government', 'people', 'try', 'social', 'objective', 'affair', 'covernance', 'community', 'territorial', 'reach', 'activity', 'political', 'area', 'particular', 'andor', 'art', 'discipline', 'entity', 'cohesion', 'governed', 'guide', 'ensuring', 'party'}
+	 {'inside', 'according', 'voter', 'abstract', 'principle', 'sience', 'government', 'aimed', 'country', 'andor', 'governing', 'concept', 'way', 'common', 'debate', 'cohesion', 'social', 'discipline', 'power', 'able', 'especially', 'amministrate', 'activity', 'population', 'try', 'governance', 'guide', 'territorial', 'set', 'good', 'entity', 'governed', 'state', 'covernance', 'community', 'political', 'science', 'people', 'objective', 'associated', 'based', 'context', 'organization', 'regulates', 'influence', 'affair', 'ensuring', 'party', 'idea', 'area', 'particular', 'art', 'reach', 'rule'}
 
 found:  Synset('state.n.04') , with similarity of: 33
 
@@ -110,9 +110,9 @@ elaborating the column: 4
 -	 item that a living organism can transform into energy to perform its vital functions
 -	 something that people and animals eat or plants absorb to keep them alive
 with bag of words:
-	 {'process', 'human', 'used', 'something', 'one', 'edible', 'living', 'absorb', 'drink', 'sustain', 'energy', 'object', 'sostance', 'alive', 'needed', 'order', 'vital', 'eat', 'dying', 'eaten', 'maintain', 'people', 'animal', 'transform', 'thing', 'growth', 'perform', 'feed', 'substance', 'maintaining', 'subtance', 'item', 'plant', 'material', 'function', 'without', 'nutritious', 'keep', 'life', 'organism'}
+	 {'perform', 'process', 'eaten', 'vital', 'one', 'eat', 'energy', 'maintaining', 'something', 'growth', 'living', 'material', 'sustain', 'function', 'thing', 'sostance', 'keep', 'maintain', 'subtance', 'plant', 'object', 'item', 'transform', 'substance', 'needed', 'life', 'people', 'order', 'human', 'used', 'feed', 'alive', 'without', 'organism', 'edible', 'nutritious', 'dying', 'drink', 'animal', 'absorb'}
 
-found:  Synset('use.v.01') , with similarity of: 29
+found:  Synset('thing.n.01') , with similarity of: 26
 
 
 
@@ -130,7 +130,7 @@ elaborating the column: 5
 -	 item of furniture to increase the temperature of a room
 -	 container filled with water, that sends out heat, often as part of heating system
 with bag of words:
-	 {'emanates', 'metal', 'issue', 'gas', 'water', 'hot', 'comoponent', 'filled', 'container', 'used', 'something', 'system', 'whihch', 'especially', 'often', 'familiar', 'usually', 'object', 'furniture', 'produce', 'increase', 'supplied', 'air', 'warm', 'raise', 'temperature', 'ambient', 'warmth', 'emits', 'part', 'thing', 'place', 'provide', 'building', 'equipment', 'item', 'home', 'heat', 'device', 'diffusion', 'sends', 'contains', 'radiated', 'room', 'heating'}
+	 {'warmth', 'temperature', 'raise', 'building', 'gas', 'increase', 'heat', 'furniture', 'room', 'usually', 'device', 'metal', 'diffusion', 'something', 'issue', 'comoponent', 'part', 'system', 'produce', 'supplied', 'sends', 'especially', 'thing', 'equipment', 'emanates', 'place', 'hot', 'object', 'item', 'emits', 'provide', 'radiated', 'warm', 'container', 'heating', 'often', 'used', 'home', 'familiar', 'whihch', 'ambient', 'contains', 'water', 'filled', 'air'}
 
 found:  Synset('heat.n.03') , with similarity of: 29
 
@@ -150,7 +150,7 @@ elaborating the column: 6
 -	 moving object that facilitates transportation
 -	 machine usually with wheels and engine, used for transporting people or goods on land, especially on roads
 with bag of words:
-	 {'cart', 'way', 'transport', 'carry', 'stell', 'human', 'common', 'used', 'one', 'mean', 'point', 'land', 'move', 'able', 'especially', 'machine', 'usually', 'object', 'good', 'moving', 'artifact', 'rideable', 'another', 'people', 'space', 'four', 'similar', 'facilitates', 'part', 'thing', 'place', 'lorry', 'engine', 'structure', 'provides', 'wheel', 'transporting', 'car', 'road', 'create', 'transportation'}
+	 {'machine', 'four', 'cart', 'transporting', 'another', 'one', 'usually', 'engine', 'create', 'way', 'part', 'common', 'provides', 'move', 'point', 'able', 'especially', 'thing', 'transportation', 'place', 'facilitates', 'transport', 'object', 'moving', 'structure', 'carry', 'good', 'artifact', 'car', 'wheel', 'people', 'stell', 'road', 'similar', 'used', 'human', 'land', 'space', 'lorry', 'rideable', 'mean'}
 
 found:  Synset('place.n.02') , with similarity of: 29
 
@@ -170,9 +170,9 @@ elaborating the column: 7
 -	 long and thin pointy item piercing two objects to hold them together
 -	 thin, pointed piece of metal with a raised edge twisting round along its length and a flat top with a cut in it, used to join things together
 with bag of words:
-	 {'metal', 'twisting', 'sharppointed', 'structural', 'piece', 'used', 'running', 'componible', 'together', 'wall', 'edge', 'top', 'pointy', 'connect', 'component', 'rotated', 'thin', 'support', 'surface', 'pierce', 'piercing', 'around', 'raised', 'object', 'artificial', 'join', 'produce', 'hold', 'inserted', 'look', 'artifact', 'put', 'needed', 'useful', 'spiral', 'helical', 'tightly', 'pointed', 'threaded', 'head', 'flat', 'part', 'thing', 'slotted', 'place', 'cut', 'example', 'short', 'fix', 'along', 'item', 'element', 'held', 'slender', 'wood', 'material', 'length', 'shape', 'pin', 'round', 'long', 'painting', 'little', 'thread', 'two'}
+	 {'together', 'put', 'along', 'shape', 'thin', 'held', 'slender', 'example', 'fix', 'length', 'piece', 'componible', 'metal', 'part', 'painting', 'produce', 'element', 'top', 'component', 'material', 'twisting', 'useful', 'around', 'slotted', 'thing', 'pierce', 'tightly', 'place', 'support', 'object', 'item', 'flat', 'pointed', 'short', 'needed', 'artifact', 'threaded', 'piercing', 'cut', 'spiral', 'artificial', 'pointy', 'thread', 'helical', 'surface', 'head', 'raised', 'sharppointed', 'running', 'wall', 'used', 'little', 'hold', 'connect', 'long', 'look', 'edge', 'two', 'wood', 'pin', 'join', 'structural', 'inserted', 'round', 'rotated'}
 
-found:  Synset('point.v.07') , with similarity of: 37
+found:  Synset('point.n.20') , with similarity of: 37
 
 
 
@@ -190,7 +190,7 @@ elaborating the column: 8
 -	 
 -	 
 with bag of words:
-	 {'gain', 'reasonable', 'fair', 'cart', 'wealth', 'metal', 'sharppointed', 'capacity', 'delay', 'used', 'quality', 'running', 'associated', 'together', 'annoyed', 'becoming', 'rotated', 'debate', 'governance', 'problem', 'land', 'country', 'especially', 'drink', 'absorb', 'pierce', 'around', 'good', 'raised', 'join', 'suffering', 'power', 'order', 'eat', 'helical', 'tightly', 'excessive', 'anxious', 'head', 'insatiable', 'maintain', 'people', 'animal', 'slotted', 'growth', 'provide', 'thing', 'lorry', 'place', 'short', 'substance', 'desire', 'building', 'equipment', 'held', 'plant', 'activity', 'slender', 'wood', 'material', 'area', 'heat', 'device', 'tolerate', 'without', 'nutritious', 'accept', 'transporting', 'pin', 'car', 'life', 'thread', 'party'}
+	 {'desire', 'together', 'building', 'cart', 'transporting', 'heat', 'held', 'slender', 'device', 'eat', 'capacity', 'wealth', 'country', 'metal', 'growth', 'quality', 'debate', 'material', 'power', 'around', 'slotted', 'especially', 'reasonable', 'problem', 'thing', 'pierce', 'equipment', 'tightly', 'place', 'maintain', 'activity', 'plant', 'rotated', 'provide', 'governance', 'substance', 'short', 'good', 'annoyed', 'car', 'suffering', 'anxious', 'thread', 'life', 'helical', 'people', 'head', 'sharppointed', 'raised', 'accept', 'insatiable', 'tolerate', 'order', 'excessive', 'delay', 'associated', 'used', 'fair', 'gain', 'running', 'without', 'becoming', 'land', 'party', 'wood', 'lorry', 'pin', 'area', 'join', 'nutritious', 'drink', 'animal', 'absorb'}
 
 found:  Synset('state.n.04') , with similarity of: 41
 
@@ -210,9 +210,9 @@ elaborating the column: 9
 -	 
 -	 
 with bag of words:
-	 {'impossibility', 'gas', 'generous', 'amministrate', 'water', 'stell', 'others', 'hot', 'comoponent', 'human', 'structural', 'used', 'one', 'organization', 'towards', 'point', 'aimed', 'whihch', 'living', 'move', 'sostance', 'state', 'ability', 'supplied', 'needed', 'warm', 'agree', 'everything', 'another', 'calm', 'ambient', 'four', 'part', 'structure', 'feed', 'fix', 'element', 'wheel', 'view', 'two', 'make'}
+	 {'four', 'calm', 'gas', 'another', 'one', 'fix', 'aimed', 'comoponent', 'part', 'living', 'element', 'move', 'supplied', 'point', 'sostance', 'ability', 'agree', 'amministrate', 'others', 'hot', 'make', 'structure', 'warm', 'needed', 'wheel', 'state', 'stell', 'impossibility', 'feed', 'used', 'human', 'structural', 'organization', 'two', 'view', 'whihch', 'generous', 'ambient', 'towards', 'water', 'everything'}
 
-found:  Synset('take.v.27') , with similarity of: 23
+found:  Synset('state.n.01') , with similarity of: 20
 
 
 
@@ -230,9 +230,9 @@ elaborating the column: 10
 -	 
 -	 
 with bag of words:
-	 {'fair', 'two', 'event', 'one', 'together', 'pointy', 'law', 'living', 'thin', 'energy', 'piercing', 'application', 'idea', 'needing', 'furniture', 'moving', 'increase', 'obsession', 'object', 'hold', 'sience', 'population', 'vital', 'temperature', 'possession', 'transform', 'facilitates', 'perform', 'item', 'function', 'low', 'reactivity', 'long', 'cohesion', 'propension', 'organism', 'room', 'ensuring', 'transportation'}
+	 {'perform', 'temperature', 'together', 'increase', 'vital', 'furniture', 'thin', 'one', 'room', 'sience', 'low', 'energy', 'application', 'living', 'cohesion', 'possession', 'function', 'transportation', 'facilitates', 'population', 'item', 'object', 'law', 'reactivity', 'moving', 'piercing', 'event', 'pointy', 'obsession', 'needing', 'hold', 'fair', 'long', 'organism', 'ensuring', 'two', 'idea', 'propension', 'transform'}
 
-found:  Synset('act.v.01') , with similarity of: 27
+found:  Synset('long.a.01') , with similarity of: 15
 
 
 
@@ -250,7 +250,7 @@ elaborating the column: 11
 -	 
 -	 
 with bag of words:
-	 {'metal', 'way', 'influence', 'twisting', 'water', 'continuously', 'piece', 'filled', 'container', 'used', 'something', 'edge', 'top', 'together', 'wait', 'system', 'thin', 'land', 'country', 'absorb', 'often', 'especially', 'usually', 'raised', 'good', 'alive', 'join', 'ability', 'right', 'pointed', 'eat', 'government', 'people', 'respect', 'animal', 'strong', 'machine', 'part', 'thing', 'difficulty', 'wish', 'engine', 'cut', 'continue', 'along', 'plant', 'activity', 'recognition', 'get', 'heat', 'length', 'wheel', 'despite', 'transporting', 'round', 'keep', 'sends', 'governed', 'road', 'flat', 'try', 'heating'}
+	 {'machine', 'together', 'along', 'despite', 'transporting', 'heat', 'thin', 'continuously', 'usually', 'eat', 'government', 'length', 'piece', 'country', 'metal', 'get', 'something', 'filled', 'strong', 'engine', 'way', 'part', 'system', 'top', 'twisting', 'wait', 'sends', 'continue', 'keep', 'especially', 'ability', 'thing', 'try', 'activity', 'plant', 'flat', 'recognition', 'good', 'cut', 'round', 'governed', 'wheel', 'people', 'container', 'raised', 'heating', 'difficulty', 'road', 'often', 'used', 'alive', 'influence', 'land', 'respect', 'edge', 'wish', 'right', 'join', 'water', 'pointed', 'animal', 'absorb'}
 
 found:  Synset('state.n.04') , with similarity of: 33
 --------------------------------
@@ -281,7 +281,7 @@ elaborating the column: 0
 -	 idea of fair application of laws
 -	 recognition and respect of people rights
 with bag of words:
-	 {'reasonable', 'fair', 'morally', 'moral', 'principle', 'concept', 'quality', 'point', 'based', 'law', 'shared', 'involved', 'court', 'rule', 'usually', 'abstract', 'idea', 'front', 'administrated', 'public', 'refers', 'application', 'right', 'agree', 'equality', 'code', 'people', 'respect', 'part', 'compliance', 'condition', 'allows', 'community', 'recognition', 'legal', 'correct', 'fairness', 'view', 'entity', 'determining'}
+	 {'allows', 'abstract', 'principle', 'usually', 'compliance', 'quality', 'application', 'concept', 'part', 'administrated', 'front', 'public', 'point', 'reasonable', 'shared', 'agree', 'law', 'recognition', 'entity', 'fairness', 'community', 'people', 'refers', 'equality', 'determining', 'based', 'morally', 'condition', 'court', 'fair', 'legal', 'respect', 'moral', 'idea', 'correct', 'view', 'right', 'code', 'involved', 'rule'}
 
 found:  Synset('principle.n.01') , with similarity of: 24
 
@@ -301,9 +301,9 @@ elaborating the column: 1
 -	 propension to have low reactivity to events
 -	 ability to wait or to continue doing something despite difficulties
 with bag of words:
-	 {'stress', 'time', 'capacity', 'inclined', 'delay', 'event', 'quality', 'behavior', 'period', 'something', 'wait', 'quiet', 'annoyed', 'becoming', 'suppress', 'problem', 'able', 'ability', 'suffering', 'fact', 'tolerant', 'opposed', 'anger', 'everything', 'anxious', 'situation', 'calm', 'people', 'difficulty', 'unpleasant', 'continue', 'feeling', 'hard', 'tranquility', 'tolerate', 'without', 'despite', 'accept', 'propension', 'low', 'long', 'reactivity', 'bear', 'mantain', 'angriness', 'make'}
+	 {'behavior', 'despite', 'calm', 'time', 'feeling', 'situation', 'suppress', 'low', 'capacity', 'something', 'quality', 'anger', 'opposed', 'period', 'wait', 'stress', 'continue', 'able', 'bear', 'problem', 'ability', 'inclined', 'make', 'reactivity', 'angriness', 'annoyed', 'suffering', 'anxious', 'event', 'mantain', 'people', 'accept', 'tolerate', 'fact', 'difficulty', 'delay', 'unpleasant', 'long', 'without', 'becoming', 'tranquility', 'tolerant', 'quiet', 'propension', 'hard', 'everything'}
 
-found:  Synset('have.v.17') , with similarity of: 29
+found:  Synset('time.n.01') , with similarity of: 28
 
 
 
@@ -321,9 +321,9 @@ elaborating the column: 2
 -	 obsession of needing to increase one's possession
 -	 very strong wish to continuously get more of something
 with bag of words:
-	 {'gain', 'wealth', 'impossibility', 'tends', 'generous', 'continuously', 'others', 'quality', 'something', 'behavior', 'spend', 'one', 'attachment', 'towards', 'attached', 'anything', 'sharing', 'person', 'anyone', 'non', 'object', 'needing', 'typical', 'increase', 'obsession', 'share', 'needed', 'useful', 'intense', 'excessive', 'accumulate', 'posse', 'insatiable', 'possession', 'strong', 'thing', 'wish', 'want', 'desire', 'get', 'generosity', 'attitude', 'acquire', 'money'}
+	 {'person', 'desire', 'behavior', 'share', 'typical', 'increase', 'accumulate', 'continuously', 'money', 'one', 'intense', 'wealth', 'get', 'generosity', 'something', 'quality', 'strong', 'possession', 'tends', 'useful', 'thing', 'spend', 'anything', 'others', 'attitude', 'object', 'non', 'needed', 'want', 'attachment', 'obsession', 'insatiable', 'excessive', 'impossibility', 'needing', 'acquire', 'gain', 'posse', 'wish', 'generous', 'towards', 'attached', 'anyone', 'sharing'}
 
-found:  Synset('want.v.02') , with similarity of: 26
+found:  Synset('quality.n.01') , with similarity of: 21
 
 
 
@@ -341,7 +341,7 @@ elaborating the column: 3
 -	 sience of ensuring cohesion of a population
 -	 activities of the government or people who try to influence the way a country is governed
 with bag of words:
-	 {'way', 'influence', 'regulates', 'amministrate', 'common', 'principle', 'set', 'concept', 'governing', 'according', 'associated', 'organization', 'based', 'aimed', 'debate', 'governance', 'able', 'rule', 'science', 'country', 'especially', 'abstract', 'idea', 'good', 'state', 'voter', 'power', 'inside', 'population', 'sience', 'context', 'government', 'people', 'try', 'social', 'objective', 'affair', 'covernance', 'community', 'territorial', 'reach', 'activity', 'political', 'area', 'particular', 'andor', 'art', 'discipline', 'entity', 'cohesion', 'governed', 'guide', 'ensuring', 'party'}
+	 {'inside', 'according', 'voter', 'abstract', 'principle', 'sience', 'government', 'aimed', 'country', 'andor', 'governing', 'concept', 'way', 'common', 'debate', 'cohesion', 'social', 'discipline', 'power', 'able', 'especially', 'amministrate', 'activity', 'population', 'try', 'governance', 'guide', 'territorial', 'set', 'good', 'entity', 'governed', 'state', 'covernance', 'community', 'political', 'science', 'people', 'objective', 'associated', 'based', 'context', 'organization', 'regulates', 'influence', 'affair', 'ensuring', 'party', 'idea', 'area', 'particular', 'art', 'reach', 'rule'}
 
 found:  Synset('state.n.04') , with similarity of: 33
 
@@ -361,9 +361,9 @@ elaborating the column: 4
 -	 item that a living organism can transform into energy to perform its vital functions
 -	 something that people and animals eat or plants absorb to keep them alive
 with bag of words:
-	 {'process', 'human', 'used', 'something', 'one', 'edible', 'living', 'absorb', 'drink', 'sustain', 'energy', 'object', 'sostance', 'alive', 'needed', 'order', 'vital', 'eat', 'dying', 'eaten', 'maintain', 'people', 'animal', 'transform', 'thing', 'growth', 'perform', 'feed', 'substance', 'maintaining', 'subtance', 'item', 'plant', 'material', 'function', 'without', 'nutritious', 'keep', 'life', 'organism'}
+	 {'perform', 'process', 'eaten', 'vital', 'one', 'eat', 'energy', 'maintaining', 'something', 'growth', 'living', 'material', 'sustain', 'function', 'thing', 'sostance', 'keep', 'maintain', 'subtance', 'plant', 'object', 'item', 'transform', 'substance', 'needed', 'life', 'people', 'order', 'human', 'used', 'feed', 'alive', 'without', 'organism', 'edible', 'nutritious', 'dying', 'drink', 'animal', 'absorb'}
 
-found:  Synset('use.v.01') , with similarity of: 29
+found:  Synset('thing.n.01') , with similarity of: 26
 
 
 
@@ -381,7 +381,7 @@ elaborating the column: 5
 -	 item of furniture to increase the temperature of a room
 -	 container filled with water, that sends out heat, often as part of heating system
 with bag of words:
-	 {'emanates', 'metal', 'issue', 'gas', 'water', 'hot', 'comoponent', 'filled', 'container', 'used', 'something', 'system', 'whihch', 'especially', 'often', 'familiar', 'usually', 'object', 'furniture', 'produce', 'increase', 'supplied', 'air', 'warm', 'raise', 'temperature', 'ambient', 'warmth', 'emits', 'part', 'thing', 'place', 'provide', 'building', 'equipment', 'item', 'home', 'heat', 'device', 'diffusion', 'sends', 'contains', 'radiated', 'room', 'heating'}
+	 {'warmth', 'temperature', 'raise', 'building', 'gas', 'increase', 'heat', 'furniture', 'room', 'usually', 'device', 'metal', 'diffusion', 'something', 'issue', 'comoponent', 'part', 'system', 'produce', 'supplied', 'sends', 'especially', 'thing', 'equipment', 'emanates', 'place', 'hot', 'object', 'item', 'emits', 'provide', 'radiated', 'warm', 'container', 'heating', 'often', 'used', 'home', 'familiar', 'whihch', 'ambient', 'contains', 'water', 'filled', 'air'}
 
 found:  Synset('heat.n.03') , with similarity of: 29
 
@@ -401,7 +401,7 @@ elaborating the column: 6
 -	 moving object that facilitates transportation
 -	 machine usually with wheels and engine, used for transporting people or goods on land, especially on roads
 with bag of words:
-	 {'cart', 'way', 'transport', 'carry', 'stell', 'human', 'common', 'used', 'one', 'mean', 'point', 'land', 'move', 'able', 'especially', 'machine', 'usually', 'object', 'good', 'moving', 'artifact', 'rideable', 'another', 'people', 'space', 'four', 'similar', 'facilitates', 'part', 'thing', 'place', 'lorry', 'engine', 'structure', 'provides', 'wheel', 'transporting', 'car', 'road', 'create', 'transportation'}
+	 {'machine', 'four', 'cart', 'transporting', 'another', 'one', 'usually', 'engine', 'create', 'way', 'part', 'common', 'provides', 'move', 'point', 'able', 'especially', 'thing', 'transportation', 'place', 'facilitates', 'transport', 'object', 'moving', 'structure', 'carry', 'good', 'artifact', 'car', 'wheel', 'people', 'stell', 'road', 'similar', 'used', 'human', 'land', 'space', 'lorry', 'rideable', 'mean'}
 
 found:  Synset('place.n.02') , with similarity of: 29
 
@@ -421,9 +421,9 @@ elaborating the column: 7
 -	 long and thin pointy item piercing two objects to hold them together
 -	 thin, pointed piece of metal with a raised edge twisting round along its length and a flat top with a cut in it, used to join things together
 with bag of words:
-	 {'metal', 'twisting', 'sharppointed', 'structural', 'piece', 'used', 'running', 'componible', 'together', 'wall', 'edge', 'top', 'pointy', 'connect', 'component', 'rotated', 'thin', 'support', 'surface', 'pierce', 'piercing', 'around', 'raised', 'object', 'artificial', 'join', 'produce', 'hold', 'inserted', 'look', 'artifact', 'put', 'needed', 'useful', 'spiral', 'helical', 'tightly', 'pointed', 'threaded', 'head', 'flat', 'part', 'thing', 'slotted', 'place', 'cut', 'example', 'short', 'fix', 'along', 'item', 'element', 'held', 'slender', 'wood', 'material', 'length', 'shape', 'pin', 'round', 'long', 'painting', 'little', 'thread', 'two'}
+	 {'together', 'put', 'along', 'shape', 'thin', 'held', 'slender', 'example', 'fix', 'length', 'piece', 'componible', 'metal', 'part', 'painting', 'produce', 'element', 'top', 'component', 'material', 'twisting', 'useful', 'around', 'slotted', 'thing', 'pierce', 'tightly', 'place', 'support', 'object', 'item', 'flat', 'pointed', 'short', 'needed', 'artifact', 'threaded', 'piercing', 'cut', 'spiral', 'artificial', 'pointy', 'thread', 'helical', 'surface', 'head', 'raised', 'sharppointed', 'running', 'wall', 'used', 'little', 'hold', 'connect', 'long', 'look', 'edge', 'two', 'wood', 'pin', 'join', 'structural', 'inserted', 'round', 'rotated'}
 
-found:  Synset('point.v.07') , with similarity of: 37
+found:  Synset('point.n.20') , with similarity of: 37
 
 
 
@@ -441,7 +441,7 @@ elaborating the column: 8
 -	 
 -	 
 with bag of words:
-	 {'gain', 'reasonable', 'fair', 'cart', 'wealth', 'metal', 'sharppointed', 'capacity', 'delay', 'used', 'quality', 'running', 'associated', 'together', 'annoyed', 'becoming', 'rotated', 'debate', 'governance', 'problem', 'land', 'country', 'especially', 'drink', 'absorb', 'pierce', 'around', 'good', 'raised', 'join', 'suffering', 'power', 'order', 'eat', 'helical', 'tightly', 'excessive', 'anxious', 'head', 'insatiable', 'maintain', 'people', 'animal', 'slotted', 'growth', 'provide', 'thing', 'lorry', 'place', 'short', 'substance', 'desire', 'building', 'equipment', 'held', 'plant', 'activity', 'slender', 'wood', 'material', 'area', 'heat', 'device', 'tolerate', 'without', 'nutritious', 'accept', 'transporting', 'pin', 'car', 'life', 'thread', 'party'}
+	 {'desire', 'together', 'building', 'cart', 'transporting', 'heat', 'held', 'slender', 'device', 'eat', 'capacity', 'wealth', 'country', 'metal', 'growth', 'quality', 'debate', 'material', 'power', 'around', 'slotted', 'especially', 'reasonable', 'problem', 'thing', 'pierce', 'equipment', 'tightly', 'place', 'maintain', 'activity', 'plant', 'rotated', 'provide', 'governance', 'substance', 'short', 'good', 'annoyed', 'car', 'suffering', 'anxious', 'thread', 'life', 'helical', 'people', 'head', 'sharppointed', 'raised', 'accept', 'insatiable', 'tolerate', 'order', 'excessive', 'delay', 'associated', 'used', 'fair', 'gain', 'running', 'without', 'becoming', 'land', 'party', 'wood', 'lorry', 'pin', 'area', 'join', 'nutritious', 'drink', 'animal', 'absorb'}
 
 found:  Synset('state.n.04') , with similarity of: 41
 
@@ -461,9 +461,9 @@ elaborating the column: 9
 -	 
 -	 
 with bag of words:
-	 {'impossibility', 'gas', 'generous', 'amministrate', 'water', 'stell', 'others', 'hot', 'comoponent', 'human', 'structural', 'used', 'one', 'organization', 'towards', 'point', 'aimed', 'whihch', 'living', 'move', 'sostance', 'state', 'ability', 'supplied', 'needed', 'warm', 'agree', 'everything', 'another', 'calm', 'ambient', 'four', 'part', 'structure', 'feed', 'fix', 'element', 'wheel', 'view', 'two', 'make'}
+	 {'four', 'calm', 'gas', 'another', 'one', 'fix', 'aimed', 'comoponent', 'part', 'living', 'element', 'move', 'supplied', 'point', 'sostance', 'ability', 'agree', 'amministrate', 'others', 'hot', 'make', 'structure', 'warm', 'needed', 'wheel', 'state', 'stell', 'impossibility', 'feed', 'used', 'human', 'structural', 'organization', 'two', 'view', 'whihch', 'generous', 'ambient', 'towards', 'water', 'everything'}
 
-found:  Synset('take.v.27') , with similarity of: 23
+found:  Synset('state.n.01') , with similarity of: 20
 
 
 
@@ -481,9 +481,9 @@ elaborating the column: 10
 -	 
 -	 
 with bag of words:
-	 {'fair', 'two', 'event', 'one', 'together', 'pointy', 'law', 'living', 'thin', 'energy', 'piercing', 'application', 'idea', 'needing', 'furniture', 'moving', 'increase', 'obsession', 'object', 'hold', 'sience', 'population', 'vital', 'temperature', 'possession', 'transform', 'facilitates', 'perform', 'item', 'function', 'low', 'reactivity', 'long', 'cohesion', 'propension', 'organism', 'room', 'ensuring', 'transportation'}
+	 {'perform', 'temperature', 'together', 'increase', 'vital', 'furniture', 'thin', 'one', 'room', 'sience', 'low', 'energy', 'application', 'living', 'cohesion', 'possession', 'function', 'transportation', 'facilitates', 'population', 'item', 'object', 'law', 'reactivity', 'moving', 'piercing', 'event', 'pointy', 'obsession', 'needing', 'hold', 'fair', 'long', 'organism', 'ensuring', 'two', 'idea', 'propension', 'transform'}
 
-found:  Synset('act.v.01') , with similarity of: 27
+found:  Synset('long.a.01') , with similarity of: 15
 
 
 
@@ -501,7 +501,7 @@ elaborating the column: 11
 -	 
 -	 
 with bag of words:
-	 {'metal', 'way', 'influence', 'twisting', 'water', 'continuously', 'piece', 'filled', 'container', 'used', 'something', 'edge', 'top', 'together', 'wait', 'system', 'thin', 'land', 'country', 'absorb', 'often', 'especially', 'usually', 'raised', 'good', 'alive', 'join', 'ability', 'right', 'pointed', 'eat', 'government', 'people', 'respect', 'animal', 'strong', 'machine', 'part', 'thing', 'difficulty', 'wish', 'engine', 'cut', 'continue', 'along', 'plant', 'activity', 'recognition', 'get', 'heat', 'length', 'wheel', 'despite', 'transporting', 'round', 'keep', 'sends', 'governed', 'road', 'flat', 'try', 'heating'}
+	 {'machine', 'together', 'along', 'despite', 'transporting', 'heat', 'thin', 'continuously', 'usually', 'eat', 'government', 'length', 'piece', 'country', 'metal', 'get', 'something', 'filled', 'strong', 'engine', 'way', 'part', 'system', 'top', 'twisting', 'wait', 'sends', 'continue', 'keep', 'especially', 'ability', 'thing', 'try', 'activity', 'plant', 'flat', 'recognition', 'good', 'cut', 'round', 'governed', 'wheel', 'people', 'container', 'raised', 'heating', 'difficulty', 'road', 'often', 'used', 'alive', 'influence', 'land', 'respect', 'edge', 'wish', 'right', 'join', 'water', 'pointed', 'animal', 'absorb'}
 
 found:  Synset('state.n.04') , with similarity of: 33
 

@@ -72,8 +72,6 @@ class CachePairwiseSentenceSimilarity:
             return sim
 
 
-
-
 #
 #
 # start Paragraph
@@ -298,8 +296,6 @@ class DocumentSegmentator(object):
         self.cache_bag_sentence_similarity = None
         self.words_weight = {}
 
-    # start document pre-processing
-
     def get_sentence_by_index(self, i):
         return self.list_of_sentences[i]
 
@@ -323,18 +319,6 @@ class DocumentSegmentator(object):
         self.map_sentence_to_bag[sentence] = h.filtered_words
         self.bag_from_sentence_list.append(h.filtered_words)
         return h.word_to_weight_mapping
-
-    #
-    #
-    # end pre-processing del documento
-    #
-    #
-
-    #
-    #
-    # start processing the whole document
-    #
-    #
 
     def weighted_intersection(self, word_weight_map, string_set1, string_set2):
         """
@@ -465,8 +449,14 @@ class DocumentSegmentator(object):
 
         # ora i backpointers possono essere trattati come "terminatori di paragrafo"
         # merge delle preferenze:
-        start = 0
-        end = 0
+
+        print("\npreferences:")
+        print(preferences)
+
+        def priParGraf():
+            for indd, parr in paragraphs_by_starting_index.items():
+                print("at ind:", indd, " -> par:", parr.toString())
+
         # V2
         # si procede a ritroso per semplicita
         end = sentences_amount - 1
@@ -479,20 +469,29 @@ class DocumentSegmentator(object):
             paragraphs_by_starting_index[start] = paragraphs_by_starting_index[start].merge_paragraph(par_end)
             paragraphs_by_starting_index.pop(end)
             start -= 1  # jump to the next (previous, tbh) sentence
-            pref = preferences[start]
-            if start < pref:
-                # sequence not ended: the current paragraph (end-1) could be merged into start
-                while 0 <= start < pref:
-                    paragraphs_by_starting_index[start] = paragraphs_by_starting_index[start].merge_paragraph(
-                        paragraphs_by_starting_index[pref])
-                    paragraphs_by_starting_index.pop(pref)
-                    start -= 1
-                    if 0 <= start:
-                        pref = preferences[start]
-                end = start
-            else:
-                # the paragraph has ended: start is pointing backward
-                end = start
+            if start >= 0:
+                try:
+                    pref = preferences[start]
+                except KeyError as ke:
+                    print("KEEEEEE")
+                    for ind, par in paragraphs_by_starting_index.items():
+                        print("at ind:", ind, " -> par:", par.toString())
+                    raise ke
+                if start < pref:
+                    # sequence not ended: the current paragraph (end-1) could be merged into start
+                    while 0 <= start < pref:
+                        paragraphs_by_starting_index[start] = paragraphs_by_starting_index[start].merge_paragraph(
+                            paragraphs_by_starting_index[pref])
+                        paragraphs_by_starting_index.pop(pref)
+                        start -= 1
+                        if 0 <= start:
+                            pref = preferences[start]
+                    end = start
+                else:
+                    # the paragraph has ended: start is pointing backward
+                    end = start
+            #priParGraf()
+        print("\n\nlinking ended")
 
         # WELL, INITIALIZATION HAS ENDED
         # now make the paragraphs-bubble boiling
@@ -513,29 +512,22 @@ class DocumentSegmentator(object):
                     prev_cohesion_current = par.get_cohesion()
                     prev_cohesion_prev = par.previous_paragraph.get_cohesion()
                     index_first = par.get_first_sentence_index()
-                    par.remove_sentence(index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
-                    par.previous_paragraph.add_sentence("will be ignored :D", index_first,
-                                                        is_start_of_paragraph=False)
-
-                    # __add_sentence_bag_to_counter_by_index__(index_first)
+                    par.remove_sentence(index_first)
+                    par.previous_paragraph.add_sentence("will be ignored :D", index_first, is_start_of_paragraph=False)
                     modified_cohesion_current = par.get_cohesion()
                     modified_cohesion_prev = par.previous_paragraph.get_cohesion()
                     sum_previous = prev_cohesion_current + prev_cohesion_prev
                     sum_modified = modified_cohesion_current + modified_cohesion_prev
                     # restore previous situation
-                    par.add_sentence("will be ignored :D",
-                                     index_first)  # __add_sentence_bag_to_counter_by_index__(index_first)
+                    par.add_sentence("will be ignored :D", index_first, is_start_of_paragraph=True)
                     par.score = prev_cohesion_current
-                    par.previous_paragraph.remove_sentence(
-                        index_first)  # __remove_sentence_bag_to_counter_by_index__(index_first)
+                    par.previous_paragraph.remove_sentence(index_first)
                     par.previous_paragraph.score = prev_cohesion_prev
                     # check modifications
                     if sum_previous < sum_modified:
                         paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_prev))
-                # print("\n\non going UP: ", len(paragraphs_to_be_processed), "paragraphs to process:")
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
-                    # print("processing -", par.toString())
                     par_index = par.lowest_index_sentence  # che sarebbe la sua "chiave"
                     par.previous_paragraph.add_sentence("will be ignored :D", par_index, is_start_of_paragraph=False)
                     par.remove_sentence(par_index)
@@ -584,29 +576,40 @@ class DocumentSegmentator(object):
                     if par.is_empty():
                         paragraphs_by_starting_index.pop(par.lowest_index_sentence)
 
+        print("\n\n\nAFTER MAIN ALGORITH, we have")
+        priParGraf()
+        print("###########################")
+
         # Union of smaller paragraph (those with 1 or 2 sentences)
         for par in [ppp for ind, ppp in paragraphs_by_starting_index.items() if ppp.size() <= 2]:
-            par_context = par.words_cooccurrence_counter_to_words_set()
-            prev_score = 0
-            if par.previous_paragraph is not None:
-                prev_score = self.weighted_overlap(self.words_weight, par_context,
-                                                   par.previous_paragraph.words_cooccurrence_counter_to_words_set())
-            next_score = 0
-            if par.next_paragraph is not None:
-                next_score = self.weighted_overlap(self.words_weight, par_context,
-                                                   par.next_paragraph.words_cooccurrence_counter_to_words_set())
-            if ((par.previous_paragraph is not None) and (prev_score >= next_score)) or (par.next_paragraph is None):
-                if par.next_paragraph is None:
-                    print("POSSIBLE BUG: the paragraph", par.toString(), "should not be merged into the previous [i.e.",
-                          par.previous_paragraph.toString(), "], but the next is None.")
-                    print("\nThe weighted overlap with previous paragraph is:", prev_score)
-                par.previous_paragraph.merge_paragraph(par)
-                del paragraphs_by_starting_index[par.get_first_sentence_index()]
-            else:
-                paragraphs_by_starting_index[par.lowest_index_sentence] = par
-                index_of_next = par.next_paragraph.lowest_index_sentence
-                par.merge_paragraph(par.next_paragraph)
-                del paragraphs_by_starting_index[index_of_next]
+            if not(par.previous_paragraph is None and par.next_paragraph is None):
+                par_context = par.words_cooccurrence_counter_to_words_set()
+                prev_score = 0
+                if par.previous_paragraph is not None:
+                    prev_score = self.weighted_overlap(self.words_weight, par_context,
+                                                       par.previous_paragraph.words_cooccurrence_counter_to_words_set())
+                next_score = 0
+                if par.next_paragraph is not None:
+                    next_score = self.weighted_overlap(self.words_weight, par_context,
+                                                       par.next_paragraph.words_cooccurrence_counter_to_words_set())
+                '''
+                if par.previous_paragraph is None and par.next_paragraph is None:
+                    priParGraf()
+                    print("____")
+                    raise ValueError("WHAT IS THAT PAR????: " + par.toString())
+                '''
+                if ((par.previous_paragraph is not None) and (prev_score >= next_score)) or (par.next_paragraph is None):
+                    if par.next_paragraph is None:
+                        print("POSSIBLE BUG: the paragraph", par.toString(), "should not be merged into the previous [i.e.",
+                              par.previous_paragraph.toString(), "], but the next is None.")
+                        print("\nThe weighted overlap with previous paragraph is:", prev_score)
+                    par.previous_paragraph.merge_paragraph(par)
+                    del paragraphs_by_starting_index[par.get_first_sentence_index()]
+                else:
+                    paragraphs_by_starting_index[par.lowest_index_sentence] = par
+                    index_of_next = par.next_paragraph.lowest_index_sentence
+                    par.merge_paragraph(par.next_paragraph)
+                    del paragraphs_by_starting_index[index_of_next]
 
             # END MAIN ALGORITHM - V2
 
@@ -643,7 +646,8 @@ class DocumentSegmentator(object):
 
         # now segment
         breakpoint_indexes = self.doc_tiling(desiredParagraphAmount)
-        print("list of breakpoints (the division will happen between the shown indexes and their respective successors):")
+        print(
+            "list of breakpoints (the division will happen between the shown indexes and their respective successors):")
         print(breakpoint_indexes)
         desiredParagraphAmount = len(breakpoint_indexes)  # forzo il fatto di mantenere i paragrafi
         i = 0
@@ -674,8 +678,6 @@ richiesti (ossia il parametro "desiredParagraphAmount") utilizzando tale valore
         split su quella frase (escludendola da ambo i paragrafi così prodotti)
         aggiunta di tale frase al paragrafo (tra i due) con cui ha maggiore weighted overlap
 '''
-
-
 
 '''
 Codice deprecato
