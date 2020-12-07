@@ -1,0 +1,34 @@
+start of all
+
+
+-----
+
+
+start
+filtering out:
+['ï»¿Definizione concreto_generico_building', ' Definizione concreto_specifico_molecule', ' Definizione astratto_generico_freedom', ' Definizione astratto_specifico_compassion']
+
+.............
+
+[['concrete structure typically made with cement ', 'structure that has walls  and roof', 'Human artifact dedicated to various purposes, including sheltering people from the outside world.', 'a construction where you can live inside', 'structure where people can stay', 'A construction made for living or decorative purposes', 'Architectural structure with one or more levels (floors) used to host people and/or objects. It can be made of various materials and have underground sections.', 'object built with material', 'An architectural structure', 'a structure consisting of walls and foundations, used for various purposes', 'a structure with walls and a roof', 'Architectural structure', 'structure, made of strong materials, with a roof, with (usually) multiple floors', 'structure that can be used in many different ways', 'A structure of walls, made by bricks', 'Palace', 'architectural structure made by human', 'Structure enclosed by walls, it typically has doors and windows', 'Physical structure with walls aimed to contains people'], ['A chemistry term that describes the smallest part of an obj', 'group of atoms', 'Chemical component formed by combinations of atoms', 'set of atoms, that is components of which everything is made', 'invisible thing , everything is made of it', 'a specific element that composes things', 'One of the smallest sub-structures of matter; it consists of atoms', 'invisible particle', 'Amount of substance', 'the smallest amount of matter', 'neutral group of two atoms', 'chemical entity', 'small part of matter', 'small chemical component', 'A chemical component', 'atom', 'basic chemical component of an element', 'Unit of chemical substances', 'A small unit in an atom'], ['unconditional choice', 'without constrains', 'The lack of physical or mental constraints.', 'live without constrains, a state of mind', 'conceptual idea where no one can limitate other people expression', 'possibility to make decisions', 'The ability of one to make free choices and act by following his;', 'autonomy to do something', 'a state of autonomy', 'possibility to move, think independently', 'The ability of make independent choices', 'right to think and act independently without repercussions', 'possibility to do anything', 'possibility to express ideas', 'possibility to choose and do whatever you want to do', 'autonomy', 'life condition in which there are no constraints of choice', 'Absence of limitations or constraints', 'Condition in which there arenâ€™t some type of restrictions'], ['comprehension', 'be sensitive and understandable towards a person', "The ability to experience other people's negative emotions.", 'sympathetic attitude', 'undterstand the suffering and feel sad for it', 'sad feeling towards someone', 'The ability of one to make free choices and act by following his/her own will and thoughts without external inhibitions.', 'understanding a bad situation', 'Understand the mood of others', 'understand a bad situation and take action to improve it', 'When you feel sad for someone of you forgive him for something.', "emphatic feeling, understand other people's emotion", "feeling and understanding someone else's emotions", "understand people's feeling", 'Fell sick for other person', 'Undestanding a difficult affaires', "\nunderstanding a person's mood", "Feeling empathy or pity towards someone's poor condition", 'Feels bad for other people that are suffering']]
+
+
+start tests:
+
+
+Usando un filtro più restrittivo (maggiore strettamente di 0.5) , abbiamo:
+concreto-generico  ->  11.695906432748538 %
+concreto-specifico  ->  7.60233918128655 %
+astratto-generico  ->  2.3391812865497075 %
+astratto-specifico  ->  1.7543859649122806 %
+
+
+Usando un filtro più morbido (maggiore o uguale a 0.5) , abbiamo:
+concreto-generico  ->  29.239766081871345 %
+concreto-specifico  ->  16.95906432748538 %
+astratto-generico  ->  8.771929824561404 %
+astratto-specifico  ->  4.093567251461988 %
+
+
+.................
+end

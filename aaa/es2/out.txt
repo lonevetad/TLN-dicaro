@@ -1,0 +1,670 @@
+Synset('entity.n.01')
+bags for entity:
+{'inferred', 'nonliving', 'existence', 'known', 'entity', 'distinct', 'perceived', 'living'}
+start :D
+
+
+
+
+
+
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+ testing similarity overlap
+
+
+
+ elaborating th given column:
+[
+	0 	 -> the concept of fairness, equality for all the parts involved
+	1 	 -> condition of being morally correct
+	2 	 -> abstract concept that refers to what is right
+	3 	 -> moral principle determining what is right
+	4 	 -> entity that allows compliance with the rules
+	5 	 -> abstract concept based on the idea of legal fairness, a front of a code of laws shared by a community
+	6 	 -> To respect other people and their rights. Usually administrated in public courts
+	7 	 -> being right and just
+	8 	 -> the quality of being fair and reasonable
+	9 	 -> when most of points of view agree with
+	10 	 -> idea of fair application of laws
+	11 	 -> recognition and respect of people rights
+]
+calculated bag:
+	 {'based', 'part', 'legal', 'application', 'code', 'involved', 'entity', 'concept', 'fairness', 'refers', 'agree', 'right', 'front', 'determining', 'moral', 'correct', 'public', 'shared', 'condition', 'idea', 'respect', 'view', 'people', 'administrated', 'compliance', 'usually', 'morally', 'recognition', 'equality', 'fair', 'principle', 'allows', 'court', 'community', 'reasonable', 'point', 'rule', 'quality', 'abstract', 'law'}
+	-> updating: new node  based.s.01 , with simil: 0.25 and bag:  {'based', 'ice', 'firmly', 'base'}
+	-> updating: new node  concept.n.01 , with simil: 0.3 and bag:  {'inferred', 'instance', 'idea', 'specific', 'general', 'concept', 'construct', 'abstract', 'derived', 'conception'}
+	-> updating: new node  legal.a.01 , with simil: 0.375 and bag:  {'accepted', 'upon', 'founded', 'established', 'legal', 'official', 'rule', 'law'}
+	-> updating: new node  legal.a.04 , with simil: 0.4 and bag:  {'characteristic', 'legal', 'profession', 'relating', 'law'}
+	-> updating: new node  code.n.01 , with simil: 0.4444444444444444 and bag:  {'principle', 'set', 'especially', 'code', 'rule', 'law', 'one', 'codification', 'written'}
+	-> updating: new node  involved.s.03 , with simil: 0.5 and bag:  {'involved', 'emotionally'}
+	-> updating: new node  morally.r.01 , with simil: 0.8 and bag:  {'respect', 'moral', 'principle', 'unjustified', 'morally'}
+found:  Synset('morally.r.01') , with similarity of: 0.8
+
+
+
+ elaborating th given column:
+[
+	0 	 -> the quality of being able to wait for a long period of time
+	1 	 -> capacity to tolerate problems
+	2 	 -> behavior of people inclined to bear unpleasant facts
+	3 	 -> ability to tolerate stress over a period of time
+	4 	 -> ability to be quiet or tolerate problems
+	5 	 -> feeling opposed to anger
+	6 	 -> To be able to suppress angriness or to be able to mantain tranquility in hard situations
+	7 	 -> the ability to be quiet and tolerant
+	8 	 -> the capacity to accept or tolerate delay, problems, or suffering without becoming annoyed or anxious
+	9 	 -> ability to make everything with calm
+	10 	 -> propension to have low reactivity to events
+	11 	 -> ability to wait or to continue doing something despite difficulties
+]
+calculated bag:
+	 {'angriness', 'fact', 'anger', 'mantain', 'hard', 'becoming', 'despite', 'problem', 'opposed', 'time', 'feeling', 'propension', 'accept', 'annoyed', 'without', 'behavior', 'stress', 'situation', 'anxious', 'long', 'delay', 'make', 'tolerate', 'period', 'capacity', 'continue', 'suppress', 'something', 'suffering', 'event', 'reactivity', 'difficulty', 'wait', 'people', 'everything', 'bear', 'tolerant', 'ability', 'inclined', 'quiet', 'unpleasant', 'able', 'low', 'quality', 'tranquility', 'calm'}
+	-> updating: new node  anger.n.02 , with simil: 0.5 and bag:  {'angry', 'angriness', 'anger', 'state'}
+found:  Synset('anger.n.02') , with similarity of: 0.5
+
+
+
+ elaborating th given column:
+[
+	0 	 -> quality of a person that is attached to money and tends to accumulate it
+	1 	 -> excessive desire for something
+	2 	 -> typical attitude of non generosity; behavior of not sharing anything with anyone
+	3 	 -> intense desire to acquire or possess more than needed
+	4 	 -> attachment to money
+	5 	 -> typical to those why do not want to share object or money
+	6 	 -> To not desire to spend money in non useful things
+	7 	 -> strong desire and attachment to money
+	8 	 -> excessive or insatiable desire for wealth or gain
+	9 	 -> impossibility to be generous towards the others and himself
+	10 	 -> obsession of needing to increase one's possession
+	11 	 -> very strong wish to continuously get more of something
+]
+calculated bag:
+	 {'person', 'gain', 'object', 'useful', 'attachment', 'needing', 'desire', 'want', 'anything', 'excessive', 'spend', 'posse', 'behavior', 'attached', 'generosity', 'wish', 'attitude', 'insatiable', 'others', 'anyone', 'typical', 'thing', 'something', 'share', 'tends', 'towards', 'generous', 'acquire', 'accumulate', 'strong', 'impossibility', 'obsession', 'increase', 'one', 'money', 'sharing', 'possession', 'wealth', 'get', 'needed', 'intense', 'continuously', 'quality', 'non'}
+	-> updating: new node  person.n.01 , with simil: 0.2222222222222222 and bag:  {'person', 'someone', 'mortal', 'human', 'soul', 'individual', 'much', 'one', 'somebody'}
+	-> updating: new node  profit.n.02 , with simil: 0.4 and bag:  {'gain', 'profit', 'advantageous', 'quality', 'beneficial'}
+	-> updating: new node  desire.n.02 , with simil: 0.5 and bag:  {'man', 'inclination', 'thing', 'desire', 'want', 'many'}
+	-> updating: new node  desire.n.03 , with simil: 0.6666666666666666 and bag:  {'desire', 'desired', 'something'}
+found:  Synset('desire.n.03') , with similarity of: 0.6666666666666666
+
+
+
+ elaborating th given column:
+[
+	0 	 -> the discipline that regulates territorial rules
+	1 	 -> activities associated with covernance of an area
+	2 	 -> abstract concept of governance inside a social context
+	3 	 -> the activity of governing an entity and its affairs
+	4 	 -> entity based on sets of principles that guide a community
+	5 	 -> activities for the good of the state
+	6 	 -> To be able to reach common objectives and ideas according to the voters and/or a particular population
+	7 	 -> the science or art of political government
+	8 	 -> the activities associated with the governance of a country or area, especially the debate between parties having power
+	9 	 -> organization aimed to amministrate a state
+	10 	 -> sience of ensuring cohesion of a population
+	11 	 -> activities of the government or people who try to influence the way a country is governed
+]
+calculated bag:
+	 {'based', 'affair', 'cohesion', 'regulates', 'aimed', 'ensuring', 'way', 'andor', 'entity', 'concept', 'associated', 'sience', 'guide', 'governing', 'state', 'inside', 'context', 'discipline', 'political', 'debate', 'covernance', 'government', 'common', 'idea', 'governance', 'social', 'particular', 'party', 'set', 'power', 'science', 'country', 'people', 'according', 'objective', 'area', 'territorial', 'activity', 'art', 'especially', 'amministrate', 'reach', 'principle', 'governed', 'organization', 'able', 'good', 'community', 'rule', 'voter', 'try', 'abstract', 'influence', 'population'}
+	-> updating: new node  based.s.01 , with simil: 0.25 and bag:  {'based', 'ice', 'firmly', 'base'}
+	-> updating: new node  incoherence.n.01 , with simil: 0.3333333333333333 and bag:  {'cohesion', 'organization', 'lack', 'incoherence', 'incoherency', 'clarity'}
+	-> updating: new node  govern.v.03 , with simil: 0.42857142857142855 and bag:  {'nation', 'governing', 'govern', 'country', 'rule', 'authority', 'exercise'}
+	-> updating: new node  nonpolitical.a.01 , with simil: 0.5 and bag:  {'nonpolitical', 'political'}
+found:  Synset('nonpolitical.a.01') , with similarity of: 0.5
+
+
+
+ elaborating th given column:
+[
+	0 	 -> something edible
+	1 	 -> subtance that animals eat
+	2 	 -> thing needed to sustain a human being or an animal
+	3 	 -> material used by organisms for maintaining the life processes
+	4 	 -> one or more edible objects
+	5 	 -> edible substances by humans or animals
+	6 	 -> What it can be eaten by a living thing without dying
+	7 	 -> something edible
+	8 	 -> any nutritious substance that people or animals eat or drink or that plants absorb in order to maintain life and growth
+	9 	 -> sostance needed to feed a living being
+	10 	 -> item that a living organism can transform into energy to perform its vital functions
+	11 	 -> something that people and animals eat or plants absorb to keep them alive
+]
+calculated bag:
+	 {'energy', 'object', 'maintaining', 'sostance', 'nutritious', 'alive', 'life', 'used', 'edible', 'subtance', 'maintain', 'order', 'without', 'transform', 'sustain', 'organism', 'vital', 'process', 'thing', 'material', 'absorb', 'something', 'item', 'keep', 'people', 'human', 'one', 'eat', 'dying', 'eaten', 'drink', 'substance', 'perform', 'feed', 'growth', 'function', 'animal', 'needed', 'living', 'plant'}
+	-> updating: new node  energy.n.01 , with simil: 0.058823529411764705 and bag:  {'system', 'energy', 'unit', 'wide', 'variety', 'equivalent', 'take', 'work', 'joule', 'erg', 'thermodynamic', 'free_energy', 'quantity', 'form', 'capacity', 'physical', 'physic'}
+	-> updating: new node  physical_phenomenon.n.01 , with simil: 0.125 and bag:  {'energy', 'phenomenon', 'physical_phenomenon', 'matter', 'property', 'physical', 'natural', 'involving'}
+	-> updating: new node  force.n.03 , with simil: 0.13333333333333333 and bag:  {'intensity', 'force', 'energy', 'hit', 'destroyed', 'vitality', 'strength', 'living', 'could', 'man', 'forcefulness', 'gale', 'physical', 'muster', 'government'}
+	-> updating: new node  drive.n.05 , with simil: 0.14285714285714285 and bag:  {'highly', 'energy', 'motivated', 'drive', 'coworkers', 'exhausted', 'trait'}
+	-> updating: new node  energy.n.06 , with simil: 0.25 and bag:  {'energy', 'source', 'power', 'doe', 'usable', 'maintaining', 'policy', 'responsible'}
+	-> updating: new node  keep.v.08 , with simil: 0.2857142857142857 and bag:  {'keep', 'writing', 'record', 'regular', 'note', 'diary', 'maintain'}
+	-> updating: new node  life.n.02 , with simil: 0.3333333333333333 and bag:  {'event', 'longer', 'complexity', 'experience', 'cope', 'alive', 'could', 'human', 'course', 'activity', 'living', 'life'}
+	-> updating: new node  life.n.08 , with simil: 0.4 and bag:  {'person', 'saved', 'living', 'life', 'heroism'}
+	-> updating: new node  life.n.10 , with simil: 0.5 and bag:  {'ocean', 'teeming', 'collectively', 'thing', 'living', 'life'}
+	-> updating: new node  vital.s.04 , with simil: 0.5714285714285714 and bag:  {'characteristic', 'sign', 'manifesting', 'organism', 'vital', 'living', 'life'}
+	-> updating: new node  perform.v.02 , with simil: 0.6666666666666666 and bag:  {'wedding', 'perform', 'function'}
+found:  Synset('perform.v.02') , with similarity of: 0.6666666666666666
+
+
+
+ elaborating th given column:
+[
+	0 	 -> item that emits warmth
+	1 	 -> thing that radiated head
+	2 	 -> object used to heat and raise temperature in a room
+	3 	 -> something that can produce heat
+	4 	 -> heat diffusion object
+	5 	 -> object that emanates hot air
+	6 	 -> Object that issues heat usually in homes or familiar places
+	7 	 -> metal object that contains hot water
+	8 	 -> equipment or devices used to provide heat, especially to a building
+	9 	 -> comoponent used to warm an ambient, whihch can be supplied with hot water or gas
+	10 	 -> item of furniture to increase the temperature of a room
+	11 	 -> container filled with water, that sends out heat, often as part of heating system
+]
+calculated bag:
+	 {'ambient', 'part', 'object', 'warm', 'temperature', 'used', 'home', 'furniture', 'heat', 'emits', 'emanates', 'head', 'issue', 'provide', 'container', 'supplied', 'filled', 'thing', 'whihch', 'warmth', 'something', 'comoponent', 'system', 'radiated', 'item', 'heating', 'contains', 'familiar', 'gas', 'device', 'usually', 'raise', 'metal', 'room', 'increase', 'especially', 'air', 'sends', 'often', 'building', 'equipment', 'produce', 'water', 'place', 'diffusion', 'hot'}
+	-> updating: new node  ambient.s.01 , with simil: 0.5 and bag:  {'ambient', 'sound', 'enveloping', 'completely', 'temperature', 'air'}
+	-> updating: new node  home.v.01 , with simil: 0.6666666666666666 and bag:  {'send', 'provide', 'home'}
+found:  Synset('home.v.01') , with similarity of: 0.6666666666666666
+
+
+
+ elaborating th given column:
+[
+	0 	 -> rideable mean of transportation
+	1 	 -> thing used for transporting people or goods
+	2 	 -> thing that provides a way to transport other things or people
+	3 	 -> an artifact create to move things in space
+	4 	 -> object used as transportation
+	5 	 -> objects used to move between places
+	6 	 -> Object that has some common parts, such as wheels and engine that is able to transport people or objects from some point to another
+	7 	 -> a moving object, with wheels or similar, that carries people
+	8 	 -> a thing used for transporting people or goods, especially on land, such as a car, lorry, or cart
+	9 	 -> stell structure with four wheels, used by human to move from one point to another
+	10 	 -> moving object that facilitates transportation
+	11 	 -> machine usually with wheels and engine, used for transporting people or goods on land, especially on roads
+]
+calculated bag:
+	 {'part', 'engine', 'create', 'move', 'transporting', 'rideable', 'object', 'transport', 'way', 'four', 'stell', 'used', 'another', 'land', 'facilitates', 'wheel', 'provides', 'thing', 'lorry', 'similar', 'artifact', 'common', 'transportation', 'moving', 'cart', 'people', 'human', 'usually', 'one', 'structure', 'mean', 'especially', 'road', 'space', 'able', 'car', 'good', 'point', 'machine', 'carry', 'place'}
+	-> updating: new node  part.n.01 , with simil: 0.05263157894736842 and bag:  {'part', 'hard', 'manuscript', 'determined', 'component', 'bigger', 'read', 'component_part', 'something', 'relation', 'smaller', 'wanted', 'animal', 'portion', 'constituent', 'includes', 'feel', 'plankton', 'reach'}
+	-> updating: new node  relation.n.01 , with simil: 0.125 and bag:  {'characteristic', 'abstraction', 'relation', 'part', 'two', 'entity', 'together', 'belonging'}
+	-> updating: new node  part.n.02 , with simil: 0.25 and bag:  {'part', 'glue', 'whole', 'two', 'human', 'portion', 'le', 'rear', 'together', 'house', 'something', 'artifact'}
+	-> updating: new node  location.n.01 , with simil: 0.5 and bag:  {'extent', 'space', 'location', 'point'}
+	-> updating: new node  thing.n.04 , with simil: 0.6666666666666666 and bag:  {'thing', 'work', 'artifact'}
+found:  Synset('thing.n.04') , with similarity of: 0.6666666666666666
+
+
+
+ elaborating th given column:
+[
+	0 	 -> item used to connect artificial parts together
+	1 	 -> metal pin with raised helical thread running around it
+	2 	 -> little metal object which can be inserted in a support
+	3 	 -> metal object threaded used to produce other artifacts
+	4 	 -> metal object used to fix componible elements
+	5 	 -> objects that is used to look and join other components
+	6 	 -> Object useful to fix other objects on some surfaces, for example a painting on the wall
+	7 	 -> metal object with the shape of a spiral used to put things together
+	8 	 -> a short, slender, sharp-pointed metal pin with a raised helical thread running around it and a slotted head, used to join things together by being rotated so that it pierces wood or other material and is held tightly in place
+	9 	 -> structural element needed to fix two parts
+	10 	 -> long and thin pointy item piercing two objects to hold them together
+	11 	 -> thin, pointed piece of metal with a raised edge twisting round along its length and a flat top with a cut in it, used to join things together
+]
+calculated bag:
+	 {'support', 'part', 'edge', 'piercing', 'raised', 'running', 'object', 'join', 'length', 'useful', 'structural', 'cut', 'put', 'thin', 'short', 'pointy', 'inserted', 'used', 'surface', 'shape', 'painting', 'slender', 'component', 'head', 'threaded', 'long', 'little', 'tightly', 'wood', 'thing', 'material', 'slotted', 'sharppointed', 'top', 'artifact', 'pointed', 'rotated', 'connect', 'along', 'item', 'thread', 'wall', 'element', 'fix', 'pierce', 'example', 'around', 'componible', 'hold', 'metal', 'twisting', 'helical', 'pin', 'held', 'round', 'two', 'artificial', 'needed', 'produce', 'piece', 'flat', 'spiral', 'together', 'look', 'place'}
+	-> updating: new node  support.n.01 , with simil: 0.14285714285714285 and bag:  {'support', 'money', 'necessity', 'kept', 'supplying', 'family', 'gave', 'emotional', 'difficult', 'maintaining', 'providing', 'time', 'together', 'activity'}
+	-> updating: new node  support.n.03 , with simil: 0.17647058823529413 and bag:  {'support', 'person', 'found', 'faith', 'interest', 'enjoyed', 'cause', 'immaterial', 'team', 'needed', 'policy', 'providing', 'assistance', 'little', 'public', 'fan', 'something'}
+	-> updating: new node  support.n.07 , with simil: 0.2222222222222222 and bag:  {'support', 'provides', 'foundation', 'hold', 'statue', 'marble', 'stood', 'structure', 'supporting'}
+	-> updating: new node  support.n.08 , with simil: 0.25 and bag:  {'support', 'bearing', 'wall', 'strengthening', 'weight', 'act', 'leaned', 'supporting'}
+	-> updating: new node  support.n.10 , with simil: 0.3333333333333333 and bag:  {'support', 'shelf', 'another', 'attach', 'weight', 'bear', 'device', 'thing', 'place'}
+	-> updating: new node  relation.n.01 , with simil: 0.375 and bag:  {'characteristic', 'abstraction', 'relation', 'part', 'two', 'entity', 'together', 'belonging'}
+	-> updating: new node  part.n.03 , with simil: 0.4 and bag:  {'part', 'three', 'object', 'granite', 'portion', 'analyzed', 'needed', 'river', 'piece', 'natural'}
+	-> updating: new node  edge.n.01 , with simil: 0.5 and bag:  {'border', 'edge', 'boundary', 'surface'}
+	-> updating: new node  surface.a.01 , with simil: 0.6666666666666666 and bag:  {'material', 'moon', 'surface'}
+	-> updating: new node  pin.n.09 , with simil: 0.6923076923076923 and bag:  {'support', 'attach', 'slender', 'often', 'pin', 'small', 'fasten', 'piece', 'wood', 'thing', 'metal', 'pointed', 'used'}
+found:  Synset('pin.n.09') , with similarity of: 0.6923076923076923
+
+
+
+ elaborating th given column:
+[
+	0 	 -> the quality of being fair and reasonable
+	1 	 -> the capacity to accept or tolerate delay, problems, or suffering without becoming annoyed or anxious
+	2 	 -> excessive or insatiable desire for wealth or gain
+	3 	 -> the activities associated with the governance of a country or area, especially the debate between parties having power
+	4 	 -> any nutritious substance that people or animals eat or drink or that plants absorb in order to maintain life and growth
+	5 	 -> equipment or devices used to provide heat, especially to a building
+	6 	 -> a thing used for transporting people or goods, especially on land, such as a car, lorry, or cart
+	7 	 -> a short, slender, sharp-pointed metal pin with a raised helical thread running around it and a slotted head, used to join things together by being rotated so that it pierces wood or other material and is held tightly in place
+	8 	 -> 
+	9 	 -> 
+	10 	 -> 
+	11 	 -> 
+]
+calculated bag:
+	 {'gain', 'becoming', 'transporting', 'raised', 'running', 'join', 'problem', 'nutritious', 'short', 'desire', 'accept', 'associated', 'life', 'excessive', 'maintain', 'order', 'used', 'annoyed', 'without', 'anxious', 'heat', 'land', 'delay', 'slender', 'head', 'debate', 'tolerate', 'tightly', 'provide', 'insatiable', 'wood', 'lorry', 'thing', 'capacity', 'material', 'absorb', 'slotted', 'sharppointed', 'suffering', 'rotated', 'governance', 'party', 'power', 'cart', 'thread', 'people', 'country', 'pierce', 'device', 'around', 'area', 'activity', 'eat', 'drink', 'especially', 'metal', 'helical', 'substance', 'fair', 'building', 'equipment', 'pin', 'growth', 'held', 'wealth', 'animal', 'reasonable', 'car', 'good', 'quality', 'together', 'place', 'plant'}
+	-> updating: new node  addition.n.03 , with simil: 0.07692307692307693 and bag:  {'recorded', 'cattle', 'gain', 'year', 'weight', 'property', 'tax', 'period', 'week', 'quantity', 'addition', 'increase', 'added'}
+	-> updating: new node  profit.n.02 , with simil: 0.4 and bag:  {'gain', 'profit', 'advantageous', 'quality', 'beneficial'}
+	-> updating: new node  desire.v.03 , with simil: 0.5 and bag:  {'desire', 'express'}
+	-> updating: new node  heat.v.02 , with simil: 0.6666666666666666 and bag:  {'provide', 'house', 'heat'}
+found:  Synset('heat.v.02') , with similarity of: 0.6666666666666666
+
+
+
+ elaborating th given column:
+[
+	0 	 -> when most of points of view agree with
+	1 	 -> ability to make everything with calm
+	2 	 -> impossibility to be generous towards the others and himself
+	3 	 -> organization aimed to amministrate a state
+	4 	 -> sostance needed to feed a living being
+	5 	 -> comoponent used to warm an ambient, whihch can be supplied with hot water or gas
+	6 	 -> stell structure with four wheels, used by human to move from one point to another
+	7 	 -> structural element needed to fix two parts
+	8 	 -> 
+	9 	 -> 
+	10 	 -> 
+	11 	 -> 
+]
+calculated bag:
+	 {'ambient', 'part', 'aimed', 'move', 'warm', 'four', 'stell', 'sostance', 'structural', 'agree', 'used', 'another', 'state', 'wheel', 'make', 'supplied', 'whihch', 'view', 'towards', 'element', 'fix', 'everything', 'generous', 'gas', 'human', 'impossibility', 'one', 'structure', 'amministrate', 'ability', 'feed', 'organization', 'two', 'point', 'needed', 'calm', 'water', 'comoponent', 'living', 'hot', 'others'}
+	-> updating: new node  ambient.s.01 , with simil: 0.16666666666666666 and bag:  {'ambient', 'sound', 'enveloping', 'completely', 'temperature', 'air'}
+	-> updating: new node  relation.n.01 , with simil: 0.25 and bag:  {'characteristic', 'abstraction', 'relation', 'part', 'two', 'entity', 'together', 'belonging'}
+	-> updating: new node  separate.v.09 , with simil: 0.2727272727272727 and bag:  {'separate', 'part', 'friend', 'party', 'move', 'split', 'separated', 'apart', 'way', 'go', 'one'}
+	-> updating: new node  be_active.v.01 , with simil: 0.3333333333333333 and bag:  {'moving', 'action', 'move', 'state', 'be_active', 'always'}
+	-> updating: new node  move.v.07 , with simil: 0.36363636363636365 and bag:  {'one', 'another', 'proceed', 'move', 'family', 'debate', 'point', 'value', 'economy', 'moved', 'go'}
+	-> updating: new node  move.v.15 , with simil: 0.5 and bag:  {'game', 'move', 'make', 'go', 'turn', 'one'}
+found:  Synset('move.v.15') , with similarity of: 0.5
+
+
+
+ elaborating th given column:
+[
+	0 	 -> idea of fair application of laws
+	1 	 -> propension to have low reactivity to events
+	2 	 -> obsession of needing to increase one's possession
+	3 	 -> sience of ensuring cohesion of a population
+	4 	 -> item that a living organism can transform into energy to perform its vital functions
+	5 	 -> item of furniture to increase the temperature of a room
+	6 	 -> moving object that facilitates transportation
+	7 	 -> long and thin pointy item piercing two objects to hold them together
+	8 	 -> 
+	9 	 -> 
+	10 	 -> 
+	11 	 -> 
+]
+calculated bag:
+	 {'cohesion', 'energy', 'ensuring', 'piercing', 'object', 'application', 'needing', 'thin', 'propension', 'temperature', 'pointy', 'sience', 'furniture', 'transform', 'facilitates', 'long', 'organism', 'vital', 'event', 'moving', 'idea', 'reactivity', 'item', 'transportation', 'hold', 'obsession', 'increase', 'one', 'room', 'perform', 'fair', 'possession', 'function', 'two', 'low', 'together', 'living', 'population', 'law'}
+	-> updating: new node  coherence.n.01 , with simil: 0.25 and bag:  {'cohesion', 'cohering', 'coherency', 'state', 'coherence', 'cohesiveness', 'together', 'sticking'}
+	-> updating: new node  cohesion.n.03 , with simil: 0.3333333333333333 and bag:  {'force', 'liquid', 'cohesion', 'molecule', 'hold', 'together', 'intermolecular', 'solid', 'physic'}
+	-> updating: new node  transform.v.05 , with simil: 0.42857142857142855 and bag:  {'energy', 'another', 'transform', 'light', 'convert', 'one', 'form'}
+	-> updating: new node  hold.n.06 , with simil: 0.5 and bag:  {'stronghold', 'hold'}
+	-> updating: new node  perform.v.02 , with simil: 0.6666666666666666 and bag:  {'wedding', 'perform', 'function'}
+found:  Synset('perform.v.02') , with similarity of: 0.6666666666666666
+
+
+
+ elaborating th given column:
+[
+	0 	 -> recognition and respect of people rights
+	1 	 -> ability to wait or to continue doing something despite difficulties
+	2 	 -> very strong wish to continuously get more of something
+	3 	 -> activities of the government or people who try to influence the way a country is governed
+	4 	 -> something that people and animals eat or plants absorb to keep them alive
+	5 	 -> container filled with water, that sends out heat, often as part of heating system
+	6 	 -> machine usually with wheels and engine, used for transporting people or goods on land, especially on roads
+	7 	 -> thin, pointed piece of metal with a raised edge twisting round along its length and a flat top with a cut in it, used to join things together
+	8 	 -> 
+	9 	 -> 
+	10 	 -> 
+	11 	 -> 
+]
+calculated bag:
+	 {'part', 'engine', 'edge', 'transporting', 'raised', 'length', 'join', 'way', 'despite', 'cut', 'thin', 'together', 'alive', 'used', 'right', 'heat', 'land', 'wheel', 'wish', 'container', 'filled', 'thing', 'top', 'pointed', 'continue', 'something', 'government', 'absorb', 'system', 'along', 'respect', 'flat', 'keep', 'difficulty', 'heating', 'people', 'wait', 'country', 'strong', 'usually', 'recognition', 'activity', 'eat', 'metal', 'especially', 'twisting', 'sends', 'road', 'ability', 'often', 'governed', 'round', 'get', 'animal', 'continuously', 'good', 'machine', 'piece', 'water', 'try', 'influence', 'plant'}
+	-> updating: new node  part.n.01 , with simil: 0.15789473684210525 and bag:  {'part', 'hard', 'manuscript', 'determined', 'component', 'bigger', 'read', 'component_part', 'something', 'relation', 'smaller', 'wanted', 'animal', 'portion', 'constituent', 'includes', 'feel', 'plankton', 'reach'}
+	-> updating: new node  relation.n.01 , with simil: 0.25 and bag:  {'characteristic', 'abstraction', 'relation', 'part', 'two', 'entity', 'together', 'belonging'}
+	-> updating: new node  engine.n.02 , with simil: 0.5 and bag:  {'engine', 'achieve', 'change', 'purpose', 'used', 'something'}
+	-> updating: new node  piece.n.09 , with simil: 0.6666666666666666 and bag:  {'distance', 'piece', 'road'}
+found:  Synset('piece.n.09') , with similarity of: 0.6666666666666666
+
+
+
+
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+ testing similarity jaccard
+
+
+
+ elaborating th given column:
+[
+	0 	 -> the concept of fairness, equality for all the parts involved
+	1 	 -> condition of being morally correct
+	2 	 -> abstract concept that refers to what is right
+	3 	 -> moral principle determining what is right
+	4 	 -> entity that allows compliance with the rules
+	5 	 -> abstract concept based on the idea of legal fairness, a front of a code of laws shared by a community
+	6 	 -> To respect other people and their rights. Usually administrated in public courts
+	7 	 -> being right and just
+	8 	 -> the quality of being fair and reasonable
+	9 	 -> when most of points of view agree with
+	10 	 -> idea of fair application of laws
+	11 	 -> recognition and respect of people rights
+]
+calculated bag:
+	 {'based', 'part', 'legal', 'application', 'code', 'involved', 'entity', 'concept', 'fairness', 'refers', 'agree', 'right', 'front', 'determining', 'moral', 'correct', 'public', 'shared', 'condition', 'idea', 'respect', 'view', 'people', 'administrated', 'compliance', 'usually', 'morally', 'recognition', 'equality', 'fair', 'principle', 'allows', 'court', 'community', 'reasonable', 'point', 'rule', 'quality', 'abstract', 'law'}
+	-> updating: new node  based.s.01 , with simil: 0.023255813953488372 and bag:  {'based', 'ice', 'firmly', 'base'}
+	-> updating: new node  relation.n.01 , with simil: 0.043478260869565216 and bag:  {'characteristic', 'abstraction', 'relation', 'part', 'two', 'entity', 'together', 'belonging'}
+	-> updating: new node  concept.n.01 , with simil: 0.06382978723404255 and bag:  {'inferred', 'instance', 'idea', 'specific', 'general', 'concept', 'construct', 'abstract', 'derived', 'conception'}
+	-> updating: new node  legal.a.01 , with simil: 0.06666666666666667 and bag:  {'accepted', 'upon', 'founded', 'established', 'legal', 'official', 'rule', 'law'}
+	-> updating: new node  code.n.01 , with simil: 0.08888888888888889 and bag:  {'principle', 'set', 'especially', 'code', 'rule', 'law', 'one', 'codification', 'written'}
+	-> updating: new node  morally.r.01 , with simil: 0.0975609756097561 and bag:  {'respect', 'moral', 'principle', 'unjustified', 'morally'}
+found:  Synset('morally.r.01') , with similarity of: 0.0975609756097561
+
+
+
+ elaborating th given column:
+[
+	0 	 -> the quality of being able to wait for a long period of time
+	1 	 -> capacity to tolerate problems
+	2 	 -> behavior of people inclined to bear unpleasant facts
+	3 	 -> ability to tolerate stress over a period of time
+	4 	 -> ability to be quiet or tolerate problems
+	5 	 -> feeling opposed to anger
+	6 	 -> To be able to suppress angriness or to be able to mantain tranquility in hard situations
+	7 	 -> the ability to be quiet and tolerant
+	8 	 -> the capacity to accept or tolerate delay, problems, or suffering without becoming annoyed or anxious
+	9 	 -> ability to make everything with calm
+	10 	 -> propension to have low reactivity to events
+	11 	 -> ability to wait or to continue doing something despite difficulties
+]
+calculated bag:
+	 {'angriness', 'fact', 'anger', 'mantain', 'hard', 'becoming', 'despite', 'problem', 'opposed', 'time', 'feeling', 'propension', 'accept', 'annoyed', 'without', 'behavior', 'stress', 'situation', 'anxious', 'long', 'delay', 'make', 'tolerate', 'period', 'capacity', 'continue', 'suppress', 'something', 'suffering', 'event', 'reactivity', 'difficulty', 'wait', 'people', 'everything', 'bear', 'tolerant', 'ability', 'inclined', 'quiet', 'unpleasant', 'able', 'low', 'quality', 'tranquility', 'calm'}
+	-> updating: new node  anger.n.02 , with simil: 0.041666666666666664 and bag:  {'angry', 'angriness', 'anger', 'state'}
+	-> updating: new node  fact.n.03 , with simil: 0.07272727272727272 and bag:  {'event', 'fiction', 'fact', 'hard', 'basis', 'tell', 'known', 'fear', 'existed', 'story', 'happened', 'much', 'something'}
+	-> updating: new node  capacity.n.08 , with simil: 0.07407407407407407 and bag:  {'knowledge', 'learn', 'ability', 'power', 'fact', 'behavior', 'understand', 'retain', 'mental_ability', 'significance', 'capacity', 'law'}
+	-> updating: new node  tolerant.s.04 , with simil: 0.08333333333333333 and bag:  {'environmental', 'extreme', 'fish', 'stress', 'long', 'quite', 'tolerate', 'condition', 'avoided', 'saltwater', 'tolerant', 'ph', 'hybrid', 'able', 'resistant', 'drought', 'physiological', 'new', 'plant'}
+found:  Synset('tolerant.s.04') , with similarity of: 0.08333333333333333
+
+
+
+ elaborating th given column:
+[
+	0 	 -> quality of a person that is attached to money and tends to accumulate it
+	1 	 -> excessive desire for something
+	2 	 -> typical attitude of non generosity; behavior of not sharing anything with anyone
+	3 	 -> intense desire to acquire or possess more than needed
+	4 	 -> attachment to money
+	5 	 -> typical to those why do not want to share object or money
+	6 	 -> To not desire to spend money in non useful things
+	7 	 -> strong desire and attachment to money
+	8 	 -> excessive or insatiable desire for wealth or gain
+	9 	 -> impossibility to be generous towards the others and himself
+	10 	 -> obsession of needing to increase one's possession
+	11 	 -> very strong wish to continuously get more of something
+]
+calculated bag:
+	 {'person', 'gain', 'object', 'useful', 'attachment', 'needing', 'desire', 'want', 'anything', 'excessive', 'spend', 'posse', 'behavior', 'attached', 'generosity', 'wish', 'attitude', 'insatiable', 'others', 'anyone', 'typical', 'thing', 'something', 'share', 'tends', 'towards', 'generous', 'acquire', 'accumulate', 'strong', 'impossibility', 'obsession', 'increase', 'one', 'money', 'sharing', 'possession', 'wealth', 'get', 'needed', 'intense', 'continuously', 'quality', 'non'}
+	-> updating: new node  person.n.01 , with simil: 0.0392156862745098 and bag:  {'person', 'someone', 'mortal', 'human', 'soul', 'individual', 'much', 'one', 'somebody'}
+	-> updating: new node  profit.n.02 , with simil: 0.0425531914893617 and bag:  {'gain', 'profit', 'advantageous', 'quality', 'beneficial'}
+	-> updating: new node  acquire.v.05 , with simil: 0.07547169811320754 and bag:  {'knowledge', 'gain', 'acquired', 'effort', 'win', 'finance', 'acquire', 'international', 'passing', 'chinese', 'one', 'understanding', 'something'}
+found:  Synset('acquire.v.05') , with similarity of: 0.07547169811320754
+
+
+
+ elaborating th given column:
+[
+	0 	 -> the discipline that regulates territorial rules
+	1 	 -> activities associated with covernance of an area
+	2 	 -> abstract concept of governance inside a social context
+	3 	 -> the activity of governing an entity and its affairs
+	4 	 -> entity based on sets of principles that guide a community
+	5 	 -> activities for the good of the state
+	6 	 -> To be able to reach common objectives and ideas according to the voters and/or a particular population
+	7 	 -> the science or art of political government
+	8 	 -> the activities associated with the governance of a country or area, especially the debate between parties having power
+	9 	 -> organization aimed to amministrate a state
+	10 	 -> sience of ensuring cohesion of a population
+	11 	 -> activities of the government or people who try to influence the way a country is governed
+]
+calculated bag:
+	 {'based', 'affair', 'cohesion', 'regulates', 'aimed', 'ensuring', 'way', 'andor', 'entity', 'concept', 'associated', 'sience', 'guide', 'governing', 'state', 'inside', 'context', 'discipline', 'political', 'debate', 'covernance', 'government', 'common', 'idea', 'governance', 'social', 'particular', 'party', 'set', 'power', 'science', 'country', 'people', 'according', 'objective', 'area', 'territorial', 'activity', 'art', 'especially', 'amministrate', 'reach', 'principle', 'governed', 'organization', 'able', 'good', 'community', 'rule', 'voter', 'try', 'abstract', 'influence', 'population'}
+	-> updating: new node  based.s.01 , with simil: 0.017543859649122806 and bag:  {'based', 'ice', 'firmly', 'base'}
+	-> updating: new node  affair.n.03 , with simil: 0.04411764705882353 and bag:  {'event', 'affair', 'arranged', 'president', 'party', 'social', 'specified', 'endless', 'quite', 'occasion', 'function', 'vaguely', 'round', 'social_occasion', 'social_function', 'seemingly', 'honor'}
+	-> updating: new node  regulate.v.02 , with simil: 0.058823529411764705 and bag:  {'principle', 'regularise', 'govern', 'cannot', 'people', 'town', 'way', 'conformity', 'usage', 'regularize', 'dress', 'regulate', 'rule', 'bring', 'like', 'regulation', 'impose', 'order'}
+	-> updating: new node  government.n.02 , with simil: 0.06349206349206349 and bag:  {'exercising', 'experience', 'administration', 'governance', 'governing', 'prison', 'state', 'government_activity', 'act', 'considerable', 'regulation', 'authority', 'government'}
+	-> updating: new node  government.n.01 , with simil: 0.06451612903225806 and bag:  {'unit', 'referred', 'governing', 'organization', 'matter', 'regime', 'political', 'tax', 'reduced', 'higher', 'authority', 'government'}
+	-> updating: new node  government.n.03 , with simil: 0.06896551724137931 and bag:  {'system', 'unit', 'governed', 'tyrannical', 'political', 'community', 'form', 'government'}
+	-> updating: new node  governed.n.01 , with simil: 0.08333333333333333 and bag:  {'particular', 'independence', 'governed', 'power', 'consent', 'declaration', 'people', 'derive', 'citizen', 'body', 'government'}
+found:  Synset('governed.n.01') , with similarity of: 0.08333333333333333
+
+
+
+ elaborating th given column:
+[
+	0 	 -> something edible
+	1 	 -> subtance that animals eat
+	2 	 -> thing needed to sustain a human being or an animal
+	3 	 -> material used by organisms for maintaining the life processes
+	4 	 -> one or more edible objects
+	5 	 -> edible substances by humans or animals
+	6 	 -> What it can be eaten by a living thing without dying
+	7 	 -> something edible
+	8 	 -> any nutritious substance that people or animals eat or drink or that plants absorb in order to maintain life and growth
+	9 	 -> sostance needed to feed a living being
+	10 	 -> item that a living organism can transform into energy to perform its vital functions
+	11 	 -> something that people and animals eat or plants absorb to keep them alive
+]
+calculated bag:
+	 {'energy', 'object', 'maintaining', 'sostance', 'nutritious', 'alive', 'life', 'used', 'edible', 'subtance', 'maintain', 'order', 'without', 'transform', 'sustain', 'organism', 'vital', 'process', 'thing', 'material', 'absorb', 'something', 'item', 'keep', 'people', 'human', 'one', 'eat', 'dying', 'eaten', 'drink', 'substance', 'perform', 'feed', 'growth', 'function', 'animal', 'needed', 'living', 'plant'}
+	-> updating: new node  energy.n.01 , with simil: 0.017857142857142856 and bag:  {'system', 'energy', 'unit', 'wide', 'variety', 'equivalent', 'take', 'work', 'joule', 'erg', 'thermodynamic', 'free_energy', 'quantity', 'form', 'capacity', 'physical', 'physic'}
+	-> updating: new node  physical_phenomenon.n.01 , with simil: 0.02127659574468085 and bag:  {'energy', 'phenomenon', 'physical_phenomenon', 'matter', 'property', 'physical', 'natural', 'involving'}
+	-> updating: new node  force.n.03 , with simil: 0.03773584905660377 and bag:  {'intensity', 'force', 'energy', 'hit', 'destroyed', 'vitality', 'strength', 'living', 'could', 'man', 'forcefulness', 'gale', 'physical', 'muster', 'government'}
+	-> updating: new node  liveliness.n.02 , with simil: 0.038461538461538464 and bag:  {'energy', 'action', 'expression', 'play', 'heavy', 'actor', 'sprightliness', 'give', 'animation', 'tried', 'spirit', 'liveliness', 'life', 'vain'}
+	-> updating: new node  energy.n.06 , with simil: 0.043478260869565216 and bag:  {'energy', 'source', 'power', 'doe', 'usable', 'maintaining', 'policy', 'responsible'}
+	-> updating: new node  sustain.v.04 , with simil: 0.05660377358490566 and bag:  {'support', 'money', 'necessity', 'there', 'alone', 'keep', 'sustained', 'family', 'cause', 'earn', 'good', 'sustain', 'supply', 'little', 'many', 'maintain'}
+	-> updating: new node  alive.a.01 , with simil: 0.06 and bag:  {'happiest', 'person', 'keep', 'working', 'hard', 'burned', 'canary', 'live', 'doctor', 'nerve', 'possessing', 'alive', 'life'}
+	-> updating: new node  life.n.02 , with simil: 0.08333333333333333 and bag:  {'event', 'longer', 'complexity', 'experience', 'cope', 'alive', 'could', 'human', 'course', 'activity', 'living', 'life'}
+	-> updating: new node  life.n.11 , with simil: 0.08888888888888889 and bag:  {'phenomenon', 'organic', 'nonliving', 'living', 'moon', 'organism', 'one', 'life', 'distinguishes'}
+	-> updating: new node  organism.n.01 , with simil: 0.09090909090909091 and bag:  {'ability', 'independently', 'function', 'act', 'organism', 'thing', 'living', 'develop'}
+	-> updating: new node  vital.s.04 , with simil: 0.09302325581395349 and bag:  {'characteristic', 'sign', 'manifesting', 'organism', 'vital', 'living', 'life'}
+found:  Synset('vital.s.04') , with similarity of: 0.09302325581395349
+
+
+
+ elaborating th given column:
+[
+	0 	 -> item that emits warmth
+	1 	 -> thing that radiated head
+	2 	 -> object used to heat and raise temperature in a room
+	3 	 -> something that can produce heat
+	4 	 -> heat diffusion object
+	5 	 -> object that emanates hot air
+	6 	 -> Object that issues heat usually in homes or familiar places
+	7 	 -> metal object that contains hot water
+	8 	 -> equipment or devices used to provide heat, especially to a building
+	9 	 -> comoponent used to warm an ambient, whihch can be supplied with hot water or gas
+	10 	 -> item of furniture to increase the temperature of a room
+	11 	 -> container filled with water, that sends out heat, often as part of heating system
+]
+calculated bag:
+	 {'ambient', 'part', 'object', 'warm', 'temperature', 'used', 'home', 'furniture', 'heat', 'emits', 'emanates', 'head', 'issue', 'provide', 'container', 'supplied', 'filled', 'thing', 'whihch', 'warmth', 'something', 'comoponent', 'system', 'radiated', 'item', 'heating', 'contains', 'familiar', 'gas', 'device', 'usually', 'raise', 'metal', 'room', 'increase', 'especially', 'air', 'sends', 'often', 'building', 'equipment', 'produce', 'water', 'place', 'diffusion', 'hot'}
+	-> updating: new node  ambient.s.01 , with simil: 0.061224489795918366 and bag:  {'ambient', 'sound', 'enveloping', 'completely', 'temperature', 'air'}
+	-> updating: new node  warm.a.03 , with simil: 0.07692307692307693 and bag:  {'impression', 'yellow', 'warm', 'color', 'red', 'warmth', 'orange', 'inducing', 'used', 'especially'}
+	-> updating: new node  heating_system.n.01 , with simil: 0.09615384615384616 and bag:  {'system', 'heat', 'heating', 'building', 'heating_plant', 'working', 'warm', 'radiant', 'wasnt', 'utility', 'heating_system'}
+	-> updating: new node  container.n.01 , with simil: 0.10714285714285714 and bag:  {'boxlike', 'standardized', 'another', 'object', 'transport', 'thing', 'especially', 'container', 'loaded', 'used', 'hold', 'dimension', 'metal', 'one', 'large', 'form'}
+found:  Synset('container.n.01') , with similarity of: 0.10714285714285714
+
+
+
+ elaborating th given column:
+[
+	0 	 -> rideable mean of transportation
+	1 	 -> thing used for transporting people or goods
+	2 	 -> thing that provides a way to transport other things or people
+	3 	 -> an artifact create to move things in space
+	4 	 -> object used as transportation
+	5 	 -> objects used to move between places
+	6 	 -> Object that has some common parts, such as wheels and engine that is able to transport people or objects from some point to another
+	7 	 -> a moving object, with wheels or similar, that carries people
+	8 	 -> a thing used for transporting people or goods, especially on land, such as a car, lorry, or cart
+	9 	 -> stell structure with four wheels, used by human to move from one point to another
+	10 	 -> moving object that facilitates transportation
+	11 	 -> machine usually with wheels and engine, used for transporting people or goods on land, especially on roads
+]
+calculated bag:
+	 {'part', 'engine', 'create', 'move', 'transporting', 'rideable', 'object', 'transport', 'way', 'four', 'stell', 'used', 'another', 'land', 'facilitates', 'wheel', 'provides', 'thing', 'lorry', 'similar', 'artifact', 'common', 'transportation', 'moving', 'cart', 'people', 'human', 'usually', 'one', 'structure', 'mean', 'especially', 'road', 'space', 'able', 'car', 'good', 'point', 'machine', 'carry', 'place'}
+	-> updating: new node  part.n.01 , with simil: 0.01694915254237288 and bag:  {'part', 'hard', 'manuscript', 'determined', 'component', 'bigger', 'read', 'component_part', 'something', 'relation', 'smaller', 'wanted', 'animal', 'portion', 'constituent', 'includes', 'feel', 'plankton', 'reach'}
+	-> updating: new node  relation.n.01 , with simil: 0.020833333333333332 and bag:  {'characteristic', 'abstraction', 'relation', 'part', 'two', 'entity', 'together', 'belonging'}
+	-> updating: new node  part.n.02 , with simil: 0.06 and bag:  {'part', 'glue', 'whole', 'two', 'human', 'portion', 'le', 'rear', 'together', 'house', 'something', 'artifact'}
+	-> updating: new node  separate.v.09 , with simil: 0.08333333333333333 and bag:  {'separate', 'part', 'friend', 'party', 'move', 'split', 'separated', 'apart', 'way', 'go', 'one'}
+	-> updating: new node  motion.n.06 , with simil: 0.09259259259259259 and bag:  {'another', 'move', 'farm', 'city', 'changing', 'police', 'people', 'crowd', 'motion', 'location', 'act', 'controlled', 'directly', 'put', 'path', 'movement', 'place', 'one'}
+	-> updating: new node  transportation.n.02 , with simil: 0.10638297872340426 and bag:  {'transportation', 'moving', 'another', 'transfer', 'transport', 'location', 'act', 'conveyance', 'transferral', 'one', 'something'}
+	-> updating: new node  way.n.06 , with simil: 0.1276595744680851 and bag:  {'road', 'affording', 'another', 'looking', 'said', 'way', 'path', 'passage', 'place', 'one', 'consisting', 'artifact'}
+found:  Synset('way.n.06') , with similarity of: 0.1276595744680851
+
+
+
+ elaborating th given column:
+[
+	0 	 -> item used to connect artificial parts together
+	1 	 -> metal pin with raised helical thread running around it
+	2 	 -> little metal object which can be inserted in a support
+	3 	 -> metal object threaded used to produce other artifacts
+	4 	 -> metal object used to fix componible elements
+	5 	 -> objects that is used to look and join other components
+	6 	 -> Object useful to fix other objects on some surfaces, for example a painting on the wall
+	7 	 -> metal object with the shape of a spiral used to put things together
+	8 	 -> a short, slender, sharp-pointed metal pin with a raised helical thread running around it and a slotted head, used to join things together by being rotated so that it pierces wood or other material and is held tightly in place
+	9 	 -> structural element needed to fix two parts
+	10 	 -> long and thin pointy item piercing two objects to hold them together
+	11 	 -> thin, pointed piece of metal with a raised edge twisting round along its length and a flat top with a cut in it, used to join things together
+]
+calculated bag:
+	 {'support', 'part', 'edge', 'piercing', 'raised', 'running', 'object', 'join', 'length', 'useful', 'structural', 'cut', 'put', 'thin', 'short', 'pointy', 'inserted', 'used', 'surface', 'shape', 'painting', 'slender', 'component', 'head', 'threaded', 'long', 'little', 'tightly', 'wood', 'thing', 'material', 'slotted', 'sharppointed', 'top', 'artifact', 'pointed', 'rotated', 'connect', 'along', 'item', 'thread', 'wall', 'element', 'fix', 'pierce', 'example', 'around', 'componible', 'hold', 'metal', 'twisting', 'helical', 'pin', 'held', 'round', 'two', 'artificial', 'needed', 'produce', 'piece', 'flat', 'spiral', 'together', 'look', 'place'}
+	-> updating: new node  support.n.01 , with simil: 0.025974025974025976 and bag:  {'support', 'money', 'necessity', 'kept', 'supplying', 'family', 'gave', 'emotional', 'difficult', 'maintaining', 'providing', 'time', 'together', 'activity'}
+	-> updating: new node  support.n.03 , with simil: 0.0379746835443038 and bag:  {'support', 'person', 'found', 'faith', 'interest', 'enjoyed', 'cause', 'immaterial', 'team', 'needed', 'policy', 'providing', 'assistance', 'little', 'public', 'fan', 'something'}
+	-> updating: new node  support.n.10 , with simil: 0.04225352112676056 and bag:  {'support', 'shelf', 'another', 'attach', 'weight', 'bear', 'device', 'thing', 'place'}
+	-> updating: new node  relation.n.01 , with simil: 0.04285714285714286 and bag:  {'characteristic', 'abstraction', 'relation', 'part', 'two', 'entity', 'together', 'belonging'}
+	-> updating: new node  part.n.02 , with simil: 0.0547945205479452 and bag:  {'part', 'glue', 'whole', 'two', 'human', 'portion', 'le', 'rear', 'together', 'house', 'something', 'artifact'}
+	-> updating: new node  part.n.03 , with simil: 0.056338028169014086 and bag:  {'part', 'three', 'object', 'granite', 'portion', 'analyzed', 'needed', 'river', 'piece', 'natural'}
+	-> updating: new node  connect.v.01 , with simil: 0.06944444444444445 and bag:  {'link', 'connect', 'tie', 'arm', 'two', 'fasten', 'put', 'piece', 'rope', 'loudspeaker', 'together', 'link_up'}
+	-> updating: new node  pin.n.09 , with simil: 0.13043478260869565 and bag:  {'support', 'attach', 'slender', 'often', 'pin', 'small', 'fasten', 'piece', 'wood', 'thing', 'metal', 'pointed', 'used'}
+found:  Synset('pin.n.09') , with similarity of: 0.13043478260869565
+
+
+
+ elaborating th given column:
+[
+	0 	 -> the quality of being fair and reasonable
+	1 	 -> the capacity to accept or tolerate delay, problems, or suffering without becoming annoyed or anxious
+	2 	 -> excessive or insatiable desire for wealth or gain
+	3 	 -> the activities associated with the governance of a country or area, especially the debate between parties having power
+	4 	 -> any nutritious substance that people or animals eat or drink or that plants absorb in order to maintain life and growth
+	5 	 -> equipment or devices used to provide heat, especially to a building
+	6 	 -> a thing used for transporting people or goods, especially on land, such as a car, lorry, or cart
+	7 	 -> a short, slender, sharp-pointed metal pin with a raised helical thread running around it and a slotted head, used to join things together by being rotated so that it pierces wood or other material and is held tightly in place
+	8 	 -> 
+	9 	 -> 
+	10 	 -> 
+	11 	 -> 
+]
+calculated bag:
+	 {'gain', 'becoming', 'transporting', 'raised', 'running', 'join', 'problem', 'nutritious', 'short', 'desire', 'accept', 'associated', 'life', 'excessive', 'maintain', 'order', 'used', 'annoyed', 'without', 'anxious', 'heat', 'land', 'delay', 'slender', 'head', 'debate', 'tolerate', 'tightly', 'provide', 'insatiable', 'wood', 'lorry', 'thing', 'capacity', 'material', 'absorb', 'slotted', 'sharppointed', 'suffering', 'rotated', 'governance', 'party', 'power', 'cart', 'thread', 'people', 'country', 'pierce', 'device', 'around', 'area', 'activity', 'eat', 'drink', 'especially', 'metal', 'helical', 'substance', 'fair', 'building', 'equipment', 'pin', 'growth', 'held', 'wealth', 'animal', 'reasonable', 'car', 'good', 'quality', 'together', 'place', 'plant'}
+	-> updating: new node  addition.n.03 , with simil: 0.011764705882352941 and bag:  {'recorded', 'cattle', 'gain', 'year', 'weight', 'property', 'tax', 'period', 'week', 'quantity', 'addition', 'increase', 'added'}
+	-> updating: new node  profit.n.02 , with simil: 0.02631578947368421 and bag:  {'gain', 'profit', 'advantageous', 'quality', 'beneficial'}
+	-> updating: new node  be.v.01 , with simil: 0.0375 and bag:  {'predicate', 'answer', 'rich', 'noun', 'good', 'john', 'quality', 'adjective', 'copula', 'used'}
+	-> updating: new node  run.v.11 , with simil: 0.05813953488372093 and bag:  {'freely', 'move', 'without', 'building', 'restraint', 'run', 'running', 'way', 'uncontrolled', 'people', 'act', 'everyone', 'trouble', 'around', 'let', 'free', 'dog', 'telling'}
+	-> updating: new node  land.n.02 , with simil: 0.07058823529411765 and bag:  {'reference', 'top', 'agricultural', 'plowed', 'earth', 'land', 'soil', 'ground', 'never', 'good', 'grow', 'quality', 'use', 'layer', 'material', 'especially', 'plant', 'surface'}
+	-> updating: new node  pin.n.09 , with simil: 0.075 and bag:  {'support', 'attach', 'slender', 'often', 'pin', 'small', 'fasten', 'piece', 'wood', 'thing', 'metal', 'pointed', 'used'}
+found:  Synset('pin.n.09') , with similarity of: 0.075
+
+
+
+ elaborating th given column:
+[
+	0 	 -> when most of points of view agree with
+	1 	 -> ability to make everything with calm
+	2 	 -> impossibility to be generous towards the others and himself
+	3 	 -> organization aimed to amministrate a state
+	4 	 -> sostance needed to feed a living being
+	5 	 -> comoponent used to warm an ambient, whihch can be supplied with hot water or gas
+	6 	 -> stell structure with four wheels, used by human to move from one point to another
+	7 	 -> structural element needed to fix two parts
+	8 	 -> 
+	9 	 -> 
+	10 	 -> 
+	11 	 -> 
+]
+calculated bag:
+	 {'ambient', 'part', 'aimed', 'move', 'warm', 'four', 'stell', 'sostance', 'structural', 'agree', 'used', 'another', 'state', 'wheel', 'make', 'supplied', 'whihch', 'view', 'towards', 'element', 'fix', 'everything', 'generous', 'gas', 'human', 'impossibility', 'one', 'structure', 'amministrate', 'ability', 'feed', 'organization', 'two', 'point', 'needed', 'calm', 'water', 'comoponent', 'living', 'hot', 'others'}
+	-> updating: new node  ambient.s.01 , with simil: 0.021739130434782608 and bag:  {'ambient', 'sound', 'enveloping', 'completely', 'temperature', 'air'}
+	-> updating: new node  relation.n.01 , with simil: 0.0425531914893617 and bag:  {'characteristic', 'abstraction', 'relation', 'part', 'two', 'entity', 'together', 'belonging'}
+	-> updating: new node  part.n.02 , with simil: 0.06 and bag:  {'part', 'glue', 'whole', 'two', 'human', 'portion', 'le', 'rear', 'together', 'house', 'something', 'artifact'}
+	-> updating: new node  separate.v.09 , with simil: 0.061224489795918366 and bag:  {'separate', 'part', 'friend', 'party', 'move', 'split', 'separated', 'apart', 'way', 'go', 'one'}
+	-> updating: new node  target.v.01 , with simil: 0.08928571428571429 and bag:  {'aimed', 'move', 'anger', 'opponent', 'face', 'criticism', 'goal', 'superior', 'aim', 'direct', 'target', 'something', 'towards', 'fist', 'intend', 'point', 'directed', 'place', 'certain', 'others'}
+found:  Synset('target.v.01') , with similarity of: 0.08928571428571429
+
+
+
+ elaborating th given column:
+[
+	0 	 -> idea of fair application of laws
+	1 	 -> propension to have low reactivity to events
+	2 	 -> obsession of needing to increase one's possession
+	3 	 -> sience of ensuring cohesion of a population
+	4 	 -> item that a living organism can transform into energy to perform its vital functions
+	5 	 -> item of furniture to increase the temperature of a room
+	6 	 -> moving object that facilitates transportation
+	7 	 -> long and thin pointy item piercing two objects to hold them together
+	8 	 -> 
+	9 	 -> 
+	10 	 -> 
+	11 	 -> 
+]
+calculated bag:
+	 {'cohesion', 'energy', 'ensuring', 'piercing', 'object', 'application', 'needing', 'thin', 'propension', 'temperature', 'pointy', 'sience', 'furniture', 'transform', 'facilitates', 'long', 'organism', 'vital', 'event', 'moving', 'idea', 'reactivity', 'item', 'transportation', 'hold', 'obsession', 'increase', 'one', 'room', 'perform', 'fair', 'possession', 'function', 'two', 'low', 'together', 'living', 'population', 'law'}
+	-> updating: new node  coherence.n.01 , with simil: 0.044444444444444446 and bag:  {'cohesion', 'cohering', 'coherency', 'state', 'coherence', 'cohesiveness', 'together', 'sticking'}
+	-> updating: new node  cohesion.n.03 , with simil: 0.06666666666666667 and bag:  {'force', 'liquid', 'cohesion', 'molecule', 'hold', 'together', 'intermolecular', 'solid', 'physic'}
+	-> updating: new node  transform.v.05 , with simil: 0.06976744186046512 and bag:  {'energy', 'another', 'transform', 'light', 'convert', 'one', 'form'}
+found:  Synset('transform.v.05') , with similarity of: 0.06976744186046512
+
+
+
+ elaborating th given column:
+[
+	0 	 -> recognition and respect of people rights
+	1 	 -> ability to wait or to continue doing something despite difficulties
+	2 	 -> very strong wish to continuously get more of something
+	3 	 -> activities of the government or people who try to influence the way a country is governed
+	4 	 -> something that people and animals eat or plants absorb to keep them alive
+	5 	 -> container filled with water, that sends out heat, often as part of heating system
+	6 	 -> machine usually with wheels and engine, used for transporting people or goods on land, especially on roads
+	7 	 -> thin, pointed piece of metal with a raised edge twisting round along its length and a flat top with a cut in it, used to join things together
+	8 	 -> 
+	9 	 -> 
+	10 	 -> 
+	11 	 -> 
+]
+calculated bag:
+	 {'part', 'engine', 'edge', 'transporting', 'raised', 'length', 'join', 'way', 'despite', 'cut', 'thin', 'together', 'alive', 'used', 'right', 'heat', 'land', 'wheel', 'wish', 'container', 'filled', 'thing', 'top', 'pointed', 'continue', 'something', 'government', 'absorb', 'system', 'along', 'respect', 'flat', 'keep', 'difficulty', 'heating', 'people', 'wait', 'country', 'strong', 'usually', 'recognition', 'activity', 'eat', 'metal', 'especially', 'twisting', 'sends', 'road', 'ability', 'often', 'governed', 'round', 'get', 'animal', 'continuously', 'good', 'machine', 'piece', 'water', 'try', 'influence', 'plant'}
+	-> updating: new node  part.n.01 , with simil: 0.038461538461538464 and bag:  {'part', 'hard', 'manuscript', 'determined', 'component', 'bigger', 'read', 'component_part', 'something', 'relation', 'smaller', 'wanted', 'animal', 'portion', 'constituent', 'includes', 'feel', 'plankton', 'reach'}
+	-> updating: new node  part.n.02 , with simil: 0.04225352112676056 and bag:  {'part', 'glue', 'whole', 'two', 'human', 'portion', 'le', 'rear', 'together', 'house', 'something', 'artifact'}
+	-> updating: new node  attempt.n.01 , with simil: 0.05194805194805195 and bag:  {'intended', 'effort', 'earnest', 'material', 'something', 'gave', 'reading', 'endeavour', 'conscientious', 'activity', 'wished', 'accomplish', 'endeavor', 'luck', 'cover', 'good', 'attempt', 'made', 'try'}
+	-> updating: new node  engine.n.04 , with simil: 0.056338028169014086 and bag:  {'catapult', 'engine', 'war', 'artillery', 'warfare', 'medieval', 'etc', 'instrument', 'machine', 'piece', 'battering', 'used', 'ram'}
+	-> updating: new node  section.n.04 , with simil: 0.06578947368421052 and bag:  {'several', 'part', 'object', 'used', 'whole', 'final', 'finished', 'fishing', 'rod', 'segment', 'fit', 'metal', 'one', 'road', 'section', 'constitute', 'ground', 'piece', 'others'}
+	-> updating: new node  land.n.02 , with simil: 0.06666666666666667 and bag:  {'reference', 'top', 'agricultural', 'plowed', 'earth', 'land', 'soil', 'ground', 'never', 'good', 'grow', 'quality', 'use', 'layer', 'material', 'especially', 'plant', 'surface'}
+	-> updating: new node  wheeled_vehicle.n.01 , with simil: 0.08 and bag:  {'syria', '3500', 'move', 'transporting', 'vehicle', 'known', 'date', 'wheeled_vehicle', 'wheel', 'container', 'oldest', 'thing', 'found', 'people', 'around', 'usually', 'sumer', 'wheeled', 'bc'}
+found:  Synset('wheeled_vehicle.n.01') , with similarity of: 0.08
+
+
+
+ fine
