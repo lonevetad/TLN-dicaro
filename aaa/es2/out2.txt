@@ -1,5 +1,0 @@
-Synset('entity.n.01')
-bags for entity:
-{'living', 'known', 'distinct', 'entity', 'nonliving', 'existence', 'inferred', 'perceived'}
-syn dog: Synset('dog.n.01')
-1.0
