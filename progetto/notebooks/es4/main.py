@@ -1,6 +1,6 @@
 from notebooks.es4 import es4
 from notebooks.es4.es4 import DocumentSegmentator
-from notebooks.utilities.cacheVarie import CacheSynsetsBag
+from notebooks.utilities.cacheVarie import CacheSynsets
 
 sentences_mocked = [
     "I love to pet my cat while reading fantasy books.",
@@ -27,7 +27,7 @@ sentences_mocked = [
     "It's a no surprise if happens that I found a better dialogue with a book or my cat."
 ]
 
-local_cache_synset = CacheSynsetsBag()
+local_cache_synset = CacheSynsets()
 document_sentences = sentences_mocked
 filename = "brexit"  # "cambridge_analytica"
 with open(filename + ".txt") as file_in:

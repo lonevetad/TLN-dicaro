@@ -8,13 +8,13 @@ import collections
 # regex_punctuation = r'[^\w\s]'
 # lemmatizer = WordNetLemmatizer()
 # stop_words = set(stopwords.words('english'))
-from notebooks.utilities.cacheVarie import CacheSynsetsBag
+from notebooks.utilities.cacheVarie import CacheSynsets
 from notebooks.utilities.functions import synsetToBagOfWords, compute_sim, filter_and_lemmatize_words_in
 from notebooks.utilities import utils # split_csv_row_string, deep_array_printer
 
 
 def newCache():
-    return CacheSynsetsBag()
+    return CacheSynsets()
 
 
 cache = newCache()

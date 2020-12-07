@@ -5,7 +5,7 @@ from nltk.stem import WordNetLemmatizer
 import csv
 import collections
 
-from notebooks.utilities.cacheVarie import CacheSynsetsBag
+from notebooks.utilities.cacheVarie import CacheSynsets
 from notebooks.utilities.functions import preprocessing, SynsetToBagOptions
 
 '''
@@ -50,8 +50,8 @@ print("\n\nlet's do it")
 
 
 def newCache():
-    # return utils.CacheSynsetsBag()
-    return CacheSynsetsBag()
+    # return utils.CacheSynsets()
+    return CacheSynsets()
 
 
 cache = newCache()

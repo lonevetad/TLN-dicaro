@@ -4,13 +4,12 @@ from nltk.corpus import wordnet as wn
 import collections
 
 from notebooks.utilities import functions
-from notebooks.utilities.cacheVarie import CacheSynsetsBag
-# from notebooks.utilities import utils  # split_csv_row_string, deep_array_printer
+from notebooks.utilities.cacheVarie import CacheSynsets
 import notebooks.utilities.synsetInfoExtraction as sye
 
 
 def newCache():
-    return CacheSynsetsBag()
+    return CacheSynsets()
 
 
 cache = newCache()
@@ -32,7 +31,7 @@ def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cache
     # words_info_cache = {}  # words_seen = set()
     frontier = collections.deque()
 
-    cache_synset_and_bag = CacheSynsetsBag() if cacheSynsetsBagByName is None else cacheSynsetsBagByName
+    cache_synset_and_bag = CacheSynsets() if cacheSynsetsBagByName is None else cacheSynsetsBagByName
     weighted_context_info = sye.weighted_bag_for_sentence(bagOfWordFromDefinitions,
                                                           cache_synset_and_bag=cache_synset_and_bag)
 
@@ -54,7 +53,7 @@ def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cache
             la quale è a sua volta una mappatura (appunto) parola -> peso, ossia associa ad ogni parola della "definizione"
             una "utilita'" nella definizione stessa.
 
-    - cache_synset_and_bag: una istanza di CacheSynsetsBag
+    - cache_synset_and_bag: una istanza di CacheSynsets
             
             
     in sintesi
@@ -146,4 +145,3 @@ def searchBestApproximatingSynset(bagOfWordFromDefinitions: Iterable[str], cache
                                     words_seen.add(word)
                 # else: scartalo
     return best_synset, best_simil
-

@@ -1,7 +1,7 @@
 # from collections.abc import Iterable
 from typing import Dict, Iterable
 
-from notebooks.utilities.cacheVarie import CacheSynsetsBag
+from notebooks.utilities.cacheVarie import CacheSynsets
 from notebooks.utilities.functions import preprocessing, first_index_of
 
 
@@ -106,7 +106,7 @@ DEFAULT_SYNSET_EXTRACTION_OPTIONS = SynsetInfoExtractionOptions()
 #
 # single word
 
-def rightfull_name_from_synset(name):
+def rightful_name_from_synset(name):
     index_dot = first_index_of(name, '.')
     if index_dot >= 0:
         name = name[0:index_dot]
@@ -117,7 +117,7 @@ def weighted_bag_for_word(synset_name: str, cache_synset_and_bag=None, options=N
     """
     :param synset_name: the string representing the word of the synset that will
     generate the set of information required (this name is a bit a scammer ...)
-    :param cache_synset_and_bag: an instance of CacheSynsetsBag or None, used to retrieve
+    :param cache_synset_and_bag: an instance of CacheSynsets or None, used to retrieve
     synset instances
     :param options: an instance of SynsetInfoExtractionOptions, used to define
     what kind of information should be retrieved to build the map
@@ -128,7 +128,7 @@ def weighted_bag_for_word(synset_name: str, cache_synset_and_bag=None, options=N
     if len(synset_name) < 2:
         return None
     if cache_synset_and_bag is None:
-        cache_synset_and_bag = CacheSynsetsBag()
+        cache_synset_and_bag = CacheSynsets()
     if options is None:
         options = SynsetInfoExtractionOptions()
     synsets = cache_synset_and_bag.get_synsets(word_text=synset_name)  # prendo il synset
@@ -137,7 +137,7 @@ def weighted_bag_for_word(synset_name: str, cache_synset_and_bag=None, options=N
 
     mapped_weights = None
     if options.is_enabled("name"):
-        namee = rightfull_name_from_synset(synset_name)
+        namee = rightful_name_from_synset(synset_name)
         if namee is not None:
             mapped_weights = {namee: options.get_weight("name")}
     else:
@@ -196,7 +196,7 @@ def weighted_bag_for_word(synset_name: str, cache_synset_and_bag=None, options=N
         for coll_weighted in synsets_collections_weighted:
             we = coll_weighted[1]
             for syn in coll_weighted[0]:
-                namee = rightfull_name_from_synset(syn.name())  # sometimes the name is like "dog.n.01" ... not what I want (i.e. "dog")
+                namee = rightful_name_from_synset(syn.name())  # sometimes the name is like "dog.n.01" ... not what I want (i.e. "dog")
                 if namee is not None:
                     mapped_weights[namee] = we
     return mapped_weights
@@ -265,14 +265,14 @@ def weighted_bag_for_sentence(sentence: str or Iterable[str], cache_synset_and_b
         -> FilteredWeightedWordsInSentence:
     """
     :param sentence:  an English sentence as a string, or a set of words as strings
-    :param cache_synset_and_bag:  an instance of CacheSynsetsBag or None, used to retrieve
+    :param cache_synset_and_bag:  an instance of CacheSynsets or None, used to retrieve
     synset instances
     :param options:  an instance of SynsetInfoExtractionOptions, used to define
     what kind of information should be retrieved to build the map
     :return:  an instance of FilteredWeightedWordsInSentence
     """
     if cache_synset_and_bag is None:
-        cache_synset_and_bag = CacheSynsetsBag()
+        cache_synset_and_bag = CacheSynsets()
     if options is None:
         options = SynsetInfoExtractionOptions()
     h = FilteredWeightedWordsInSentence(sentence)
@@ -286,4 +286,5 @@ def weighted_bag_for_sentence(sentence: str or Iterable[str], cache_synset_and_b
         wm = wm_tupla[1]
         if wm:
             h.mapping_word_to_its_weighted_bag[wm_tupla[0]] = wm
+
     return h

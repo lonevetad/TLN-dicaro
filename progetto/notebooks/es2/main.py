@@ -2,7 +2,7 @@ import csv
 
 from notebooks.es2 import es2
 from notebooks.utilities import utils, functions
-from notebooks.utilities.cacheVarie import CacheSynsetsBag
+from notebooks.utilities.cacheVarie import CacheSynsets
 
 
 def read_csv():
@@ -43,7 +43,7 @@ def colum_csv_to_bag_of_words(column):
 def main():
     print("start :D\n\n")
     cols = read_csv()
-    cache_synset_and_bag = CacheSynsetsBag()
+    cache_synset_and_bag = CacheSynsets()
     i = 0
     bag_of_cols = [colum_csv_to_bag_of_words(column) for column in cols]
 
