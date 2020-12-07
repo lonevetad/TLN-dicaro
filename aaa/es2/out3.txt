@@ -1,0 +1,20 @@
+Synset('entity.n.01')
+bags for entity:
+{'existence', 'nonliving', 'known', 'perceived', 'entity', 'distinct', 'inferred', 'living'}
+syn dog: Synset('dog.n.01')
+
+
+updating: new node  man.n.01 , with simil: 0.0
+and bag:  {'opposed', 'six', 'person', 'men', 'two', 'bus', 'male', 'woman', 'adult_male', 'man', 'adult'}
+
+
+updating: new node  serviceman.n.01 , with simil: 0.2727272727272727
+and bag:  {'force', 'duty', 'men', 'member', 'two', 'armed', 'serviceman', 'serf', 'military_personnel', 'man', 'sentry', 'military', 'stood', 'military_man', 'someone'}
+
+
+updating: new node  serviceman.n.01 , with simil: 1.0
+and bag:  {'force', 'duty', 'men', 'member', 'two', 'armed', 'serviceman', 'serf', 'military_personnel', 'man', 'sentry', 'military', 'stood', 'military_man', 'someone'}
+
+
+found: Synset('serviceman.n.01')
+1.0

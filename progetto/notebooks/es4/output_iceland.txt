@@ -1,0 +1,109 @@
+usando il file iceland come input
+start analysys with 77 sentences
+list of breakpoints (the division will happen between the shown indexes and their respective successors):
+[3, 6, 9, 14, 21, 24, 28, 31, 43, 49, 52, 60, 71, 76]
+
+paragraph:
+---- The Northern Lights are the visible result of solar particles entering the earth's magnetic field and ionizing high in the atmosphere.
+---- Their intensity depends on the activity of the sun and the acceleration speed of these particles.
+---- They appear as dancing lights high in the sky and vary in color.
+---- The lights usually appear green, but occasionally also purple, red, pink, orange, and blue.
+
+paragraph:
+---- Their colors depend on the elements being ionized.
+---- Solar activity is not regular, however.
+---- Even if it is a dark, clear night, there could still be absolutely no chance of seeing the auroras due to a lack of solar activity.
+
+paragraph:
+---- It also means that the sky could be alive with Northern Lights on a midsummer day, but the sun's brightness obscures them.
+---- Due to the nature of the earth's magnetic field, the auroras only appear at the poles.
+---- They are usually visible above the 60Â° latitude mark in the north and below the 60Â° latitude in the south (these 'Southern Lights' are called the aurora australis).
+
+paragraph:
+---- Iceland, which sits at a latitude of approximately 64Â° north, is therefore ideally located to see the aurora.
+---- Before science could explain what these dancing lights were, there were many theories throughout different cultures.
+---- For example, the Old Norse theorized that they could be the glinting of the armor of the Valkyries.
+---- These mythical female figures chose who would live and die in battle and then took the dead to the afterlife.
+---- Certain Native American groups reportedly believed the aurora represented the spirits of the dead; the brighter they shone, the happier the dead were said to be.
+
+paragraph:
+---- In Finnish, the word for Northern Lights (revontulet) translates to firefox.
+---- It was the belief of the Sami people of Finnish Lapland, and other neighboring regions, that the lights were a result of the firefox running across the snow so quickly that his tail caused sparks to fly into the sky.
+---- The auroras have also been considered omens.
+---- After Christianization in Medieval Europe, people saw them as a warning for dark times ahead.
+---- Confederates who saw them in the sky at the Battle of Fredericksburg believed that they were a temporary but positive omen.
+---- While they would win this brutal fight, the aurora's positive effects on their war efforts would not last long.
+---- There is still much to learn about both the science and mythological origins of the aurora.
+
+paragraph:
+---- More discoveries are being made to this day, particularly regarding the dangers of strong solar winds.To witness the aurora borealis in all their glory requires patience, luck, and the following conditions to be met:
+---- You must be visiting between September and April (while you can occasionally see them towards the end of August, the lingering sunlight makes them very faint)
+---- The night must be as dark as possible (a fuller moon, for example, will dim the aurora)
+
+paragraph:
+---- There should be as little unnatural light as possible (avoid watching under artificial lights)
+---- There should be as little cloud cover as possible (Northern Lights occur much higher than clouds)
+---- There must be enough solar activity (usually anything higher than Kp 2 is a good rule of thumb to witness the aurora in Iceland)
+---- You can research these last two conditions before looking for the lights by referencing the aurora forecast and cloud cover forecast.
+
+paragraph:
+---- However, it is impossible to know what the forecast will be more than a few days in advance.
+---- The aurora forecast is measured on a scale of 0-9 Kp-index, with anything above a Kp 2 usually promising for visibility at Iceland's latitude.
+---- Contrary to popular belief, the temperature's coldness has no impact on whether the aurora borealis will show.
+
+paragraph:
+---- You are likely to have a better experience the warmer it is, as you will be able to marvel in comfort for longer.
+---- Even if all of the conditions listed above seem perfect, nature can be fickle, and the lights still may not show.
+---- Therefore, it is a simple truth that the longer you stay in Iceland, the likelier it is that you will see them.
+---- If you're coming for just a couple of days, then you're limiting your chances of a clear sky and an active aurora.
+---- Keep this in mind while booking your trip.
+---- Another possible way to ensure that you have the best chance to catch the aurora is to travel to the Westfjords or North Iceland.
+---- These areas have longer hours of darkness and often statistically less frequent cloud cover, providing more opportunities to see the aurora borealis.
+---- In Reykjavik, you will have about twenty hours of darkness at the winter equinox, while in the northernmost regions, it is closer to twenty-two.
+---- North Iceland, particularly to the east, also tends to have clearer weather than the southeast.
+---- If traveling in September or April, you could opt to go camping in Iceland.
+---- Sleeping beneath a canopy of stars will vastly increase your chance of seeing the lights.
+---- As many campsites are rural, the light pollution in these places will often be minimal.
+
+paragraph:
+---- Of course, there is a slight chance that you still might not see them even if you take every opportunity.
+---- That being said, there is always a chance you will see the Northern Lights on the plane over to Iceland or the drive from KeflavÃ­k airport.
+---- Luck is always a factor where nature is concerned, particularly when hunting the aurora borealis.
+---- If traveling in September or April, you could opt to go camping in Iceland.
+---- Sleeping beneath a canopy of stars will vastly increase your chance of seeing the lights.
+---- As many campsites are rural, the light pollution in these places will often be minimal.
+
+paragraph:
+---- Of course, there is a slight chance that you still might not see them even if you take every opportunity.
+---- That being said, there is always a chance you will see the Northern Lights on the plane over to Iceland or the drive from KeflavÃ­k airport.
+---- Luck is always a factor where nature is concerned, particularly when hunting the aurora borealis.
+
+paragraph:
+---- When considering the best places to see the Northern Lights, it's worth examining your travel plans and thinking about where you will be staying in Iceland.
+---- To have the best opportunity to see the Northern Lights in Iceland, you have four options.
+---- The first is to hunt for them without leaving the town you are staying in; the second is to take a guided tour into nature; the third is to drive out of town and search for them yourself.
+---- Or lastly, you could take a boat cruise.
+---- Each of these options has its advantages and disadvantages, so continue reading to see which will best suit you on your vacation.
+---- If your budget is a concern, and the idea of renting a car to see the Northern Lights or booking a tour seems too extravagant, you can always hope to catch the auroras from the city or town in which you are staying.
+---- The best way to see them is to find the darkest place possible and wait until your eyes have adjusted.
+---- ReykjavÃ­k, for example, is quite a spread-out city with many parks, providing multiple places to do this.
+
+paragraph:
+---- Perhaps the best spot is by GrÃ³tta lighthouse, on the Seltjarnarnes Peninsula in the capital's northwesternmost point.
+---- There is minimal light pollution along this stretch, meaning that, on clear nights with a good forecast, you have a great shot at spotting them.
+---- There is also a little geothermal tub (Kvika Foot Bath), in which you can warm up your feet while waiting for them to show.
+---- Oskjuhlid is another excellent place to hunt the aurora.
+---- The forest, which surrounds the popular restaurant and landmark Perlan, is very dark, so observing the sky from one of its clearings often achieves great results.
+---- Otherwise, watching from one of the city's parks, such as Klambratun or the more expansive Laugardalur Park, is also an option.
+---- In settlements outside of Reykjavik, there is usually a lot less light pollution, making this easier.
+---- The main exception to this is Akureyri, where you may need to get to the town's outskirts to find a dark enough vantage point.
+---- Unfortunately, seeking the aurora borealis from urban areas has several distinct disadvantages.
+---- Firstly, there will always be more light pollution in towns and cities than in the untouched landscapes of Iceland's nature.
+---- Secondly, you will lack mobility, so if there is a little cloud cover blocking the best of the auroras, you will not be able to reposition yourself for an optimal viewing experience.
+
+paragraph:
+---- It should be noted that when the auroras are incredibly vibrant, you may be able to see them from urban areas even with light pollution, such as from a beer garden, your hotel, or just the street.
+---- Even if they are quite distinct, they will be much more intense the darker your surroundings.
+---- The most common way to hunt for the aurora borealis is by taking a guided minibus tour.
+---- These tours run regularly from September to April whenever the lights are expected.
+---- If the outings are canceled or unsuccessful, you will usually get another opportunity to see them for free.

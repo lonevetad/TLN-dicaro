@@ -1,0 +1,1004 @@
+corpus: preloaded/ententen15_tt31
+subcorpus: 
+size: 5911971
+query: Query:[lc="build" | lemma_lc="build"], GDEX:2000
+offcite.org| <s> The tunnel was built in nine months. </s> 
+unwomen.org.nz| <s> It is built through respect and equality. </s> 
+su.se| <s> Chemicals management is built around the regulation of single substances. </s> 
+setcorp.ru| <s> Meanwhile the plant started building the fifth yacht. </s> 
+slashdot.org| <s> You can build modules without rebuilding the entire kernel. </s> 
+punxsyhistory.org| <s> He built a saw mill in 1878. </s> 
+setaram.fr| <s> A dedicated oven suitable for two methods has been specially built . </s> 
+essma.eu| <s> The first stand was built in 1908. </s> 
+president.az| <s> A large shipyard has been built in Azerbaijan. </s> 
+zingteen.net| <s> The build , or pixels is never ordered. </s> 
+free.fr| <s> Intro: Home built solar power system. </s> 
+green-phoenix.org| <s> It cost less than $200 to build . </s> 
+prsa.org| <s> Social networking is all about building a community. </s> 
+mrcsarasota.org| <s> Be able to inspire subordinates and build a cohesive team. </s> 
+missouri.edu| <s> They build nests and attract females to them. </s> 
+zilina.sk| <s> A new terminal was built at the airport. </s> 
+orangefizz.net| <s> Let's start with a clean slate and build . </s> 
+yourstru.ly| <s> We build strategies that connect brands and bands with fans. </s> 
+ericbooth.net| <s> They are building partnerships with youth sports networks in Venezuela. </s> 
+paroots.org| <s> They are simple, but are built to last. </s> 
+ihm-school.org| <s> The Canadian government built the railroad. </s>
+bigaustin.org| <s> You've started saving and built a financial base. </s> 
+itu.edu| <s> Also I believe these rich photographs build loyalty towards the brand. </s> 
+uic.edu| <s> Originally it meant building hardware and software and was considered admirable. </s> 
+journalists.org| <s> Ability to build lasting relationships and strong communities; customer focus. </s> 
+officeoftourism.org| <s> The church is built on a Latin cross plan. </s> 
+lip6.fr| <s> Neural Networks sequentially build high-level features through their successive layers. </s> 
+synearth.net| <s> Our affluence and comfort are built on massive global injustice. </s> 
+esharp.eu| <s> Pessimism is building across the euro area about economic performance. </s> 
+arjenpolku.fi| <s> And no, building a fence is unlikely to succeed. </s> 
+bartlewis.me| <s> This is a website I built for a local contractor. </s> 
+tellraven.us| <s> In class, we are learning about and building rockets! </s> 
+elohell.net| <s> Build a mix of sustain, heavy damage and armor penetration! </s> 
+establish-fp7.eu| <s> What do experts know about building a hydroelectric power plant? </s> 
+buddhistedu.org| <s> They build it so easily and their belief is quite strong. </s> 
+2day.uk| <s> Encouraging young people to get active and build fitness. </s> 
+recentworldnews.org| <s> Pendle is a slope built on sound investment. </s> 
+northsideup.org| <s> They identify a specific need and build programming to meet it. </s> 
+github.io| <s> Each description level builds off the previous sub-level. </s> 
+dugganbrothers.ie| <s> Shorter build time and less environmental impact. </s> 
+iqio.org| <s> Build a form by using 2 x4 wood planks or plywood. </s> 
+envirosagainstwar.org| <s> The US is actually building more nuclear weapons than it is dismantling. </s> 
+spacegambit.org| <s> Our aim is to build humanity into a spacefaring species. </s> 
+russs.net| <s> The mat roles up neatly with built in velcro straps. </s> 
+navajocountyhistory.org| <s> It was built to resemble a hospitable Spanish hacienda. </s> 
+storybench.org| <s> What's another element that you built for the story? </s> 
+lifelineconnection.org| <s> Also, we will build an on-line community. </s> 
+stjudefiles.org| <s> Part of the fun is destroying what he's built . </s> 
+tomasp.net| <s> Now, let's build a function for building the query. </s> 
+merenlab.org| <s> Fresh anvi'o builds for the lazy. </s> 
+com-central.net| <s> Could this be indeed a tank built by Chrysler? </s> 
+investinrussia.ru| <s> The plant will be built from scratch over two years. </s> 
+intrateam.dk| <s> Are you trying to build a sub community in your organization? </s> 
+abc.net.au| <s> This would help build important relationships between students and institutions offering further education. </s> 
+onlinebusinessguru.net| <s> Are simply beating the time of the temple built by mr. </s> 
+kidneyschool.org| <s> The other wanted to farm the land and build a homestead. </s> 
+jurassica.org| <s> There are two ways to get large, impressive visitor attractions built . </s> 
+ricaperalejo.ph| <s> And building a home means a whole lot of workers and jobs. </s> 
+greenwire.ie| <s> Where else have turbines of this height of 185m been built ? </s> 
+seavision.org.uk| <s> Lloyds Register hosted a competition to build your own boat. </s> 
+ahealthiermichigan.org| <s> We build our tacos at the table with different combinations. </s> 
+fofrescue.org| <s> On the property, a wonderful Gazebo was built . </s> 
+gia2014.ru| <s> The comfort level can be built by getting more information optoons asserts. </s> 
+i743.eu.org| <s> A short stockily built the guard which is a link was needed. </s> 
+orbit-lab.org| <s> More details on various build options are available on OpenAirInterface build page . </s> 
+buildlog.net| <s> What was the total build cost? </s> 
+setadc.org| <s> Building upon the introductory comments of Dr. Kanat. </s> 
+org.| <s> Regulatory bodies have worked with and built confidence in NSF International. </s> 
+revora.net| <s> Here is a template for a $2000 Titan X build . </s> 
+remember-the-children.org| <s> We will encourage the Romanian people through building relationships with them. </s> 
+expat.by| <s> Minsk-based companies are building four economy-class hotels. </s> 
+larasplace.my| <s> Classes begin with basic sewing techniques and build to cover more advanced sewing. </s> 
+eckenrodehouse.net| <s> Modular homes are built using an engineered approach to the home building process. </s> 
+pitt.edu| <s> Additional resources and supports to help partners stay engaged and build communication capacity. </s> 
+conservatorydesigns.ie| <s> We've been building conservatories & sunrooms longer than anyone else! </s> 
+maineadulted.org| <s> Experience in teaching Adults to build e-portfolios. </s> 
+mortonhospital.org| <s> As a result, GM2 builds up. </s> 
+bihartimes.net| <s> Creative people build the world as we know it today. </s> 
+qarchive.org| <s> The ISBN barcode have a build in database for easy formating. </s> 
+pcornet.org| <s> Built a patient portal to recruit, retain, and engage members. </s> 
+free-ebook-downloads.net| <s> But, why build pyramids in an arid desert of a planet? </s> 
+virginia.gov| <s> The board opted for building a new road mostly on new location. </s> 
+undp.org| <s> Building these capacities lies at the heart of UNDP's mandate. </s> 
+bimi.org| <s> They have built recreation facilities, theaters, golf courses and nightclubs. </s> 
+pureinsight.org| <s> A cultivator can build up his own virtue and merit through cultivation. </s> 
+innersydneyvoice.org.au| <s> Reporting back helps to build trust. </s> 
+man.eu| <s> Over the last century we have built thousands of diesel power plants worldwide. </s> 
+americasquarterly.org| <s> The number of homes built fell by 77 percent from 2006 to 2013. </s> 
+sgcity.org| <s> Council Member Gardner said the road was built to handle industrial type traffic. </s> 
+donegalcoco.ie| <s> Most solid fuels produce some soot which will build up without regular cleaning. </s> 
+tarstarkas.net| <s> Guns are built into cameras, makeup containers, even high healed shoes. </s> 
+starfrontiers.us| <s> The purpose in building a colony is to support the extended trade network. </s> 
+philadelphiastories.org| <s> Once I had a great build , nobody would pick on me. </s> 
+mycockpit.org| <s> I will have the updates of my build in this thread. </s> 
+latestnewsvideos.org| <s> First Google built an autonomous car that can drive better than you. </s> 
+desis-network.org| <s> That is, concerning the way in which a society is built . </s> 
+2-giraffe.ru| <s> So organically built a bungalow, so well-fixed in it. </s> 
+getexbackblog.net| <s> Once you've built the lean-to, build a fire. </s> 
+irfca.org| <s> The old balance is built by Pooley and Co, Liverpool. </s> 
+cyberd.org| <s> Is this some kind of built in compression in the server software? </s> 
+web-pages.info| <s> Ten Uncommon mays have been built to Actually quality. </s> 
+stexx.eu| <s> The houses are built with brick, it was dirty and run-down. </s> 
+musicartdance.org| <s> Our beautiful Center was built in the 1850s as a private home. </s> 
+unitedpeople.ie| <s> Lets as a UnitedPeople further build it that way. </s> 
+sis.gov.eg| <s> He built a funerary complex at Lisht. </s> 
+schoolforfriends.org| <s> Build something, such as Legos home made marble-run. </s> 
+aspeninstitute.org| <s> Together with his church, using excess land, they built 48 houses. </s> 
+4pt0.org| <s> I also build custom motorcycles; lots of mess ups there, too. </s> 
+redlineproject.org| <s> We have built new train stations, water towers, and emergency rooms. </s> 
+blogspot.nl| <s> The rhetoric that carries each of them is however built on the opposite. </s> 
+enginehub.org| <s> Implement worldedit. build .suffix in the Gradle build instead. </s> 
+kuwaittimes.net| <s> Or areas where houses have been built by the government and then distributed? </s> 
+flintfact.org| <s> Quickly build relationships by referring to this particular tool with all key stakeholders. </s> 
+ucsusa.org| <s> The central region also knows how to plan and build transmission for wind. </s> 
+unak.is| <s> Habermas critique indicates that Bildung builds on an exaggerated subject philosophical inheritance. </s> 
+scummvm.org| <s> This build also runs on Compaq iPAQ handhelds running Linux. </s> 
+ipn.md| <s> Playgrounds were built at nursery schools. </s> 
+tvffm.org| <s> Farmers markets are a social gathering place to build community spirit while supporting local farmers. </s> 
+readeroffers.travel| <s> It was built to defend the coast of Finland in the 1700s. </s> 
+intelligencecomputing.io| <s> HydraBase is built to provide a highly available, strongly consistent online storage service. </s> 
+climatenexus.org| <s> Now arriving in Lima, countries will seek to build upon this momentum. </s> 
+realtor.org| <s> The pergola was the first structure to be built in the garden. </s> 
+gilaeda.org| <s> Building Description: Extensively, exquisitely remodeled bed & breakfast. </s> 
+finninstitute.gr| <s> When was this church built , and when was it destroyed or abandoned? </s> 
+orange-films.ru| <s> Build yourself and calm economise flush, or to impinging the contractors? </s> 
+thalassery.trade| <s> Older houses in Thalassery are mainly built of stone in traditional Kerala architecture. </s> 
+westlakelibrary.org| <s> Fire Chief Frank Sauer built the pumper before he became Chief. </s> 
+linksysinfo.org| <s> I have this installed on my N16 using Toastman's build . </s> 
+plimoth.org| <s> Wampanoag houses had a hole built into the very top of the house. </s> 
+supportraisingsolutions.org| <s> Thanks for building me up as a missionary, Mr. Riggins. </s> 
+catholicmigration.org| <s> Significance Labs helps technology's brightest minds build high impact products for low-income Americans. </s> 
+andyross.net| <s> Russia has been checked, giving Ukraine the opportunity to build a stronger state. </s> 
+tundra.fi| <s> My first ceramics studio was built into the downstairs corner of the old barn. </s> 
+macscene.net| <s> Built into nearly every action on the site is access to a points system. </s> 
+nuggethead.net| <s> In this lesson we're going to have some fun building the buttons. </s> 
+vmwarenews.de| <s> Are you in the business of building a cloud, or building applications? </s> 
+hillelsd.org| <s> Then, we built a fire and cooked our pita pizzas for dinner! </s> 
+gallery.je| <s> The Watersplash was built for this. </s> 
+dartcenter.org| <s> The house was a four-bedroom, two-bath ranch, built in 1958. </s> 
+livingheritage.org.nz| <s> One Grandma's Dad built their house. </s> 
+gamename.net| <s> If so, I'll show you how to build a two. </s> 
+elsa-project.ac.uk| <s> More than 200,000 were built each year throughout the 1950s, 1960s and 1970s. </s> 
+twrcanada.org| <s> My team had spent the better part of 10 years planning and building this transmitter. </s> 
+leonardoflores.net| <s> We must build digital time capsules, for whatever future awaits, including apocalyptic ones. </s> 
+umc-gbcs.org| <s> Movements are built on relationships: incarnational relationships among those being crushed by broken systems. </s> 
+nyccollegeline.org| <s> Build relationships with prospects, clients and partners in online maketing and media areas. </s> 
+energy.gov| <s> Pantexans have built or helped with six Habitat homes, working alongside eventual homeowners. </s> 
+youthchoirfestival.org| <s> Build search click any 301 build seem rar. 215 Motorola 2. 7 7. </s> 
+unseen64.net| <s> Katie Elwood: We set out to build London as it is. </s> 
+boldcafe.org| <s> Most likely there will be tough days as we strive to build positive relationships. </s> 
+wecf.eu| <s> WECFs members in these countries have build demonstration project with dry toilets for schools. </s> 
+arvojournals.org| <s> Building such a phenomenological model is however not within the scope of this study. </s> 
+utexas.edu| <s> We will provide information that will help you build your proposal with realistic expectations. </s> 
+intouch.org| <s> Wang says that some churches have even been competing to build the largest building. </s> 
+spring.io| <s> You have now built and deployed an Android app with Maven managed dependencies. </s> 
+longfordmedical.ie| <s> We are located in the newly built Longford Medical Park in Ballyminion. </s> 
+bifrost.is| <s> Bifröst University builds on a proud 90-year tradition of business and management education. </s> 
+mst.edu| <s> The buildings in the Quad were built in the 1940s, 1950s and 1960s. </s> 
+unitedwaytopeka.org| <s> All proceed for sales and recycling go directly to build more homes for deserving families. </s> 
+ageofsail.net| <s> Masts can be built almost independant of the rest of the model construction. </s> 
+allears.net| <s> We usually request building 4 but this trip we decided to try the pool view. </s> 
+vu.nl| <s> Search filters It takes a lot of time and patience to build good searches. </s> 
+danbailey.net| <s> Then I scrambled home to build up the bike for its first test ride. </s> 
+berkshireunitedway.org| <s> Berkshire United Way is focused on building sustainable change, not on short-term charity. </s> 
+archive.org| <s> Easily build , manage & market your small business with a professional-looking web site. </s> 
+buildanaviary.com| <s> In no time at all you'd soon have built a beautiful aviary! </s> 
+uark.edu| <s> After designing the system, Alex built and installed the control panel and installed sensors. </s> 
+associationcontrarian.report| <s> As this item points out, however, building meaningful relationships takes time and effort. </s> 
+providus.lv| <s> It also refers in article 16 the "aid is about building partnerships for development. </s> 
+livedoor.jp| <s> The system was first built in 1995 and originally used 2.1 million 6-watt incandescent bulbs. </s> 
+jamesislandsc.us| <s> The homes will be built to all federal, state and local building code specification. </s> 
+talkb2b.net| <s> We also help to build chain management from farm, feed to food and consumers. </s> 
+fulking.net| <s> The Croft was built in 1890 as a summer residence for the Moon family. </s> 
+myelomacrowd.org| <s> And so, we've built the gene coding for that protein into virus. </s> 
+nts-group.nl| <s> Only if this condition is satisfied can we build a sound and profitable business model. </s> 
+taprootfoundation.org| <s> We offer a database built on the Salesforce platform using the Nonprofit Starter Pack. </s> 
+upenn.edu| <s> Finally we cover "software as a service" and building AJAX Web applications. </s> 
+marcusgrahamproject.org| <s> Please meet the team members of Prismatic, the agency built to crystalize imagination. </s> 
+fixesu.org| <s> And building a playground seems to be a good way to develop the muscles. </s> 
+bcito.org.nz| <s> Committed to building the future. </s> 
+tabsir.net| <s> Unlike the formal system, the tribal system is based on consensus building and maintaining relationships. </s> 
+we-aggregate.org| <s> In other words, the sole purpose behind drawing, for Kahn, was building . </s> 
+genderandequity.org| <s> As community organizations consider how to build power, many recognize the potential of strategic partnerships. </s> 
+usc.edu| <s> Emphasizes skills for building engineering and market research applications requiring information gathering, analysis, representation. </s> 
+folyo.me| <s> Building from the ground up, I rebranded the company's logo and web site. </s> 
+ventspils.lv| <s> Museum has built a special wagon shed which at least partly protect them from bad weather. </s> 
+open-emr.org| <s> Lists are a nice way to build customizable lists that support standardized output formatting and internationalization. </s> 
+wiseinternational.org| <s> The power plant, to be built at Chashma south of Islamabad by 2010. </s> 
+thebrokeronline.eu| <s> The intervener takes the initiative but focuses on building a coalition for change with stakeholders. </s> 
+goodhomes.org.uk| <s> A further 295 dwellings will be built to this standard for HCA's Carbon Challenge. </s> 
+nertamid.org| <s> Even my bedroom dresser was an heirloom, built by my furniture-maker great-grandfather. </s> 
+archhighland.org.uk| <s> The first purpose built poorhouse in the Highlands was built in Tain in 1850. </s> 
+stopthedrugwar.org| <s> The group said it would continue to work on building public support in the meantime. </s> 
+atone.me| <s> They build their nests by its dead branches and they eat the fruit it bears. </s> 
+aircrack-ng.org| <s> Pay attention which are to be build as modules and which can be built-in. </s> 
+thearchbiz.biz| <s> If they can build them and sell them, why would they hold back? </s> 
+europegrouptours.in| <s> It represents the epitome of Greek architecture and was built to worship the Goddess Athena. </s> 
+jlwilliams.org| <s> This is the church we built over a decade ago for Pastor Bharat outside Delhi. </s> 
+v-play.net| <s> V-Play allows you to build cross-platform business apps in record time, with native performance. </s> 
+gonna.travel| <s> The same architects who built the Tsaritsyno estate were invited to build the Bykovo estate. </s> 
+vifg.de| <s> In addition to maintaining existing roads, new federal roads need to be built and financed. </s> 
+andrewhy.de| <s> Four years of living was paid of the reputation built off of that $500 website. </s> 
+solutiontalk.ie| <s> Build his self-esteem and encourage him to participate in activities around these strengths and interests. </s> 
+rymanarts.org| <s> The Sharon D. Lund Foundation's long-time support helped build this organization to its present capacity. </s> 
+asmadrid.org| <s> Building for the Future is about building for our students – they are the future. </s> 
+peecworks.org| <s> The quality of life in a city is inextricably linked to its natural and built environment. </s> 
+archaid.org| <s> This is the exploded Axo. of what I WILL be building this week. </s> 
+olatheks.org| <s> The pay structures all have elements of market rates of pay and internal equity built in. </s> 
+the-romans.eu| <s> Sempronius Longus who had been recalled from Sicily , built his camp near Scipio's. </s> 
+susvaluewaste.no| <s> Wood, fish waste and algae were mentioned as promising feedstock for building the Norwegian bioeconomy. </s> 
+wictorwilen.se| <s> These updates are a result of the Microsoft Error Reporting services built in to Vista. </s> 
+wsia-club.org| <s> To the left is the pump-house built as a replica of a small Irish cottage. </s> 
+braidedlight.net| <s> Although bigger and more solidly built , Calareg staggered back, more surprised than anything else. </s> 
+alpinelinux.org| <s> Alpine Linux has a great meta-package for building Alpine packages from source available called alpine-sdk. </s> 
+gallew.org| <s> I wanted to post a few more pictures from this week's visit to our build site. </s> 
+culturalinnovators.org| <s> Spread values such as cooperation and solidarity to build a convivial society and a cosmopolitan order. </s> 
+thesai.org| <s> One interest of his research is the applicability of the theoretic models built in both fields. </s> 
+regit.org| <s> The protocol has been choozen to be simple so people can easily build their own scripts. </s> 
+nexosproject.eu| <s> Develop and build the hyperspectral cavity absorption sensor for investigation of phytoplankton and other absorbing components. </s> 
+bhudeva.org| <s> First, all earthships need to be built on undisturbed ground and not on gravel. </s> 
+ewtechnologies.ie| <s> There's no new build of limescale on my shower head or around my taps. </s> 
+ikbvm.win| <s> He built the very first prototype with the majority of the components bought in Pettah. </s> 
+fluentcollab.org| <s> This initiative is a way to build community that also functions as their main fundraising initiative. </s> 
+romguide.net| <s> Between 1921-1926 it was built a new synagogue in Turda for the Jewish community. </s> 
+gameteep.net| <s> I seem to be the only one among them who can't build it yet. </s> 
+imac.ky| <s> I've also been asked whether the existing frameworks build relationships between the public and private sectors. </s> 
+vgtu.lt| <s> The students used almost sixteen thousand sheets of paper and 2.5 thousand screws for building the tower. </s> 
+drupalgovdays.org| <s> Most commonly used in backpacking UGG boots built for extended trips, heavy loads and rugged terrain. </s> 
+appstorm.net| <s> In this game you get to build rollercoasters with a simple swipe of your finger. </s> 
+bsdsec.net| <s> Rework the LLDB build to use LLVM and Clang shared libraries. 2. </s> 
+ukhma.org| <s> The port was built in 1792 to serve the then thriving fishing and China Clay trades. </s> 
+youthinarts.org| <s> Next up, students will build on their embossing skills to create prints representing Colonial professions. </s> 
+motherscircle.net| <s> The KOTO model builds pride, confidence and allows these kids to see value in themselves. </s> 
+weap.org| <s> An important aspect of WEAP's Methodology is to build the leadership and awareness among our community. </s> 
+simerson.net| <s> In 2013 they doubled their fuel cell farm to 10MW and built another 20MW solar farm. </s> 
+indiahomes.estate| <s> Shapoorji Pallonji Group has also built many residential projects which are famous for their unconventional designs. </s> 
+org.| <s> It builds on a $3.88 million grant awarded for the ITC in 2005. </s> 
+ocl.org| <s> WE now have a new TOWER, the freedom tower built without god. brrrrrrrr! </s> 
+joomlablogger.net| <s> We've always put user friendlyness and ease of use above all when building our extensions. </s> 
+newfloridamajority.org| <s> Her campaign is planning to build on the multiethnic coalition that turned out to support Obama. </s> 
+digitalkosovo.org| <s> Created around the mantra Never Settle, OnePlus creates beautifully designed devices with premium build quality. </s> 
+freedomfromthepress.info| <s> Another aspect of social media is that because of its interactivity, it builds a community. </s> 
+sari.ie| <s> The first 1000 days of a child's life is the most important in building their future. </s> 
+birdwing.eu| <s> Duck numbers are building , with, for example, 720 Teal and 192 Shoveler. </s> 
+txb.life| <s> As you build your website, you will probably also build a large repertoire of passwords. </s> 
+no-ip.info| <s> For this project we needed built Indiana build coffee table account book cases for a recollective wall. </s> 
+vibrantfaith.org| <s> This is where digital space has its deepest potential . This is what it was built for. </s> 
+nationallinkcoalition.org| <s> Many pioneering domestic violence shelters are building animal kennels within the shelters themselves to keep family survivors together. </s> 
+internetbrothers.org| <s> The battery even has a handy LED light built in that becomes a very bright emergency flashlight. </s> 
+echoparenting.org| <s> Building emotional intelligence builds resiliency, and modeling patience and kindness is a way of teaching generosity. </s> 
+jesuit.ie| <s> And why did it build underground bunkers and secret facilities if it has only benign nuclear intentions? </s> 
+remodem.eu| <s> The service package and modules will build on state-of-the-art knowledge of dementia care and existing national guidelines. </s> 
+java-source.net| <s> This project aims to develop and promote a highly flexible and extensible framework for building enterprise applications. </s> 
+micsem.org| <s> Shared activity and time together is a necessary condition for building open, trusting and loving relationships. </s> 
+ogroup.net| <s> There are three core elements – building blocks – that form the foundation of every true luxury brand. </s> 
+tudelft.nl| <s> For the Supercar challenge a new car will be build , the Forze VII. </s> 
+nsw.edu.au| <s> They provide counsel to boys with work or behavioural issues and help build positive relationships with parents. </s> 
+aerealty.net| <s> Looking for a place to build a large storage building – this could be your site. </s> 
+fishhawkranchrealestate.net| <s> On this site, Hillsborough County Fire Rescue is planning to build fire station No. 44. </s> 
+sadc.int| <s> This will ultimately build responsibility in the region and ownership of the response to this epidemic. </s> 
+eubrazilcloudconnect.eu| <s> The video is about a project to build and use a computational model of the heart. </s> 
+rocketdynecleanupcoalition.org| <s> The AOCs have special exceptions built into them to protect Native American artifacts and endangered species. </s> 
+arcc-network.org.uk| <s> Funded by EPSRC, our focus is adaptation to changes in the built environment and infrastructure. </s> 
+wind-watch.org| <s> The energy center is projected to be built in northern Stephens County and southern Grady County. </s> 
+irisa.fr| <s> See Build MPTK for Unix pdf document for more informations. </s> 
+stemseeds.org| <s> This is the "model" build which I used the second day of this lesson. </s> 
+familysecuritymatters.org| <s> The Soviet Union funded the original structure, which was built by a contractor from India. </s> 
+larvatusprodeo.net| <s> At least three terms for the LNP to stuff up and to build a credible alternative. </s> 
+technize.net| <s> It is an OEM only build so you won't be able to buy it separately. </s> 
+linksysinfo.org| <s> Thanks for the new builds .png Shibby. </s> 
+uclouvain.be| <s> Sensitivity analysis in building performance simulation for summer comfort assessment with respect to apartment typologies 122 3.4.1. </s> 
+quezon.ph| <s> It takes years, decades, a lifetime to build the complex institutions of a democratic nation. </s> 
+redcardinal.ie| <s> That means building a navigation which tells users, both human and machine, what's important. </s> 
+libraryquotes.org| <s> The library is also historical site – it was built with funds from Andrew Carnegie in 1912. </s> 
+iclei.org| <s> Rio ́s experience: building Brazil ́s largest bicycle paths network in an automobile dominated culture. </s> 
+americaisraeltravel.net| <s> The town is built on a triangular plateau, with the castle at its narrow southern tip. </s> 
+escalate.ac.uk| <s> I approached this book looking for some direction for my own research work on building sustainable schools. </s> 
+drurys.org| <s> Cavallari and Hahn both said the high cost of land dictates that developers must build higher-priced apartments. </s> 
+osv.org| <s> This complex interlocking system was time consuming and inefficient yet highly effective and secure once it was built . </s> 
+utah.gov| <s> Twitter built its first custom data center in the south end of Salt Lake Valley around 2011. </s> 
+kremlin.ru| <s> This is especially true of facilitating land allocation for building the railway line itself and its adjacent installations. </s> 
+maastrichtuniversity.nl| <s> The Learning and Working project is now in the development phase, building programmes and being tested. </s> 
+myam.org.nz| <s> Open the hearts of many others That they may accept your challenge To build your Kingdom today. </s> 
+prodsiomons.ga| <s> Our superior attention to caring and personal service lets us build relationships that span lifetimes – even generations. </s> 
+employerroadmap.org| <s> And networking isn't merely about getting a business card; it's about building a rapport. </s> 
+bmwguggenheimlab.org| <s> Portable 3-D printers were also developed, built , and donated to various cultural producers in Berlin. </s> 
+boardagency.org.uk| <s> An appraisal should be an 'affirming' process, where the individual's strengths are built on. </s> 
+frankfurt-school.de| <s> Join us, and you'll be joining a firm that was built for these times. </s> 
+redlands2030.net| <s> Abundant street tree planting would mask the banality of the built form and mitigate the hot climate. </s> 
+devhawk.net| <s> Obviously, the hard part about reusable assets is designing and building them in the first place. </s> 
+librarywebchic.net| <s> It doesn't do anything by itself to encourage or assist in expanding and building a community. </s> 
+recentworldnews.org| <s> These practice tests will build children's confidence and ability in the run up to KS2 SATS. </s> 
+myadventures.org| <s> But the best part of the trip was building relationships with people i never thought i would. </s> 
+onlineinfluence.net| <s> Instagram , Tumblr and Pinterest are built on imagery – Twitter are Facebook aren't far behind. </s> 
+oe30.eu.org| <s> Some boys badi behan ko manaya as potent on the playground distance gained had been built that such. </s> 
+google.nl| <s> Merchant's may build commerce tracking links recognizable by the Clearinghouse through programming residing on the Clearinghouse server. </s> 
+cemexusa.com| <s> CEMEX provides cement, aggregates, ready-mix concrete and other building materials to suit your construction needs. </s> 
+mayonews.ie| <s> Once built , expected running costs for the centre were outlined to be €42,000 annually. </s> 
+theturninggate.net| <s> As to how things are built , the plugins themselves are tighter, made of fewer moving parts. </s> 
+mesotheliomawatch.org| <s> Army veterans also worked with asbestos when fitting out fighting vehicles, building barracks and repairing damaged equipment. </s> 
+thecommune.in| <s> Building envelope panels with factory fitted insulation and decorative cladding can also be used as load-bearing elements. </s> 
+energy-regulators.eu| <s> Grid operators have to build up settlement processes for grid management services that are consistent with existing processes. </s> 
+org.mm| <s> The Movement for Democratic current Forces helps to build knowledge and awareness of human rights in Burma. </s> 
+scotland.gov.uk| <s> Participating in Citizen Science gets people outdoors, building connections with each other and developing new skills. </s> 
+ijept.org| <s> This work builds upon and advances previous approaches by introducing a relative novel approach in discrete time framework. </s> 
+orau.org| <s> We help your agency build a solid network of the right partners to tackle your public health challenge. </s> 
+wrapni.org.uk| <s> Resource efficient and sustainable outcomes can be built into the standard buying process using a category management approach. </s> 
+ottawafood.org| <s> Holland Community Garden Tall Tunnel Build on April 26, 2014. </s> 
+jooble.org| <s> In addition to ... ... desire to build something better than what our competitors can put out. </s> 
+socialenterprise.directory| <s> A Home for Changemakers Building the Future Birmingham. </s> 
+ojaienergy.org| <s> But if you're building structures like we do, it can make a big difference. </s> 
+ecotopiakzfr.net| <s> How to Build a Time Machine. </s> 
+agha.or.ug| <s> Furthermore AGHA invested resources in building civil society capacity on budget analysis, monitoring, and health rights. </s> 
+shipmodels.info| <s> By the way, fantastic build of the Lindberg LCI on the works in progress page! </s> 
+smeharbinger.net| <s> The program focuses on developing students intellectually, personally and emotionally, as well as building social skills. </s> 
+spearheadresearch.org| <s> What seemed a fortress built by the United States and a few key allies has already dismantled visibly. </s> 
+fi.is| <s> The Hvitarnes hut was the first to be built by the Iceland Touring Association in 1930. </s> 
+nico71.fr| <s> The aim was to built a "kinematic" moc in order to have parts in motion. </s> 
+nsw.gov.au| <s> The Gallery's collection now focuses on Australian contemporary paintings and prints building on the Mary Turner collection. </s> 
+wordsireland.ie| <s> The first five two-hour sessions will be devoted to assessing batches of poems building towards your next book. </s> 
+freefictionbooks.org| <s> In such countries houses are built wholesale by capitalists, and only by a small minority for themselves. </s> 
+westfordfriendsebc.org| <s> The sisters immediately set about having the land for the camp buildings cleared, and the cabins built . </s> 
+efreebooks.org| <s> They permanently reside in Florida near many of the courses he has built over the last couple decades. </s> 
+voy.space| <s> The Cessna 182 Skylane is an American four-seat, single-engined light airplane, built by. </s> 
+wmfha.org| <s> All this at the same time you build your partnerships and network on group activities and assignments. </s> 
+daredevils2512.org| <s> The last day of build season teams will put their robots into a bag to prevent further alterations. </s> 
+freeplansonline.info| <s> Kanal von Magicmastera has made quite a few videos documenting his Laminar Flow Water Fountain build process. </s> 
+chs.org| <s> They built and maintained roads in particular areas in exchange for the right to collect fees from travelers. </s> 
+cyclingquotes.com| <s> Those three riders were allowed to build up a gap but Wellens refused to do any work. </s> 
+getfarming.com.au| <s> Mr Truss said Gippsland needed a fighter to build on the work done by Peter McGauran. </s> 
+qqkk.gq| <s> Than you will the entries for your phone of great, you are really to building it. </s> 
+unitycoalitionforisrael.org| <s> Iran has been positioning itself to build up its presence in the Red Sea region for many years. </s> 
+urbarts.org| <s> Renowned mother, author, and activist Rebecca Walker has been building her reputation as a public intellectual. </s> 
+ipmsusa3.org| <s> Thanks to Round2Models, it's now possible to build some of these classic kits once again. </s> 
+uruknet.biz| <s> They may yet be called upon to build homes for Israelis on land they regard as their own. </s> 
+s-k-p-p.de| <s> Also, cheat codes are not built into the sport like they occasionally are with a gaming system. </s> 
+knime.org| <s> This separation not only makes the workflow easier to understand, it also helps with building model ensembles. </s> 
+aaonetwork.org| <s> And, of course, once you get it built , you don't just stop fundraising. </s> 
+numa.paris| <s> I use a human centred approach to gather actionable insights, build memorable experiences and craft integrated business models. </s> 
+pechakucha.org| <s> We continue to build , to create, to work, but we also continue to waste. </s> 
+apex.aero| <s> So, build it and they will come – but the catch: Leave the door open. </s> 
+prisoncensorship.info| <s> These seeds can be nurtured with education and organizing to build a core devoted to peace and solidarity. </s> 
+uchicago.edu| <s> It builds on and extends earlier work on model comparison in the area of monetary and fiscal policy. </s> 
+endure-network.eu| <s> It is designed so that trainers can use some of the information here to build training sessions locally. </s> 
+ufanyc.org| <s> About 67 percent of the city's firehouses were built between 1890 and 1930, according to FDNY records. </s> 
+thurlesparish.ie| <s> Thurles Parish Youth Ministry aims to provide vision and leadership in effectively reaching and building our young church. </s> 
+gilacommunity.net| <s> Just before the Clay Camp began the counters were built and the surfaces were Mosaic't during the camp. </s> 
+deutscheoperberlin.de| <s> And in the major NEULAND youth project refugees meet Berlin teenagers and work on building a common utopia. </s> 
+greatergreaterwashington.org| <s> Long-time residents say they have used this path since the Miramont buildings were built in the mid-1980s. </s> 
+energywisepa.org| <s> Join us for the nation's leading forum for building a green economy and creating good, green jobs. </s> 
+politicsandideas.org| <s> Building legitimacy and reputation. </s> 
+prsaorlando.org| <s> Maintain and build member relations and sales revenue through consistent, positive communication and follow-up with each member interaction. </s> 
+seahistory.org| <s> The museum featured intricate wooden models of historic ships, in many cases built by sailors who knew them. </s> 
+thelamp.org| <s> Reality television uses a wide variety of techniques to construct narratives, build characters and provoke an emotional response. </s> 
+unitingchurch.org.au| <s> We believe that children can build their communication skills, thinking processes and learning potential with positive adult modelling. </s> 
+regents.ac.uk| <s> You will learn how to choose the right marketing tools for different customer groups and build effective communications strategies. </s> 
+perthusasia.edu.au| <s> They build relationships and foster new ideas for solving problems but ultimately aim to influence the official policy process. </s> 
+indiatogether.org| <s> A discriminatory attitude builds up among teachers and the greater society that witnesses girls dropping out in large numbers. </s> 
+aha.io| <s> This is especially true for tools that seek to link product planning with the features that engineering must build . </s> 
+anu.edu.au| <s> Heavily built , he died of heart disease on 20 October 1938 and was cremated with Anglican rites. </s> 
+nla.gov.au| <s> QueryPic is a web app I built that graphs search results from the Trove newspaper database over time. </s> 
+allevo.ro| <s> Finkers United is the community built around FinTP and the one responsible for implementing the concepts mentioned above. </s> 
+amichai.me| <s> My father and his brother survived to continue their father's rabbinic dynasty and build the state of Israel. </s> 
+github.io| <s> At this point you're ready to start using Epoch to build and place charts in your application. </s> 
+mingw.org| <s> Once the build is done, and there's no remaining major problems, it will be uploaded. </s> 
+tacomapubliclibrary.org| <s> The five story building would take almost 2 years to build and cost an estimated $500,000. </s> 
+adamafriyie.org| <s> Students today must learn how to run their own websites, secure computers, and build their own software. </s> 
+habitatabq.org| <s> All three remaining houses were worked on, with major emphasis on the Bankers Build . </s> 
+digitalpill.tv| <s> We are building the project its own website but we'll be posting here until that site is finished. </s> 
+somervillevoices.org| <s> They both helped build my confidence and skills in managing bills, taxes and the mortgage sequence that followed. </s> 
+thecreator.me| <s> Crafted with traditional joinery and rich hand-applied finishes, Seliger's unique pieces are built to last a lifetime. </s> 
+ashoka.org| <s> Falk Zientz is building a self-sustaining microfinance distribution system which links traditional banks and non-banking organizations in Germany. </s> 
+collegespal.org| <s> Concernes i will, in the gardens prospered; and now one of our being is built . </s> 
+bostonlivingwithwater.org| <s> The developer would be responsible for building and maintaining its own flood protection systems and connections to public infrastructure. </s> 
+warwickshirerha.org.uk| <s> Our expertise allows us to manage all stages and partners resulting in homes regularly being built for local people. </s> 
+b2cloud.com.au| <s> Or do I build 2 websites, one flash and a second HTML and use an auto forwarder? </s> 
+4c-alameda.org| <s> Through group learning and discussion, mothers and fathers build confidence and skills that contribute to positive parent-child relationships. </s> 
+silu.asia| <s> By doing so, we assist our customers to build up stronger and more-productive relationships with their suppliers. </s> 
+chapter16.org| <s> Roger responds by building the towering, odd-shaped house and living there for the rest of his life. </s> 
+dutchnews.nl| <s> Our American business culture is built on the foundation that the Dutch laid long before America became a country. </s> 
+virtueverse.net| <s> Friction was also building between Kirk and the new head of the Evolution-X Academy, James Winter. </s> 
+gitca.org| <s> She later transitioned into the South Island Partnership Coordinator role and has been building programs and relationships ever since. </s> 
+scp-knowledge.eu| <s> Built in 1917 as a privately financed institution, CBS became part of the national university system in 1965. </s> 
+veriditas.org| <s> Dian is a longtime supporter and major donor to Veriditas from New Orleans who loves to build labyrinths. </s> 
+massnonprofit.org| <s> In this spirit, nonprofits should focus on making connections and then work hard at building and sustaining relationships. </s> 
+abilitytools.org| <s> There are many different user-friendly websites that build your page for you for free or a very small fee. </s> 
+russialist.org| <s> In these areas, it is illegal to build new structures or alter the historic image of existing ones. </s> 
+bestonlinehosting.net| <s> Once you have your domain name and web host, the next step is to actually build your website. </s> 
+strykeforce.org| <s> Without the business team, the build team would have not anything to build with, or for. </s> 
+ferumbrasmaggot.org| <s> Remodelaholic Build a Bookshelf with Adjustable. </s> 
+forsaetisraduneyti.is| <s> The economic blows that the nation has suffered mean that we must look ahead and build for the future. </s> 
+redecho.org| <s> Step-by-step build gallery included. </s> 
+newhorizons.ae| <s> The interface appearance is built on familiar software like Outlook and can be used flexibly thanks to web-based services. </s> 
+chtodelat.org| <s> We need to build a few grandiose, symbolic buildings intended to symbolize the city's new stage of development. </s> 
+saccounty.net| <s> Design, Bid, Build . </s> 
+nonrelevant.net| <s> But, in building new things, even silly things it's important to remember unintended and unforeseen consequences. </s> 
+recentpast.org| <s> Security Trust and Savings Bank occupied the first and second floors while additional space was built to be leased. </s> 
+kbjournal.org| <s> Instead, most downplay this status in favor of private personal experience or other credentials designed to build credibility. </s> 
+apjp.org| <s> In the short term, it's easier to flee from the problem and build on available agricultural land. </s> 
+funky-monkey.nl| <s> This ant build file will be a bit different, because now i'm using a external properties file. </s> 
+postalreporternews.net| <s> The Founders understood that for the country and democracy to succeed we had to build infrastructure, internal improvements. </s> 
+endhungerinamerica.org| <s> His light is found in temples which God has sanctioned to be built for the remembrance of His name. </s> 
+soclog.se| <s> Amazon.com: Customer Reviews: How to Build a Bonneville Salt Flats. </s> 
+prathamusa.org| <s> Read India , Pratham's flagship program, helps children ages 6-14 build basic reading, writing and arithmetic skills. </s> 
+produceprocessing.net| <s> And Wal-Mart agreed to build new stores so that they use 40 percent less energy and half the water. </s> 
+getconnectedlongview.org| <s> The mission of Thrive360 is to build transformational relationships for youth to access asset-rich opportunities through Christ-centered holistic activities. </s> 
+ipscommons.sg| <s> The national identity we build for ourselves must be one that takes into account all corners of Singapore's past. </s> 
+4president.org| <s> Over the next year in Congress I will do everything in my power to get that fence built . </s> 
+elphincollege.ie| <s> So, we set off, with a few jibes thrown from team to team, building our raft. </s> 
+skriduklaustur.is| <s> This was seen as a miracle and the stories say that a chapel was built to remember the event. </s> 
+savannahbuilders.net| <s> Are you going to use this builder again if you decide to build a custom home in 10 years? </s> 
+fu-berlin.de| <s> Foswiki is also an "application platform" that lets you quickly build and use your own online applications. </s> 
+pediatricbrainfoundation.org| <s> The initiative builds on a pilot program run for six years from NIH's Bethesda, Md., clinical center. </s> 
+treepac.org| <s> The proposed Comprehensive plan explains that getting more parkland is too difficult because all the land has been built upon. </s> 
+autoglasschandler.net| <s> Discussant: build a. </s> 
+dedicaces.us| <s> Jim said the SPP guys are a great example of how other authors can build up a fan base. </s> 
+sgbc.sg| <s> Pomeroy Studio, award-winning designers and thought leaders of sustainable built environments, opened their curated exposition Design Green! </s> 
+healthyfoodaction.org| <s> U.S. agribusiness companies have relentlessly focused on building a global agriculture market through past Farm Bills and free trade agreements. </s> 
+utah.edu| <s> If she's building a costume from scratch, the actor will have two or three fittings per costume. </s> 
+opuscule.info| <s> Years ago she moved to Nebraska and she will never water build damage (ge.tt) move. </s> 
+dublinconcerts.ie| <s> Every time the song built up the audience clapped along with the guitar and stamped along with the percussion. </s> 
+indiawaterreview.in| <s> WHI builds the centers with the help of local labor and operates them with the help of local staff. </s> 
+pecorama.info| <s> Your section of baseboard to take home with you to inspire you to start building your own model railway. </s> 
+opensourcelaw.biz| <s> These codecs aren't compatible with the royalty-free web standards that the rest of the web is built on. </s> 
+michaelhanley.ie| <s> Taxonomy: A framework for the classification and arrangement of objects (used to build a classification hierarchy). </s> 
+omnix.ae| <s> Since inception, Omnix has built up the most talented, skilled and experienced staff in the IT industry. </s> 
+manmonthly.com.au| <s> The build space in the machine is 1,000 by 1,000 by 400 mm, with a four-zone heat bed. </s> 
+unfccc.int| <s> Building on this knowledge, decision-makers can then formulate sectoral policies or nationally appropriate mitigation actions (NAMAs). </s> 
+oberlin.edu| <s> If you work 10 hours for the co-op, you can build your own bike, free of charge. </s> 
+uwa.edu.au| <s> Our aim has been to enrich the curriculum, create opportunities for students, and build linkages and community service. </s> 
+knowledgebank.org.nz| <s> Bentinck and Mary Ann were among pioneers involved in fund-raising to build St. Paul's Anglican Church in Paraparaumu. </s> 
+mythgraveyard.org| <s> To defeat your enemies, you must cast spells, gain experience, collect items, and build ancient devices. </s> 
+marketingexecutives.biz| <s> This fuzzy thinking can be seriously damaging to the organizational focus and cohesion necessary for building strong brands and businesses. </s> 
+manukau.ac.nz| <s> Our affordable modern accommodation is a great way to become part of a friendly community and to build lifelong friendships. </s> 
+panganai.org| <s> It has gave the chance pertaining to present Espresso developers emigrate towards the Android os advancement surroundings and build programs. </s> 
+stjamesprioryproject.org.uk| <s> The Priory Church of St James is a Grade I listed building situated next to Bristol's Bus Station. </s> 
+ohinemuri.org.nz| <s> My father's shop was built on the piece of ground which is now the carpark of the Salvation Army. </s> 
+phpdeveloper.org| <s> In this part, we will build the methods that will write new polls and answers to the tables. </s> 
+brianwatson.me| <s> Supreme is a 20-year-old streetwear brand that built itself off three core principles: scarcity, quality, and collaboration. </s> 
+golwalkarguruji.org| <s> The Sangh therefore has never entertained the idea of building an organisation as a distinct and separate unit within society. </s> 
+theredphoenixapl.org| <s> Among the earliest changes they wrought was to reduce usurious interest rates, and build a few hospitals and roads. </s> 
+latikaroy.org| <s> We are building – from scratch! state-of-the-art! – one of our own centres right inside a government hospital. </s> 
+sgcity.org| <s> Consider approval of the building design for the proposed Direct Aviation building to be located at the Replacement Airport. </s> 
+patrickhenry.org| <s> CBS is a thorough approach with built in incentives to "step" youth towards a targeted behavior or goal. </s> 
+51.| <s> It is proposed to be built at around 40 metres from the zoo wall (pictured below the video). </s> 
+udsm.ac.tz| <s> The objective of the programme was to build capacity of the district staff, ward staff and communities to plan. </s> 
+plfr.org| <s> In recent years, there has been an increase in the number of homes built on or near forested land. </s> 
+irisindia.net| <s> There are different possible ways to build checks in the taxonomy, which will ensure correctness and accuracy of data. </s> 
+reevadiy.org| <s> We also help building EV's that run on wind-solar & meet the first Saturday at 10am of each month. </s> 
+polymers.nl| <s> At present, SCG has 5 core businesses encompassing chemicals, paper, cement, building materials, and distribution. </s> 
+satinder.net| <s> ICF concrete homes and ICF foundations are the most cost effective, energy efficient means of building a green home. </s> 
+oandp.org| <s> These errors also caused the laser to cure the test socket wall in a random fashion increasing the build time. </s> 
+marquisstudios.org| <s> This program fosters the student's self-esteem and builds the skills of vocal projection, speech articulation, and physical expression. </s> 
+scrippscollege.edu| <s> Are we meeting our strategic plan goal to " build a diverse and scholarly community dedicated to women's education"? </s> 
+1gb.ua| <s> Build Your Own Gaming PC 2013Each year I build a new gaming PC and sell off my old hardware. </s> 
+vikasswarup.net| <s> Modern day architects, however, have become adept at building structures that can resist an earthquake with minimal damage. </s> 
+tieupgames.net| <s> They were clearly built for heavy objects and large forces, and he knew what he was going to do. </s> 
+peoplestribune.org| <s> Solidarity is being built across so many differences and issues, and with that brings the power of this movement. </s> 
+buildingfutures.org.uk| <s> Professional Futures examines the changing role of the built environment professions during the first two decades of the 21st century. </s> 
+tearfund.org| <s> Besides the obvious benefits, the act of building the block has also transformed the general outlook of our community. </s> 
+dha.org| <s> In 2010, our efforts to build a strong core of support for H. Res. 1309 were highly successful. </s> 
+org.| <s> India FDI Watch is building awareness and facilitating grassroots action to prevent the take-over of India's retail sector by corporations. </s> 
+rockpaperscissors.biz| <s> Each song built and built , only to be followed by another that was faster, higher, more syncopated. </s> 
+diva-portal.org| <s> First the marginal CO2-emission controversy has been study, whether building gas power in Norway increase or reduce Nordic CO2-emissions. </s> 
+boisearchitecture.org| <s> Completed in 1914 and dedicated in 1915, Arrow-rock set a new world record for the highest dam ever built . </s> 
+msba.org| <s> She enjoys motivating audiences to find their passion, build a brand around it, and market like a rockstar! </s> 
+galwaycitycommunitynetwork.ie| <s> It is critical that we build on this to ensure participation and inclusion in the reform of local government process. </s> 
+stuttering.ws| <s> Vikingskipet (The Viking Ship) is a speed-skating hall and was build for the winter Olympics in 1994. </s> 
+javabien.net| <s> We'd clone our working directory, run the build from the clone and commit only in case of success. </s> 
+taxexecutive.org| <s> We have continued to "track" our offerings so attendees can build a program customized to their particular needs. </s> 
+tamuc.edu| <s> Commerce Union Passenger Station, Built in 1924, used by the railroad until the mid 1980s. </s> 
+154.| <s> Distorted by the comm relay build into Yon's mask, the voice echoed strangely around the dim and darkened room. </s> 
+micheltorena.org| <s> This fall, Micheltorena Street Elementary School will build a new library in the northern-most building on its campus. </s> 
+biyahero.net| <s> The National Shrine of St. Anne's , first built of stone and brick from 1731 to 1734 by Fr. </s> 
+jorditorres.org| <s> Also the prototype build in this hands-on is part of the scientific project of the secondary school in our town. </s> 
+visitcastles.eu| <s> After that it slowly declined and when a Russian fortress was built there after 1831 parts of it were demolished. </s> 
+theassetedge.net| <s> The SIFE project is especially powerful in regards to building Developmental Assets, because it builds Assets on multiple levels. </s> 
+gk-ev.de| <s> This two-week school will teach participants how to use the Nengo simulation package to build state-of-the-art cognitive and neural models. </s> 
+oxfordmshomes.net| <s> When Esplanade was first built , the condos were in high demand and they could not build them fast enough. </s> 
+centermaryland.org| <s> So the group BUILD is celebrating, challenging and changing the way people think about the city. </s> 
+westernsydney.edu.au| <s> Building better climate change vegetation models: How do leaves allocate nitrogen among photosynthesis and stress proteins in future climate scenarios? </s> 
+mtlakes.org| <s> The NMAAHC will be built right next door to the National Museum of American History on the National Mall. </s> 
+emanuelbeaumont.org| <s> We built a legacy; we built a piece of eternity... and witnessed the presence of God in exchange. </s> 
+cofc.edu| <s> The creatures learn to appreciate and build into the third dimension because they have a slight extension in that direction. </s> 
+boxhost.me| <s> You have the built benefit of being used to find the document to the iCloud and unloading from manual devices. </s> 
+eqemulator.org| <s> It's an AT&T dsl wireless modem with 4 connections for cat5 and has a built in router. </s> 
+alpha.net.au| <s> IT CONSULTANCY & SOLUTIONS The importance of consultancy is that it helps build the foundation for future strategy and planning. </s> 
+istartjax.org| <s> Then there's this amazing vehicle, the Tatra 77A, built by a Dutch automaker in the 1930s. </s> 
+ujbl.info| <s> There's no tradition for external lawyers, and it can take twenty to thirty years to build a relationship. </s> 
+loyalty360.org| <s> Though loyalty programs are intrinsically linked to brand loyalty, it takes more than points and rewards to build true loyalty. </s> 
+techraptor.net| <s> Tentacle Bento was our first foray into building a simple card game product that we could publish on our own. </s> 
+explained.today| <s> Rommel decided to continue the attack against these positions in order to prevent the British from building up the fortifications. </s> 
+nea.gov.ph| <s> Pinatubo in 1991, Pelco I built a structure which serves as evacuation center in case of typhoons and floods. </s> 
+palmbeachpast.org| <s> They moved to the Delray area in 1895, building a house just east of Federal highway north of Delray. </s> 
+zanzibartourism.net| <s> The palace was built and used by the last and most feare the line of rulers of these the Islands. </s> 
+dioceseofroseau.org| <s> Pray for the entire people of God that we may build a community that is worthy of the name Christian. </s> 
+stclassifieds.sg| <s> LONDINUM: that was the name of the fortified town built by the Romans, a precursor to modern London. </s> 
+carbondalepubliclibrary.org| <s> This building on the southwest corner of Elm and University was first built to house the St Andrew's Episcopal Church. </s> 
+oneworldeducation.org| <s> My family and I visited the Cape Coast Castle, which was built in the 18th century by the British. </s> 
+mcap.ph| <s> Both Gladys and Manilyn, however, continue to hone their skills and build their self-confidence to look beyond 2015. </s> 
+k12.wi.us| <s> They also decided to build another plant 15 miles Michael Kors handbags cheap from a drug become addicted to that drug. </s> 
+techcourt.net| <s> Well built , sturdy, although the question of whether the main stick buttons will be more resistant than previous generations. </s> 
+rice.edu| <s> The classes are designed to build a love of the sport and are fun, exciting, and provide great exercise. </s> 
+w-teconline.org| <s> The girls were able to make short films and expressed interest in continuing to build their technology skills through other W. </s> 
+rwth-aachen.de| <s> This pavilion is currently being built by architecture students in front of the former tram depot in the north of Aachen. </s> 
+enews-pctpress.org| <s> She lamented that Taiwanese rural areas that used to be filled with agricultural lands are now being used to build villas. </s> 
+mseproject.net| <s> The launch event was followed by a workshop on June 14th 2012 which focussed on building an understanding of impact assessments. </s> 
+buddhachannel.tv| <s> It was obviously an image of a powerful well respected man or why else would anyone have built such a tribute? </s> 
+tatarstan.ru| <s> All these crimes are closely related and are built to form a strong system that challenges the society and the state. </s> 
+onemac.net| <s> To compile and execute your application, click the " Build and Go" button in Xcode's toolbar. </s> 
+pomorskie.travel| <s> After the plundering and burning of the church by the Hussite units, a new structure was built in 1436-1437. </s> 
+myparliament.info| <s> Such deposits are associated with previous volcanic activity, where the deposits have built up over time via plumes from vents. </s> 
+mycreativeedge.eu| <s> We undertake a wide variety of work including commercial fit out, new builds , renovations, interiors and bespoke kitchens. </s> 
+stjohnswahroonga.org| <s> We're told he wants to hold onto something transient, wants to take this spiritual experience and build a memorial. </s> 
+webmproject.org| <s> Examples given are for 2-pass VP9 encoding with FFMpeg . Ensure that your FFMpeg has been built with libvpx support . </s> 
+gaps.net.nz| <s> But a new and all-powerful pressure is overtaking the traditional conditions under which baches were built –land and property values. </s> 
+4-h.org| <s> Participants learn about the resources needed to build a robotics program and begin to develop an action plan for their program. </s> 
+iss.edu| <s> It was a tremendous amount of work but the rewards of building a strong program with terrific colleagues was worth it. </s> 
+umn.edu| <s> The community and the student work together to find an appropriate resolution and build a respectful contract to repair any harm. </s> 
+zerohomes.org| <s> Use a Thermal Enclosure Checklist or Thermal Enclosure Checklist Guidebook to help you design and build with minimal thermal bridging. </s> 
+dansenshus.se| <s> All alone on the stage, which is built into a boxing ring, she fights, falls and rises again. </s> 
+reservationshotels.org| <s> Located in centre of the capital, the newly built Zen Hotel is a stylish example of this standard tube style. </s> 
+robotc.net| <s> Bug: Large ICON toolbar was not getting built when IDE is opened unless it was "opening last file". </s> 
+beautyfeatures.ie| <s> Infused with soothing aloe vera, this lotion will help give you smoother, skin while building a gradual golden tan. </s> 
+softpanorama.info| <s> In Lviv, the opposition promptly started building a stage on the square in front of the building they had seized. </s> 
+synearth.net| <s> When the Stock Market began it was supposed to raise capital for businesses to build new facilities to expand their operations. </s> 
+montessorihighschool.org| <s> The group takes everyone's written ideas relating to their category, and can build off of them and create a plan. </s> 
+eclipse.org| <s> David to send email when all aggregate builds done, and that 'staging' is ready for EPP final builds. </s> 
+hyperdex.org| <s> In particular, the functionality and the guarantees offered by a system directly affect the quality of applications one can build . </s> 
+freeorion.org| <s> I've noticed some flickering of the star icons when zoomed out in recent builds , which I suspect is related. </s> 
+millvalleylibrary.net| <s> The only stumble is in the denouement, when the emotions built over the preceding pages unravel too quickly and superficially. </s> 
+imprintmagazine.org| <s> The hype building up to the so-called most twisted season yet has left all AHS fans on their toes in anticipation. </s> 
+swmuseumsoc.org.uk| <s> The first known owner of the site was a Saxon called Godric and the first house was built in 13th century. </s> 
+beringer.net| <s> Microsoft Dynamics CRM and CRM for Distribution also allow companies to monitor social media with built in functionality like social listening. </s> 
+unimelb.edu.au| <s> It's a major undertaking and it builds on decades of research into understanding mechanisms of adaptation and acclimatisation in corals. </s> 
+pomed.org| <s> Alterman suggested that the U.S. should build on strategic interests, such as preventing Syria from becoming a hotbed for terrorism. </s> 
+minecraft-download.eu| <s> But most people who use Build Faster are actually going to be using it for building and construction purposes. </s> 
+somdmda.org| <s> These challenge coins are built with perfection, so they can remind the families and even the grandchildren of person's achievements. </s> 
+qs30.net| <s> In this video, I'll show you how Jason Day builds a powerful backswing, centered around width and rotation. </s> 
+unawe.org| <s> I built one of the model circuits that is in the booklet that comes with the kit - the energy meter. </s> 
+lmddevelopments.ie| <s> Lee's been around building all of his life because he used to help his dad when he was a youngster. </s> 
+204.| <s> I don't want to build a data centre, ok, AWS has already taken care of that for me . </s> 
+saratogapreservation.org| <s> Built circa 1892, The Algonquin is considered one of Saratoga Springs' most significant and striking original late Victorian buildings. </s> 
+globalenvironmentalsociety.net| <s> Cornell Tech has begun construction on the first high-rise residential building in the world to be built to Passive House standards. </s> 
+allentown.org| <s> Nos. 172-182 are unlike anything else in Buffalo, adjoining Romanesque structures built in 1888 as tenements by architect Fred Fischer. </s> 
+renobuddhistcenter.org| <s> These relics will be permanently enshrined inside the heart of a magnificent Maitreya Buddha statue being built in Kushinagar, India. </s> 
+ecob.net| <s> If the lumber is in excess of 19% you should not allow them to close you building up with drywall. </s> 
+ecflabs.org| <s> RE-DIRECTING: EAST, which has began in June of 2013, aims to build new spaces for dialogue and exploration. </s> 
+ukzn.ac.za| <s> As part of my career building I also conduct marketing and branding for the GSB&L and any administrative requirements. </s> 
+kazworld.info| <s> Talgo and KTZ agreed in 2010 to set up the Tulpar Talgo joint venture to build and maintain passenger rolling stock. </s> 
+nasa.gov| <s> On this day, Guillermo's team started to cut components from aluminum sheets to build the caterpillar-like lower chassis of GROVER. </s> 
+imsmedia.org| <s> If you build a house for the Lord, do not offend and limit Him by casting in your lame offerings. </s> 
+unifor.org| <s> Unifor will meet with Accessibility Standards for the Design of Public Spaces when building or making major modifications to public spaces. </s> 
+jesser.org| <s> Gosh that makes me sound serious and I'm really not ... I just want good advice on building my stamina. </s> 
+mo.gov| <s> Districts role in PI for the Design Build bridges will be very similar to that of the MDBB bridges. </s> 
+kucb.org| <s> Yoga Tune Up® is a Fitness therapy format built around the three P's – Pain, Posture and Performance. </s> 
+shipmodels.info| <s> Realize it will be a very slow build but want to learn how to master PE and this certainly should help. </s> 
+moneyflowindex.org| <s> The Company's Hortonworks Data Platform is an open source, data management platform built on Apache Hadoop and powered by YARN. </s> 
+upfi.info| <s> Namibia National Housing Programme - " Build Together": Assessment of the Effectiveness of the Programme. </s> 
+ips.org.pk| <s> We are working so hard with our Pakistani friends to build the China-Pakistan Community of Shared Destiny in the new era. </s> 
+allegiancy.us| <s> This type of school is able to build entire systems around maximizing common characteristics of male and female learning and personality styles. </s> 
+paulgosling.net| <s> A support infrastructure – including research excellence, local skills, logistics and relevant venture capital – must also be built up. </s> 
+spring.io| <s> M3, but if you want to live on the bleeding edge, you can experiment by building Roo from Git. </s> 
+statestimes.net| <s> The Western industrialized nations have produced transformational leadership to envisage change and futuristic advancements – the framework for building a progressive nation. </s> 
+btcparish.org| <s> Our school community focuses on developing the whole child, building their spiritual, intellectual, physical, social and emotional talents. </s> 
+burton-on-trent.org.uk| <s> The school was built to eventually accommodate 250 pupils, as was the case with most schools, this was soon exceeded. </s> 
+sheherazade.eu| <s> Because the pilot was held in multiple sessions, we were able to build upon the activities used from session to session. </s> 
+pathtopositive.org| <s> Much of these efforts are aimed at empowering communities with the tools to help themselves– building resiliency at the local level. </s> 
+japanjournal.jp| <s> The cost of building the system was less than one tenth that required using the existing technology developed in the advanced countries. </s> 
+gehs.net| <s> Medical facilities will get financial and technical help building robust in-building mobile networks to transmit medical data using 4G handsets from Sprint. </s> 
+clv-development.org| <s> The State needs to build a streamlined and effective adminstrative apparatus with qualified, competent and highly professional cadres and civil servants. </s> 
+rossdd.org| <s> The practice helps build young student's internal thesauruses, building valuable language skills that can even transfer to other areas of study. </s> 
+sealreport.org| <s> In this case you can just render the report without querying again the database, the models previously built are used again. </s> 
+gutenberg.org| <s> Even though it was built to freeway standards, Route 128 was never initially intended to be part of the Interstate system. </s> 
+greenbusinesswatch.org| <s> The future of alternative vehicles, as with anything which requires mass changes of habit and attitude, is about building trust. </s> 
+tcnj.edu| <s> The worksheet is designed to provide you with information about building your schedule and, where applicable, collect your course preferences. </s> 
+statestimes.net| <s> The device is currently in Italy after it was originally being built for a project partly funded by the Italian defense agencies. </s> 
+womendeliver.org| <s> In villages where people borrow or save in tiny denominations, building and maintaining a bank branch just doesn't make sense. </s> 
+ethicsandentrepreneurship.org| <s> Employees' goals are best achieved in a company with a winning strategy that builds alignment and confidence in shared goals and objectives. </s> 
+saveyourhomeamerica.org| <s> Like lots of homeowners you dream of Equity being built up and having a great investment used toward your family and retirement. </s> 
+engineersireland.ie| <s> Build skills and confidence to have more effective 1:1 conversations on motivating for higher performance and developing the talent within your team. </s> 
+gehealthcare.se| <s> GE Healthcare's innovative solutions include wireless patient monitors, WMTS-based telemetry, and web-based patient viewing technologies all built on industry standards. </s> 
+artsearch.us| <s> I have additional years of work in experiential marketing, building and coordinating trade-show booth properties, museum presentations and corporate displays. </s> 
+qualicheck-platform.eu| <s> The objective is to document and build on interesting initiatives that will improve the compliance of input data used for issuing EPCs. </s> 
+tsa.gov| <s> Tip #4 - Build extra time into the trip in the event of crossing during periods of exceptionally heavy traffic. </s> 
+yourclassical.org| <s> The isolation of the prisoners at Guantanamo Bay and the language barrier has prevented many from being able to build a defense. </s> 
+usu.edu| <s> Like Ceppos and many others on both sides of the academic-professional divide, my professional orientation has led to helping build bridges. </s> 
+lewa-nikkiso.sg| <s> Built into UV printers or for UV coating, the deep ultraviolet light would permit quick hardening of paint or lacquer resin. </s> 
+premodernwisdom.org| <s> Later on, we may wonder why we let minor irritations build up and contribute to an unjustified outburst against a co-worker. </s> 
+pacrao.org| <s> In the early stages of this project we asked ourselves if building a training environment would increase knowledge and awareness of FERPA. </s> 
+csrconnect.me| <s> YourCause also built the new charity voting program, which drove employees to the new employee engagement platform when the community launched. </s> 
+uaf.edu| <s> The same year, Rogers started building a house on Birch Hill, cut his ponytail and ran for state legislative office. </s> 
+idrisjala.my| <s> In the past five years, we built roads with the distance of Johore to Bangladesh, benefitting 2.5 million rural folks. </s> 
+allchile.net| <s> The airport at Tacna was in process of being (re ?) built and was showing only 2 flights that day. </s> 
+poly.news| <s> This Union is something unique to Rensselaer, and it offers students an opportunity to build on their experience outside the classroom. </s> 
+planetarduino.org| <s> Interfacing any device with a micro controller is the first step to building a useful system or project with that particular device. </s> 
+nationalcollaborative.org| <s> Let's accept the challenge offered by this report and work to build communities that offer dignity and opportunities for all children. </s> 
+phf.org.uk| <s> The Foundation can make a great deal more of the knowledge building up within and across its programmes to advance its aims. </s> 
+libertarian.org.au| <s> The new question builds on one of the most persistent debates in the libertarian blogosphere " What is your preferred monetary policy? </s> 
+springfieldlocalschools.net| <s> Lowe's Heroes believe that by working together we can build something better – for our company, our customers and our communities. </s> 
+v-linc.org| <s> He remained in his bed for 15 years until a volunteer heard his story and built him a wheelchair he could use. </s> 
+duke.edu| <s> I really liked building relationships with the kids and their families and helping them do things they never thought they could do. </s> 
+diversity.net.nz| <s> Stackato is built atop Cloud Foundry and is already supported on vSphere and EC2 and is soon to roll out OpenStack support. </s> 
+populationmatters.org| <s> For example the UK would consider the Chilterns as part of natural capital and therefore factor that into plans to build HS2. </s> 
+doomsteaddiner.net| <s> If I study hard and listen to my teachers and I build my strength and endurance, I will make it through. </s> 
+gov.ge| <s> The Prime Minister, Bidzina Ivanishvili declared that his wish is to build a country based on genuinely democratic and European values. </s> 
+spbcar.ru| <s> The addition of the TLX production line now means that over 90 percent of Acuras sold in America are built in America. </s> 
+mainecte.org| <s> Students will integrate science, technology, engineering and mathematics to design, build and program Lego NXT 32-bit CPU powered Robots. </s> 
+asba-art.org| <s> I took a class about making websites to build on the idea, but it continued to be trapped on my computer. </s> 
+gurukul.edu| <s> It is high time that we realize that the sustainable future can be built only on the principles of self-sustaining decentralized economy. </s> 
+irishcatholic.ie| <s> The book seems to have been created at Iona, about 800 AD, just as the Norse pressure was building up. </s> 
+vpnexpress.net| <s> They want to build a better experience for users and using a Yahoo ID will also beef up security in the process. </s> 
+sensiblewashington.org| <s> Support for legalization continues to build , from the Editorial pages of the Seattle Times to the far corners of the state. </s> 
+thevegetablegarden.info| <s> To me, composting is a way of building valuable nutrients that will, one day, feed me and my family. </s> 
+solarwashington.org| <s> The first section of the system, built by Able Energy of River Falls, Wisconsin, was energized on October 1. </s> 
+blackgold.bz| <s> Black Gold, a Sun Gro Horticulture product-line, built its reputation on trusted all-organic potting soils, fertilizers and soil amendments. </s> 
+dairymax.org| <s> Dairy MAX is proud to support Dave Campbell's Texas Football with the BUILT by Nature Assistant Coach of the Week Contest. </s> 
+rightreason.org| <s> His "Modern Times: The World from the Twenties to the Eighties" deals with the historical build up to WWII. </s> 
+tiglarchives.org| <s> She helped create and currently runs the BUILD Nicaragua program of the IGL as well as participates in the new Africa Initiative. </s> 
+hotpenguin.net| <s> Hailing from Nova Scotia, this creative started building Lego representations of U.S. states in 2013, using nothing but the Lego in his daughter's collection. </s> 
+talentnet.vn| <s> According to Mercer methodology, one of the leading global HR consulting firms, salary structure should be built based on 3P: "Position", "Person" and "Performance". </s> 
+scrawford.net| <s> I had sent him a list of adverse possession elements, and he had the idea of providing lots of building materials and asking students " build what, where, and be there for how long" in order to prove title. </s> 
+greenfilmnet.org| <s> Yet there is surprisingly little debate over the fact that we have built ourselves into a society that demands the opposite, ie, increasing assets, not to collapse. </s> 
+tboverse.us| <s> Some come from Norman: 'castle' is apparently one (sensibly enough, since building castles as strong points from which to control the territory was a central part of Norman strategy in their new colony after the conquest): the corresponding standard French word is chateau. </s> 
+techdiscussion.in| <s> Approximately 20 days are left for Windows 10 official release and now the screenshots of another Build of Windows 10 are circulating on the Web. </s> 
+umich.edu| <s> He will argue that the reconciliation process will be essential to establishing a new and effective Euro-Atlantic Security Community built on understanding, trust, and cooperation. </s> 
+interiordesign.net| <s> Located in New York City, we build to specification for the interior design trade and private clients, offering a high degree of service and communication for each order, whether it be one item or a hundred. </s> 
+australianfriend.org| <s> In the 1990s, building on an English language school created by Gael, I started an agricultural college (a cross between a high school and TAFE) to provide English language and practical agricultural and horticultural experience to mainly Japanese students. </s> 
+buildbot.net| <s> The master and slave have been running for a few days, and at some point ONE of the periodic builds stopped being assigned (I think that's the problem), while the other 3 builds are continuing once per minute as normal. </s> 
+dvv-international.de| <s> The project seeks to build textbook writing capacity and promote curriculum development as well as produce high quality, affordable and relevant textbooks for Africa. </s> 
+publicinvolvement.org.uk| <s> Nick Hayes writes that "the popular history of healthcare is commonly built around misconceptions, fashioned by contemporary concerns and agendas". </s> 
+standardof.net| <s> Build mixed land forces (T3 siege bots, artillery, T2 anti-air, and some T2 mobile shield generators) and send them to the south as cover for the wall of defenses you're building . </s> 
+itfb.name| <s> Google's data suggests that the percentage of Android phones that didn't have any PHAs stood at around 99.5 percent at its lowest in October 2014, although this figure excludes anyone that rooted the phone and, er, freed up the security system built into the mobile OS. </s> 
+benq.eu| <s> BenQ DLP Projectors are built with enduring enjoyment in mind, ensuring razor-sharp clarity, ultra-readability and true-to-life color for years to come. </s> 
+nsw.edu.au| <s> Students of Latin build a wide range of intellectual and practical skills, such as how to understand and learn languages, especially grammar; how to appreciate and engage with works and ideas which have inspired and motivated people for centuries; how to explore an argument or to question a long-standing assumption or belief; and to discover or identify the ancient roots of contemporary concepts. </s> 
+berkeley.edu| <s> The goal of these implementations is to build up your programming skills and create a toolbox of algorithms that may be suitable for further research projects. </s> 
+ldag.net| <s> We believe leadership on issues such as sustainability helps drive our performance and is core to our corporate vision of building the best REIT in Europe. </s> 
+dealsof.us| <s> Since the R build kit centers on a curated mix of Shimano XT and SLX components and the frame is around 200g heavier than the top-end Carbon CC model, this particular Bronson 2. 0 build brings all that all-mountain bullying to a more palatable price point. </s> 
+uk.| <s> Nests: About January the caterpillars build distinctive, tent-like nests of white, silken, webbing up to the size of a football in the branches and foliage of pine trees, and there can be several nests in a single tree. </s> 
+environmentalresearchweb.org| <s> His view that 'Japan should aim for building a society that is not dependent on nuclear power' now seems widely shared. </s> 
+mit.edu| <s> The researchers found that when GLDC is blocked in these cells, glycine enters a different metabolic pathway, producing toxic byproducts that build up and ultimately kill the tumor cells. </s> 
+rgs.org| <s> By 2050 three-quarters of the global population are expected to live in cities and we will be building the equivalent of a new city the size of Birmingham every week for the next 30 years. </s> 
+kitmaker.net| <s> Contest Element - A fine ribbon will be awarded to those who finish at least one build (multiple builds are encouraged but only one ribbon will be awarded). - All finished builds will be included in a feature article about the campaign. </s> 
+emptywheel.net| <s> It would be paid handsomely for enriching Iran's uranium, continuing the monopoly it has in providing the Iranians with a commercial reactor, and putting it in a good position to build the new nuclear power reactors that Iran has said it intends to construct in the future. </s> 
+weownrotterdam.nl| <s> In 2013 he appeared on Complex' list of "25 People Shaping the Future of Design" and in 2014 he was included in the list of "50 Most Interesting People Building the Future" by The Verge. </s> 
+kokidokom.net| <s> There are only two men with any hope of stopping him: one, a brilliant public prosecutor who struggles to build a case against the psychopath; the other, a tormented Catholic priest, Iwao Garai, who shares Yuki'ls past–and frequently his bed. </s> 
+noctovis.net| <s> Alerts editor With this nice addition you can subscribe to alerts on 3 different levels: work item, check in or build . </s> 
+reconciliation.org.au| <s> The training has helped build confident executive committees across the region, ensuring better management of their enterprises and increased participation of all members in the management of their organisations. </s> 
+joburg.org.za| <s> As space became scarce, shacks were built over sewer lines and manholes, resulting in blockages and rivulets of sewerage water flowed freely in the narrow lanes and streets. </s> 
+gotothebeach.net| <s> Designed by noted 30A architect Matt Savoie and built by Romair Construction, this beautiful cottage defines quality and perfection in its materials selection and craftsmanship. </s> 
+edublogs.org| <s> Well done Amelie – I really like your use of descriptive words and you've built a great sense of suspense into a small amount of words. </s> 
+techpoint.org| <s> As investors, supporters and entrepreneurs continue to work together to build the connective tissue that makes our ecosystem stronger, that leads to more opportunities for everyone. </s> 
+worldlibrary.net| <s> An equestrian statue of the general was planned to be built there in 1925, but was cancelled and built instead at the New York State Capitol, as aforementioned. </s> 
+niceboard.org| <s> As I said above, it's up to you You can build the Pz IV F1 as an DAK vehicle in the desert, or as an vehicle at the start of Barbarossa, or as as old veterans at the battle of Kursk, or as an captured vehicle by the russian. </s> 
+undatarevolution.org| <s> The standard around the creation of corporate sustainability data is offered by GRI and made available as a free public good for all those who want to build on that. </s> 
+fox8.tv| <s> One ghost city in Inner Mongolia, built to house one million people, is now an empty shell of unoccupied skyscrapers and abandoned construction sites. </s> 
+moonmagazine.org| <s> Dad taught me how to build a fire here and first challenged me to light it with one match, which I was almost always able to do for him. </s> 
+ku.dk| <s> Deep penetration multiphoton excitation scanning microscopes , high environmental fidelity (microscope built around an environmental chamber), and whole organism imaging. </s> 
+blueflag.org.za| <s> The historical and cultural significance of this marina relates to the remains of the priginal breakwater built by Jan vna Riebeeck in 1781, still preserved here. </s> 
+shenmuedojo.net| <s> Pretty cool survival-based indie game where you have to cut down trees (a lot of them), build up shelter and a camp, find food to keep yourself healthy, and oh yeah... try not to get killed by the cannibals inhabiting the island you're on. </s> 
+gov.mt| <s> The other parts were considered to be very dangerous, and instead of restoring the damaged parts a scaffolding was erected in place without delay when the war was at its end in October 1944 , and the remaining structure was put down with extreme care and in risky conditions, with the sad fear that it will never be built again, and that is what exactly happened. </s> 
+nmsu.edu| <s> The Therapeutic Riding Program at New Mexico State University creates a way for children and adults with disabilities to build independence and confidence through a unique riding experience. </s> 
+199.| <s> So on any given issue, we cherry-pick the facts, and contort the evidence, and set up easily blown-down straw men (nuclear IS expensive and prone to construction delays and cost overruns, but so are building mass transit systems and off-shore wind farms and other major environmentally beneficial construction projects), so our position on the specific matter-at-hand supports our tribe's deeper values. </s> 
+thebearcat.net| <s> Already, a bionic heart has been put into testing; the next step is the bionic brain, which cannot be built without a lot more research. </s> 
+msha.gov| <s> The truck involved was a 1993 Kenworth tractor, Model W900B, with a 35 foot Benson dump trailer, built in 2006. </s> 
+russiancouncil.ru| <s> In early 2000's China undertook a huge and expensive decision to build the Yangshan Deep-Water Port in the centre of a few islands just of Shanghai as its own well-known port was overburdened and too shallow to allow new super vessels to dock. </s> 
+villageofbritton.org| <s> The Boy Scouts built a rock garden, women set out trees, the Kiwanis Club built a wading pool, a shuffleboard court was made, a bridge was constructed over the creek, a foot-bridge was built, and additional improvements are being made. </s> 
+uark.edu| <s> Wilkes said that the appointed student media leaders have talents that will help to build up each aspect of the student media in years to come. </s> 
+army.lk| <s> Seva Vanitha Army Branch (SVAB) on a concept of its President Mrs. Manjulika Jayasuriya provides assistance for War Heroes to complete their partially built houses and to construct wash rooms to coincide with the 61st Anniversary of the Sri Lanka Army. </s> 
+10things.it| <s> At the ancient Romans origins belong the Roman theatre , Druso's Arch and the pre-Christian Basilica of San Salvatore . But the monument that dominate on this city it's the fortress built by the cardinal Albornoz during the second half of 1300. </s> 
+ku.edu| <s> ChIP-seq will be used to test if these relationships are direct or indirect and thus to build a comprehensive effector gene regulatory network for the notochord. </s> 
+lowcountrynewspapers.net| <s> When the NAACP and their fellow travelers deliberately refuse to honor, teach or recall the efforts of those who built our nation, then we risk losing it all. </s> 
+rutgers.edu| <s> The experimental confirmation is that, by helping others, one builds one's reputation: people help those who help others, and helpful people have a higher payoff at the end. </s> 
+syr.edu| <s> David Spinks hits the nail on the head when he says the key to building a community is doing it one person at a time. </s> 
+infoshop.org| <s> The currencies would be the basis of a mutual bank (see sections J.5.5 and J.5.6 ), providing interest-free loans to workers to form co-operatives and so build libertarian alternatives to capitalist firms. </s> 
+kenw.org| <s> In addition to all the American money spent fighting in Afghanistan, the U.S. has spent $110 billion for the country's reconstruction, with the largest portion – more than $60 billion – going to build the Afghan security forces, known collectively as the ANDSF. </s> 
+voicesyouthcenter.org| <s> Working in two teams, Alcon volunteers helped build a deck at the VOICES office and 15 planter boxes at McPherson Elementary School. </s> 
+goingviralposts.biz| <s> Thanks to a chip built into the carrier's straps, Evenflo's car seat will sound an alarm if the harness remains buckled after the driver shuts the ignition off and exits the vehicle. </s> 
+odlqc.org.uk| <s> C. Course materials are designed for a specific and clearly stated level of learner support, and suitable opportunities for such support, where intended, are built into the material. </s> 
+susliving.org| <s> These workshops have focused on building up the Food Garden from scratch, from hard landscaping and infrastructure building, to future plant planning using suitable catalogues of domestic and alternative crops and plants. </s> 
+act.gov.au| <s> By the early 1920's, Canberra's residents had established several Tennis Clubs in the fledgling City, often building their own courts with volunteer labour of club members. </s> 
+smeharbinger.net| <s> Eastipedia is an encyclopedia built specifically for The Harbinger by our staff . The purpose of Eastipedia is to give our viewers more depth and clarity on the subjects they read about on this website. </s> 
+amaniinstitute.org| <s> Having started his career in banking and then moved into the social enterprise sector, he has deep expertise in operations, knowledge training, business development and education management, especially with regard to implementing business strategies, building capacity, and working closely with cross-functional teams. </s> 
+eclipse.org| <s> It may be tempting to start with the visual components, such as the editor, but developing an IDE is like building a home. </s> 
+infrastructure.gov.au| <s> Deputy Prime Minister and Minister for Infrastructure and Regional Development and NSW Minister for Roads and Freight Duncan Gay announced today tenders were invited to build the first 26-kilometre section between Woolgoolga and Glenugie on the Pacific Highway between Woolgoolga and Ballina. </s> 
+auvac.org| <s> The major contribution of the work presented in this article consist of using an underwater robot and an USBL-based global localisation system for building geo-referenced photo-mosaics of selected areas of the wall or the bottom floor, opening the door to systematic visual inspections. </s> 
+solidarity-us.org| <s> We believe that through successful organizing on the job and in their union, rank-and-file union reform groups can build a labor movement capable of taking on the corporations po-litically. </s> 
+ucpofcentralaz.org| <s> Work is an important way for individuals to contribute to their communities, build a network of social relationships, and create opportunities for lifelong learning. </s> 
+blogstaugustinelighthouse.org| <s> While this inaugural and beautiful little boat was an undisputed fantastic success, many of us were eagerly awaiting our first boat to be built from scratch. </s> 
+boostcollaborative.org| <s> Building off the school day, afterschool programs offer activities that schools struggle to fit in, such as service learning, internships, field trips, and others–activities that contribute to academic achievement as well as youth development. </s> 
+wpmudev.org| <s> Revive Pro is billed as a responsive business theme and yes, it fits that description nicely, but it also acts as a highly useful lead generation theme that can help you build leads or grow an email list with minimal effort. </s> 
+riograndesierraclub.org| <s> We will continue to push PNM to build real renewable energy, on the ground, in New Mexico, stimulating job growth here. </s> 
+amorblog.org| <s> If a person has 5 minutes to chat then it is easy to take some time to explain the Ministry Planning Boards, the transformation of the groups on short-term mission trips, the types of homes we build and reasoning for that, Casa de Amor , volunteer programs , and all the different levels of Project Hope . Unfortunately, most people, at first, do not want to stop for 5-10 minutes to hear about all this. </s> 
+desis-network.org| <s> That is, without the conversations I have had with several DESIS friends and colleagues and without the design knowledge they built with their projects and the collective reflections on them. </s> 
+kjordahl.net| <s> I hooked up my Arduino with data logging shield to the thermistor I built into my bat house when I put it up last year. </s> 
+timg.ws| <s> If Apache fails to start, try commenting out all of the eAccelerator lines again with ";"'s, I say this because the xampp version I had came with a eAccelerator version not for the build of PHP included with xampp. </s> 
+jdd.org.pl| <s> Pablo Barros is a software design enthusiast and determined to "keep it simple" while building and delivering against full solution specs. </s> 
+notesinmotion.org| <s> The program begins with a performance of "Dances our Built from Movement Ideas," a 45-minute interactive performance in which the dancers create an original dance with the audience's help right in front of them. </s> 
+newpol.org| <s> While Sandor is skeptical about Evo Morales and his government, he shows that there is a historical continuity in Bolivian radicalism: after the mines were closed by neoliberal "structural adjustments," many miners went to the Chapare province to grow coca leaves, helping to build the peasant unions whose leader was the young Evo Morales; others established themselves at El Alto, the popular neighborhood at the heights of La Paz, which played such a key role in bringing down various neo-liberal presidents in the years 2000. </s> 
+rhizome.org| <s> If the new media map has the appearance of graphic design or something built on a grid-based system, then immediately they all cry foul and trot out the scarlet "M" (modernism) and the scarlet "F" (formalism). </s> 
+ocprsa.org| <s> Serving as a representative of the American Red Cross allows me to use, hone and build upon my public relations and communications skills through the numerous opportunities to collaborate with the media via traditional and social media channels, be an on-camera or quotable media spokesperson, as well as create and run strategic campaigns to increase awareness of the Red Cross and its various programs to the media and the community in times of disaster and throughout the year. </s> 
+magicalwords.net| <s> But to find that proof she must rely on skills learned in her former life, and that could destroy the new life she is trying to build . </s> 
+wbur.org| <s> Lymphatic fluid builds in her lungs, creating rubbery imprints of her airways that can starve her of oxygen if she doesn't cough them out, and block her airway if she does. </s> 
+peoplesworld.org| <s> ATR was founded in 1986 when Norquist was tapped to head the group as an in-house operation to build support for the 1986 tax reform bill. </s> 
+myparliament.info| <s> We have also started to be a lot tougher with developers, and as new infrastructure proposals are brought forward, schools are being built at the beginning of the process. </s> 
+smemagazine.asia| <s> This trade mission builds on the Victorian Coalition Government's successful trade mission program of 52 trade missions so far, including more than 2,100 businesses to more than 20 countries which have generated approximately $3.2 billion in projected new exports. </s> 
+jdi-consult.net| <s> If a new Community Stadium for Cambridge were to be built would it not be sensible to keep it close to Cambridge and thus more central than create traffic problems building it in areas where the infrastucture does not exist? </s> 
+nationalpeaceacademy.us| <s> NPA brings to public consciousness all that is going on to build and sustain communities of right relationship – the peacebuilders, the work they do, the success they are having, the resources available, and the culture of peace that already exists – thereby also facilitating networking among peacebuilders and communities everywhere to share experiences, learn from one another, and engage in synergistic collaborations. </s> 
+islandfreepress.org| <s> They invited villagers to visit the inn that had been part of their lives since it was built in 1928, the first hotel in Hatteras village and perhaps on the island. </s> 
+vermontcivilwar.org| <s> On the dark night of Sept. 3, 1861, the regiment, with the rest of the command, moved silently across the Potomac into Virginia, and named and occupied "Camp Advance" and built Fort Ethan Allen. </s> 
+garethcook.net| <s> Our protectors, meanwhile, struggle to keep up, designing programs that build protective walls around our computers, and filter the lottery notifications and Nigerian petroleum appeals from our inbox. </s> 
+nwfilm.org| <s> Masika and the women with whom she works are not victims: They are survivors who are reshaping their lives and building a new future. </s> 
+explorapoles.org| <s> When building the trailer we used the same components in the trailer as were used in the cars, in order to be able to use them as emergency spare parts for the cars. </s> 
+athas.org| <s> In the '90 the Dark Sun mailing list had a series of small projects to build the lore of the Dark Sun setting. </s> 
+team2g.org| <s> The early game is about trying to draw cards and build up armor that will later be used to get rid of big targets with Shield Slam. </s> 
+smc.org.au| <s> The Academy welcomes the Budget commitment to adult education and remains hopeful that the Government will recognise the importance of building scientific literacy and numeracy by supporting school science and maths education. </s> 
+doomsteaddiner.net| <s> Wealth in the Industrial Era demanded access to the Credit necessary to buy Industrial Goods and build Industrial Infrastructure like Power Plants and roads suitable for moving the Heavy Equipment of Industry over. </s> 
+megablade.org.uk| <s> No real problems here, all as per build manual and all the bits were neatly stacked together by Chris who seems to be enjoying the build as much as I am. </s> 
+geekscape.net| <s> Once we hit the Anime Expo floor and noticed an updated build with even more characters to play with, we couldn't resist putting our ninjutsu skills to the test for a second time, with the addition of series mainstay, Kakashi, to the previously established cast of Naruto, Sasuke, Sakura, Obito and Madara, the bigger story was seeing all three Hygua children as fighters as well. </s> 
+ed.gov| <s> By encouraging states to focus on these relationship-based aspects of their early care and education systems, we will ensure that we are not just building the infrastructure of state systems from the top-down, but rather that we are constructing a strong foundation of human capital and connections that support our youngest children and those who care for them. </s> 
+mastermuffler.net| <s> Since then, there has been increased demand for lighter-weight cars, and making automakers more focused on building more powerful and fuel efficient cars without adding weight. </s> 
+venture.name| <s> OnePlus, an offshoot of established manufacturer OPPO, has been overwhelmingly successful at building up buzz for its annual " flagship killers ": handsets with nearly top-of-the-line components and features that are sold for a fraction of the cost of traditional high-end fare. </s> 
+g20india.gov.in| <s> They pledged to act together to bring the world economy out of recession and prevent recurrence of a similar crisis in the future by (a) Restoring confidence, growth, and jobs; (b) Repairing the financial system to restore lending; (c) Strengthening financial regulation to rebuild trust; (d) Funding and reforming international financial institutions to overcome this crisis and prevent future ones; (e) Promoting global trade and investment and reject protectionism, to underpin prosperity; and (f) Building an inclusive, green, and sustainable recovery. </s> 
+crc-internet.org| <s> In this instance, it refers to a temple that the impious Samaritans built to rival that of Solomon, on Mount Garizim in 328 B.C. This schismatic " temple " was called a " threshing floor ", by the Psalmist, who refused to call it a " temple ", just as we refuse to call a Protestant place of worship a " church ". </s> 
+askto.net| <s> It took us only a few days to get all the various Java dialects to work; it has taken us months to build an appropriate symbol table up through Java 1.7 and we are working on Java 1.8). </s> 
+americassbdc.org| <s> Building LONG term customer relationships is beyond a CPC campaign or TV commercial – it's being in TUNE with each and other customer. </s> 
+irlgov.ie| <s> In one of these cases, rent had not been billed for eight years, resulting in a build up of arrears of €264,000. </s> 
+powerswitch.org.uk| <s> Density is very often cited as a "moral excuse" to build skyscrapers, but it is just that, a "moral excuse", I bet exactly the same for these "vertical farms". </s> 
+nativenewsonline.net| <s> The tribe can then use this land to benefit its community – for example, to build homes, community centers or businesses, or for cultural or environmental preservation. </s> 
+lrp.lt| <s> I hope that they will have sufficient spiritual strength and moral resolve to walk down the path of responsibility and endeavors to build a Lithuania the people wish to see. </s> 
+unicef.in| <s> To find and reach children in Bihar's flooded plains, hundreds of overnight stay huts were built , allowing surveillance medical officers, social mobilizers and vaccinators to stay in the Kosi River basin, to more rapidly map the population and ensure the programme was reaching every possible child. </s> 
+juku.it| <s> It's sort of ... Think of it this way, it's been built and architect-ed for these large cloud environments, and what Swift-Stack does is we make it suitable for the enterprises. </s> 
+centralsquarefoundation.org| <s> This builds on a collaborative effort with INDUS ACTION as part of which we gathered insights on the effective implementation of the 25 percent reservation of seats in Delhi private schools for students of economically weaker sections. </s> 
+eccourts.org| <s> Whatever terminology the defendants may have used in Section 3 of the Amended Declaration in relation to the definition of "Additional Buildings", it bears reiterating that the Defendants cannot lawfully build a Phase III building irrespective of the private intentions Mr. Erato may have had and which he may have communicated to Mr. Grice in 2004. </s> 
+johnpapa.net| <s> We've learned a lot, and with BUILD just around the corner, it's time to refocus the show a bit. </s> 
+usdec.org| <s> These facilities–set to start going online in late 2012 and reportedly aiming for high-value, high-protein applications–are being built not to serve some theoretical projected rise in whey protein demand. </s> 
+alldubai.ae| <s> Based in Dubai, and serving clients in an ever more competitive environment around the world, we are fully in tune with the demands of those companies we work with, and strive to deliver the most dynamic ways of working to build brand and product awareness which in turn adds value to client propositions and products through new customer acquisition over multiple platforms for synergistic integration. </s> 
+meerp-material.eu| <s> Feb 11, 2013 ·&nbsp Free Wood Toy Plans – Step By Step DIY Woodworking Blueprints PDF Download How To Build a Free Wood Toy Plans with Quality Plans. </s> 
+theholidaypackage.net| <s> St.John's Church: Situated near by the Nainital club St. John;s Church is one of the oldest buildings of Nainital which was built in 1847. </s> 
+thereachmux.org| <s> Hours have passed since the incident in the warehouse and Rex has spent hours more personally cutting down the wood to build the bier, the wooden riser that would bear the weight of Ambrose's body, personally put into place by a stubborn ghoul with this sudden inexplicable desire to honor this man. </s> 
+umd.edu| <s> Organizations can establish a "village of ethical support" targeting employees at all levels and built on ethics training plus a zero-tolerance policy for misconduct. </s> 
+greensmps.org.au| <s> I think it is a matter of building a relationship with the university and, I guess, in pressing upon them the importance and contribution of the extracurricular and co curricular services provided are about in the full educational experience. </s> 
+1d4chan.org| <s> It's a chariot, has two Bloodletters on board, and the Blood Throne itself can attack (and heal itself if it causes wounds on impact hits!) However, the model looks like a cover from a Lady Gaga album, and I'm left wondering what happened to Doomrider . Build your kit to make a Skull Cannon instead, and BAM! </s> 
+phdec.org.pk| <s> He said a proposal is under consideration to build pack houses in mango growing areas of Punjab and Sindh with first one likely to be built during the current fiscal in Multan with capacity of 10 tonnes per hour. </s> 
+voisalliance.org| <s> In her role at Oregon BEST, Johanna connects Oregon businesses with Oregon BEST's shared network of laboratories and expertise across the Oregon University System to transform research related to the sustainable built environment into on-the-ground products, services, and jobs that power Oregon's green economy. </s> 
+10news.org| <s> Roos continue to build off the field - Fox Sports North Melbourne is the only Victorian AFL club that doesn't earn revenue from poker machines. </s> 
+myfastforum.org| <s> I've just looked through your photos of the latest Harrier build and I think you can give yourself a break over building slowly. </s> 
+duke.edu| <s> Building on that interest, Moore took Nellore to the Festival for the Eno in July, where they tried on handcrafted local jewelry and discovered they both enjoyed bluegrass music - a new genre for Nellore. </s> 
+rust-lang.org| <s> I was planning to publish the nightly builds on my own infrastructure, but it would be much better to make them available via official channels if possible. </s> 
+eudl.eu| <s> This floor is part of a living lab ("The Future Care Lab") developed and built within the eHealth project at RWTH Aachen University. </s> 
+somaliamediamonitoring.org| <s> The Garissa Senator said the Security Committee had since planned a retreat set for June 18 to collect more views and opinions to build up on their proposed exit strategy. </s> 
+interchangewestern.org.au| <s> All programs provide carers and siblings with a regular break and the child or young person with new friends, places to go, and things to do allowing them to build social skills and feel a connection to their community. </s> 
+bungie.org| <s> We seem important, but moreover if I was building the key to the salvation or destruction of all sentient life in the galaxy, I would make sure I knew everything possible about where I was building it. </s> 
+wonderfulltrip.info| <s> Built in San Antonio Historic Hotel - San Antonio Historic Hotel - Deluxe Room with 2 Queen Beds Luxury, charm and Victorian elegance is what each guest will experience at The Fairmount Hotel in downtown Downtown San Antonio Hotel- Historic - - Fairmount History Dating back to 1906, The Fairmount is a historic San Antonio hotel that represents an era of great prosperity in San Antonio's past. </s> 
+venture.name| <s> Company culture is such a core element of the modern workplace, and many companies are highly invested in having built a particular company culture. </s> 
+icelandairgroup.is| <s> From the year 2008 he was the chairman of the board of Iceland Travel, with the main task to build up the brand VITA, which since January 2012 is a independent subsidiary of Icelandair Group. </s> 
+unt.edu| <s> I'm equally grateful to all the groups across Texas who recognize how important it is to work together, to collaborate toward building something larger than all of us, in a way that ensures long-term access and long-term preservation. </s> 
+tedx.amsterdam| <s> Giving the girls opportunity to meet, learn and share knowledge with each other has built their strength and helped them create a unified voice to address their challenges to the next level. </s> 
+kaec.net| <s> It is open exclusively to a select group of up to 150 senior government and business leaders involved in building these cities of the future. </s> 
+chesterfieldlibdems.org.uk| <s> Representatives from the campaign group have scrutinised the figures in the council's feasibility study and report that the case being presented, that it is financially more viable to re build , instead of refurbish, just doesn't add up. </s> 
+public-republic.net| <s> Photo: PinkMoose I drove, in leaden convoy, On highways built Through the thinning ambers of autumn, In a falling of leaves fake in its evocation. </s> 
+inspiringcities.org| <s> In Rotterdam they try to solve social problems with more concrete, architects who build for their own frustrations, not for people. </s> 
+ueberproduct.de| <s> In talks, workshops and intimate sessions, an international line-up of top notch speakers will cover everything it takes to grow a hardware product from prototype to scaling business – and help participants build the companies of tomorrow. </s> 
+ed.ac.uk| <s> The White Paper rightly states that with independence, Scotland would have sovereign ability to choose the direction of its foreign affairs – to follow the pillars the Government seeks to build . </s> 
+greens.org.nz| <s> But no, Waitakere City Council want to build another airport at Whenuapai, which is completely unserviced by public transport, rather than get a decent public transport service into the existing one. </s> 
+palsolidarity.org| <s> What the Israeli government has done, however, is to build most of the barrier, not along Israel's recognized border as originally proposed, but in a lengthy, serpentine pattern through the occupied West Bank in order to incorporate illegal settlement blocs – along with large areas of Palestinian farmland – into Israel. </s> 
+nefac.net| <s> The Good Friday Agreement came about as the culmination of Sinn Féin's strategy for over a decade which was aimed at building various broad fronts around different issues in an attempt to gain respectability by pulling in Fianna Fáil members and church figures. </s> 
+voxbox.rocks| <s> China has seen an explosion of new bridge and infrastructure projects over the past few decades–to say nothing of the railways, bridges, and highways it's building across Africa and Latin America. </s> 
+getrealscience.org| <s> To build a future in the midst of uncertainty, refugee children need teachers who are trained, a well-developed curriculum that builds skills and knowledge, and the possibility of certifying their learning. </s> 
+canfactory.com| <s> Can Factory have been professional, effective and always on hand, helping us with everything from design, and build to long-term digital strategy. </s> 
+bainesreport.org| <s> It is not clear whether you should specifically be working on providing access to a formal sewage system, building a municipal sewage system, building individual toilets, educating users, cleaning toilets, promoting use, or providing security. </s> 
+debka.com| <s> Ex-foreign minister Velayati now discloses that in 1986, he brought the first centrifuges from Pakistan to Iran aboard the private plane of the Ayatollah Ruhollah Khomeini, founder of the Islamic Revolution or Iran . DEBKA intelligence and counter-terror sources add that the centrifuges came with the first Pakistani technical specifications for building a bomb and designing missiles for their delivery. </s> 
+theatrecraft.org| <s> Ben recognises the importance of passing on the wealth of knowledge and experience he has built across a number of West End, touring productions and events to new professionals wanting to enter one of the fastest developing practices in the entertainment industry. </s> 
+uk.| <s> The Access Fund paid for adviser time, tickets to the show, travel to and from the venue, general art materials to build portfolios, and moderation costs. </s> 
+rhd.org| <s> For more than 20 years, The Results Companies has served as a premier global customer experience provider for Fortune 500 companies and uniquely designed, built and operated award-winning call centers that have set the standard for innovative customer-focused contact solutions. </s> 
+nsw.edu.au| <s> Dr Fansler's visit builds upon the work of other visiting Professors this year including – Dr Tim Reynish (Royal Northern College of Music), Dr Stephen Peterson (Ithaca College) and Dr Steven Capaldo (University of Wollongong). </s> 
+ips.org.pk| <s> Besides, proper attention should be paid to build proper linkages in education and professional job market, both at individual as well at government level. </s> 
+so-net.ne.jp| <s> While not as exciting as building new trails, infrastructure improvements like these will improve safety, and the overall functionality and biking experience in Revelstoke. </s> 
+franchisesales.ie| <s> We have built up the system so we can make white label sites for the customers (with their logo, text, pictures etc) and we have approximately 85,000 hotels worldwide. </s> 
+americanintelligence.us| <s> On the whole, the rhythm of activity this year seems to have a different beat; a sense of pressure is building for combatants on both sides of the U.S.-jihadist war, and this pressure seems to be coming from a variety of sources. </s> 
+sussexlife.co.uk| <s> She intends to build on her acclaimed exhibition, Cave (2011), and discover whether it is a viable research model in different places, different countries – as Louise says, "in each location, I want my art to reflect portraits of places". </s> 
+emory.edu| <s> Later committees worked with Vice President Gary Hauk to develop a series of permanent campus outdoor signs that highlight Emory's heritage and commitment to environmental stewardship, building on the success of signs that accompanied the Millennium Year walking tour signs. </s> 
+decc.gov.uk| <s> DECC administers the Electricity Act 1989 and the Transport and Works Act 1992 (for offshore wind farms only), for developers seeking consents to build electricity generating stations and overhead lines. </s> 
+google.tl| <s> To build all possible constituents, every element of the source sentence 512 which is not a space or a punctuator is viewed as a potential core of a constituent. </s> 
+suwa.org| <s> A private developer, BMB Enterprises Inc., has received a license from the Federal Energy Regulatory Commission to build a small hydroelectric project near the proposed wilderness. </s> 
+ncdcr.gov| <s> The rest of the industrially zoned land could be used for lumber mill expansion, oil bulk plants, coal yards, building materials fabrication, and wholesaling and storage facilities. </s> 
+pinnershul.org| <s> The instruction to build an Ark is followed by the instruction to build two Cherubim, which were placed above the Ark, in order to shield it. </s> 
+website-ontwerpen-blog.nl| <s> Sustainable and futureproof furniture design is the way to go if you want beautiful and unique pieces of furniture that is built to last to complement your home or office. </s> 
+jugem.jp| <s> Just think about the heartburn the treadmill has caused actuaries and the people who sign - and have to keep on signing - cheques for pension plans built on the reclining chair theory of retirement. </s> 
+brookesblogs.net| <s> Some studies suggest that shared training involving different professionals helps to build a common language and way of working and that this helps build effective integrated teams (Schneider et al 2007). </s> 
+theterramarproject.org| <s> The map shows exactly where Russia is building its bases, and reveals the continent-wide scope of Russia's militarization of its northern coast. </s> 
+itsan.org| <s> I have about 10 pages of notes, starting with his advice that we need to build a disease registry in Redcap to be "attractive" to researchers. </s> 
+micro-isv.asia| <s> Enterprise has all the Professional features plus dbExpress server connectivity, DataSnap (for multi-tier database applications), WebSnap, UML modeling, and build automation. </s> 
+communicateonline.me| <s> Then, they may consult with the photo editor or one of our graphic artists to draw or illustrate, or we may have an infographic built for a certain article. </s> 
+belkin.ir| <s> There juicy apple, sweet floral and sex-a-peel and you literally just go nuts and build your own customised scent to suit you. </s> 
+tesfanews.net| <s> I suspect woyane brought the electric issue with eritrea hve some relationship with the naile and the dam they are building right now. if eritrea get cheap or free electricity from the dam or any other existing hydro power projects they have it is eritrea to side with ethiopia to maintain its interest and object egyptian claim to bomb the dam. they have done so with Sudan and sudna has already objected egypt to subotage the construction. </s> 
+slateassociation.org| <s> They are generally required by building codes where the average daily temperature in January is 25° F or less, or where there is a possibility of ice damming. </s> 
+ancb.de| <s> Henk Ovink then asked again about a way to proceed and Martin Ertl, Chief Innovation Officer for Transportation at Bombardier Berlin, stressed the need to study change in the past, to build on these insights and to establish clear goals for sustainability. </s> 
+autoline.tv| <s> I have a solution for the smog the Chinese are experiencing in Beijing: Build a gigantic wind farm around the City of Beijing and blow the smog towards the Pacific Ocean or anywhere they choose. </s> 
+mcall.com| <s> The 1975 regional guidelines generally required developers to build water control devices that maintain the same peak water runoff levels after construction that existed before construction. </s> 
+sailing.ie| <s> We are writing up details of additional measurements, schedule of wood and other details, which may be of use to the next person who builds an IDRA14 but if you find any additional IDRA14 plans lying around, do let us know about them. </s> 
+greendel.org| <s> It's obvious, for example, that we shouldn't build houses or roads or factories where they will soon be under water. </s> 
+presidio.gov| <s> Built in 1895, the course has played host to some of the greatest golfers in the world as well as to refugees of the 1906 earthquake. </s> 
+ghanaoilwatch.org| <s> Mr. Obimpeh-Abedi says the shorebase will also have a facility that will assist in the supply of Ghana's Gas Plant to be built in the Ellembele District. </s> 
+weeportal-lb.org| <s> At that stage, the project focused on building the capacity of women's organizations with knowledge and skills for working with men towards ending VAW and thus by their engagement with men, to positively change the attitudes, practices and policies of men and boys. </s> 
+boehmsumc.org| <s> His heart for mission has taken him to the western U.S. to build trails and assist in fighting wildfires, as well as to serve at Broken Arrow Bible Ranch. </s> 
+softpanorama.info| <s> In the same article, Belkovsky (u know the man who published about Putin's wealth) accuses the French Vinci group (which is heavily involved in building the road through the Khimki forest) of having a(n) (indirect) hand in the beating of the journalists and continues to defend the project despite of the demonstrations. </s> 
+omahapubliclibrary.org| <s> Marlane also believes that an important part of her job is building relationships with staff, community organizations, and other library stakeholders. </s> 
+senate.gov| <s> Sanders said that the backlog built up because of the VA's slow transition from paper to a digital claims system and because of an influx of cases after the VA extended benefits to more Vietnam veterans exposed Agent Orange. </s> 
+parkerchronicle.net| <s> The Freedom School: The Freedom School, built by Robert LeFevre, opened in 1957 and stayed in Douglas County until 1968, teaching Libertarian philosophies to such people as the Koch Brothers, Ayn Rand, Ludwig Heinrich Elder von Misas and Milton Freidman. </s> 
+wimbledonmuseum.org.uk| <s> Obviously there were always problems and irritations but it was the sort of work I enjoyed, building up stock, organising and indexing things and answering enquiries which is to some extent what I am still doing in the Museum now. </s> 
+umdearborn.edu| <s> Building better communication systems on campus is one way we can build a stronger community, both during emergencies and in calmer times, for all of our students, faculty and staff. </s> 
+seda-cog.org| <s> An application for the Pennsylvania Department of Transportation's Rail Freight Assistance Program was made to cost share in the $425,000 needed to build about 1,600 more feet of railroad track. </s> 
+rootchange.org| <s> Building on the success of business model generation tools, Root Change worked with WBI network teams to profile their target audience (network target segment) and clarify exactly what each network aims to solve or deliver (their value proposition). </s> 
+emmawillard.org| <s> Emma students, faculty, staff, board of trustees, parents, and guests gathered in Rensselaer Polytechnic Institute's (RPI) amazing concert hall of EMPAC for a day of quick-fire presentations designed and delivered to build awareness around building sustainable solutions to problems in the world today. </s> 
+healthforanimals.org| <s> To ensure this continued progress and build upon the 200 years of success, regulatory authorities, researchers, industry, veterinarians, the media and the general public need to have a clear understanding of the benefits and risks associated with vaccines. </s> 
+jliss.net| <s> Only two North American Aviation plants built B-25s: NAA's main plant in Inglewood, California, and a plant in Kansas City, adjacent to Fairfax Field. </s> 
+rumahbapaku.net| <s> God is building a new generation of loving, caring believers in our home that have a growing knowledge of God and His spiritual truths. </s> 
+antibullying.eu| <s> The amendment would allow for greater penalties of up to two years in prison and extend the period of time made available to authorities attempting to build difficult cases against offenders. </s> 
+imc.nl| <s> Being part of a great team is important in any job and because IMC Chicago employs people from across the world, you'll have endless opportunities to find your place on our team and build a network of friends. </s> 
+imi.ie| <s> The key thing is that it is a relationship, it is a partnership and it is built on credibility and trust - it is built on expertise and it requires your bringing something to the table that enhances people and their performance. </s> 
+hchylivingston.org| <s> In addition, her work during these years on the committees resulted in building expansions at all six of the district's elementary schools. </s> 
+virginia.edu| <s> Given this, there is a question of whether or not sacrifice is serviceable for a modern neo-Kantian ethics that is built on the free choices of autonomous selves. </s> 
+beitrabban.org| <s> During a discussion about Sukkot, all of the Gan Katom students agreed that they wanted to build a sukkah in our classroom using wood. </s> 
+feedthefuture.gov| <s> In Tanzania, Feed the Future supports post-graduate students in agriculture- and nutrition-related fields to build the capacity of future agriculture specialists in the country. </s> 
+theunfocused.net| <s> Marcus Tucker: Yes, the plan is for Taskfox to (eventually) be merged with the Firefox codebase and be part of the official shipped builds . </s> 
+arizona.edu| <s> In October 2013, one year after launching at the UA, TLA kicked off a regional eco-system partnership with the City of Tucson , the Commercialization Network Alliance (CNA) . In this unique, public-private partnership, the city contracted with Tucson-based firm, AZTERA , to work directly with Tech Launch Arizona to build the Wheelhouse Network and to represent the city in entrepreneurial and tech commercialization discussions across Southern Arizona. </s> 
+southernproperties.net| <s> We strive to help our customers achieve their goals in the real estate industry, whether it is selling the family home, purchasing a new home, investing in development and farm land, or building your dream home. </s> 
+northshore-village.org| <s> Our mission is to help you build upon the foundation of your past success, support your objective of achieving continual growth, and facilitate your ability to embrace new opportunities. </s> 
+uva.nl| <s> Using modern techniques, chemists at the UvA study the structure and characteristics of molecules and living cells, even developing new molecules that can be used to build smart solutions for a sustainable future. </s> 
+pacbi.org| <s> Organizers and participants left the conference with a sense of accomplishment: practical recommendations are in place for building the popular Palestinian BDS campaign as a strategic form of civil resistance in the long struggle ahead against Israel's regime of apartheid over the Palestinian people. </s> 
+myaadenetwork.org| <s> Sandi Burke, PhD, APRN, BC-ADM, FAADE, FAAN; now Professor & Academic Chair, Undergraduate Programs, at St Louis Barnes-Jewish College, Goldfarb School of Nursing co-presented the session: Jazz it up: Building the CDE – CHW Connection into Your Practice. </s> 
+everett.nl| <s> From custom built portals to just the ctrl-alt-delete option in windows, in almost every case combined with an internal or external service desk for password service calls. </s> 
+dpdproject.info| <s> The principle "improve badge impact" and "research FOR badges" is exemplified through the practice of " building an online community," as 4-H examines online sites to shape their practices of fostering a web-based hub of learning and sharing. </s> 
+virtualschool.edu| <s> Chip-level pluggability lets vendors build cards from off-the-shelf chips without needing to understand the minute gate and block-level details that their vendors must know to build silicon chips. </s> 
+smallwatersupply.org| <s> I was asked, as our web designer, to provide the technical details of our web development, as well as what went into the decisions to build our website using the technologies we have chosen. </s> 
+dyndns.org| <s> Meiling's dissertation examines the complex associations between the built environment, mixtures of different air pollutants, and both physical and mental health outcomes. </s> 
+whitleyaward.org| <s> Supporting nature conservationists who are usually nationals of the countries where they work, who are often best placed to bring about change, build capacity, and enable projects to become self-supporting. </s> 
+scienceprogress.org| <s> This problem is magnified by the related systems problem of the misguided cost-cutting strategies that have decimated hospital's clinical social work staff and continue to act as barriers to building clinical ethics, palliative care, and hospice programs into daily hospital operations. </s> 
+tynerblain.com| <s> Probably a good idea to keep recent builds in the same place too, in case a problem sneaks through the process temporarily (like a memory leak or other obscure, not-yet-tested situation). </s> 
+org.np| <s> Let's not build environment for youth, let's build youth for environment Each and every one of us is responsible for the degradation of environment. </s> 
+mediaspectrum.net| <s> With the right, integrated Cloud system , built on a flexible and scalable architecture, you can bring together all of the data necessary for effective, cross-device targeting. </s> 
+scchildren.org| <s> Julie Valentine Center Fathers are Essential Program County served: Greenville Congressional district: 4 Grant: $13,130 Designed to reconnect fathers to the family, the Fathers are Essential program, educates men on the appropriate skills required to build a healthy relationship with their child(ren). </s> 
+ufs.ac.za| <s> However, the massive build particularly with the heavy forequarters and sloping backs of the spotted hyaena makes it quite easy to distinguish them from the brown hyaena. </s> 
+adad.org.uk| <s> Building on the success of Trailblazers, the organisation is developing the depth and scope of its offering of professional development opportunities and continuing to develop a community of practice for dance of the African Diaspora. </s> 
+wasb.org| <s> Eleva-Strum technology education teacher Craig Cegielski and his students who run Cardinal Manufacturing will be featured in an upcoming episode of "American Built " on April 5 on MAVTV – a cable and satellite network with the bulk of its programming focused on motorsports and automotive reality. </s> 
+issplatform.ie| <s> Dolan, P. and Canavan, J. (eds) "Child Care in Practice Special Issue: Building Resilience in Children, Families and Communities". </s> 
+github.io| <s> The frontend of appear.in is built using AngularJS , Socket.io , WebRTC, Twitter Bootstrap 3 and HTML5, while the backend is built on Node.js using Express and Socket.io. </s> 
+a-star.edu.sg| <s> This strategic priority seeks to build our expertise and innovation in order to deliver solutions and commercial opportunities to combat these two growing public health concerns. </s> 
+talbotspy.org| <s> For the artist, Zentangle (Tile Variations) will build upon tangles learned in Zentangle basics, while Art in the 21st Century will investigate the global art world. </s> 
+haitiresiliencesystem.org| <s> An analysis of infill transit stations built since 2012 along "L" routes in Chicago shows clear increases in ridership and transit oriented development. </s> 
+s-cube-network.eu| <s> Recently, the VRESCo project proposed a new infrastructure for service-oriented computing, that also assumes that dynamic binding is the foundation on which loosely-coupled service-based systems are built . </s> 
+trivago.ie| <s> The hotel was built by the famous Danish architect Kim Utzon, and is designed in a beautiful minimalist style of high quality, which makes Wakeup Copenhagen Carsten Niebuhrs Gade a match for many of the 3- and 4-star hotels in Copenhagen, at a 2-star price. </s> 
+navyrecords.org.uk| <s> This volume is not so much a collection of documents with introduction, more a 'life and letters' built around his papers. </s> 
+intermix.org| <s> The Voices of Humanity will be morale builders whose messages are always new and inspiring, and that the multitude of organizations and networks that see the value of uniting humanity will promote the process as an easy way to build a global consciousness. </s> 
+africom.mil| <s> In the end, six ETUs were built through LOGCAP, three by Armed Forces Liberia, and one by the 902nd Engineering Platoon. </s> 
+vewshorses.org| <s> Not only is he handsome with a great build , he loves the trails and will make a lucky someone a good trail horse. </s> 
+ascc.net| <s> As a result, an element of trust exists for the user within social networking tools, and recommendations and collaborations are built upon this trust. </s> 
+gratisparkeren.net| <s> Most rods also have a reel seat that rods are classified like spinning rods with reels are specified to be heavier and throw crankbaits, light winds fishing are built with dynamic fish fighting properties, and cheap aminum die casting fly fishing reels a fishing tackle ocean rock fshing reservoir pond lake river – 9000 series around Long Island Sound while fishing equipment, from the guys in the fishing rods. </s> 
+rochester.edu| <s> This again was an excellent opportunity to build leadership skills and develop the ability to meet different stakeholder needs through a common vision. </s> 
+ugr.es| <s> Ex.: The author reports work since 1991 on building information carnivores, which intelligently hunt and feast on herbivores in Unix, on the Internet, and on the WWW. </s> 
+dilovasinakliyat.org| <s> When they find themselves the secret code of success.pdf with a long before he would live in tiny's rich backdrop, who create pdf using php tutorial have built . </s> 
+aseed.net| <s> For this reason we are continuing to build a broader and bigger Dutch Food action movement; through practical help, linking up groups and individuals and through exchanging experiences and information. </s> 
+alabama.travel| <s> Built 1935. </s> 
+thetab.org| <s> Adult classes available are a Marriage Class with Joe and Amy Pasinski in the Tower Chapel, a Watchmen on the Wall class with Eagles'€TM Wings in the World Prayer Center, We Build People membership class in the Matthew Room with Pastor Al Baun and Greg Collins, and Intercessory Prayer with Pastor Jo Ann Angelo in the World Leadership Center. </s> 
+tecnolandia.info| <s> Dams are developed in order to build a man made waterfall; as the water falls, it rotates a turbine as a result transforming the kinetic power into a usable mechanical vitality. </s> 
+timkastelle.org| <s> That's pretty interesting Ken. I've kind of resolved myself to never building a house Christopher Alexander style (but I do use some his patterns!), so building networks using his ideas might be a great alternative! </s> 
+essma.eu| <s> Although the stadium has got a bit older since it was built in 1992, in terms of accessibility for example, it is still a very solid candidate as a host. </s> 
+balhamortooting.org.uk| <s> We've seen the impact on Stratford of improved infrastructure, it would accelerate improvements which have been building in momentum in Tooting over the last decade. </s> 
+lrc.org.za| <s> With the elections nearing in South Africa there is hope that the newly-appointed president will give full attention to the uncared-for communities and take the appropriate steps to move them, tackle the contaminated areas, enforce necessary regulations to prevent future housing being built on mine areas and have an overall vision of preventing future pollution. </s> 
+pakistanpressfoundation.org| <s> One of the main reasons, according to Ms Sadek, why women rampantly indulged in this patronage was because they considered it a charity; they also wished to leave their individual mark on society which is why most of the work commissioned by such women carries a distinctive flavour of the times they were built in and as well as the position the patron enjoyed. </s> 
+minipickup.org| <s> It's a matter of passing the low volume vehicle code here (they take a close interest in modified or scratch built cars, but the rules are reasonable). </s> 
+suffolkcountynews.net| <s> A few weeks later the office was moved to the second floor in what was called the Green Block on the northeast corner of Green Avenue and Main Street, built in 1885 by Samuel W. Green. </s> 
+frankleng.me| <s> Samba The folks over at FreeNAS have done a great job of keeping Samba up to date, especially with the latest nightly builds . </s> 
+usacbi.org| <s> The withholding of food, medicine, schoolbooks, building supplies, among thousands of other items, as well as the right to enter and leave Gaza for any purpose became a weapon to terrorise the civilian population. </s> 
+wotbn.net| <s> Later additions include wings built in the 1970s and 1985 as well as an impressive series of steps flanked by fountains leading to a central entrance. </s> 
+offcite.org| <s> Details have not been released, but Raine hopes to repeat and build on what has been successful in the existing network, improve safety conditions, and repair deteriorating trails and pathways. </s> 
+guerillawire.org| <s> Today, 22 of the 103 NHS trusts to enter PFI are facing difficulty due to the exorbitant repayments required to pay back the so-called NHS Mortgage (paying back the company for building the hospital). </s> 
+streets.mn| <s> In a taste of what the world would be like if a new boondoggle St. Croix River Bridge were never built , the Stillwater Lift Bridge closed on September 10 for a 3-month rehabilitation project . Thus far, the world has not ended. </s> 
+digitaldemocracy.org| <s> Clearly, the intent of these statutes is to balance the interests of local public entities, building public improvements using roads with the interest of residents and businesses that may be impacted by the projects initiated by officials in another jurisdiction who do not represent them. </s> 
+njherald.com| <s> Jennie Sweetman photo – When George Kimber built his house, located on today's Route 284, it was viewed as a typical family-type frontier fort. </s> 
+uuormond.org| <s> Chair Bill Ternent, Ben Butera, and Bryan Collyer worked diligently to make controlled-cost arrangements and came up with a design of a sturdy, pleasing concrete-block structure that met the most wanted and basic needs, would blend well with façade improvements occurring on buildings along Granada, and could be built for $555,000. </s> 
+p4nh.org| <s> The conference focused on helping students build practical skills in areas such as time management, preparation for the GRE and MCAT tests, and use of library services. </s> 
+iot-vienna.at| <s> The system is used for the new generation of communication equipment, notably for the TETRA trunked radio system ground infrastructure built by Frequentis. </s> 
+roccat.org| <s> Robust, ultra-light, and with a comfortable ergonomic headband and netted cloth ear cup cushions, this is a headset that is built to last and suitable for hardcore gaming sessions. </s> 
+worldea.org| <s> Musalaha has recognized the unique role that women with foreign background can have in building bridges between the two communities, as well as their need to become comfortable with their own identity, and this is the dual purpose of this group. </s> 
+idi-design.ie| <s> These are a valuable resource for those looking to involve design in their workplaces, public planning, built environments, workplaces or facilities. </s> 
+phf.org.uk| <s> Building these students' employability skills and understanding of the full range of post-16 options through workshops and follow on coaching, improving confidence and communication skills. </s> 
+ndu.edu| <s> Moreover, the ability to sustain and build on the considerable gains achieved in the conduct of joint operations is uncertain as our Armed Forces reset from a decade of sustained combat to face a future of complex challenges and constrained resources. </s> 
+eoht.info| <s> Messrs Geoffroy , Gellert, Bergman , Scheel, De Morveau, Kirwan , and many others, have collected a number of particular facts upon this subject, which only waits for a proper arrangement; but the principle data are still wanting, or, at least, those we have are either not sufficiently defined, or not sufficiently provided, to become the foundation upon which to build so very important a branch of chemistry. </s> 
+ursinus.edu| <s> The non-profit organization's mission is to empower underprivileged youth through personal and professional development while building their communities through service, reversing the negative trends of the urban communities. </s> 
+auu.org.au| <s> The Club has built a mind-controlled robot, participated in competitions, run robotics workshops and held BBQs and social nights - all while keeping our members informed about the latest developments in robotics. </s> 
+ieee-cas.org| <s> The goal is to build and support the grass-roots membership of the CAS Society by strengthening local activities and providing additional services to its members. </s> 
+treetop.us| <s> Because there were plans to later release a Version 2 of the Sleep Trainer that would use a slightly different data format, we took some extra time to build a solution that could parse both data formats. </s> 
+worldsocialscience.org| <s> Transformative Knowledge Workshops are an annual event in the Transformations to Sustainability Programme, bringing together the main partners in the Transformative Knowledge Networks with invited experts for focussed discussions, mutual learning and exchange of experience and to further progress in building the Global Knowledge Trust on social transformation. </s> 
+lancasterpriory.org| <s> The organ in the west gallery was built originally by Henry Willis for St. John's church Blackpool in 1915, while the organ in the North Choir Aisle was built by Harrison and Harrison in 1908 for Blackburn Girls' School. </s> 
+engad.org| <s> Following my personal vision, in this picture from Wolf Nkole Helzle the whole humanity is present composing the figure of the symbolic human being, the millions of fragments build the symbol of the individual when we move us far away, and the symbolic individual fragments itself again when we approach to the picture. </s> 
+squashbusters.org| <s> I like the fact that the college process was built right into the program so that I could come work and ask questions. </s> 
+eimf.eu| <s> We should stress the importance of the experience built over the years for the industry by certain national regulators in their subsequent understanding of any risks involved and the measures to mitigate them. </s> 
+daviscountyutah.gov| <s> He has served as committee chairman of the Build Legacy Now committee, on the Wasatch Integrated Waste Management board and chair of the Wasatch Front Regional council, a transportation planning committee comprised of mayors and commissioners from five counties along the Wasatch front. </s> 
+aweinautism.org| <s> But George, like many children who have ASD, does not naturally gravitate to back-and-forth, dynamic activities that build relationships – which is why I value our cooking time together so much. </s> 
+deliberation.info| <s> It is the asserted right of the first strike, which could annihilate the Iranian people – who are bullied by a loudmouth and directed to an organized frenzy – because it is suspected that an atom bomb is being built in the land where he rules. </s> 
+blog-collector.org| <s> Only build a portfolio of shares listed in the marketplace while they do this cold sore patch walgreens fundamental analysis are often late. </s> 
+ttc.org.nz| <s> As for the sidle track, this reporter along with many other club members helped survey the route, but lost interest when it seemed unlikely the track would ever be built . </s> 
+ondernemeninontwikkelingslanden.nl| <s> This will be followed by facilitated discussion and action planning in order to seize the opportunities, build upon the strengths, counter the weaknesses and threats within the direct relationship between farmers and firm, but also the environment in which they operate; such as the regulatory environment, service suppliers and market conditions. </s> 
+gingerbread.org.uk| <s> During the last 8 years my sons father has done some temporary work here and there but still lives at home with his parents and doesn't seemed to have done much with his life in terms of building himself a future. </s> 
+nationalenterprisenetwork.org| <s> The winning prize package for each award includes £5,000 of investment plus mentoring, including legal, branding and marketing advice, as well as an opportunity for the winners to build their network and raise their profile in order to further their prospects. </s> 
+benno.id.au| <s> The next challenge was actually just getting the kernel I had built from to work with the rootfs rather than just the binary kernel. </s> 
+atlassociety.org| <s> Houses here are built like fortresses: just the picture of the open lawns and bare, unbarred windows of U.S. houses must seem like a dreamland of peace and plenty. </s> 
+theurbanist.org| <s> However, Vulcan was able to submit it's plan before the new zoning took effect, vesting their rights to build two six-story corporate offices in the middle of the of the area. </s> 
+readinghalloffame.org| <s> But my original goal in starting research on the reading process was to provide teachers with the knowledge that would make it possible for them to understand reading and to build their teaching on that knowledge. </s> 
+startingelectronics.org| <s> This is the same method used to read the analog inputs of the Arduino in the WebServer example that is built into the Arduino software (found in the Arduino IDE under File → Examples → Ethernet → WebServer ). </s> 
+ssti.org| <s> The Democracy Collaborative, with support from the Community Affairs program of the Regional Federal Reserve Banks, is working with a host of partners to create an Anchor Dashboard that can establish common metrics, support data collection, and build a national community of practice focused on leveraging the power of anchor institutions to drive inclusive competitiveness and rebuild struggling communities. </s> 
+idvsa.org| <s> From 1997 until 2004, she was Executive Director of the Texas Homeless Network, a non-profit organization that built homeless coalitions across the state, provided resources and technical skills to non-profit organizations that served the homeless. </s> 
+cheerjob.info| <s> How do you build a New Media company in the digital era ... Howcast.com offers 200,000 videos ranging from the prosaic "How to Paint a Wall" to the piquant "How to Kiss With Passion," its most popular video ever with 20.8 million views on YouTube. </s> 
+ahwaziarabs.info| <s> The AFZ is being built at the expense of Arabs who will lose their farmland and be forced to live in city slums. </s> 
+leoncountyfl.gov| <s> Dr. Andrew Rogers, a staunch "Gator" had it drained for mosquito control purposes and then had the irony of seeing a "Seminole" football field built on the grounds. </s> 
+citizencyberlab.eu| <s> A new world of science is emerging – one where average people are encouraged to participate, relying on help from a web-based community of amateur and professional scientists to initiate and build their own science projects online. </s> 
+epim.info| <s> Through its grants and capacity-building programme, EPIM encourages NGOs to network and partner across the EU in order to build effective coalitions for advocacy and to learn from the advocacy strategies and experiences in other countries. </s> 
+europeubf.org| <s> Luke's gospel Sunday messages 3. 12 1:1 Bible studies and 12 Sunday worship attendees (Begi, Bolor, and Zaja to be rooted and built up in the word of God) 4. </s> 
+mrt.ac.lk| <s> However a built environment to be considered as an 'architecture' it requires responses to the both qualitative and quantitative requirements of design generators and constraints. </s> 
+laca.org.au| <s> Electromagnetic hypersensitivity has been linked to cancer clusters in Brisbane according to local author Donna Fisher whose book Silent Fields published August 2008 relates the exciting account of the author and her neighbours in the Queensland suburb of Tanah Merah who without much technical, medical and legal experience did battle with the large public company, Energex to stop them from building an electricity sub-station in their street which they felt would be unsafe. </s> 
+intelligencecomputing.io| <s> This experience lead me to focus on building Kafka to combine what we had seen in messaging systems with the log concept popular in databases and distributed system internals. </s> 
+indiemusicreviews.net| <s> Los Angeles' brightest new star is building her musical reputation brick by brick, spreading a personal and important message centered on faith, passion, and healing. </s> 
+actionforhappiness.org| <s> World Happy Day is a unique global event where people in local communities all around the world will connect together and be inspired to help build happier lives and communities. </s> 
+powerprofiles.org| <s> Schlickenrieder had apparently built up spying experience during years of working for Germany's domestic and foreign intelligence services, Landesamt für Verfassungsschutz and Bundesnachrichtendienst . Documents found at his home indicated he had had access to reports from them as well as the French and Italian secret services. </s> 
+anchoragecentennial.org| <s> O.W. Petersen had filed on the Fireweed Lane homestead and built a one-room cabin on it; Mr. Petersen relinquished the homestead to my grandfather for the price of the cabin and other improvements. </s> 
+valleychildrens.org| <s> So for his Eagles Scout Service Project he proposed raising funds for and building the course to help Valley Children's patients with various forms of disabilities better navigate their environment. </s> 
+greenenergyinvesting.net| <s> Developers have to submit lighting plans with building permit applications, and owners of existing developments have until 2018 to come into compliance with these "dark skies" requirements intended to preserve the view of the stars. </s> 
+gresham.ac.uk| <s> Sullivan refused ever to write again for the Savoy, and went in with D'Oyly Carte, who built the Royal English Opera House, now the Palace Theatre, which opened with Sullivan's only grand opera, Ivanhoe . </s> 
+driestar-educatief.nl| <s> Following this survey we will collect and depict good practices in order to build a database of examples for initial and post-initial teacher training. </s> 
+uesp.net| <s> My biggest piece of advice is don't get too attached to your first character and don't be afraid to start again, keep experimenting with different class builds , as you play through the game you'll probably realise that you picked the wrong skill or joined the wrong guild or something and will be tempted to start again (I have found that it takes a couple of characters to get the one that suits you the best). </s> 
+parkwayucc.org| <s> The one built on rock survived; the one on sand did not. –Matthew 7:24-27 God invites us to engage in experiences, relationships, groups that help us to be steady and sturdy. </s> 
+greeneconomycoalition.org| <s> Therefore, the EC initial framing of the 'WHAT' - "Investing in the sustainable management of key resources and natural capital" should be expanded to include 'in order to build an economy that explicitly pursues wellbeing for all'. </s> 
+artsjobs.org.uk| <s> We are particularly keen to hear from emerging designers and masters graduates so that we can build a long-term relationship over the coming years. </s> 
+jewishdayton.org| <s> The Jewish Foundation builds the Dayton Jewish community's future, ensuring through endowments and donor advised funds that we pass the tradition of building on for generations to come. </s> 
+creating-change.org.uk| <s> Building on the Story of Change we started in the first meeting we worked on this brown paper to create the Story of Change below. </s> 
+explained.today| <s> There also traces of ancient Romans , though the modern settlement dates to the early Middle Ages, when Berengar of Italy (983) had a castle built here. </s> 
+starling-framework.org| <s> Another issues I remember was the build in parallax effect - that was to hard to disable or hook my own 3D system in place- it was already to specificly target at what it wanted to be - starling at its core allows much more freedom to build or extend on top. </s> 
+openhub.net| <s> Rich: One thing I learned through my prior experience is that the greatest challenges in building a robust developer community are usually not technical. </s> 
+techtarget.in| <s> In the past, you had 20 different mobile app vendors figuring out mobile middleware, so you had this huge layer of technology that everyone was building on their own. </s> 
+af.mil| <s> For Airman Kelly, the experience has been rewarding because it has taught her teamwork, time management and helped build her character. </s> 
+inspireyourselftoday.net| <s> Actively work directly with customers out in the field to understand how to build software and services that help them achieve their goals. </s> 
+staticred.net| <s> I was no longer really working in the web proper, but still made use of and built web-based projects on a regular basis. </s> 
+yale.edu| <s> Should a test-firing succeed this year and fusion be demonstrated in Livermore, the NIF team would be far more likely to get the billions more from the Department of Energy that the NIF leadership says are needed to build the first-ever prototype fusion reactor. </s> 
+minhousing.govt.nz| <s> The Department launched its product assurance guide last April and then teamed up with BRANZ to run nationwide seminars for building consent authorities (BCAs), manufacturers, suppliers and residential designers. </s> 
+vmwarenews.de| <s> Nigel brings to his current role a depth of telecommunications experience built through the the design, delivery and marketing of networking solutions in a career spanning almost 30 years. </s> 
+org.| <s> In Minnesota and along a lot of the indigenous communities is having sincere conversation of how we can build sustainable sovereign nations and also have a conversation about what does localized energy production look like, what does localized food production look like, what does it mean to really self determine our future as native people? </s> 
+missiondiscovery.org| <s> While the visible part of a Mission Discovery summer mission trip week may be repairing a rotted floor, painting a home, or building a wheelchair ramp, the other work is the hope that Christ brings to the families we serve. </s> 
+departuresandarrivals.travel| <s> Morning sightseeing of New Delhi is consisting of drive through the Raisina Hills- Parliament House, India Gate, President House; 16th century tomb of Emperor Humayun built of Marble & Red stone in typical Mughal fashion, Lotus temple ( Bahai Temple) & Qutab Minar. </s> 
+justgoodnews.biz| <s> Once Austin and Dallas are in place, the company plans to build five more Texas facilities; however, the other cities have not been named as of yet. </s> 
+mycouncillor.org.uk| <s> Once again I've seen an email from the Tory's accusing the council of treating this as a done deal, exactly the same thing that they were saying about proposals to build in Toton even on the day that we dropped them. </s> 
+ycabfoundation.org| <s> As the only foundation owned by a company in Asia that focuses on the development of social entrepreneurship, DBS Indonesia contributes to build an environment with – better standards, so the people, and the entrepreneurs in Singapore, India, Indonesia, China, Taiwan, and Hong Kong through various programs from basic training, to workshops that enhance – business incubation. </s> 
+flightstohawaii.xyz| <s> Family Dollar built a new store that opened earlier this year on John L Avenue at Route 66 ... No. 20 for median monthly cost for renter-occupied housing units at $916. </s> 
+dmu.ac.uk| <s> The ch'teau was built for a family of very successful merchants of Marseille that were ennobled by Louis XV in 1753. </s> 
+newamericanstrategies.org| <s> Part of the process of building a larger zone of peace involves also engaging Russia and drawing it into a closer relationship simultaneously with Europe and with the Euro-Atlantic community. </s> 
+ecec.net| <s> Therefore the ECEC Executive Board decided that it is more than just and equitable to honour those persons, who made, make and will make outstanding and essential contributions to build up such a strong and effective representation. </s> 
+replicant.us| <s> As adb is built as a 32 bit binary, you will need to install compatibility libraries for 32 bits executables if your computer is running on a 64 bit architecture. 7. </s> 
+theatreforum.in| <s> Perhaps a cynical view is that the 68% felt that they had to keep up with their competitors and that the 66% were really just interested in building up collections at the box! </s> 
+skynoise.net| <s> VDMX 5 will also work very well with quartz composer files, the software built into OSX – meaning further fast, fluid capacities. </s> 
+forgetthebox.net| <s> It is a strategy to remove from these states all of their social aspirations; a strategy to transfer the public wealth, amassed through the struggle of many generations to build a social structure that would provide for everyone, into the hands of an elite. </s> 
+uubrunswick.org| <s> To build those unlikely friendships, to open to the wider story – as yet unknown, to create new deep rumbling languages together, to begin, right here, to make of our earth the peaceable kingdom artists have only dreamed of. </s> 
+truthalliance.net| <s> He prefers to think of his Liberator in the same terms as its namesake, the one built for distribution to resistance fighters in Nazi-occupied countries in the 1940s. </s> 
+thestonetrust.org| <s> Taking a level one workshop is also highly recommended, if you are considering hiring someone else to build a wall for you, as you will learn how to evaluate contractors work and make an informed decision about who you want to build your wall. </s> 
+belizetimes.bz| <s> While many hurricane victims still have no proper shelter, the Minister has been storing up stockpiles of building materials at his property at Mile 3 on the Western Road, most of which was obtained in bulk purchases from one special hardware store. </s> 
+irvinenewleadershipnetwork.org| <s> Effective collaboration requires authentic, trust-based relationships, and consequently networks must focus a significant amount of time up front on building genuine relationships, and providing the space for each leader to share their own personal story behind why they do what they do. </s> 
+socialwatch.org| <s> Some of the LDC Watch slogans in the rally were: "Lets build an inclusive society to ensure sustainable peace", "Respect, protect and fulfill the rights of people", "No pounding of people's sovereignty", "Say no to war", "Poverty is the greatest enemy of peace, let us kill it", "Let there be peace and let it begin with me", and "Secularism is a key tenet of democracy and peace". </s> 
+bobmorris.biz| <s> John Butman is founder and principal of the idea and content development firm Idea Platforms, Inc. and author of Breaking Out : How to Build Influence in a World of Competing Ideas (Harvard Business Review Press 2013). </s> 
+eteda.org| <s> A development group that includes Budd Cullom, Jim Harrison and Mike McGuffin said in a statement that a project called University Commons will be built at the property located between Volunteer Boulevard and Alcoa Highway. </s> 
+umich.edu| <s> The dining hall now meets high sustainability levels in the categories of disposables, energy use, food, building materials, chemicals, waste and water. </s> 
+nationalscience.org| <s> Dr. Butte's lab at Stanford builds and uses computational tools that convert more than 400 trillion points of molecular, clinical, and epidemiological data – measured by researchers and clinicians over the past decade and now increasingly publicly available – into diagnostics, therapeutics, and new insights into disease. </s> 
+aacr.org| <s> These studies would also build upon what is currently known about radiation-stimulated DNA damage and repair pathways, an area where we know the biology but need help translating this knowledge into improved treatments. </s> 
+ictschools.gov.in| <s> The learning strands seek to build capacities to handling today's and tomorrow's technologies appropriate for use in education, capitalizing on technology to master technology, managing the ICT infrastructure, using technology to surmount barriers and to acquire insights to lead technology educationally. </s> 
+kartverket.no| <s> The project is aiming at building competence and capacity within the partner institutes; the Albanian Hydrographic Service (AHS) and the Military Geographical Institute (MGI). </s> 
+boisestate.edu| <s> Beyond that, a model that predicts the capacity of the landscape to support dam-building activity by beavers will be presented that helps build realistic expectations about where beaver may or may not be appropriate restoration agents. </s> 
+wexnerfoundation.org| <s> He finds this pulpit rewarding for the opportunity it affords to help people build religious lives that are holy in both traditional and contemporary ways. </s> 
+opendata-aha.net| <s> Influenced by the Government Digital Service and by more generally by things like agile development and the 'Learn Startup' movement we built a small, co-located, multi-disciplinary team that has been truly user focused since day one. </s> 
+ezsmoke.ie| <s> The MVP 2.0 was virtually indestructible , and the new and improved iTaste MVP 3.0 is built to the same high standards that one would expect from Innokin. </s> 
+mnfc.org.uk| <s> Over the last few years Mally and his good lady Sylvia have built up a team of pigeons that have flown exceptionally well in the MNFC and wins include 1st YB National in 2011. </s> 
+sahaglobal.org| <s> One of the elders from Gidanturu hanging out at the future site of the CWS water business Building the Gidanturu polytank stand Me with the guys from Gidanturu who helped build the polytank stand (minus Peter who was taking the picture!) Finishing up the polytank stand! </s> 
+massivepr.tv| <s> The highly effective and exclusive blend of omegas and antioxidants contained in Paradox Omega Sport is designed to help increase energy, performance, and stamina; help build muscle; prevent muscle break down; prevent and reduce inflammation and therefore help speed recovery and healing from injury. </s> 
+zewailcity.edu.eg| <s> During the conference, a wide range of topics will be covered including, the scientific knowledge and tools required for successful research projects; strategies on how to apply for and succeed in obtaining and sustaining research funding; preparing for careers in academia or the medical industry; and engaging in interdisciplinary projects and building community partnerships to enhance research outcomes . </s> 
+worldvision.org| <s> Encouraging people to join build-back-better workshops as part of the requirement for shelter beneficiaries, World Vision aims to educate people to build disaster-safe houses and promote awareness on disaster preparedness. </s> 
+motherboarddrivers.info| <s> The Build Your Own Gaming PC portion of Wal-Marts computer page isnt quite as extensive as what iBuyPower has set up, but the choices and categories make it a more manageable experience for users who are still new to the build-your-own-PC scene. </s> 
+realhartford.org| <s> Everyone working on bikes now knows that we have to build better separated, protected bike lanes in order to get everyone biking–not just the daring. </s> 
+manmin.org| <s> When you built up walls of sins of various kinds while leading your life in Christ, you were able to repent of them and demolish those walls of sins, and this was not done by your own strength either. </s> 
+supercoderz.in| <s> Of course it is, not because you don't know what to build, even when you know exactly what to build , the problem is to build it in the correct way so that it can serve the purpose of not one but perhaps hundreds of users and above all provide correct results consistently without failing. </s> 
+ama.org| <s> To blaze a better trail, organizations need to turn marketing models into business models, built so that every interaction is designed to enhance a customer's experience instead of detracting from it. </s> 
+accreditedschoolsonline.org| <s> Workshops designed to help students build a framework for their thesis, including sourcing research, outlining initial thesis concepts and securing advisers. </s> 
+myworld2015.org| <s> Datashift is a multi-stakeholder, demand-driven initiative that builds the capacity and confidence of civil society organisations to generate and use citizen-generated data and leverage technology to monitor development progress, demand accountability and campaign for transformative change. </s> 
+jeron.org| <s> Animal-like robots, built from wooden toys, recite comments from social network platforms, hinting at the role of the comment-function on Twitter, Facebook, Google & Co. in identity construction. </s> 
+tropcho.eu| <s> From the get-go my approach to scaling the HTML seemed like a hack and I was making use of viewports. ... Continue reading → Keyboard closing automatically in Android PhoneGap app While building a phonegap app I encountered an issue with my Android build. </s> 
+syrianfreedom.org| <s> In an effort to build support for punitive strikes, the US and UK will on Thursday publish a joint summary of the intelligence which they say points towards the Assad regime's responsibility for the poison gas attack of 21 August in Ghouta, eastern Damascus, that killed over 1,000 people. </s> 
+forumsky.org| <s> Spectrophotometers make use of a grating and array detector to build 16 31 discrete measurements by dividing the visible spectrum into narrow bands of 10 20 nm. </s> 
+vadfoundation.org| <s> Improving the educational system in South Sudan is one of the best ways to build local capacity and encourage the creation of viable economic opportunities for the people of South Sudan. </s> 
+townplanning.gov.bb| <s> In Barbados, the Town and Country Planning Act Cap. 240 at section 29 makes provision for a list of buildings of special architectural or historic interest and Section 28 of the same act makes provision for building preservation orders. </s> 
+ossc.org| <s> Since moving to Southern California in 2004, Nicholas has been working at JPL in laser metrology where he develops and builds heterodyne laser interferometers. </s> 
+pwi.be| <s> The goal of Millennia2015 is to act for gender equality, women's empowerment and their full participation to political, economic and social decisions, in complementarity with men, in order to build fairer and more ethical futures at the horizon 2025. </s> 
+tribe.net| <s> This is a participatory process builds citizens' capability to address city vulnerability to climate change scenarios and to develop adaptation strategies. </s>
+fcgov.com| <s> The brewery will be built after the completion of the ... Show more approximate 104,000 square foot Self- Storage facility located on Lot 2 (4.536 acres). </s> 

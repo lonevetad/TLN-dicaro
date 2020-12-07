@@ -1,0 +1,7 @@
+what the file:
+es4.py
+let's go ....
+__file__=es4.py                              | __name__=__main__             | __package__=None                
+
+
+let's do it

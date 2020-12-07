@@ -1,0 +1,20 @@
+Synset('entity.n.01')
+bags for entity:
+{'perceived', 'nonliving', 'existence', 'distinct', 'entity', 'known', 'inferred', 'living'}
+syn dog: Synset('dog.n.01')
+
+
+updating: new node  dog.n.01 , with simil: 0.0
+and bag:  {'canis_familiaris', 'night', 'occurs', 'barked', 'many', 'probably', 'domesticated', 'since', 'wolf', 'breed', 'common', 'canis', 'prehistoric', 'member', 'time', 'dog', 'man', 'domestic_dog', 'descended', 'genus'}
+
+
+updating: new node  night.n.01 , with simil: 0.2857142857142857
+and bag:  {'time', 'sunset', 'night', 'outside', 'nighttime', 'dark', 'sunrise'}
+
+
+updating: new node  night.n.04 , with simil: 0.42857142857142855
+and bag:  {'time', 'cycle', 'later', 'collapsed', 'night', 'three', 'unit', 'considered', 'diurnal', 'dark', 'part'}
+
+
+found: Synset('night.n.04')
+1.0
