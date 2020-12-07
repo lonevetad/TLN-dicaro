@@ -6,7 +6,9 @@ from notebooks.utilities.cacheVarie import CacheSynsets
 local_cache_synset = CacheSynsets()
 
 #"cat_book",
+#"iceland",
 files = [
+    "cat_book",
     "iceland",
     "cambridge_analytica",
     "brexit"

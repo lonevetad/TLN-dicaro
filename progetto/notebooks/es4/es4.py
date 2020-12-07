@@ -18,7 +18,7 @@ class WordWeighted(object):
     def recalculateTotalValue(self):
         # the additional 1 inside the second factor is provided to still consider the word's weight,
         # even if it's not present in the document
-        return int(math.floor(self.cumulativeWeight * (1 + math.log2(1 + self.countPresenceInDocument))))
+        return int(math.floor(self.cumulativeWeight * (1 + math.log2(self.countPresenceInDocument))))
 
     def getTotalWeigth(self):
         if self.cacheTotalValue < 0:
@@ -156,7 +156,6 @@ class Paragraph(object):
         self.__add_sentence_bag_to_counter_by_index__(i)
 
     def remove_sentence(self, i):
-
         # self.map_sentence_by_index.pop(i)
         removed = False
         if i == self.lowest_index_sentence:
@@ -450,12 +449,14 @@ class DocumentSegmentator(object):
         # ora i backpointers possono essere trattati come "terminatori di paragrafo"
         # merge delle preferenze:
 
+        '''
         print("\npreferences:")
         print(preferences)
 
         def priParGraf():
             for indd, parr in paragraphs_by_starting_index.items():
                 print("at ind:", indd, " -> par:", parr.toString())
+        '''
 
         # V2
         # si procede a ritroso per semplicita
@@ -470,13 +471,7 @@ class DocumentSegmentator(object):
             paragraphs_by_starting_index.pop(end)
             start -= 1  # jump to the next (previous, tbh) sentence
             if start >= 0:
-                try:
-                    pref = preferences[start]
-                except KeyError as ke:
-                    print("KEEEEEE")
-                    for ind, par in paragraphs_by_starting_index.items():
-                        print("at ind:", ind, " -> par:", par.toString())
-                    raise ke
+                pref = preferences[start]
                 if start < pref:
                     # sequence not ended: the current paragraph (end-1) could be merged into start
                     while 0 <= start < pref:
@@ -490,8 +485,6 @@ class DocumentSegmentator(object):
                 else:
                     # the paragraph has ended: start is pointing backward
                     end = start
-            #priParGraf()
-        print("\n\nlinking ended")
 
         # WELL, INITIALIZATION HAS ENDED
         # now make the paragraphs-bubble boiling
@@ -499,8 +492,7 @@ class DocumentSegmentator(object):
         # START MAIN ALGORITHM - V2
         is_up = True
         for iteration in range(0, max_iterations):
-            is_up = (iteration % 2) == 1
-
+            is_up = not is_up  # (iteration % 2) == 1
             paragraphs_to_be_processed = []
             amount_paragr_pairs = len(paragraphs_by_starting_index) - 1
             if is_up:
@@ -528,16 +520,21 @@ class DocumentSegmentator(object):
                         paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_prev))
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
-                    par_index = par.lowest_index_sentence  # che sarebbe la sua "chiave"
-                    par.previous_paragraph.add_sentence("will be ignored :D", par_index, is_start_of_paragraph=False)
+                    prev_par = par.previous_paragraph
+                    par_index = par.lowest_index_sentence  # che sarebbe la sua "chiave" di paragraphs_by_starting_index
+                    prev_par.add_sentence("will be ignored :D", par_index, is_start_of_paragraph=False)
                     par.remove_sentence(par_index)
                     par.score = tupla[1]
-                    par.previous_paragraph.score = tupla[2]
+                    prev_par.score = tupla[2]
                     # adjust indexes
                     paragraphs_by_starting_index.pop(par_index)
-                    if not par.is_empty():
+                    if par.is_empty():
+                        #aggiustamento puntatori a paragrafo
+                        prev_par.next_paragraph = par.next_paragraph
+                        if par.next_paragraph is not None:
+                            par.next_paragraph.previous_paragraph =prev_par
+                    else:
                         paragraphs_by_starting_index[par_index + 1] = par
-                        # ora vale: par_index+1 == par.lowest_index_sentence
             else:  # we're going dooown, dooown, dooooown, we're going dooown, dooOOWWN, DOOOOWN [cit. Bruce Springsteen]
                 # scorro tutte le coppie di paragrafi, ossia tutti i par. tranne l'ultimo
                 i = 0
@@ -557,28 +554,33 @@ class DocumentSegmentator(object):
                         par.score = prev_cohesion_current
                         par.next_paragraph.remove_sentence(index_last)
                         par.next_paragraph.score = prev_cohesion_next
-                        # check modifications
+                        # check modifications to se if the breakpoint could be moved
                         if sum_previous < sum_modified:
                             paragraphs_to_be_processed.append((par, modified_cohesion_current, modified_cohesion_next))
                     i += 1
                 for tupla in paragraphs_to_be_processed:
                     par = tupla[0]
-                    par_next_index = par.next_paragraph.lowest_index_sentence
+                    #print("on down, par is: ", par.toString())
+                    next_par = par.next_paragraph
+                    index_next_par = next_par.lowest_index_sentence
                     # aggiungo la frase al paragrafo dopo
+                    index_par = par.get_first_sentence_index()
                     index_to_add = par.get_last_sentence_index()
-                    par.next_paragraph.add_sentence("will be ignored :D", index_to_add, is_start_of_paragraph=True)
+                    next_par.add_sentence("will be ignored :D", index_to_add, is_start_of_paragraph=True)
                     # la rimuovo da quello attuale
                     par.remove_sentence(index_to_add)
                     par.score = tupla[1]
-                    par.next_paragraph.score = tupla[2]
-                    paragraphs_by_starting_index.pop(par_next_index)
-                    paragraphs_by_starting_index[index_to_add] = par.next_paragraph
+                    next_par.score = tupla[2]
+                    # update the reference of the next paragraph in the helper map
+                    paragraphs_by_starting_index.pop(index_next_par)
+                    paragraphs_by_starting_index[index_to_add] = next_par
                     if par.is_empty():
-                        paragraphs_by_starting_index.pop(par.lowest_index_sentence)
-
-        print("\n\n\nAFTER MAIN ALGORITH, we have")
-        priParGraf()
-        print("###########################")
+                        # se il paragrafo "ridotto" diventerà vuoto, allora rimuovilo
+                        paragraphs_by_starting_index.pop(index_par)
+                        #aggiustamento puntatori a paragrafo
+                        next_par.previous_paragraph = par.previous_paragraph
+                        if par.previous_paragraph is not None:
+                            par.previous_paragraph.next_paragraph = next_par
 
         # Union of smaller paragraph (those with 1 or 2 sentences)
         for par in [ppp for ind, ppp in paragraphs_by_starting_index.items() if ppp.size() <= 2]:

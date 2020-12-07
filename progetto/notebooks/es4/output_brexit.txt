@@ -1,7 +1,7 @@
 usando il file brexit come input
 start analysys with 44 sentences
 list of breakpoints (the division will happen between the shown indexes and their respective successors):
-[2, 5, 9, 12, 19, 28, 32, 35, 39, 43]
+[2, 5, 9, 12, 19, 26, 29, 32, 35, 39, 43]
 
 paragraph:
 ---- The end of the Brexit transition period on 31 December is looming, and with it some major changes for anyone going from the UK to continental Europe â€“ either to holiday, work or live.
@@ -41,11 +41,13 @@ paragraph:
 ---- The Association of British Insurers is warning consumers that travel insurance policies could be more costly if Ehic is not continued or replaced.
 ---- Its website says: "In the absence of the Ehic or similar reciprocal health agreement, insurers will inevitably see an increase in claims costs â€“ this could have a direct impact on the prices charged to consumers.
 ---- This will vary depending on the provider."
----- If you are planning a trip to Europe that involves driving, under current arrangements you will need some extra documents when you go.
----- Anyone driving their own vehicle will need to have a so-called green card â€“ this is proof that you are insured and you get it from your car insurer.
 
 paragraph:
+---- If you are planning a trip to Europe that involves driving, under current arrangements you will need some extra documents when you go.
+---- Anyone driving their own vehicle will need to have a so-called green card â€“ this is proof that you are insured and you get it from your car insurer.
 ---- Make sure you ask for it a month before you plan to travel.
+
+paragraph:
 ---- You may also need an international driving permit (IDP) to drive in some countries, although it is not yet clear which states may ask for it â€“ currently no EU countries are on the list.
 ---- The IDP costs Â£5.50 and is available from post offices.
 ---- The UK has applied to become a listed "country", which will allow pets to be moved between it and the EU almost as freely as now.
