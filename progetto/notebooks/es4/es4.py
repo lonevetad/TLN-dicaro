@@ -31,6 +31,49 @@ class WordWeighted(object):
         if isPresentInDocument:
             self.countPresenceInDocument += 1
 
+
+class CachePairwiseSentenceSimilarity:
+    def __init__(self, map_words_weights, list_word_bags_from_sentences, sentence_similarity_function):
+        """
+        :param map_words_weights: map <string, int> representing the words' weights
+        :param list_word_bags_from_sentences: a list of set of string, i.e. a list of bag of words
+        each extracted from a respective sentence
+        :param sentence_similarity_function: a function that accepts a map <string, int> (words' weights),
+        and two strings (sentences) and returns a float (the similarity between those)
+        """
+        self.map_words_weights = map_words_weights
+        self.list_word_bags_from_sentences = list_word_bags_from_sentences
+        self.sentence_similarity_function = sentence_similarity_function
+        self.cache_simil = [None] * len(list_word_bags_from_sentences)
+
+    def get_similarity_by_sentence_indexes(self, index_sentence1, index_sentence2):
+        minind = 0
+        maxind = 0
+        if index_sentence1 > index_sentence2:
+            minind = index_sentence2
+            maxind = index_sentence1
+        elif index_sentence1 == index_sentence2:
+            raise ValueError(
+                "Shouldn't calculate the similarity of the same sentence (index: " + str(index_sentence1) + ")")
+        else:
+            minind = index_sentence1
+            maxind = index_sentence2
+        m = self.cache_simil[minind]
+        if m is None:
+            m = {}
+            self.cache_simil[minind] = m
+        if maxind in m:
+            return m[maxind]
+        else:
+            sim = self.sentence_similarity_function(self.map_words_weights,
+                                                    self.list_word_bags_from_sentences[index_sentence1],
+                                                    self.list_word_bags_from_sentences[index_sentence2])
+            m[maxind] = sim
+            return sim
+
+
+
+
 #
 #
 # start Paragraph
@@ -173,31 +216,6 @@ class Paragraph(object):
             if c > 1:
                 self.score += self.documentSegmentator.words_weight[w].getTotalWeigth()  # it's not multiplied by "c"
         self.score /= self.size()
-        return self.score
-
-    def get_score_OLD(self):
-        """
-        DEPRECATED
-        :return:
-        """
-        if self.is_empty():
-            return 0
-        if self.score >= 0:
-            return self.score
-        self.score = 0
-        # for i, sent1 in self.map_sentence_by_index.items():
-        #    for j, sent2 in self.map_sentence_by_index.items():
-        for i in range(self.lowest_index_sentence, self.highest_index_sentence + 1):
-            for j in range(self.lowest_index_sentence, self.highest_index_sentence + 1):
-                if i != j:
-                    # self.score += self.cache_pairwise_sentence_similarity.get_similarity_by_sentence_indexes(
-                    self.score += self.documentSegmentator.cache_bag_sentence_similarity \
-                        .get_similarity_by_sentence_indexes(
-                        # self.documentSegmentator.get_bag_of_word_of_sentence_by_index(i),
-                        # self.documentSegmentator.get_bag_of_word_of_sentence_by_index(j)
-                        i, j
-                    )
-        self.score /= float(len(self.map_sentence_by_index) * (len(self.map_sentence_by_index) - 1))
         return self.score
 
     def get_first_sentence_index(self):
@@ -617,8 +635,11 @@ class DocumentSegmentator(object):
                     w_w[word] = w
             i += 1
 
-
-        # pre-compute the similarity of each sentence
+        self.cache_bag_sentence_similarity = CachePairwiseSentenceSimilarity(
+            map_words_weights=w_w,
+            list_word_bags_from_sentences=self.bag_from_sentence_list,
+            sentence_similarity_function=self.similarity
+        )
 
         # now segment
         breakpoint_indexes = self.doc_tiling(desiredParagraphAmount)
@@ -659,7 +680,40 @@ richiesti (ossia il parametro "desiredParagraphAmount") utilizzando tale valore
 '''
 Codice deprecato
 
-    #on class DocumentSegmentator
+
+# on class Paragraph
+
+
+    def get_score_OLD(self):
+        """
+        DEPRECATED
+        :return:
+        """
+        if self.is_empty():
+            return 0
+        if self.score >= 0:
+            return self.score
+        self.score = 0
+        # for i, sent1 in self.map_sentence_by_index.items():
+        #    for j, sent2 in self.map_sentence_by_index.items():
+        for i in range(self.lowest_index_sentence, self.highest_index_sentence + 1):
+            for j in range(self.lowest_index_sentence, self.highest_index_sentence + 1):
+                if i != j:
+                    # self.score += self.cache_pairwise_sentence_similarity.get_similarity_by_sentence_indexes(
+                    self.score += self.documentSegmentator.cache_bag_sentence_similarity \
+                        .get_similarity_by_sentence_indexes(
+                        # self.documentSegmentator.get_bag_of_word_of_sentence_by_index(i),
+                        # self.documentSegmentator.get_bag_of_word_of_sentence_by_index(j)
+                        i, j
+                    )
+        self.score /= float(len(self.map_sentence_by_index) * (len(self.map_sentence_by_index) - 1))
+        return self.score
+
+
+
+
+
+#on class DocumentSegmentator
     
     
     def compute_similarity_lists_subsequent_sentences(self, bags_sentences, word_weight_map):
@@ -684,61 +738,4 @@ Codice deprecato
 
 
     ... and, in the function "document_segmentation" where it was useful, this code before invoking that function..
-    
-    
-        self.cache_bag_sentence_similarity = CachePairwiseSentenceSimilarity(
-            map_words_weights=w_w,
-            list_word_bags_from_sentences=self.bag_from_sentence_list,
-            sentence_similarity_function=self.similarity
-        )
-
-
-
-    # DEPRECATED
-class CachePairwiseSentenceSimilarity:
-    def __init__(self, map_words_weights, list_word_bags_from_sentences, sentence_similarity_function):
-        """
-        :param map_words_weights: map <string, int> representing the words' weights
-        :param list_word_bags_from_sentences: a list of set of string, i.e. a list of bag of words
-        each extracted from a respective sentence
-        :param sentence_similarity_function: a function that accepts a map <string, int> (words' weights),
-        and two strings (sentences) and returns a float (the similarity between those)
-        """
-        self.map_words_weights = map_words_weights
-        self.list_word_bags_from_sentences = list_word_bags_from_sentences
-        self.sentence_similarity_function = sentence_similarity_function
-        self.cache_simil = [None] * len(list_word_bags_from_sentences)
-
-    def get_similarity_by_sentence_indexes(self, index_sentence1, index_sentence2):
-        minind = 0
-        maxind = 0
-        if index_sentence1 > index_sentence2:
-            minind = index_sentence2
-            maxind = index_sentence1
-        elif index_sentence1 == index_sentence2:
-            raise ValueError(
-                "Shouldn't calculate the similarity of the same sentence (index: " + str(index_sentence1) + ")")
-        else:
-            minind = index_sentence1
-            maxind = index_sentence2
-        m = self.cache_simil[minind]
-        if m is None:
-            m = {}
-            self.cache_simil[minind] = m
-        if maxind in m:
-            return m[maxind]
-        else:
-            sim = self.sentence_similarity_function(self.map_words_weights,
-                                                    self.list_word_bags_from_sentences[index_sentence1],
-                                                    self.list_word_bags_from_sentences[index_sentence2])
-            m[maxind] = sim
-            return sim
-
-    #
-    #
-    # end CachePairwiseSentenceSimilarity
-    #
-    #
-
-
 '''
